@@ -73,6 +73,50 @@
   body {
     scroll-padding-top: 80px;
   }
+
+  @keyframes gradient-flow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes floating-orbs {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-20px) scale(1.1);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  .dynamic-background {
+    background: linear-gradient(-45deg, #fe7a33, #07437c, #fe7a33, #07437c, #fe7a33);
+    background-size: 500% 500%;
+    animation: gradient-flow 12s ease infinite;
+  }
+
+  .floating-orb {
+    animation: floating-orbs 6s ease-in-out infinite;
+  }
+
+  .pulse-orb {
+    animation: pulse-slow 8s ease-in-out infinite;
+  }
 }
 
 @layer utilities {
