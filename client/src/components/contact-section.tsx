@@ -26,19 +26,19 @@ const contactInfo = [
     icon: Mail,
     label: "Email",
     value: "andre@asprodigital.com",
-    gradient: "from-orange-500 to-blue-600"
+    colorClass: "brand-gradient"
   },
   {
     icon: Phone,
     label: "Phone",
     value: "+49 (0) 123 456 789",
-    gradient: "from-blue-600 to-orange-500"
+    colorClass: "brand-blue"
   },
   {
     icon: MapPin,
     label: "Location",
     value: "Germany",
-    gradient: "from-orange-500 to-blue-600"
+    colorClass: "brand-gradient"
   }
 ];
 
@@ -248,7 +248,7 @@ export default function ContactSection() {
                     transition={{ duration: 0.6, delay: index * 0.1 + 0.4 }}
                     data-testid={`contact-info-${info.label.toLowerCase()}`}
                   >
-                    <div className={`w-12 h-12 bg-gradient-to-br ${info.gradient} rounded-xl flex items-center justify-center`}>
+                    <div className={`w-12 h-12 ${info.colorClass} rounded-xl flex items-center justify-center`}>
                       <info.icon className="text-white w-5 h-5" />
                     </div>
                     <div>
@@ -271,7 +271,7 @@ export default function ContactSection() {
                     <motion.a
                       key={social.label}
                       href={social.href}
-                      className="w-12 h-12 bg-slate-100 hover:bg-gradient-to-br hover:from-orange-500 hover:to-blue-600 text-slate-600 hover:text-white rounded-xl flex items-center justify-center transition-all duration-300"
+                      className="w-12 h-12 bg-slate-100 hover:bg-orange-500 text-slate-600 hover:text-white rounded-xl flex items-center justify-center transition-all duration-300"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       initial={{ opacity: 0, scale: 0.8 }}

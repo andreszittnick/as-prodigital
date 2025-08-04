@@ -5,6 +5,7 @@ This is a modern full-stack web application built for a digital agency called "A
 # User Preferences
 
 Preferred communication style: Simple, everyday language.
+Brand colors: Use #fe7a33 (orange) and #07437c (blue) separately - do not mix/gradient the colors together.
 
 # System Architecture
 

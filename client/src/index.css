@@ -69,10 +69,7 @@
 
 @layer utilities {
   .gradient-text {
-    background: linear-gradient(135deg, var(--brand-orange), var(--brand-blue));
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: var(--brand-orange);
   }
 
   .glass-effect {
@@ -82,15 +79,28 @@
   }
 
   .brand-gradient {
-    background: linear-gradient(135deg, var(--brand-orange), var(--brand-blue));
+    background: var(--brand-orange);
   }
 
   .brand-gradient-hover {
-    background: linear-gradient(135deg, var(--brand-orange), var(--brand-blue));
+    background: var(--brand-orange);
     transition: all 0.3s ease;
   }
 
   .brand-gradient-hover:hover {
-    background: linear-gradient(135deg, hsl(18, 98%, 55%), hsl(206, 91%, 21%));
+    background: hsl(18, 98%, 55%);
+  }
+
+  .brand-blue {
+    background: var(--brand-blue);
+  }
+
+  .brand-blue-hover {
+    background: var(--brand-blue);
+    transition: all 0.3s ease;
+  }
+
+  .brand-blue-hover:hover {
+    background: hsl(206, 91%, 21%);
   }
 }

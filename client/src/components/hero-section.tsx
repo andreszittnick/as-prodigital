@@ -156,7 +156,7 @@ export default function HeroSection() {
               </motion.div>
               
               <motion.div 
-                className="absolute -bottom-4 -left-4 w-20 h-20 brand-gradient rounded-xl opacity-80 glass-effect flex items-center justify-center"
+                className="absolute -bottom-4 -left-4 w-20 h-20 brand-blue rounded-xl opacity-80 glass-effect flex items-center justify-center"
                 animate={{ 
                   y: [0, 10, 0],
                   rotate: [0, -5, 0]

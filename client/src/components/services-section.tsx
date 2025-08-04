@@ -9,21 +9,21 @@ const services = [
     title: "Web Design",
     description: "Modern, responsive websites that captivate your audience and drive conversions. Every pixel crafted with purpose and precision.",
     features: ["Responsive Design", "UX/UI Optimization", "Performance Focus"],
-    gradient: "from-orange-500 to-blue-600"
+    colorClass: "brand-gradient"
   },
   {
     icon: Search,
     title: "SEO Optimization",
     description: "Strategic search engine optimization that elevates your visibility and brings qualified traffic to your business.",
     features: ["Keyword Research", "Technical SEO", "Content Strategy"],
-    gradient: "from-blue-600 to-orange-500"
+    colorClass: "brand-blue"
   },
   {
     icon: Bot,
     title: "AI Solutions",
     description: "Custom AI integrations and automation solutions that streamline operations and unlock new possibilities for your business.",
     features: ["Custom AI Integration", "Process Automation", "Smart Analytics"],
-    gradient: "from-orange-500 to-blue-600"
+    colorClass: "brand-gradient"
   }
 ];
 
@@ -59,10 +59,10 @@ export default function ServicesSection() {
               whileHover={{ y: -8 }}
               data-testid={`service-card-${service.title.toLowerCase().replace(/\s+/g, '-')}`}
             >
-              <div className="absolute inset-0 bg-gradient-to-br from-orange-500/5 to-blue-600/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative">
                 <motion.div 
-                  className={`w-16 h-16 bg-gradient-to-br ${service.gradient} rounded-2xl flex items-center justify-center mb-6`}
+                  className={`w-16 h-16 ${service.colorClass} rounded-2xl flex items-center justify-center mb-6`}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.3 }}
                 >
