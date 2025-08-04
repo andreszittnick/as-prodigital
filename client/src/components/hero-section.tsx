@@ -94,12 +94,14 @@ export default function HeroSection() {
             </motion.h1>
             
             <motion.div 
-              className="text-2xl md:text-3xl font-medium mb-8 text-center lg:text-left"
+              className="mb-8 text-center lg:text-left"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <span className="text-slate-700">Improve your digital </span>
+              <div className="text-2xl md:text-3xl font-medium mb-4 text-slate-700">
+                Improve your digital
+              </div>
               <TypingAnimation />
             </motion.div>
             
