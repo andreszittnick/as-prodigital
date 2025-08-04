@@ -55,89 +55,86 @@ export default function ProcessTimeline() {
           </p>
         </motion.div>
         
-        {/* Desktop Timeline */}
-        <div className="hidden lg:block relative">
-          {/* Timeline Line */}
+        {/* Vertical Timeline */}
+        <div className="relative max-w-4xl mx-auto">
+          {/* Vertical Timeline Line */}
+          <div className="absolute left-8 md:left-1/2 top-0 w-0.5 h-full bg-slate-200 transform md:-translate-x-0.5" />
           <motion.div 
-            className="absolute top-1/2 left-0 w-full h-1 bg-slate-200 transform -translate-y-1/2"
-            initial={{ scaleX: 0 }}
-            animate={isInView ? { scaleX: 1 } : {}}
-            transition={{ duration: 1.5, delay: 0.5 }}
-          />
-          <motion.div 
-            className="absolute top-1/2 left-0 h-1 bg-gradient-to-r from-orange-500 to-blue-600 transform -translate-y-1/2"
-            initial={{ width: 0 }}
-            animate={isInView ? { width: "100%" } : {}}
-            transition={{ duration: 2, delay: 0.8 }}
+            className="absolute left-8 md:left-1/2 top-0 w-0.5 bg-gradient-to-b from-orange-500 to-blue-600 transform md:-translate-x-0.5"
+            initial={{ height: 0 }}
+            animate={isInView ? { height: "100%" } : {}}
+            transition={{ duration: 2, delay: 0.5 }}
           />
           
-          <div className="grid grid-cols-4 gap-8">
+          <div className="space-y-16">
             {processSteps.map((step, index) => (
               <motion.div
                 key={step.number}
-                className="relative text-center"
+                className="relative flex items-center flex-col md:flex-row"
                 initial={{ opacity: 0, y: 50 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
+                transition={{ duration: 0.8, delay: index * 0.3 }}
                 data-testid={`process-step-${step.number}`}
               >
                 {/* Timeline Dot */}
                 <motion.div 
-                  className={`w-16 h-16 ${step.colorClass} rounded-full flex items-center justify-center mx-auto mb-6 relative z-10 shadow-lg`}
-                  whileHover={{ scale: 1.1 }}
+                  className={`w-16 h-16 ${step.colorClass} rounded-full flex items-center justify-center shadow-xl z-10 relative md:absolute md:left-1/2 md:transform md:-translate-x-1/2`}
+                  whileHover={{ scale: 1.2, rotate: 5 }}
                   transition={{ duration: 0.3 }}
                 >
                   <step.icon className="text-white w-8 h-8" />
                 </motion.div>
                 
-                {/* Step Number */}
-                <div className="text-6xl font-bold text-slate-100 mb-4">{step.number}</div>
-                
-                {/* Content */}
-                <div className="bg-slate-50 p-6 rounded-2xl">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
-                  <p className="text-slate-600 text-sm leading-relaxed">{step.description}</p>
-                </div>
+                {/* Content Card */}
+                <motion.div 
+                  className={`flex-1 max-w-md mx-auto md:mx-0 mt-6 md:mt-0 ${
+                    index % 2 === 0 ? 'md:mr-auto md:pr-16' : 'md:ml-auto md:pl-16'
+                  }`}
+                  whileHover={{ 
+                    scale: 1.02,
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
+                  }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 relative overflow-hidden group">
+                    {/* Background gradient on hover */}
+                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500 ${
+                      step.colorClass === 'brand-gradient' ? 'bg-orange-500' : 'bg-blue-600'
+                    }`} />
+                    
+                    {/* Step Number */}
+                    <div className="text-6xl font-bold text-slate-100 mb-4 group-hover:text-slate-200 transition-colors duration-300">
+                      {step.number}
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="relative z-10">
+                      <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-slate-800 transition-colors duration-300">
+                        {step.title}
+                      </h3>
+                      <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                        {step.description}
+                      </p>
+                    </div>
+                    
+                    {/* Decorative element */}
+                    <motion.div 
+                      className={`absolute -top-2 -right-2 w-20 h-20 ${step.colorClass} rounded-full opacity-10`}
+                      animate={{ 
+                        scale: [1, 1.1, 1],
+                        rotate: [0, 5, 0]
+                      }}
+                      transition={{ 
+                        duration: 4,
+                        repeat: Infinity,
+                        ease: "easeInOut"
+                      }}
+                    />
+                  </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>
-        </div>
-        
-        {/* Mobile Timeline */}
-        <div className="lg:hidden space-y-8">
-          {processSteps.map((step, index) => (
-            <motion.div
-              key={step.number}
-              className="flex items-start space-x-4"
-              initial={{ opacity: 0, x: -50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              data-testid={`mobile-process-step-${step.number}`}
-            >
-              {/* Timeline Dot and Line */}
-              <div className="flex flex-col items-center">
-                <motion.div 
-                  className={`w-12 h-12 ${step.colorClass} rounded-full flex items-center justify-center shadow-lg`}
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <step.icon className="text-white w-6 h-6" />
-                </motion.div>
-                {index < processSteps.length - 1 && (
-                  <div className="w-0.5 h-16 bg-slate-200 mt-4" />
-                )}
-              </div>
-              
-              {/* Content */}
-              <div className="flex-1 pb-8">
-                <div className="text-4xl font-bold text-slate-100 mb-2">{step.number}</div>
-                <div className="bg-slate-50 p-6 rounded-2xl">
-                  <h3 className="text-xl font-bold text-slate-900 mb-3">{step.title}</h3>
-                  <p className="text-slate-600 leading-relaxed">{step.description}</p>
-                </div>
-              </div>
-            </motion.div>
-          ))}
         </div>
       </div>
     </section>
