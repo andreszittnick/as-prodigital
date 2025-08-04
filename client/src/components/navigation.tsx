@@ -46,6 +46,7 @@ export default function Navigation() {
             {[
               { name: "Home", id: "home" },
               { name: "About", id: "why-choose" },
+              { name: "Process", id: "process" },
               { name: "Services", id: "services" },
               { name: "Portfolio", id: "portfolio" },
             ].map((item) => (
@@ -91,6 +92,7 @@ export default function Navigation() {
               {[
                 { name: "Home", id: "home" },
                 { name: "About", id: "why-choose" },
+                { name: "Process", id: "process" },
                 { name: "Services", id: "services" },
                 { name: "Portfolio", id: "portfolio" },
                 { name: "Contact", id: "contact" },
