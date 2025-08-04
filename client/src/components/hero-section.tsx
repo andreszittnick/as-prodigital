@@ -147,53 +147,18 @@ export default function HeroSection() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="relative">
-              {/* Professional photo */}
-              <motion.div 
-                className="w-80 h-80 lg:w-96 lg:h-96 rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/50 backdrop-blur-sm"
-                whileHover={{ scale: 1.02 }}
-                transition={{ duration: 0.3 }}
-              >
-                <img 
-                  src={andreImage} 
-                  alt="Andre Szittnick - Professional Web Designer" 
-                  className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-                  data-testid="img-hero-photo"
-                />
-              </motion.div>
-              
-              {/* Floating elements */}
-              <motion.div 
-                className="absolute -top-4 -right-4 w-24 h-24 brand-gradient rounded-2xl opacity-80 glass-effect flex items-center justify-center"
-                animate={{ 
-                  y: [0, -10, 0],
-                  rotate: [0, 5, 0]
-                }}
-                transition={{ 
-                  duration: 4,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              >
-                <Code className="text-white w-8 h-8" />
-              </motion.div>
-              
-              <motion.div 
-                className="absolute -bottom-4 -left-4 w-20 h-20 brand-blue rounded-xl opacity-80 glass-effect flex items-center justify-center"
-                animate={{ 
-                  y: [0, 10, 0],
-                  rotate: [0, -5, 0]
-                }}
-                transition={{ 
-                  duration: 5,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 1
-                }}
-              >
-                <Brain className="text-white w-6 h-6" />
-              </motion.div>
-            </div>
+            <motion.div 
+              className="w-80 h-[500px] lg:w-96 lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/50 backdrop-blur-sm"
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img 
+                src={andreImage} 
+                alt="Andre Szittnick - Professional Web Designer" 
+                className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                data-testid="img-hero-photo"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </div>
