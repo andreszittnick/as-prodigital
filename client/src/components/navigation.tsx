@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { useScrollPosition } from "@/hooks/use-scroll";
+import logoImage from "@assets/Logo_1754308337340.png";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -29,16 +30,17 @@ export default function Navigation() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <motion.div 
-            className="flex items-center space-x-2 cursor-pointer"
+            className="flex items-center cursor-pointer"
             onClick={() => scrollToSection("home")}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             data-testid="logo-link"
           >
-            <div className="w-8 h-8 brand-gradient rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">AS</span>
-            </div>
-            <span className="font-semibold text-lg text-slate-900">AS ProDigital</span>
+            <img 
+              src={logoImage} 
+              alt="AS-ProDigital Logo" 
+              className="h-8 w-auto object-contain"
+            />
           </motion.div>
           
           {/* Desktop Navigation */}
