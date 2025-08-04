@@ -69,17 +69,17 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="text-orange-500 font-medium text-lg">Digital Innovation Specialist</span>
+              <span className="text-slate-600 font-medium text-xl">Welcome to</span>
             </motion.div>
             
             <motion.h1 
-              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <span className="gradient-text">Andre</span><br />
-              <span className="text-slate-900">Szittnick</span>
+              <span className="gradient-text">Andre Szittnick</span><br />
+              <span className="text-slate-900">AS-ProDigital</span>
             </motion.h1>
             
             <motion.div 
