@@ -79,8 +79,13 @@ export default function ProcessTimeline() {
                 {/* Timeline Dot */}
                 <motion.div 
                   className={`w-16 h-16 ${step.colorClass} rounded-full flex items-center justify-center shadow-xl z-10 relative md:absolute md:left-1/2 md:transform md:-translate-x-1/2`}
-                  whileHover={{ scale: 1.2, rotate: 5 }}
-                  transition={{ duration: 0.3 }}
+                  initial={{ scale: 0.8, rotate: -10 }}
+                  animate={isInView ? { 
+                    scale: 1, 
+                    rotate: 0,
+                    boxShadow: "0 20px 40px -12px rgba(0, 0, 0, 0.25)"
+                  } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
                   <step.icon className="text-white w-8 h-8" />
                 </motion.div>
@@ -90,31 +95,64 @@ export default function ProcessTimeline() {
                   className={`flex-1 max-w-md mx-auto md:mx-0 mt-6 md:mt-0 ${
                     index % 2 === 0 ? 'md:mr-auto md:pr-16' : 'md:ml-auto md:pl-16'
                   }`}
-                  whileHover={{ 
-                    scale: 1.02,
-                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
+                  initial={{ 
+                    scale: 0.95,
+                    boxShadow: "0 4px 6px -1px rgba(0, 0, 0, 0.1)"
                   }}
-                  transition={{ duration: 0.3 }}
+                  animate={isInView ? { 
+                    scale: 1,
+                    boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.15)"
+                  } : {}}
+                  transition={{ duration: 0.6, delay: index * 0.2 + 0.3 }}
                 >
-                  <div className="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 relative overflow-hidden group">
-                    {/* Background gradient on hover */}
-                    <div className={`absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500 ${
-                      step.colorClass === 'brand-gradient' ? 'bg-orange-500' : 'bg-blue-600'
-                    }`} />
+                  <motion.div 
+                    className="bg-white p-8 rounded-3xl shadow-lg border border-slate-100 relative overflow-hidden"
+                    initial={{ backgroundColor: "#ffffff" }}
+                    animate={isInView ? {
+                      backgroundColor: step.colorClass === 'brand-gradient' ? "#fef3f2" : "#eff6ff"
+                    } : {}}
+                    transition={{ duration: 0.8, delay: index * 0.2 + 0.5 }}
+                  >
+                    {/* Background gradient effect */}
+                    <motion.div 
+                      className={`absolute inset-0 ${
+                        step.colorClass === 'brand-gradient' ? 'bg-orange-500' : 'bg-blue-600'
+                      }`}
+                      initial={{ opacity: 0 }}
+                      animate={isInView ? { opacity: 0.03 } : {}}
+                      transition={{ duration: 1, delay: index * 0.2 + 0.6 }}
+                    />
                     
                     {/* Step Number */}
-                    <div className="text-6xl font-bold text-slate-100 mb-4 group-hover:text-slate-200 transition-colors duration-300">
+                    <motion.div 
+                      className="text-6xl font-bold mb-4"
+                      initial={{ color: "#f1f5f9" }}
+                      animate={isInView ? { 
+                        color: step.colorClass === 'brand-gradient' ? "#fed7d7" : "#dbeafe"
+                      } : {}}
+                      transition={{ duration: 0.8, delay: index * 0.2 + 0.4 }}
+                    >
                       {step.number}
-                    </div>
+                    </motion.div>
                     
                     {/* Content */}
                     <div className="relative z-10">
-                      <h3 className="text-2xl font-bold text-slate-900 mb-4 group-hover:text-slate-800 transition-colors duration-300">
+                      <motion.h3 
+                        className="text-2xl font-bold mb-4"
+                        initial={{ color: "#64748b" }}
+                        animate={isInView ? { color: "#0f172a" } : {}}
+                        transition={{ duration: 0.6, delay: index * 0.2 + 0.5 }}
+                      >
                         {step.title}
-                      </h3>
-                      <p className="text-slate-600 leading-relaxed group-hover:text-slate-700 transition-colors duration-300">
+                      </motion.h3>
+                      <motion.p 
+                        className="leading-relaxed"
+                        initial={{ color: "#94a3b8" }}
+                        animate={isInView ? { color: "#475569" } : {}}
+                        transition={{ duration: 0.6, delay: index * 0.2 + 0.6 }}
+                      >
                         {step.description}
-                      </p>
+                      </motion.p>
                     </div>
                     
                     {/* Decorative element */}
@@ -130,7 +168,7 @@ export default function ProcessTimeline() {
                         ease: "easeInOut"
                       }}
                     />
-                  </div>
+                  </motion.div>
                 </motion.div>
               </motion.div>
             ))}
