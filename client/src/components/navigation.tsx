@@ -45,6 +45,7 @@ export default function Navigation() {
           <div className="hidden md:flex items-center space-x-8">
             {[
               { name: "Home", id: "home" },
+              { name: "About", id: "why-choose" },
               { name: "Services", id: "services" },
               { name: "Portfolio", id: "portfolio" },
             ].map((item) => (
@@ -89,6 +90,7 @@ export default function Navigation() {
             <div className="flex flex-col space-y-4">
               {[
                 { name: "Home", id: "home" },
+                { name: "About", id: "why-choose" },
                 { name: "Services", id: "services" },
                 { name: "Portfolio", id: "portfolio" },
                 { name: "Contact", id: "contact" },

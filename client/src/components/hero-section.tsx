@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Code, Brain } from "lucide-react";
+import TypingAnimation from "./typing-animation";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -72,7 +73,7 @@ export default function HeroSection() {
             </motion.div>
             
             <motion.h1 
-              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6"
+              className="text-5xl md:text-6xl lg:text-7xl font-bold leading-tight mb-4"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -80,6 +81,16 @@ export default function HeroSection() {
               <span className="gradient-text">Andre</span><br />
               <span className="text-slate-900">Szittnick</span>
             </motion.h1>
+            
+            <motion.div 
+              className="text-2xl md:text-3xl font-medium mb-8 text-center lg:text-left"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <span className="text-slate-700">Improve your digital </span>
+              <TypingAnimation />
+            </motion.div>
             
             <motion.p 
               className="text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl"
