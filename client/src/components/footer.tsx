@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import logoImage from "@assets/Logo_1754308337340.png";
 
 export default function Footer() {
   return (
@@ -6,16 +7,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 items-center">
           <motion.div 
-            className="flex items-center space-x-2"
+            className="flex items-center"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="w-8 h-8 brand-gradient rounded-lg flex items-center justify-center">
-              <span className="text-white font-bold text-sm">AS</span>
-            </div>
-            <span className="font-semibold text-lg">AS ProDigital</span>
+            <img 
+              src={logoImage} 
+              alt="AS-ProDigital Logo" 
+              className="h-8 w-auto object-contain"
+            />
           </motion.div>
           
           <motion.div 

@@ -39,7 +39,7 @@ export default function Navigation() {
             <img 
               src={logoImage} 
               alt="AS-ProDigital Logo" 
-              className="h-8 w-auto object-contain"
+              className="h-10 w-auto object-contain"
             />
           </motion.div>
           
