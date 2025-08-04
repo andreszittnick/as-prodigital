@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Code, Brain } from "lucide-react";
 import TypingAnimation from "./typing-animation";
+import andreImage from "@assets/Bild_Andre_Szittnick_1754308315756.jpg";
 
 export default function HeroSection() {
   const scrollToSection = (sectionId: string) => {
@@ -154,7 +155,7 @@ export default function HeroSection() {
                 transition={{ duration: 0.3 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=800" 
+                  src={andreImage} 
                   alt="Andre Szittnick - Professional Web Designer" 
                   className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   data-testid="img-hero-photo"
