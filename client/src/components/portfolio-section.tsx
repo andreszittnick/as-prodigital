@@ -46,10 +46,10 @@ export default function PortfolioSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Aktuelle <span className="gradient-text">Arbeiten</span>
+            Ergebnisse, die für sich <span className="gradient-text">sprechen</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Eine Auswahl erfolgreicher Projekte, die die Kraft von modernem Webdesign und digitaler Innovation demonstrieren.
+            Jedes Projekt ist ein individuelles Abenteuer – hier sehen Sie Ergebnisse, die durch enge Zusammenarbeit und kreative Ideen entstanden sind.
           </p>
         </motion.div>
         
