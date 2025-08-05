@@ -4,20 +4,20 @@ import { useRef } from "react";
 
 const portfolioItems = [
   {
-    title: "E-Commerce Plattform",
-    description: "Moderne E-Commerce-Lösung mit KI-gestützten Empfehlungen und nahtloser Benutzererfahrung.",
+    title: "Projekt 1",
+    description: "Projekt 1 - Beschreibung",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
     tags: ["Webdesign", "KI-Integration"]
   },
   {
-    title: "Analytics Dashboard",
-    description: "Echtzeit-Business-Intelligence-Plattform mit individueller KI-Analytik und Berichterstattung.",
+    title: "Projekt 2",
+    description: "Projekt 2 - Beschreibung",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
     tags: ["Dashboard", "KI-Analytik"]
   },
   {
-    title: "Kreatives Portfolio",
-    description: "Preisgekrönte Portfolio-Website mit innovativen Animationen und SEO-Optimierung.",
+    title: "Projekt 3",
+    description: "Projekt 3 - Beschreibung",
     image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
     tags: ["Portfolio", "SEO"]
   }
