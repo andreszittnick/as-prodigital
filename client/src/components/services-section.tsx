@@ -7,7 +7,7 @@ const services = [
   {
     icon: Palette,
     title: "Webdesign",
-    description: "Moderne, responsive Websites, die Ihr Publikum begeistern und Conversions fördern. Jedes Pixel mit Zweck und Präzision gestaltet.",
+    description: "Ich gestalte Ihre Website so, dass sie Ihre Marke authentisch widerspiegelt und Ihre Besucher begeistert. Jede Seite entsteht in enger Abstimmung mit Ihnen – modern, klar und für alle Geräte optimiert.",
     features: ["Responsive Design", "UX/UI Optimierung", "Performance-Fokus"],
     colorClass: "brand-gradient"
   },
@@ -21,7 +21,7 @@ const services = [
   {
     icon: Bot,
     title: "KI-Lösungen",
-    description: "Maßgeschneiderte KI-Integrationen und Automatisierungslösungen, die Abläufe optimieren und neue Möglichkeiten für Ihr Unternehmen erschließen.",
+    description: "Ich zeige Ihnen, wie Sie KI in Ihrem Unternehmen sinnvoll nutzen können – von kleinen Automatisierungen bis zu individuellen Lösungen. Mein Ziel: Mehr Zeit für das Wesentliche und weniger Routinearbeit.",
     features: ["Individuelle KI-Integration", "Prozess-Automatisierung", "Intelligente Analytik"],
     colorClass: "brand-gradient"
   }
