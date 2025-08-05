@@ -38,7 +38,7 @@ export default function WhyChooseSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Was für <span className="gradient-text">AS-ProDigital</span> spricht
+            Warum ich der richtige <span className="gradient-text">Partner</span> für Ihr Projekt bin
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
             Erleben Sie den Unterschied bei der Zusammenarbeit mit einem engagierten Digitalspezialisten, der Ihren Erfolg an erste Stelle setzt.

@@ -104,21 +104,23 @@ export default function HeroSection() {
               <TypingAnimation />
             </motion.div>
             
-            <motion.p 
+            <motion.div 
               className="text-xl text-slate-600 mb-8 leading-relaxed max-w-2xl"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              Ich helfe Ihnen dabei, Ihre digitale Präsenz sichtbar und erfolgreich zu machen.
-              <br /><br />
-              Als Ihr persönlicher Ansprechpartner entwickle ich maßgeschneiderte Webseiten, effektives SEO und individuelle KI‑Lösungen, die genau zu Ihrem Unternehmen passen.
-              <br /><br />
+              <p>
+                Ich helfe Ihnen dabei, Ihre digitale Präsenz sichtbar und erfolgreich zu machen.
+                <br /><br />
+                Als Ihr persönlicher Ansprechpartner entwickle ich maßgeschneiderte Webseiten, effektives SEO und individuelle KI‑Lösungen, die genau zu Ihrem Unternehmen passen.
+              </p>
+              <br />
               <div className="space-y-2">
                 <div className="text-lg font-bold text-slate-800">Ihre Vision. Meine Mission.</div>
                 <div className="font-medium text-slate-600">Damit Ihr Online-Auftritt begeistert</div>
               </div>
-            </motion.p>
+            </motion.div>
             
             <motion.div 
               className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
