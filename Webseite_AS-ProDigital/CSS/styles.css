@@ -301,16 +301,15 @@ body {
 }
 
 .hero-content {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 3rem;
-    align-items: center;
+    display: block;
 }
 
 @media (min-width: 1024px) {
     .hero-content {
+        display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
+        align-items: center;
     }
 }
 
@@ -532,14 +531,14 @@ body {
     animation: pulse 4s ease-in-out infinite;
 }
 
-/* Hero Layout Control */
+/* Hero Layout Control - Force Mobile First */
 .hero-desktop {
-    display: none;
+    display: none !important;
 }
 
 @media (min-width: 1024px) {
     .hero-desktop {
-        display: grid;
+        display: grid !important;
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
         align-items: center;
@@ -547,12 +546,24 @@ body {
 }
 
 .hero-mobile {
-    display: block;
+    display: block !important;
 }
 
 @media (min-width: 1024px) {
     .hero-mobile {
-        display: none;
+        display: none !important;
+    }
+}
+
+/* Ensure proper mobile section ordering */
+.hero-mobile {
+    display: flex !important;
+    flex-direction: column;
+}
+
+@media (min-width: 1024px) {
+    .hero-mobile {
+        display: none !important;
     }
 }
 
