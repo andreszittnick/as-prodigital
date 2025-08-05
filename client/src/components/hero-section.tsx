@@ -110,7 +110,9 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              Ich helfe Ihnen dabei, Ihre digitale Präsenz sichtbar und erfolgreich zu machen. Als Ihr persönlicher Ansprechpartner entwickle ich maßgeschneiderte Webseiten, effektives SEO und individuelle KI‑Lösungen, die genau zu Ihrem Unternehmen passen.
+              Ich helfe Ihnen dabei, Ihre digitale Präsenz sichtbar und erfolgreich zu machen.
+              <br /><br />
+              Als Ihr persönlicher Ansprechpartner entwickle ich maßgeschneiderte Webseiten, effektives SEO und individuelle KI‑Lösungen, die genau zu Ihrem Unternehmen passen.
               <br /><br />
               <span className="font-semibold text-slate-700">Ihre Vision wird zu meiner Mission – damit Ihr Auftritt online begeistert.</span>
             </motion.p>
