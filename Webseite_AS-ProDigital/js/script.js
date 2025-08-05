@@ -78,8 +78,8 @@ function initScrollAnimations() {
     const animatedElements = document.querySelectorAll('.animate-on-scroll');
     
     const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '-50px 0px -50px 0px'
+        threshold: 0.05,
+        rootMargin: '0px 0px -20px 0px'
     };
     
     const observer = new IntersectionObserver((entries) => {
@@ -434,13 +434,13 @@ function addAdvancedScrollAnimations() {
     const timelineObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const delay = Array.from(timelineSteps).indexOf(entry.target) * 300;
+                const delay = Array.from(timelineSteps).indexOf(entry.target) * 200;
                 setTimeout(() => {
                     entry.target.classList.add('visible');
                 }, delay);
             }
         });
-    }, { threshold: 0.3 });
+    }, { threshold: 0.2 });
     
     timelineSteps.forEach(step => {
         timelineObserver.observe(step);

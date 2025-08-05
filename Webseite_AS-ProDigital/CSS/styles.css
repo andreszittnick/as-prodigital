@@ -943,7 +943,7 @@ section {
         background: linear-gradient(to bottom, #fe7a33, #07437c, #fe7a33);
         transform: translateX(-50%);
         opacity: 0;
-        animation: timeline-fill 3s ease-out 1s forwards;
+        animation: timeline-fill 2s ease-out 0.5s forwards;
     }
 }
 
