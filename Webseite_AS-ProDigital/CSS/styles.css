@@ -559,8 +559,9 @@ body {
 /* Mobile Hero Sections */
 .mobile-section-1,
 .mobile-section-2,
-.mobile-section-3,
-.mobile-section-4 {
+.mobile-section-vision,
+.mobile-section-image,
+.mobile-section-description {
     text-align: center;
     padding: 0 1rem;
 }
@@ -573,11 +574,15 @@ body {
     margin-bottom: 2rem;
 }
 
-.mobile-section-3 {
+.mobile-section-vision {
     margin-bottom: 2rem;
 }
 
-.mobile-section-4 {
+.mobile-section-image {
+    margin-bottom: 2rem;
+}
+
+.mobile-section-description {
     margin-bottom: 1rem;
 }
 
@@ -633,7 +638,7 @@ body {
     }
 }
 
-/* Mobile Section 3 - Profile Image */
+/* Mobile Profile Image Section */
 .mobile-profile-container {
     position: relative;
     width: 250px;
@@ -673,13 +678,13 @@ body {
     animation: pulse 4s ease-in-out infinite;
 }
 
-/* Mobile Section 4 - Second Description + Vision */
+/* Mobile Section Description */
 .mobile-description-2 {
     font-size: 0.95rem;
     color: #64748b;
     line-height: 1.6;
     max-width: 500px;
-    margin: 0 auto 2rem;
+    margin: 0 auto;
 }
 
 @media (min-width: 640px) {
