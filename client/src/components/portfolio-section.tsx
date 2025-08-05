@@ -74,7 +74,7 @@ function StatCard({ stat, index, isInView }: { stat: typeof stats[0], index: num
   
   return (
     <motion.div
-      className="text-center bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 group"
+      className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-500 group"
       initial={{ opacity: 0, y: 50, scale: 0.9 }}
       animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
       transition={{ duration: 0.8, delay: index * 0.2 }}
@@ -82,7 +82,7 @@ function StatCard({ stat, index, isInView }: { stat: typeof stats[0], index: num
       data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
     >
       <motion.div 
-        className="text-5xl md:text-6xl font-bold mb-4 relative"
+        className="text-4xl md:text-5xl font-bold mb-3 relative"
         initial={{ scale: 0.5 }}
         animate={isInView ? { scale: 1 } : {}}
         transition={{ duration: 0.6, delay: index * 0.2 + 0.4, type: "spring", bounce: 0.4 }}
@@ -102,7 +102,7 @@ function StatCard({ stat, index, isInView }: { stat: typeof stats[0], index: num
         />
       </motion.div>
       <motion.div 
-        className="text-slate-700 font-medium text-lg"
+        className="text-slate-700 font-medium text-base"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6, delay: index * 0.2 + 0.8 }}
