@@ -52,7 +52,7 @@ export default function ServicesSection() {
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              className="group relative bg-gradient-to-br from-white to-slate-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500"
+              className="group relative bg-gradient-to-br from-white to-slate-50 p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 h-full"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -60,7 +60,7 @@ export default function ServicesSection() {
               data-testid={`service-card-${service.title.toLowerCase().replace(/\s+/g, '-')}`}
             >
               <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative">
+              <div className="relative h-full flex flex-col">
                 <motion.div 
                   className={`w-16 h-16 ${service.colorClass} rounded-2xl flex items-center justify-center mb-6`}
                   whileHover={{ scale: 1.1, rotate: 5 }}
@@ -70,11 +70,11 @@ export default function ServicesSection() {
                 </motion.div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                <p className="text-slate-600 mb-6 leading-relaxed">
+                <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
                   {service.description}
                 </p>
                 
-                <ul className="space-y-2 text-sm text-slate-600">
+                <ul className="space-y-2 text-sm text-slate-600 mt-auto">
                   {service.features.map((feature, featureIndex) => (
                     <motion.li 
                       key={feature}
