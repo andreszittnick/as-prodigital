@@ -110,7 +110,12 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              Außergewöhnliche digitale Erlebnisse durch modernes Webdesign, strategische SEO und innovative KI-Lösungen schaffen. Ihre Vision wird zur digitalen Realität.
+              Ich helfe Ihnen dabei, Ihre digitale Präsenz sichtbar und erfolgreich zu machen.
+              <br /><br />
+              Als Ihr persönlicher Ansprechpartner entwickle ich maßgeschneiderte Webseiten, effektives SEO und individuelle KI‑Lösungen,
+              die genau zu Ihrem Unternehmen passen.
+              <br /><br />
+              Ihre Vision wird zu meiner Mission – damit Ihr Auftritt online begeistert.
             </motion.p>
             
             <motion.div 
