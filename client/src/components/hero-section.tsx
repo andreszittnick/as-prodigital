@@ -112,7 +112,7 @@ export default function HeroSection() {
             >
               Ich helfe Ihnen dabei, Ihre digitale Präsenz sichtbar und erfolgreich zu machen. Als Ihr persönlicher Ansprechpartner entwickle ich maßgeschneiderte Webseiten, effektives SEO und individuelle KI‑Lösungen, die genau zu Ihrem Unternehmen passen.
               <br /><br />
-              Ihre Vision wird zu meiner Mission – damit Ihr Auftritt online begeistert.
+              <span className="font-semibold text-slate-700">Ihre Vision wird zu meiner Mission – damit Ihr Auftritt online begeistert.</span>
             </motion.p>
             
             <motion.div 
