@@ -93,9 +93,25 @@ export default function ServicesSection() {
           ))}
         </div>
         
+        {/* SEO Partnership Note */}
+        <motion.div
+          className="text-center mt-12 mb-8"
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+        >
+          <div className="max-w-4xl mx-auto p-6 bg-slate-50 rounded-2xl border border-slate-200">
+            <p className="text-slate-700 leading-relaxed">
+              Für tiefgehendes SEO, professionelle Meta- und Google-Ads-Kampagnen sowie umfassendes Brandbuilding arbeite ich eng mit der{" "}
+              <span className="font-semibold text-blue-700">Deutschen Marketing Beratung</span>{" "}
+              zusammen. Gemeinsam bieten wir Ihnen ganzheitliche Lösungen für Ihre digitale Sichtbarkeit.
+            </p>
+          </div>
+        </motion.div>
+        
         {/* CTA Button */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-8"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.0 }}
