@@ -9,8 +9,9 @@ const ProcessTimeline = () => {
   const steps = [
     {
       id: 1,
-      title: "Analyse & Strategieentwicklung",
-      description: "Wir analysieren Ihre aktuelle Online-Präsenz und entwickeln eine maßgeschneiderte Digitalstrategie für Ihr Unternehmen.",
+      title: "Kontaktaufnahme",
+      subtitle: "Erster Schritt in Richtung Erfolg",
+      description: "Sie nehmen unkompliziert Kontakt mit mir auf und teilen mir Ihre Wünsche und Ziele für Ihr Projekt mit.",
       icon: Target,
       primaryColor: "#fe7a33",
       secondaryColor: "#ff9966",
@@ -18,8 +19,9 @@ const ProcessTimeline = () => {
     },
     {
       id: 2,
-      title: "Design & Entwicklung", 
-      description: "Unsere Experten erstellen ein modernes, responsives Design und entwickeln Ihre Website mit neuesten Technologien.",
+      title: "Persönliches Strategiegespräch",
+      subtitle: "Ich entwickle Ihren Plan",
+      description: "In einem persönlichen Gespräch besprechen wir die Vorgehensweise, entwickeln die passende Strategie und stimmen Designideen ab.",
       icon: Zap,
       primaryColor: "#07437c",
       secondaryColor: "#1a5490",
@@ -27,8 +29,9 @@ const ProcessTimeline = () => {
     },
     {
       id: 3,
-      title: "SEO-Optimierung",
-      description: "Wir optimieren Ihre Website für Suchmaschinen und sorgen für bessere Sichtbarkeit in den Suchergebnissen.",
+      title: "Umsetzung",
+      subtitle: "Ihre Vision wird Realität",
+      description: "Ich setze Ihr Projekt mit höchster Sorgfalt um – von der technischen Umsetzung bis zum modernen, professionellen Design.",
       icon: TrendingUp,
       primaryColor: "#fe7a33",
       secondaryColor: "#ff9966",
@@ -36,8 +39,9 @@ const ProcessTimeline = () => {
     },
     {
       id: 4,
-      title: "Launch & Erfolg",
-      description: "Ihre neue Website geht live und wir unterstützen Sie beim erfolgreichen Start in die digitale Zukunft.",
+      title: "Finalisierung & Übergabe",
+      subtitle: "Fertigstellung und Start",
+      description: "Nach dem letzten Feinschliff erhalten Sie Ihr fertiges Projekt, inklusive Einweisung und allen benötigten Dateien.",
       icon: Rocket,
       primaryColor: "#07437c",
       secondaryColor: "#1a5490",
@@ -151,28 +155,19 @@ const ProcessTimeline = () => {
                           {step.id}
                         </motion.div>
                         
-                        <h3 className="text-2xl lg:text-3xl font-bold mb-4 text-slate-900">
+                        <h3 className="text-2xl lg:text-3xl font-bold mb-2 text-slate-900">
                           {step.title}
                         </h3>
                         
-                        <p className="text-slate-600 leading-relaxed mb-6">
+                        {step.subtitle && (
+                          <h4 className="text-lg font-semibold mb-4" style={{ color: step.primaryColor }}>
+                            {step.subtitle}
+                          </h4>
+                        )}
+                        
+                        <p className="text-slate-600 leading-relaxed">
                           {step.description}
                         </p>
-                        
-                        {/* Action indicator */}
-                        <motion.div 
-                          className="flex items-center gap-2 text-sm font-medium"
-                          style={{ color: step.primaryColor }}
-                          animate={{ x: [0, 5, 0] }}
-                          transition={{ 
-                            duration: 2,
-                            repeat: Infinity,
-                            delay: index * 0.3
-                          }}
-                        >
-                          <span>Phase {step.id} starten</span>
-                          <ArrowRight className="w-4 h-4" />
-                        </motion.div>
                       </div>
                     </motion.div>
                   </motion.div>
