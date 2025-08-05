@@ -106,7 +106,7 @@ export default function WhyChooseSection() {
             whileTap={{ scale: 0.95 }}
             data-testid="button-contact-why-choose"
           >
-            Kontaktieren Sie mich
+            Erleben Sie den Unterschied
           </motion.button>
         </motion.div>
       </div>
