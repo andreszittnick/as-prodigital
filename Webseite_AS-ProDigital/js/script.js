@@ -149,9 +149,9 @@ function initTypingAnimation() {
     const typingTextMobile = document.getElementById('typingTextMobile');
     if (typingTextMobile) {
         const mobileTexts = [
+            'Sichtbarkeit',
             'Präsenz',
             'Performance',
-            'Sichtbarkeit',
             'Reichweite'
         ];
         

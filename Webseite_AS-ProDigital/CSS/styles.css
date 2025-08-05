@@ -557,24 +557,14 @@ body {
 }
 
 /* Mobile Hero Sections */
-.mobile-section-1,
-.mobile-section-2,
-.mobile-section-vision,
+.mobile-section-header,
 .mobile-section-image,
-.mobile-section-description {
+.mobile-section-content {
     text-align: center;
     padding: 0 1rem;
 }
 
-.mobile-section-1 {
-    margin-bottom: 2rem;
-}
-
-.mobile-section-2 {
-    margin-bottom: 2rem;
-}
-
-.mobile-section-vision {
+.mobile-section-header {
     margin-bottom: 2rem;
 }
 
@@ -582,7 +572,7 @@ body {
     margin-bottom: 2rem;
 }
 
-.mobile-section-description {
+.mobile-section-content {
     margin-bottom: 1rem;
 }
 
@@ -622,13 +612,13 @@ body {
     }
 }
 
-/* Mobile Section 2 - First Description */
+/* Mobile Content Section Descriptions */
 .mobile-description-1 {
     font-size: 1rem;
     color: #64748b;
     line-height: 1.6;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 0 auto 1.5rem;
 }
 
 @media (min-width: 640px) {
@@ -678,13 +668,13 @@ body {
     animation: pulse 4s ease-in-out infinite;
 }
 
-/* Mobile Section Description */
+/* Mobile Second Description */
 .mobile-description-2 {
     font-size: 0.95rem;
     color: #64748b;
     line-height: 1.6;
     max-width: 500px;
-    margin: 0 auto;
+    margin: 0 auto 2rem;
 }
 
 @media (min-width: 640px) {
