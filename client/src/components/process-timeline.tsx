@@ -72,7 +72,7 @@ const ProcessTimeline = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Von Ihrer <span className="bg-gradient-to-r from-[#fe7a33] to-[#ff6b1a] bg-clip-text text-transparent">Idee</span> zu Ihrem digitalen <span className="bg-gradient-to-r from-[#fe7a33] to-[#ff6b1a] bg-clip-text text-transparent">Erfolg</span>
+            Von Ihrer <span className="text-[#064a7f]">Idee</span> zu Ihrem digitalen <span className="bg-gradient-to-r from-[#fe7a33] to-[#ff6b1a] bg-clip-text text-transparent">Erfolg</span>
           </motion.h2>
           
           <motion.p 
