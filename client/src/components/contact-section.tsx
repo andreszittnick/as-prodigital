@@ -4,7 +4,8 @@ import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { Mail, Phone, MapPin, Linkedin, Github, Twitter, Instagram } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, MessageCircle } from "lucide-react";
+import { Facebook } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,17 +16,16 @@ import { insertContactInquirySchema, type InsertContactInquiry } from "@shared/s
 import { apiRequest } from "@/lib/queryClient";
 
 const socialLinks = [
-  { icon: Linkedin, href: "#", label: "LinkedIn" },
-  { icon: Github, href: "#", label: "GitHub" },
-  { icon: Twitter, href: "#", label: "Twitter" },
-  { icon: Instagram, href: "#", label: "Instagram" }
+  { icon: Facebook, href: "#", label: "Facebook" },
+  { icon: Instagram, href: "#", label: "Instagram" },
+  { icon: MessageCircle, href: "#", label: "WhatsApp" }
 ];
 
 const contactInfo = [
   {
     icon: Mail,
     label: "Email",
-    value: "andre@asprodigital.com",
+    value: "Info@AS-ProDigital.de",
     colorClass: "brand-gradient"
   },
   {
@@ -265,7 +265,7 @@ export default function ContactSection() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                <div className="text-lg font-semibold text-slate-900 mb-4">Follow My Work</div>
+                <div className="text-lg font-semibold text-slate-900 mb-4">Social-Media</div>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
