@@ -81,7 +81,7 @@ function StatCard({ stat, index, isInView }: { stat: typeof stats[0], index: num
       data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
     >
       <motion.div 
-        className="text-6xl md:text-7xl font-bold mb-4 relative inline-block"
+        className="text-4xl md:text-5xl font-bold mb-4 relative inline-block"
         initial={{ scale: 0.5 }}
         animate={isInView ? { scale: 1 } : {}}
         transition={{ duration: 0.6, delay: index * 0.2 + 0.4, type: "spring", bounce: 0.4 }}
@@ -93,41 +93,10 @@ function StatCard({ stat, index, isInView }: { stat: typeof stats[0], index: num
             backgroundClip: 'text',
             WebkitBackgroundClip: 'text',
             color: 'transparent',
-            textShadow: '0 0 40px rgba(254, 122, 51, 0.4)',
           }}
         >
           {formatNumber(count, stat.suffix)}
         </span>
-        {/* Animated background highlight */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-orange-400/30 to-blue-600/20 rounded-lg blur-sm"
-          animate={isInView ? { 
-            opacity: [0.2, 0.6, 0.2],
-            scale: [0.8, 1.1, 0.8]
-          } : {}}
-          transition={{ 
-            duration: 3, 
-            delay: index * 0.3 + 1, 
-            repeat: Infinity, 
-            repeatDelay: 2,
-            ease: "easeInOut"
-          }}
-        />
-        {/* Pulsing glow effect */}
-        <motion.div
-          className="absolute -inset-4 bg-gradient-to-r from-orange-500/10 to-blue-600/10 rounded-xl blur-lg"
-          animate={isInView ? { 
-            opacity: [0, 0.4, 0],
-            scale: [0.9, 1.2, 0.9]
-          } : {}}
-          transition={{ 
-            duration: 2.5, 
-            delay: index * 0.2 + 0.5, 
-            repeat: Infinity, 
-            repeatDelay: 3,
-            ease: "easeInOut"
-          }}
-        />
       </motion.div>
       <motion.div 
         className="text-slate-700 font-medium text-lg"
