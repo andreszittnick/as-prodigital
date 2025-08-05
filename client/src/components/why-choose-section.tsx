@@ -6,20 +6,20 @@ import { DollarSign, Users, Zap } from "lucide-react";
 const benefits = [
   {
     icon: DollarSign,
-    title: "Keine Agentur-Preise",
-    description: "Direkte Zusammenarbeit ohne Agentur-Aufschläge - transparente, faire Preise für Premium-Qualität.",
+    title: "Keine Agentur-Preise → \"Faire Preise ohne Agentur-Aufschläge\"",
+    description: "",
     colorClass: "brand-gradient"
   },
   {
     icon: Users,
-    title: "Persönliche Beratung von Anfang bis Ende",
-    description: "Individuelle Betreuung während Ihres gesamten Projekts mit persönlicher Aufmerksamkeit.",
+    title: "Direkter Kontakt – von Start bis Ziel",
+    description: "",
     colorClass: "brand-blue"
   },
   {
     icon: Zap,
-    title: "Schnelle Umsetzung",
-    description: "Kurze Umsetzungszeiten ohne Qualitätsverlust - Ihr Projekt wird effizient und professionell geliefert.",
+    title: "Schnell, effizient, zuverlässig",
+    description: "",
     colorClass: "brand-gradient"
   }
 ];
@@ -67,9 +67,11 @@ export default function WhyChooseSection() {
                 </motion.div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">{benefit.title}</h3>
-                <p className="text-slate-600 leading-relaxed">
-                  {benefit.description}
-                </p>
+                {benefit.description && (
+                  <p className="text-slate-600 leading-relaxed">
+                    {benefit.description}
+                  </p>
+                )}
               </div>
             </motion.div>
           ))}
