@@ -114,7 +114,10 @@ export default function HeroSection() {
               <br /><br />
               Als Ihr persönlicher Ansprechpartner entwickle ich maßgeschneiderte Webseiten, effektives SEO und individuelle KI‑Lösungen, die genau zu Ihrem Unternehmen passen.
               <br /><br />
-              <span className="font-semibold text-slate-700">Ihre Vision wird meine Mission - damit Ihr Auftritt online begeistert</span>
+              <div className="space-y-2">
+                <div className="text-lg font-bold text-slate-800">Ihre Vision. Meine Mission.</div>
+                <div className="font-medium text-slate-600">Damit Ihr Online-Auftritt begeistert</div>
+              </div>
             </motion.p>
             
             <motion.div 
