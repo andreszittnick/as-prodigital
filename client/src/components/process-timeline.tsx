@@ -72,7 +72,7 @@ const ProcessTimeline = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Von der Idee zum <span className="bg-gradient-to-r from-[#fe7a33] to-[#ff6b1a] bg-clip-text text-transparent">Erfolg</span>
+            Von Ihrer Idee zu Ihrem digitalen <span className="bg-gradient-to-r from-[#fe7a33] to-[#ff6b1a] bg-clip-text text-transparent">Erfolg</span>
           </motion.h2>
           
           <motion.p 
@@ -81,7 +81,7 @@ const ProcessTimeline = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            In vier strategischen Phasen verwandele ich Ihre digitale Vision in messbare Erfolge
+            In vier klaren Schritten begleite ich Sie von der ersten Idee bis zum erfolgreichen Online-Auftritt
           </motion.p>
         </div>
 
