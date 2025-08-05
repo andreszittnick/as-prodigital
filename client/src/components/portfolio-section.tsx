@@ -24,10 +24,9 @@ const portfolioItems = [
 ];
 
 const stats = [
-  { value: "50+", label: "Abgeschlossene Projekte" },
-  { value: "40+", label: "Zufriedene Kunden" },
-  { value: "5+", label: "Jahre Erfahrung" },
-  { value: "250%", label: "Durchschn. Traffic-Wachstum" }
+  { value: "3+", label: "Jahre Erfahrung" },
+  { value: "80+", label: "Betreute Projekte" },
+  { value: "99,8%", label: "Zufriedene Kunden" }
 ];
 
 export default function PortfolioSection() {
