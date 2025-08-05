@@ -169,26 +169,22 @@ const ProcessTimeline = () => {
                           {step.description}
                         </p>
                         
-                        {/* CTA Button */}
-                        <motion.button
+                        {/* Action indicator */}
+                        <motion.div 
+                          className="flex items-center gap-2 text-sm font-medium cursor-pointer"
+                          style={{ color: step.primaryColor }}
+                          animate={{ x: [0, 5, 0] }}
+                          transition={{ 
+                            duration: 2,
+                            repeat: Infinity,
+                            delay: index * 0.3
+                          }}
                           onClick={() => {
                             const contactSection = document.getElementById("contact");
                             if (contactSection) {
                               contactSection.scrollIntoView({ behavior: "smooth" });
                             }
                           }}
-                          className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full border transition-all duration-300 hover:shadow-lg"
-                          style={{ 
-                            color: step.primaryColor,
-                            borderColor: step.primaryColor,
-                            backgroundColor: 'transparent'
-                          }}
-                          whileHover={{ 
-                            scale: 1.05,
-                            backgroundColor: step.primaryColor,
-                            color: 'white'
-                          }}
-                          whileTap={{ scale: 0.95 }}
                           data-testid={`button-phase-${step.id}`}
                         >
                           <span>
@@ -198,7 +194,7 @@ const ProcessTimeline = () => {
                             {step.id === 4 && "Projekt live schalten"}
                           </span>
                           <ArrowRight className="w-4 h-4" />
-                        </motion.button>
+                        </motion.div>
                       </div>
                     </motion.div>
                   </motion.div>
