@@ -74,6 +74,29 @@ export default function ServicesSection() {
                   {service.description}
                 </p>
                 
+                {/* SEO Partnership Note - only for SEO card */}
+                {service.title === "SEO-Basisoptimierung" && (
+                  <motion.div
+                    className="mb-4 pb-4 border-b border-slate-200"
+                    initial={{ opacity: 0 }}
+                    animate={isInView ? { opacity: 1 } : {}}
+                    transition={{ duration: 0.6, delay: (index * 0.2) + 0.8 }}
+                  >
+                    <p className="text-xs text-slate-500 leading-relaxed">
+                      Für tiefgehendes SEO, SEA-, Meta-Ads & Brandbuilding arbeite ich mit der{" "}
+                      <a 
+                        href="https://dmberatung.de/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-700 hover:underline transition-colors duration-200"
+                      >
+                        Deutschen Marketing Beratung
+                      </a>{" "}
+                      zusammen.
+                    </p>
+                  </motion.div>
+                )}
+                
                 <ul className="space-y-2 text-sm text-slate-600 mt-auto">
                   {service.features.map((feature, featureIndex) => (
                     <motion.li 
@@ -88,29 +111,6 @@ export default function ServicesSection() {
                     </motion.li>
                   ))}
                 </ul>
-                
-                {/* SEO Partnership Note - only for SEO card */}
-                {service.title === "SEO-Basisoptimierung" && (
-                  <motion.div
-                    className="mt-4 pt-4 border-t border-slate-200"
-                    initial={{ opacity: 0 }}
-                    animate={isInView ? { opacity: 1 } : {}}
-                    transition={{ duration: 0.6, delay: (index * 0.2) + 0.8 }}
-                  >
-                    <p className="text-xs text-slate-500 leading-relaxed">
-                      Für tiefgehendes SEO arbeite ich mit der{" "}
-                      <a 
-                        href="https://dmberatung.de/" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-700 hover:underline transition-colors duration-200"
-                      >
-                        Deutschen Marketing Beratung
-                      </a>{" "}
-                      zusammen.
-                    </p>
-                  </motion.div>
-                )}
               </div>
             </motion.div>
           ))}
