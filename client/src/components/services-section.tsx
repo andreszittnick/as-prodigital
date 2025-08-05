@@ -103,7 +103,14 @@ export default function ServicesSection() {
           <div className="max-w-4xl mx-auto p-6 bg-slate-50 rounded-2xl border border-slate-200">
             <p className="text-slate-700 leading-relaxed">
               Für tiefgehendes SEO, professionelle Meta- und Google-Ads-Kampagnen sowie umfassendes Brandbuilding arbeite ich eng mit der{" "}
-              <span className="font-semibold text-blue-700">Deutschen Marketing Beratung</span>{" "}
+              <a 
+                href="https://dmberatung.de/" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="font-semibold text-blue-700 hover:text-blue-800 hover:underline transition-colors duration-200"
+              >
+                Deutschen Marketing Beratung
+              </a>{" "}
               zusammen. Gemeinsam bieten wir Ihnen ganzheitliche Lösungen für Ihre digitale Sichtbarkeit.
             </p>
           </div>
