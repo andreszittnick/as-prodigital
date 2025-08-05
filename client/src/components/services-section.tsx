@@ -13,7 +13,7 @@ const services = [
   },
   {
     icon: Search,
-    title: "SEO-Optimierung",
+    title: "SEO-Basisoptimierung",
     description: "Strategische Suchmaschinenoptimierung, die Ihre Sichtbarkeit erhöht und qualifizierten Traffic zu Ihrem Unternehmen bringt.",
     features: ["Keyword-Recherche", "Technisches SEO", "Content-Strategie"],
     colorClass: "brand-blue"
