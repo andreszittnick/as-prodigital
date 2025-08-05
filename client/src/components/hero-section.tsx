@@ -148,7 +148,10 @@ export default function HeroSection() {
             transition={{ duration: 0.8, delay: 0.3 }}
           >
             <motion.div 
-              className="w-80 h-[500px] lg:w-96 lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/50 backdrop-blur-sm"
+              className="w-80 h-[500px] lg:w-96 lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/50 backdrop-blur-sm drop-shadow-2xl"
+              style={{
+                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+              }}
               whileHover={{ scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
