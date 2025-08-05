@@ -88,37 +88,37 @@ export default function ServicesSection() {
                     </motion.li>
                   ))}
                 </ul>
+                
+                {/* SEO Partnership Note - only for SEO card */}
+                {service.title === "SEO-Basisoptimierung" && (
+                  <motion.div
+                    className="mt-4 pt-4 border-t border-slate-200"
+                    initial={{ opacity: 0 }}
+                    animate={isInView ? { opacity: 1 } : {}}
+                    transition={{ duration: 0.6, delay: (index * 0.2) + 0.8 }}
+                  >
+                    <p className="text-xs text-slate-500 leading-relaxed">
+                      Für tiefgehendes SEO arbeite ich mit der{" "}
+                      <a 
+                        href="https://dmberatung.de/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-blue-600 hover:text-blue-700 hover:underline transition-colors duration-200"
+                      >
+                        Deutschen Marketing Beratung
+                      </a>{" "}
+                      zusammen.
+                    </p>
+                  </motion.div>
+                )}
               </div>
             </motion.div>
           ))}
         </div>
         
-        {/* SEO Partnership Note */}
-        <motion.div
-          className="text-center mt-12 mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.8 }}
-        >
-          <div className="max-w-4xl mx-auto p-6 bg-slate-50 rounded-2xl border border-slate-200">
-            <p className="text-slate-700 leading-relaxed">
-              Für tiefgehendes SEO, professionelle Meta- und Google-Ads-Kampagnen sowie umfassendes Brandbuilding arbeite ich eng mit der{" "}
-              <a 
-                href="https://dmberatung.de/" 
-                target="_blank" 
-                rel="noopener noreferrer"
-                className="font-semibold text-blue-700 hover:text-blue-800 hover:underline transition-colors duration-200"
-              >
-                Deutschen Marketing Beratung
-              </a>{" "}
-              zusammen. Gemeinsam bieten wir Ihnen ganzheitliche Lösungen für Ihre digitale Sichtbarkeit.
-            </p>
-          </div>
-        </motion.div>
-        
         {/* CTA Button */}
         <motion.div
-          className="text-center mt-8"
+          className="text-center mt-16"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.0 }}
