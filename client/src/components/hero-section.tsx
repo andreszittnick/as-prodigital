@@ -154,13 +154,30 @@ export default function HeroSection() {
           
           {/* Right side - Photo */}
           <motion.div 
-            className="flex justify-center lg:justify-end"
+            className="flex justify-center lg:justify-end relative"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
           >
+            {/* Glow Effect Behind Image */}
+            <motion.div
+              className="absolute inset-0 -z-10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5, delay: 0.5 }}
+            >
+              <div 
+                className="w-80 h-[500px] lg:w-96 lg:h-[600px] mx-auto rounded-3xl"
+                style={{
+                  background: 'radial-gradient(ellipse at center, rgba(254, 122, 51, 0.3) 0%, rgba(254, 122, 51, 0.15) 40%, rgba(7, 67, 124, 0.1) 70%, transparent 100%)',
+                  filter: 'blur(40px)',
+                  transform: 'scale(1.2)'
+                }}
+              />
+            </motion.div>
+            
             <motion.div 
-              className="w-80 h-[500px] lg:w-96 lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/50 backdrop-blur-sm drop-shadow-2xl"
+              className="w-80 h-[500px] lg:w-96 lg:h-[600px] rounded-3xl overflow-hidden shadow-2xl ring-4 ring-white/50 backdrop-blur-sm drop-shadow-2xl relative z-10"
               style={{
                 boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05)'
               }}
