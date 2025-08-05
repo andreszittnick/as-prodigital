@@ -81,7 +81,7 @@ const ProcessTimeline = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            In vier strategischen Phasen verwandeln wir Ihre digitale Vision in messbare Erfolge
+            In vier strategischen Phasen verwandele ich Ihre digitale Vision in messbare Erfolge
           </motion.p>
         </div>
 
