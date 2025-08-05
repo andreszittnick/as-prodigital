@@ -46,20 +46,17 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
             {[
-              { name: "Start", id: "home" },
-              { name: "Über uns", id: "why-choose" },
-              { name: "Prozess", id: "process" },
-              { name: "Services", id: "services" },
-              { name: "Portfolio", id: "portfolio" },
-            ].map((item) => (
-              <button
-                key={item.id}
-                onClick={() => scrollToSection(item.id)}
-                className="text-slate-600 hover:text-orange-500 transition-colors duration-300"
-                data-testid={`nav-${item.id}`}
+              { name: "Leistungen" },
+              { name: "Blog" },
+              { name: "Über mich" },
+            ].map((item, index) => (
+              <span
+                key={index}
+                className="text-slate-600 hover:text-orange-500 transition-colors duration-300 cursor-pointer"
+                data-testid={`nav-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
               >
                 {item.name}
-              </button>
+              </span>
             ))}
             <motion.button
               onClick={() => scrollToSection("contact")}
@@ -92,22 +89,25 @@ export default function Navigation() {
           >
             <div className="flex flex-col space-y-4">
               {[
-                { name: "Home", id: "home" },
-                { name: "About", id: "why-choose" },
-                { name: "Process", id: "process" },
-                { name: "Services", id: "services" },
-                { name: "Portfolio", id: "portfolio" },
-                { name: "Contact", id: "contact" },
-              ].map((item) => (
-                <button
-                  key={item.id}
-                  onClick={() => scrollToSection(item.id)}
-                  className="text-slate-600 hover:text-orange-500 transition-colors duration-300 text-left"
-                  data-testid={`mobile-nav-${item.id}`}
+                { name: "Leistungen" },
+                { name: "Blog" },
+                { name: "Über mich" },
+              ].map((item, index) => (
+                <span
+                  key={index}
+                  className="text-slate-600 hover:text-orange-500 transition-colors duration-300 text-left cursor-pointer"
+                  data-testid={`mobile-nav-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
                 >
                   {item.name}
-                </button>
+                </span>
               ))}
+              <button
+                onClick={() => scrollToSection("contact")}
+                className="text-slate-600 hover:text-orange-500 transition-colors duration-300 text-left"
+                data-testid="mobile-nav-contact"
+              >
+                Kontakt
+              </button>
             </div>
           </motion.div>
         )}
