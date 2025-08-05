@@ -87,12 +87,9 @@ function StatCard({ stat, index, isInView }: { stat: typeof stats[0], index: num
         transition={{ duration: 0.6, delay: index * 0.2 + 0.4, type: "spring", bounce: 0.4 }}
       >
         <span 
-          className="relative z-10"
+          className="relative z-10 text-orange-500"
           style={{
-            background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 50%, #07437c 100%)',
-            backgroundClip: 'text',
-            WebkitBackgroundClip: 'text',
-            color: 'transparent',
+            textShadow: '0 4px 8px rgba(254, 122, 51, 0.3), 0 2px 4px rgba(254, 122, 51, 0.2)',
           }}
         >
           {formatNumber(count, stat.suffix)}
