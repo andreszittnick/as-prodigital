@@ -74,35 +74,63 @@ function StatCard({ stat, index, isInView }: { stat: typeof stats[0], index: num
   
   return (
     <motion.div
-      className="text-center bg-white rounded-xl p-4 shadow-lg hover:shadow-xl transition-all duration-500 group max-w-xs mx-auto"
-      initial={{ opacity: 0, y: 50, scale: 0.9 }}
-      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      className="text-center"
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: index * 0.2 }}
-      whileHover={{ y: -5, scale: 1.02 }}
       data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
     >
       <motion.div 
-        className="text-4xl md:text-5xl font-bold mb-2 relative"
+        className="text-6xl md:text-7xl font-bold mb-4 relative inline-block"
         initial={{ scale: 0.5 }}
         animate={isInView ? { scale: 1 } : {}}
         transition={{ duration: 0.6, delay: index * 0.2 + 0.4, type: "spring", bounce: 0.4 }}
       >
         <span 
-          className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-blue-700 transition-all duration-500"
+          className="relative z-10"
           style={{
-            textShadow: '0 0 30px rgba(254, 122, 51, 0.3)',
+            background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 50%, #07437c 100%)',
+            backgroundClip: 'text',
+            WebkitBackgroundClip: 'text',
+            color: 'transparent',
+            textShadow: '0 0 40px rgba(254, 122, 51, 0.4)',
           }}
         >
           {formatNumber(count, stat.suffix)}
         </span>
+        {/* Animated background highlight */}
         <motion.div
-          className="absolute -inset-2 bg-gradient-to-r from-orange-500/20 to-orange-600/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-          animate={isInView ? { opacity: [0, 0.3, 0] } : {}}
-          transition={{ duration: 2, delay: index * 0.2 + 1, repeat: Infinity, repeatDelay: 3 }}
+          className="absolute inset-0 bg-gradient-to-r from-orange-500/20 via-orange-400/30 to-blue-600/20 rounded-lg blur-sm"
+          animate={isInView ? { 
+            opacity: [0.2, 0.6, 0.2],
+            scale: [0.8, 1.1, 0.8]
+          } : {}}
+          transition={{ 
+            duration: 3, 
+            delay: index * 0.3 + 1, 
+            repeat: Infinity, 
+            repeatDelay: 2,
+            ease: "easeInOut"
+          }}
+        />
+        {/* Pulsing glow effect */}
+        <motion.div
+          className="absolute -inset-4 bg-gradient-to-r from-orange-500/10 to-blue-600/10 rounded-xl blur-lg"
+          animate={isInView ? { 
+            opacity: [0, 0.4, 0],
+            scale: [0.9, 1.2, 0.9]
+          } : {}}
+          transition={{ 
+            duration: 2.5, 
+            delay: index * 0.2 + 0.5, 
+            repeat: Infinity, 
+            repeatDelay: 3,
+            ease: "easeInOut"
+          }}
         />
       </motion.div>
       <motion.div 
-        className="text-slate-700 font-medium text-base"
+        className="text-slate-700 font-medium text-lg"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6, delay: index * 0.2 + 0.8 }}
@@ -182,12 +210,12 @@ export default function PortfolioSection() {
         {/* Stats Section */}
         <motion.div 
           ref={statsRef}
-          className="max-w-4xl mx-auto"
+          className="max-w-5xl mx-auto"
           initial={{ opacity: 0, y: 50 }}
           animate={statsInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <div className="grid md:grid-cols-3 gap-8 justify-center">
+          <div className="grid md:grid-cols-3 gap-16 justify-center">
             {stats.map((stat, index) => (
               <StatCard 
                 key={stat.label}
