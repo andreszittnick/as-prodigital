@@ -96,7 +96,7 @@ export default function ContactSection() {
             Lassen Sie uns etwas <span className="gradient-text">Außergewöhnliches</span> schaffen
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Bereit, Ihre digitale Präsenz zu transformieren? Kontaktieren Sie uns und lassen Sie uns besprechen, wie wir Ihre Vision zum Leben erwecken können.
+            Bereit, Ihre digitale Präsenz auf das nächste Level zu bringen? Melden Sie sich bei mir – gemeinsam lassen wir Ihre Ideen Wirklichkeit werden.
           </p>
         </motion.div>
         
