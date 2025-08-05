@@ -81,7 +81,7 @@ function StatCard({ stat, index, isInView }: { stat: typeof stats[0], index: num
       data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
     >
       <motion.div 
-        className="text-4xl md:text-5xl font-bold mb-4 relative inline-block"
+        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-3 sm:mb-4 relative inline-block"
         initial={{ scale: 0.5 }}
         animate={isInView ? { scale: 1 } : {}}
         transition={{ duration: 0.6, delay: index * 0.2 + 0.4, type: "spring", bounce: 0.4 }}
@@ -96,7 +96,7 @@ function StatCard({ stat, index, isInView }: { stat: typeof stats[0], index: num
         </span>
       </motion.div>
       <motion.div 
-        className="text-slate-700 font-medium text-lg"
+        className="text-slate-700 font-medium text-sm sm:text-base lg:text-lg"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 1 } : {}}
         transition={{ duration: 0.6, delay: index * 0.2 + 0.8 }}
@@ -114,43 +114,43 @@ export default function PortfolioSection() {
   const statsInView = useInView(statsRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="portfolio" className="py-20 bg-slate-50" ref={ref}>
+    <section id="portfolio" className="py-16 sm:py-20 bg-slate-50" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
             Ergebnisse, die für sich <span className="gradient-text">sprechen</span>
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto px-4 sm:px-0">
             Jedes Projekt ist ein individuelles Abenteuer – hier sehen Sie Ergebnisse, die durch enge Zusammenarbeit und kreative Ideen entstanden sind.
           </p>
         </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-16 sm:mb-20">
           {portfolioItems.map((item, index) => (
             <motion.div
               key={item.title}
-              className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
+              className="group bg-white rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               whileHover={{ y: -8 }}
               data-testid={`portfolio-item-${item.title.toLowerCase().replace(/\s+/g, '-')}`}
             >
-              <div className="h-64 bg-gradient-to-br from-slate-200 to-slate-300 overflow-hidden flex items-center justify-center">
+              <div className="h-48 sm:h-56 md:h-64 bg-gradient-to-br from-slate-200 to-slate-300 overflow-hidden flex items-center justify-center">
                 <div className="text-slate-500 text-center">
                   <div className="w-16 h-16 bg-slate-400 rounded-lg mb-4 mx-auto opacity-50"></div>
                   <p className="text-sm font-medium">Projekt-Vorschau</p>
                   <p className="text-xs">Bild folgt</p>
                 </div>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
-                <p className="text-slate-600 mb-4">{item.description}</p>
+              <div className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
+                <p className="text-sm sm:text-base text-slate-600 mb-4">{item.description}</p>
                 <div className="flex flex-wrap gap-2">
                   {item.tags.map((tag, tagIndex) => (
                     <motion.span
@@ -181,7 +181,7 @@ export default function PortfolioSection() {
           animate={statsInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <div className="grid md:grid-cols-3 gap-16 justify-center">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 lg:gap-16 justify-center">
             {stats.map((stat, index) => (
               <StatCard 
                 key={stat.label}

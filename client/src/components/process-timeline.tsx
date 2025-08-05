@@ -50,7 +50,7 @@ const ProcessTimeline = () => {
   ];
 
   return (
-    <section id="process" className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+    <section id="process" className="py-16 sm:py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-32 h-32 bg-[#fe7a33] rounded-full blur-3xl"></div>
@@ -58,8 +58,8 @@ const ProcessTimeline = () => {
         <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-[#fe7a33] rounded-full blur-2xl"></div>
       </div>
 
-      <div className="container mx-auto px-6 relative">
-        <div className="text-center mb-20">
+      <div className="container mx-auto px-4 sm:px-6 relative">
+        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
           <motion.div
             className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-slate-200 mb-6"
             initial={{ opacity: 0, y: 20 }}
@@ -71,7 +71,7 @@ const ProcessTimeline = () => {
           </motion.div>
           
           <motion.h2 
-            className="text-5xl md:text-6xl font-bold mb-8 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent"
+            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent px-4 sm:px-0"
             style={{ lineHeight: '1.4' }}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -81,7 +81,7 @@ const ProcessTimeline = () => {
           </motion.h2>
           
           <motion.p 
-            className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
+            className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -101,7 +101,7 @@ const ProcessTimeline = () => {
             />
           </div>
 
-          <div className="space-y-20 lg:space-y-32">
+          <div className="space-y-12 sm:space-y-16 lg:space-y-32">
             {steps.map((step, index) => {
               const Icon = step.icon;
               const isLeft = step.position === "left";
@@ -109,7 +109,7 @@ const ProcessTimeline = () => {
               return (
                 <motion.div
                   key={step.id}
-                  className={`relative flex items-center ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex-col gap-8 lg:gap-16`}
+                  className={`relative flex items-center ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex-col gap-6 sm:gap-8 lg:gap-16`}
                   initial={{ opacity: 0, y: 80 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ duration: 0.8, delay: index * 0.3 + 0.6 }}
@@ -121,7 +121,7 @@ const ProcessTimeline = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <motion.div 
-                      className="bg-white/70 backdrop-blur-sm rounded-3xl p-8 shadow-xl border border-white/50 relative overflow-hidden group"
+                      className="bg-white/70 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl border border-white/50 relative overflow-hidden group"
                       style={{ 
                         boxShadow: `0 20px 40px -12px ${step.primaryColor}20` 
                       }}
@@ -140,7 +140,7 @@ const ProcessTimeline = () => {
                       <div className="relative z-10">
                         {/* Step number */}
                         <motion.div 
-                          className="inline-flex items-center justify-center w-12 h-12 rounded-2xl mb-6 text-white font-bold text-lg"
+                          className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 text-white font-bold text-base sm:text-lg"
                           style={{ backgroundColor: step.primaryColor }}
                           animate={{ 
                             rotate: [0, 5, -5, 0],

@@ -85,35 +85,35 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 bg-white" ref={ref}>
+    <section id="contact" className="py-16 sm:py-20 bg-white" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12 sm:mb-16"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
             Lassen Sie uns etwas <span className="gradient-text">Außergewöhnliches</span> schaffen
           </h2>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto px-4 sm:px-0">
             Bereit, Ihre digitale Präsenz auf das nächste Level zu bringen? Melden Sie sich bei mir – gemeinsam lassen wir Ihre Ideen Wirklichkeit werden.
           </p>
         </motion.div>
         
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
           {/* Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <div className="bg-gradient-to-br from-slate-50 to-white p-8 rounded-3xl shadow-lg">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Nachricht senden</h3>
+            <div className="bg-gradient-to-br from-slate-50 to-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg">
+              <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Nachricht senden</h3>
               
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                     <FormField
                       control={form.control}
                       name="firstName"
@@ -233,28 +233,28 @@ export default function ContactSection() {
           >
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Direkter Kontakt</h3>
-                <p className="text-slate-600 leading-relaxed mb-8">
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Direkter Kontakt</h3>
+                <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6 sm:mb-8">
                   Jedes Projekt beginnt mit einem Gespräch. Erzählen Sie mir von Ihrer Idee, und gemeinsam finden wir den besten Weg, sie online erfolgreich umzusetzen.
                 </p>
               </div>
               
-              <div className="space-y-6">
+              <div className="space-y-4 sm:space-y-6">
                 {contactInfo.map((info, index) => (
                   <motion.div
                     key={info.label}
-                    className="flex items-center space-x-4"
+                    className="flex items-center space-x-3 sm:space-x-4"
                     initial={{ opacity: 0, x: 20 }}
                     animate={isInView ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.6, delay: index * 0.1 + 0.4 }}
                     data-testid={`contact-info-${info.label.toLowerCase()}`}
                   >
-                    <div className={`w-12 h-12 ${info.colorClass} rounded-xl flex items-center justify-center`}>
-                      <info.icon className="text-white w-5 h-5" />
+                    <div className={`w-10 h-10 sm:w-12 sm:h-12 ${info.colorClass} rounded-lg sm:rounded-xl flex items-center justify-center`}>
+                      <info.icon className="text-white w-4 h-4 sm:w-5 sm:h-5" />
                     </div>
                     <div>
-                      <div className="font-semibold text-slate-900">{info.value}</div>
-                      <div className="text-slate-600">{info.label}</div>
+                      <div className="font-semibold text-slate-900 text-sm sm:text-base">{info.value}</div>
+                      <div className="text-slate-600 text-xs sm:text-sm">{info.label}</div>
                     </div>
                   </motion.div>
                 ))}
@@ -266,13 +266,13 @@ export default function ContactSection() {
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 0.8 }}
               >
-                <div className="text-lg font-semibold text-slate-900 mb-4">Social-Media</div>
-                <div className="flex space-x-4">
+                <div className="text-base sm:text-lg font-semibold text-slate-900 mb-3 sm:mb-4">Social-Media</div>
+                <div className="flex space-x-3 sm:space-x-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={social.label}
                       href={social.href}
-                      className="w-12 h-12 bg-slate-100 hover:bg-orange-500 text-slate-600 hover:text-white rounded-xl flex items-center justify-center transition-all duration-300"
+                      className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-100 hover:bg-orange-500 text-slate-600 hover:text-white rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-300"
                       whileHover={{ scale: 1.1 }}
                       whileTap={{ scale: 0.95 }}
                       initial={{ opacity: 0, scale: 0.8 }}
@@ -280,7 +280,7 @@ export default function ContactSection() {
                       transition={{ duration: 0.3, delay: index * 0.1 + 1 }}
                       data-testid={`social-link-${social.label.toLowerCase()}`}
                     >
-                      <social.icon className="w-5 h-5" />
+                      <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
                     </motion.a>
                   ))}
                 </div>
