@@ -232,9 +232,9 @@ export default function ContactSection() {
           >
             <div className="space-y-8">
               <div>
-                <h3 className="text-2xl font-bold text-slate-900 mb-6">Get In Touch</h3>
+                <h3 className="text-2xl font-bold text-slate-900 mb-6">Direkter Kontakt</h3>
                 <p className="text-slate-600 leading-relaxed mb-8">
-                  I'm always excited to discuss new projects and opportunities. Whether you need a complete digital transformation or a specific solution, let's explore how we can work together.
+                  Jedes Projekt beginnt mit einem Gespräch. Erzählen Sie mir von Ihrer Idee, und gemeinsam finden wir den besten Weg, sie online erfolgreich umzusetzen.
                 </p>
               </div>
               
