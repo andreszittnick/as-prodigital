@@ -46,9 +46,9 @@ export default function Navigation() {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {[
-              { name: "Home", id: "home" },
-              { name: "About", id: "why-choose" },
-              { name: "Process", id: "process" },
+              { name: "Start", id: "home" },
+              { name: "Über uns", id: "why-choose" },
+              { name: "Prozess", id: "process" },
               { name: "Services", id: "services" },
               { name: "Portfolio", id: "portfolio" },
             ].map((item) => (
@@ -68,7 +68,7 @@ export default function Navigation() {
               whileTap={{ scale: 0.95 }}
               data-testid="nav-contact"
             >
-              Contact
+              Kontakt
             </motion.button>
           </div>
           

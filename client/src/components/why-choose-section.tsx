@@ -6,20 +6,20 @@ import { DollarSign, Users, Zap } from "lucide-react";
 const benefits = [
   {
     icon: DollarSign,
-    title: "No agency prices",
-    description: "Direct collaboration without agency markups - transparent, fair pricing for premium quality work.",
+    title: "Keine Agentur-Preise",
+    description: "Direkte Zusammenarbeit ohne Agentur-Aufschläge - transparente, faire Preise für Premium-Qualität.",
     colorClass: "brand-gradient"
   },
   {
     icon: Users,
-    title: "Personal consultation from start to finish",
-    description: "One-on-one guidance throughout your entire project journey with dedicated personal attention.",
+    title: "Persönliche Beratung von Anfang bis Ende",
+    description: "Individuelle Betreuung während Ihres gesamten Projekts mit persönlicher Aufmerksamkeit.",
     colorClass: "brand-blue"
   },
   {
     icon: Zap,
-    title: "Fast implementation",
-    description: "Quick turnaround times without compromising quality - your project delivered efficiently and professionally.",
+    title: "Schnelle Umsetzung",
+    description: "Kurze Umsetzungszeiten ohne Qualitätsverlust - Ihr Projekt wird effizient und professionell geliefert.",
     colorClass: "brand-gradient"
   }
 ];
@@ -38,10 +38,10 @@ export default function WhyChooseSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            What speaks for <span className="gradient-text">AS-ProDigital</span>
+            Was für <span className="gradient-text">AS-ProDigital</span> spricht
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Experience the difference of working with a dedicated digital specialist who puts your success first.
+            Erleben Sie den Unterschied bei der Zusammenarbeit mit einem engagierten Digitalspezialisten, der Ihren Erfolg an erste Stelle setzt.
           </p>
         </motion.div>
         

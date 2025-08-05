@@ -6,23 +6,23 @@ import { Palette, Search, Bot, Check } from "lucide-react";
 const services = [
   {
     icon: Palette,
-    title: "Web Design",
-    description: "Modern, responsive websites that captivate your audience and drive conversions. Every pixel crafted with purpose and precision.",
-    features: ["Responsive Design", "UX/UI Optimization", "Performance Focus"],
+    title: "Webdesign",
+    description: "Moderne, responsive Websites, die Ihr Publikum begeistern und Conversions fördern. Jedes Pixel mit Zweck und Präzision gestaltet.",
+    features: ["Responsive Design", "UX/UI Optimierung", "Performance-Fokus"],
     colorClass: "brand-gradient"
   },
   {
     icon: Search,
-    title: "SEO Optimization",
-    description: "Strategic search engine optimization that elevates your visibility and brings qualified traffic to your business.",
-    features: ["Keyword Research", "Technical SEO", "Content Strategy"],
+    title: "SEO-Optimierung",
+    description: "Strategische Suchmaschinenoptimierung, die Ihre Sichtbarkeit erhöht und qualifizierten Traffic zu Ihrem Unternehmen bringt.",
+    features: ["Keyword-Recherche", "Technisches SEO", "Content-Strategie"],
     colorClass: "brand-blue"
   },
   {
     icon: Bot,
-    title: "AI Solutions",
-    description: "Custom AI integrations and automation solutions that streamline operations and unlock new possibilities for your business.",
-    features: ["Custom AI Integration", "Process Automation", "Smart Analytics"],
+    title: "KI-Lösungen",
+    description: "Maßgeschneiderte KI-Integrationen und Automatisierungslösungen, die Abläufe optimieren und neue Möglichkeiten für Ihr Unternehmen erschließen.",
+    features: ["Individuelle KI-Integration", "Prozess-Automatisierung", "Intelligente Analytik"],
     colorClass: "brand-gradient"
   }
 ];
@@ -44,7 +44,7 @@ export default function ServicesSection() {
             Premium <span className="gradient-text">Digital Services</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Delivering cutting-edge solutions that drive growth, enhance visibility, and automate success for forward-thinking businesses.
+            Modernste Lösungen, die Wachstum fördern, Sichtbarkeit erhöhen und Erfolg für zukunftsorientierte Unternehmen automatisieren.
           </p>
         </motion.div>
         

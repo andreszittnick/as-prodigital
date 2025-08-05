@@ -4,30 +4,30 @@ import { useRef } from "react";
 
 const portfolioItems = [
   {
-    title: "E-commerce Platform",
-    description: "Modern e-commerce solution with AI-powered recommendations and seamless UX.",
+    title: "E-Commerce Plattform",
+    description: "Moderne E-Commerce-Lösung mit KI-gestützten Empfehlungen und nahtloser Benutzererfahrung.",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    tags: ["Web Design", "AI Integration"]
+    tags: ["Webdesign", "KI-Integration"]
   },
   {
     title: "Analytics Dashboard",
-    description: "Real-time business intelligence platform with custom AI analytics and reporting.",
+    description: "Echtzeit-Business-Intelligence-Plattform mit individueller KI-Analytik und Berichterstattung.",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    tags: ["Dashboard", "AI Analytics"]
+    tags: ["Dashboard", "KI-Analytik"]
   },
   {
-    title: "Creative Portfolio",
-    description: "Award-winning portfolio website with innovative animations and SEO optimization.",
+    title: "Kreatives Portfolio",
+    description: "Preisgekrönte Portfolio-Website mit innovativen Animationen und SEO-Optimierung.",
     image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
     tags: ["Portfolio", "SEO"]
   }
 ];
 
 const stats = [
-  { value: "50+", label: "Projects Completed" },
-  { value: "40+", label: "Happy Clients" },
-  { value: "5+", label: "Years Experience" },
-  { value: "250%", label: "Avg. Traffic Growth" }
+  { value: "50+", label: "Abgeschlossene Projekte" },
+  { value: "40+", label: "Zufriedene Kunden" },
+  { value: "5+", label: "Jahre Erfahrung" },
+  { value: "250%", label: "Durchschn. Traffic-Wachstum" }
 ];
 
 export default function PortfolioSection() {
@@ -46,10 +46,10 @@ export default function PortfolioSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Recent <span className="gradient-text">Work</span>
+            Aktuelle <span className="gradient-text">Arbeiten</span>
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            A showcase of successful projects that demonstrate the power of modern web design and digital innovation.
+            Eine Auswahl erfolgreicher Projekte, die die Kraft von modernem Webdesign und digitaler Innovation demonstrieren.
           </p>
         </motion.div>
         

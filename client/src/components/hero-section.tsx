@@ -81,7 +81,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="text-slate-600 font-medium text-xl">Welcome to</span>
+              <span className="text-slate-600 font-medium text-xl">Willkommen bei</span>
             </motion.div>
             
             <motion.h1 
@@ -100,7 +100,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <span className="text-slate-700">Improve your digital </span>
+              <span className="text-slate-700">Verbessern Sie Ihre digitale </span>
               <TypingAnimation />
             </motion.div>
             
@@ -110,7 +110,7 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              Crafting exceptional digital experiences through modern web design, strategic SEO, and cutting-edge AI solutions. Transforming your vision into digital reality.
+              Außergewöhnliche digitale Erlebnisse durch modernes Webdesign, strategische SEO und innovative KI-Lösungen schaffen. Ihre Vision wird zur digitalen Realität.
             </motion.p>
             
             <motion.div 
@@ -126,7 +126,7 @@ export default function HeroSection() {
                 whileTap={{ scale: 0.95 }}
                 data-testid="button-explore-services"
               >
-                Explore Services
+                Services entdecken
               </motion.button>
               <motion.button
                 onClick={() => scrollToSection("portfolio")}
@@ -135,7 +135,7 @@ export default function HeroSection() {
                 whileTap={{ scale: 0.95 }}
                 data-testid="button-view-portfolio"
               >
-                View Portfolio
+                Portfolio ansehen
               </motion.button>
             </motion.div>
           </motion.div>
@@ -154,7 +154,7 @@ export default function HeroSection() {
             >
               <img 
                 src={andreImage} 
-                alt="Andre Szittnick - Professional Web Designer" 
+                alt="Andre Szittnick - Professioneller Webdesigner" 
                 className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
                 data-testid="img-hero-photo"
               />

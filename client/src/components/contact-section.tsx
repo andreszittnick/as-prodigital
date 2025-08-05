@@ -30,14 +30,14 @@ const contactInfo = [
   },
   {
     icon: Phone,
-    label: "Phone",
+    label: "Telefon",
     value: "+49 (0) 123 456 789",
     colorClass: "brand-blue"
   },
   {
     icon: MapPin,
-    label: "Location",
-    value: "Germany",
+    label: "Standort",
+    value: "Deutschland",
     colorClass: "brand-gradient"
   }
 ];
@@ -65,15 +65,15 @@ export default function ContactSection() {
     },
     onSuccess: (data) => {
       toast({
-        title: "Message sent successfully!",
+        title: "Nachricht erfolgreich gesendet!",
         description: data.message,
       });
       form.reset();
     },
     onError: (error: any) => {
       toast({
-        title: "Error sending message",
-        description: error.message || "Please try again later.",
+        title: "Fehler beim Senden der Nachricht",
+        description: error.message || "Bitte versuchen Sie es später erneut.",
         variant: "destructive",
       });
     },
@@ -93,10 +93,10 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">
-            Let's Create Something <span className="gradient-text">Amazing</span>
+            Lassen Sie uns etwas <span className="gradient-text">Außergewöhnliches</span> schaffen
           </h2>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            Ready to transform your digital presence? Get in touch and let's discuss how we can bring your vision to life.
+            Bereit, Ihre digitale Präsenz zu transformieren? Kontaktieren Sie uns und lassen Sie uns besprechen, wie wir Ihre Vision zum Leben erwecken können.
           </p>
         </motion.div>
         
@@ -108,7 +108,7 @@ export default function ContactSection() {
             transition={{ duration: 0.8 }}
           >
             <div className="bg-gradient-to-br from-slate-50 to-white p-8 rounded-3xl shadow-lg">
-              <h3 className="text-2xl font-bold text-slate-900 mb-6">Send a Message</h3>
+              <h3 className="text-2xl font-bold text-slate-900 mb-6">Nachricht senden</h3>
               
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -118,10 +118,10 @@ export default function ContactSection() {
                       name="firstName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>First Name</FormLabel>
+                          <FormLabel>Vorname</FormLabel>
                           <FormControl>
                             <Input 
-                              placeholder="John" 
+                              placeholder="Max" 
                               {...field} 
                               data-testid="input-first-name"
                             />
@@ -135,10 +135,10 @@ export default function ContactSection() {
                       name="lastName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Last Name</FormLabel>
+                          <FormLabel>Nachname</FormLabel>
                           <FormControl>
                             <Input 
-                              placeholder="Doe" 
+                              placeholder="Mustermann" 
                               {...field} 
                               data-testid="input-last-name"
                             />
@@ -158,7 +158,7 @@ export default function ContactSection() {
                         <FormControl>
                           <Input 
                             type="email" 
-                            placeholder="john@example.com" 
+                            placeholder="max@beispiel.de" 
                             {...field} 
                             data-testid="input-email"
                           />
@@ -173,18 +173,18 @@ export default function ContactSection() {
                     name="service"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Service Interest</FormLabel>
+                        <FormLabel>Service-Interesse</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger data-testid="select-service">
-                              <SelectValue placeholder="Select a service" />
+                              <SelectValue placeholder="Service auswählen" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="web-design">Web Design</SelectItem>
-                            <SelectItem value="seo">SEO Optimization</SelectItem>
-                            <SelectItem value="ai-solutions">AI Solutions</SelectItem>
-                            <SelectItem value="complete-package">Complete Digital Package</SelectItem>
+                            <SelectItem value="web-design">Webdesign</SelectItem>
+                            <SelectItem value="seo">SEO-Optimierung</SelectItem>
+                            <SelectItem value="ai-solutions">KI-Lösungen</SelectItem>
+                            <SelectItem value="complete-package">Komplettes Digital-Paket</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -197,11 +197,11 @@ export default function ContactSection() {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Project Details</FormLabel>
+                        <FormLabel>Projekt-Details</FormLabel>
                         <FormControl>
                           <Textarea 
                             rows={4}
-                            placeholder="Tell me about your project..." 
+                            placeholder="Erzählen Sie mir von Ihrem Projekt..." 
                             {...field} 
                             data-testid="textarea-message"
                           />
@@ -217,7 +217,7 @@ export default function ContactSection() {
                     disabled={submitMutation.isPending}
                     data-testid="button-submit-contact"
                   >
-                    {submitMutation.isPending ? "Sending..." : "Send Message"}
+                    {submitMutation.isPending ? "Wird gesendet..." : "Nachricht senden"}
                   </Button>
                 </form>
               </Form>

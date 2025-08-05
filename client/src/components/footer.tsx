@@ -28,7 +28,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <p className="text-slate-400">
-              © 2024 AS ProDigital. All rights reserved.
+              © 2024 AS ProDigital. Alle Rechte vorbehalten.
             </p>
           </motion.div>
           
@@ -44,21 +44,21 @@ export default function Footer() {
               className="text-slate-400 hover:text-orange-500 transition-colors duration-300"
               data-testid="link-privacy"
             >
-              Privacy
+              Datenschutz
             </a>
             <a 
               href="#" 
               className="text-slate-400 hover:text-orange-500 transition-colors duration-300"
               data-testid="link-terms"
             >
-              Terms
+              AGB
             </a>
             <a 
               href="#" 
               className="text-slate-400 hover:text-orange-500 transition-colors duration-300"
               data-testid="link-imprint"
             >
-              Imprint
+              Impressum
             </a>
           </motion.div>
         </div>
