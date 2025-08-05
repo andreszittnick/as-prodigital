@@ -532,22 +532,182 @@ body {
     animation: pulse 4s ease-in-out infinite;
 }
 
-/* Mobile Hero Text Section */
-.mobile-hero-text {
-    display: block;
-    text-align: center;
-    margin-top: 2rem;
-    padding: 0 1rem;
+/* Hero Layout Control */
+.hero-desktop {
+    display: none;
 }
 
 @media (min-width: 1024px) {
-    .mobile-hero-text {
+    .hero-desktop {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+    }
+}
+
+.hero-mobile {
+    display: block;
+}
+
+@media (min-width: 1024px) {
+    .hero-mobile {
         display: none;
     }
 }
 
+/* Mobile Hero Sections */
+.mobile-section-1,
+.mobile-section-2,
+.mobile-section-3,
+.mobile-section-4 {
+    text-align: center;
+    padding: 0 1rem;
+}
+
+.mobile-section-1 {
+    margin-bottom: 2rem;
+}
+
+.mobile-section-2 {
+    margin-bottom: 2rem;
+}
+
+.mobile-section-3 {
+    margin-bottom: 2rem;
+}
+
+.mobile-section-4 {
+    margin-bottom: 1rem;
+}
+
+/* Mobile Section 1 - Welcome + Title + Typing */
+.mobile-welcome {
+    font-size: 1rem;
+    color: #64748b;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+}
+
+.mobile-title {
+    font-size: 2rem;
+    font-weight: bold;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+    .mobile-title {
+        font-size: 2.5rem;
+    }
+}
+
+.mobile-typing-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    font-size: 1rem;
+    color: #64748b;
+}
+
+@media (min-width: 640px) {
+    .mobile-typing-section {
+        font-size: 1.125rem;
+    }
+}
+
+/* Mobile Section 2 - First Description */
+.mobile-description-1 {
+    font-size: 1rem;
+    color: #64748b;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .mobile-description-1 {
+        font-size: 1.125rem;
+        line-height: 1.7;
+    }
+}
+
+/* Mobile Section 3 - Profile Image */
+.mobile-profile-container {
+    position: relative;
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+}
+
+@media (min-width: 640px) {
+    .mobile-profile-container {
+        width: 300px;
+        height: 300px;
+    }
+}
+
+.mobile-profile-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid white;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 2;
+}
+
+.mobile-profile-glow {
+    position: absolute;
+    top: -15px;
+    left: -15px;
+    right: -15px;
+    bottom: -15px;
+    background: linear-gradient(135deg, #fe7a33, #07437c);
+    border-radius: 50%;
+    opacity: 0.3;
+    filter: blur(25px);
+    z-index: 1;
+    animation: pulse 4s ease-in-out infinite;
+}
+
+/* Mobile Section 4 - Second Description + Vision */
+.mobile-description-2 {
+    font-size: 0.95rem;
+    color: #64748b;
+    line-height: 1.6;
+    max-width: 500px;
+    margin: 0 auto 2rem;
+}
+
+@media (min-width: 640px) {
+    .mobile-description-2 {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+}
+
+/* Mobile Vision Section */
+.mobile-vision-section {
+    background: rgba(248, 250, 252, 0.8);
+    backdrop-filter: blur(10px);
+    border-radius: 1.5rem;
+    padding: 2rem 1.5rem;
+    margin: 0 0.5rem;
+    border: 1px solid rgba(226, 232, 240, 0.5);
+}
+
+@media (min-width: 640px) {
+    .mobile-vision-section {
+        padding: 2.5rem 2rem;
+        margin: 0 1rem;
+    }
+}
+
 .mobile-vision {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: bold;
     color: #1e293b;
     margin-bottom: 0.75rem;
@@ -556,7 +716,7 @@ body {
 
 @media (min-width: 640px) {
     .mobile-vision {
-        font-size: 1.75rem;
+        font-size: 1.6rem;
     }
 }
 
@@ -590,13 +750,22 @@ body {
 
 .mobile-services,
 .mobile-portfolio {
-    padding: 0.75rem 1.5rem;
+    padding: 0.875rem 1.75rem;
     border-radius: 50px;
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s ease;
     min-width: 180px;
     text-align: center;
+    font-size: 0.95rem;
+}
+
+@media (min-width: 640px) {
+    .mobile-services,
+    .mobile-portfolio {
+        font-size: 1rem;
+        min-width: 200px;
+    }
 }
 
 .mobile-services {

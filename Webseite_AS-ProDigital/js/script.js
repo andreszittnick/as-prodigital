@@ -101,48 +101,93 @@ function initScrollAnimations() {
 
 // Typing animation for hero section
 function initTypingAnimation() {
+    // Desktop typing animation
     const typingText = document.getElementById('typingText');
-    if (!typingText) return;
-    
-    const texts = [
-        'Webdesign',
-        'SEO-Optimierung', 
-        'KI-Lösungen',
-        'Digital Marketing'
-    ];
-    
-    let currentIndex = 0;
-    let currentText = '';
-    let isDeleting = false;
-    
-    function typeWriter() {
-        const fullText = texts[currentIndex];
+    if (typingText) {
+        const texts = [
+            'Webdesign',
+            'SEO-Optimierung', 
+            'KI-Lösungen',
+            'Digital Marketing'
+        ];
         
-        if (isDeleting) {
-            currentText = fullText.substring(0, currentText.length - 1);
-        } else {
-            currentText = fullText.substring(0, currentText.length + 1);
+        let currentIndex = 0;
+        let currentText = '';
+        let isDeleting = false;
+        
+        function typeWriter() {
+            const fullText = texts[currentIndex];
+            
+            if (isDeleting) {
+                currentText = fullText.substring(0, currentText.length - 1);
+            } else {
+                currentText = fullText.substring(0, currentText.length + 1);
+            }
+            
+            typingText.textContent = currentText;
+            
+            let typeSpeed = isDeleting ? 100 : 150;
+            
+            if (!isDeleting && currentText === fullText) {
+                // Pause at end
+                typeSpeed = 2000;
+                isDeleting = true;
+            } else if (isDeleting && currentText === '') {
+                isDeleting = false;
+                currentIndex = (currentIndex + 1) % texts.length;
+                typeSpeed = 500;
+            }
+            
+            setTimeout(typeWriter, typeSpeed);
         }
         
-        typingText.textContent = currentText;
-        
-        let typeSpeed = isDeleting ? 100 : 150;
-        
-        if (!isDeleting && currentText === fullText) {
-            // Pause at end
-            typeSpeed = 2000;
-            isDeleting = true;
-        } else if (isDeleting && currentText === '') {
-            isDeleting = false;
-            currentIndex = (currentIndex + 1) % texts.length;
-            typeSpeed = 500;
-        }
-        
-        setTimeout(typeWriter, typeSpeed);
+        // Start typing animation after hero loads
+        setTimeout(typeWriter, 1000);
     }
     
-    // Start typing animation after hero loads
-    setTimeout(typeWriter, 1000);
+    // Mobile typing animation
+    const typingTextMobile = document.getElementById('typingTextMobile');
+    if (typingTextMobile) {
+        const mobileTexts = [
+            'Präsenz',
+            'Performance',
+            'Sichtbarkeit',
+            'Reichweite'
+        ];
+        
+        let mobileCurrentIndex = 0;
+        let mobileCurrentText = '';
+        let mobileIsDeleting = false;
+        
+        function mobileTypeWriter() {
+            const fullText = mobileTexts[mobileCurrentIndex];
+            
+            if (mobileIsDeleting) {
+                mobileCurrentText = fullText.substring(0, mobileCurrentText.length - 1);
+            } else {
+                mobileCurrentText = fullText.substring(0, mobileCurrentText.length + 1);
+            }
+            
+            typingTextMobile.textContent = mobileCurrentText;
+            
+            let typeSpeed = mobileIsDeleting ? 100 : 150;
+            
+            if (!mobileIsDeleting && mobileCurrentText === fullText) {
+                // Pause at end
+                typeSpeed = 2000;
+                mobileIsDeleting = true;
+            } else if (mobileIsDeleting && mobileCurrentText === '') {
+                mobileIsDeleting = false;
+                mobileCurrentIndex = (mobileCurrentIndex + 1) % mobileTexts.length;
+                typeSpeed = 500;
+            }
+            
+            setTimeout(mobileTypeWriter, typeSpeed);
+        }
+        
+        // Start mobile typing animation after hero loads
+        setTimeout(mobileTypeWriter, 1200);
+    }
 }
 
 // Animated statistics counter

@@ -47,52 +47,94 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-text">
-                    <div class="hero-badge animate-fade-in">
-                        <span class="badge-icon">✨</span>
-                        <span>Digitale Transformation neu gedacht</span>
-                    </div>
-                    
-                    <h1 class="hero-title animate-slide-up">
-                        <span class="gradient-text">André Szittnick</span><br>
-                        <span>AS-ProDigital</span>
-                    </h1>
-                    
-                    <div class="hero-subtitle animate-slide-up">
-                        <p>Ihr persönlicher Partner für</p>
-                        <div class="typing-container">
-                            <div class="typing-text" id="typingText">Webdesign</div>
+                <!-- Desktop Layout -->
+                <div class="hero-desktop">
+                    <div class="hero-text">
+                        <div class="hero-badge animate-fade-in">
+                            <span class="badge-icon">✨</span>
+                            <span>Digitale Transformation neu gedacht</span>
+                        </div>
+                        
+                        <h1 class="hero-title animate-slide-up">
+                            <span class="gradient-text">André Szittnick</span><br>
+                            <span>AS-ProDigital</span>
+                        </h1>
+                        
+                        <div class="hero-subtitle animate-slide-up">
+                            <p>Ihr persönlicher Partner für</p>
+                            <div class="typing-container">
+                                <div class="typing-text" id="typingText">Webdesign</div>
+                            </div>
+                        </div>
+                        
+                        <p class="hero-description animate-fade-in">
+                            Ich entwickle maßgeschneiderte digitale Lösungen, die Ihr Unternehmen voranbringen. 
+                            Von modernen Websites bis hin zu KI-gestützten Anwendungen – gemeinsam machen wir Ihre digitale Vision Realität.
+                        </p>
+                        
+                        <div class="hero-buttons animate-fade-in">
+                            <button class="btn-primary" onclick="scrollToSection('contact')">
+                                Projekt starten
+                            </button>
+                            <button class="btn-secondary" onclick="scrollToSection('portfolio')">
+                                Portfolio ansehen
+                            </button>
                         </div>
                     </div>
                     
-                    <p class="hero-description animate-fade-in">
-                        Ich entwickle maßgeschneiderte digitale Lösungen, die Ihr Unternehmen voranbringen. 
-                        Von modernen Websites bis hin zu KI-gestützten Anwendungen – gemeinsam machen wir Ihre digitale Vision Realität.
-                    </p>
-                    
-                    <div class="hero-buttons animate-fade-in">
-                        <button class="btn-primary" onclick="scrollToSection('contact')">
-                            Projekt starten
-                        </button>
-                        <button class="btn-secondary" onclick="scrollToSection('portfolio')">
-                            Portfolio ansehen
-                        </button>
+                    <div class="hero-image">
+                        <div class="profile-container animate-float">
+                            <img src="img/Bild_Andre_Szittnick_1754308315756.jpg" alt="André Szittnick" class="profile-image">
+                            <div class="profile-glow"></div>
+                        </div>
                     </div>
                 </div>
-                
-                <div class="hero-image">
-                    <div class="profile-container animate-float">
-                        <img src="img/Bild_Andre_Szittnick_1754308315756.jpg" alt="André Szittnick" class="profile-image">
-                        <div class="profile-glow"></div>
+
+                <!-- Mobile Layout -->
+                <div class="hero-mobile">
+                    <!-- 1. Willkommen bei + Titel + Typing -->
+                    <div class="mobile-section-1">
+                        <p class="mobile-welcome">Willkommen bei</p>
+                        <h1 class="mobile-title">
+                            <span class="gradient-text">André Szittnick</span><br>
+                            <span>AS-ProDigital</span>
+                        </h1>
+                        <div class="mobile-typing-section">
+                            <p>Verbessern Sie Ihre digitale</p>
+                            <div class="typing-container">
+                                <div class="typing-text" id="typingTextMobile">Präsenz</div>
+                            </div>
+                        </div>
                     </div>
-                    
-                    <!-- Mobile-only text section -->
-                    <div class="mobile-hero-text">
-                        <h2 class="mobile-vision">Ihre Vision. Meine Mission.</h2>
-                        <p class="mobile-tagline">Damit Ihr Online-Auftritt begeistert</p>
-                        <div class="mobile-actions">
-                            <span class="mobile-services" onclick="scrollToSection('services')">Meine Leistungen</span>
-                            <span class="mobile-portfolio" onclick="scrollToSection('portfolio')">Portfolio ansehen</span>
+
+                    <!-- 2. Erste Beschreibung -->
+                    <div class="mobile-section-2">
+                        <p class="mobile-description-1">
+                            Ich helfe Ihnen dabei, Ihre digitale Präsenz sichtbar und erfolgreich zu machen.
+                        </p>
+                    </div>
+
+                    <!-- 3. Bild -->
+                    <div class="mobile-section-3">
+                        <div class="mobile-profile-container">
+                            <img src="img/Bild_Andre_Szittnick_1754308315756.jpg" alt="André Szittnick" class="mobile-profile-image">
+                            <div class="mobile-profile-glow"></div>
+                        </div>
+                    </div>
+
+                    <!-- 4. Zweite Beschreibung + Vision/Mission + Buttons -->
+                    <div class="mobile-section-4">
+                        <p class="mobile-description-2">
+                            Als Ihr persönlicher Ansprechpartner entwickle ich maßgeschneiderte Webseiten, effektives SEO und individuelle KI‑Lösungen, die genau zu Ihrem Unternehmen passen.
+                        </p>
+                        
+                        <div class="mobile-vision-section">
+                            <h2 class="mobile-vision">Ihre Vision. Meine Mission.</h2>
+                            <p class="mobile-tagline">Damit Ihr Online-Auftritt begeistert</p>
+                            <div class="mobile-actions">
+                                <span class="mobile-services" onclick="scrollToSection('services')">Meine Leistungen</span>
+                                <span class="mobile-portfolio" onclick="scrollToSection('portfolio')">Portfolio ansehen</span>
+                            </div>
                         </div>
                     </div>
                 </div>
