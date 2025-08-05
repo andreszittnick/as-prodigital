@@ -165,9 +165,40 @@ const ProcessTimeline = () => {
                           </h4>
                         )}
                         
-                        <p className="text-slate-600 leading-relaxed">
+                        <p className="text-slate-600 leading-relaxed mb-6">
                           {step.description}
                         </p>
+                        
+                        {/* CTA Button */}
+                        <motion.button
+                          onClick={() => {
+                            const contactSection = document.getElementById("contact");
+                            if (contactSection) {
+                              contactSection.scrollIntoView({ behavior: "smooth" });
+                            }
+                          }}
+                          className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2 rounded-full border transition-all duration-300 hover:shadow-lg"
+                          style={{ 
+                            color: step.primaryColor,
+                            borderColor: step.primaryColor,
+                            backgroundColor: 'transparent'
+                          }}
+                          whileHover={{ 
+                            scale: 1.05,
+                            backgroundColor: step.primaryColor,
+                            color: 'white'
+                          }}
+                          whileTap={{ scale: 0.95 }}
+                          data-testid={`button-phase-${step.id}`}
+                        >
+                          <span>
+                            {step.id === 1 && "Jetzt Kontakt aufnehmen"}
+                            {step.id === 2 && "Strategie abstimmen"}
+                            {step.id === 3 && "Umsetzung starten"}
+                            {step.id === 4 && "Projekt live schalten"}
+                          </span>
+                          <ArrowRight className="w-4 h-4" />
+                        </motion.button>
                       </div>
                     </motion.div>
                   </motion.div>
