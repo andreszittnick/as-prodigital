@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
-const words = ["Performance", "Positionierung", "Präsenz", "Wirkung", "Sichtbarkeit"];
+const words = ["Performance", "Präsenz", "Wirkung", "Sichtbarkeit"];
 
 export default function TypingAnimation() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
