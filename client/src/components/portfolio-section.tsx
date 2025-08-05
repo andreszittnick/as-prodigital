@@ -64,13 +64,12 @@ export default function PortfolioSection() {
               whileHover={{ y: -8 }}
               data-testid={`portfolio-item-${item.title.toLowerCase().replace(/\s+/g, '-')}`}
             >
-              <div className="h-64 bg-gradient-to-br from-slate-200 to-slate-300 overflow-hidden">
-                <motion.img 
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover transition-transform duration-500"
-                  whileHover={{ scale: 1.1 }}
-                />
+              <div className="h-64 bg-gradient-to-br from-slate-200 to-slate-300 overflow-hidden flex items-center justify-center">
+                <div className="text-slate-500 text-center">
+                  <div className="w-16 h-16 bg-slate-400 rounded-lg mb-4 mx-auto opacity-50"></div>
+                  <p className="text-sm font-medium">Projekt-Vorschau</p>
+                  <p className="text-xs">Bild folgt</p>
+                </div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-slate-900 mb-2">{item.title}</h3>
