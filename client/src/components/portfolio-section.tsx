@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef } from "react";
+import { useRef, useState, useEffect } from "react";
 
 const portfolioItems = [
   {
@@ -24,10 +24,94 @@ const portfolioItems = [
 ];
 
 const stats = [
-  { value: "3+", label: "Jahre Erfahrung" },
-  { value: "80+", label: "Betreute Projekte" },
-  { value: "99,8%", label: "Zufriedene Kunden" }
+  { value: "3+", label: "Jahre Erfahrung", number: 3, suffix: "+" },
+  { value: "80+", label: "Betreute Projekte", number: 80, suffix: "+" },
+  { value: "99,8%", label: "Zufriedene Kunden", number: 99.8, suffix: "%" }
 ];
+
+// Custom hook for counting animation
+function useCountUp(target: number, duration: number = 2000, isInView: boolean = false) {
+  const [count, setCount] = useState(0);
+  
+  useEffect(() => {
+    if (!isInView) return;
+    
+    const startTime = Date.now();
+    const increment = target / (duration / 16); // 60fps
+    
+    const timer = setInterval(() => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      
+      // Easing function for smooth animation
+      const easeOutCubic = 1 - Math.pow(1 - progress, 3);
+      const currentCount = target * easeOutCubic;
+      
+      setCount(currentCount);
+      
+      if (progress >= 1) {
+        clearInterval(timer);
+        setCount(target);
+      }
+    }, 16);
+    
+    return () => clearInterval(timer);
+  }, [target, duration, isInView]);
+  
+  return count;
+}
+
+// StatCard component with counting animation
+function StatCard({ stat, index, isInView }: { stat: typeof stats[0], index: number, isInView: boolean }) {
+  const count = useCountUp(stat.number, 2000, isInView);
+  
+  const formatNumber = (num: number, suffix: string) => {
+    if (suffix === "%") {
+      return num.toFixed(1) + suffix;
+    }
+    return Math.floor(num) + suffix;
+  };
+  
+  return (
+    <motion.div
+      className="text-center bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-500 group"
+      initial={{ opacity: 0, y: 50, scale: 0.9 }}
+      animate={isInView ? { opacity: 1, y: 0, scale: 1 } : {}}
+      transition={{ duration: 0.8, delay: index * 0.2 }}
+      whileHover={{ y: -5, scale: 1.02 }}
+      data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
+    >
+      <motion.div 
+        className="text-5xl md:text-6xl font-bold mb-4 relative"
+        initial={{ scale: 0.5 }}
+        animate={isInView ? { scale: 1 } : {}}
+        transition={{ duration: 0.6, delay: index * 0.2 + 0.4, type: "spring", bounce: 0.4 }}
+      >
+        <span 
+          className="bg-gradient-to-r from-orange-500 to-orange-600 bg-clip-text text-transparent group-hover:from-blue-600 group-hover:to-blue-700 transition-all duration-500"
+          style={{
+            textShadow: '0 0 30px rgba(254, 122, 51, 0.3)',
+          }}
+        >
+          {formatNumber(count, stat.suffix)}
+        </span>
+        <motion.div
+          className="absolute -inset-2 bg-gradient-to-r from-orange-500/20 to-orange-600/20 rounded-xl blur-lg opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+          animate={isInView ? { opacity: [0, 0.3, 0] } : {}}
+          transition={{ duration: 2, delay: index * 0.2 + 1, repeat: Infinity, repeatDelay: 3 }}
+        />
+      </motion.div>
+      <motion.div 
+        className="text-slate-700 font-medium text-lg"
+        initial={{ opacity: 0 }}
+        animate={isInView ? { opacity: 1 } : {}}
+        transition={{ duration: 0.6, delay: index * 0.2 + 0.8 }}
+      >
+        {stat.label}
+      </motion.div>
+    </motion.div>
+  );
+}
 
 export default function PortfolioSection() {
   const ref = useRef(null);
@@ -98,31 +182,21 @@ export default function PortfolioSection() {
         {/* Stats Section */}
         <motion.div 
           ref={statsRef}
-          className="grid md:grid-cols-4 gap-8"
+          className="max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 50 }}
           animate={statsInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          {stats.map((stat, index) => (
-            <motion.div
-              key={stat.label}
-              className="text-center"
-              initial={{ opacity: 0, y: 30 }}
-              animate={statsInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              data-testid={`stat-${stat.label.toLowerCase().replace(/\s+/g, '-')}`}
-            >
-              <motion.div 
-                className="text-4xl font-bold gradient-text mb-2"
-                initial={{ scale: 0.5 }}
-                animate={statsInView ? { scale: 1 } : {}}
-                transition={{ duration: 0.5, delay: index * 0.1 + 0.3, type: "spring" }}
-              >
-                {stat.value}
-              </motion.div>
-              <div className="text-slate-600">{stat.label}</div>
-            </motion.div>
-          ))}
+          <div className="grid md:grid-cols-3 gap-8 justify-center">
+            {stats.map((stat, index) => (
+              <StatCard 
+                key={stat.label}
+                stat={stat}
+                index={index}
+                isInView={statsInView}
+              />
+            ))}
+          </div>
         </motion.div>
       </div>
     </section>
