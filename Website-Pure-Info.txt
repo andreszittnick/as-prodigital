@@ -1,0 +1,42 @@
+## AS-ProDigital - Pure HTML/CSS/JS Website
+
+### ✅ 100% Framework-Free
+- Pure HTML5 semantic structure
+- CSS3 with custom animations and responsive design  
+- Vanilla JavaScript for all functionality
+- No React, Vue, Angular, or any framework dependencies
+
+### 📁 File Structure:
+- index.html (669 lines) - Main website file
+- CSS/styles.css (24KB) - All styling and responsive design
+- js/script.js (24KB) - Complete JavaScript functionality
+- img/ (1.7MB) - All images and assets
+  - Profile image, logo, favicons
+
+### 🎯 Features (All Pure JavaScript):
+✓ Smooth scroll animations with Intersection Observer API
+✓ Typing animation effects 
+✓ Mobile hamburger menu with CSS transitions
+✓ Contact form with validation
+✓ Toast notifications
+✓ Responsive mobile-first design
+✓ CSS Grid and Flexbox layouts
+✓ Custom CSS animations (@keyframes)
+✓ Navigation scroll effects
+
+### 📱 Mobile Layout Order:
+1. Welcome header + typing animation ('Sichtbarkeit')
+2. Profile image (centered)
+3. Description texts + Vision/Mission + Action buttons
+
+### 🌐 Ready for Deployment:
+- Works on any web server (Apache, Nginx, etc.)
+- No build process required
+- No dependencies to install
+- Simply upload files and go live!
+
+### 🎨 Design:
+- Brand colors: #fe7a33 (orange) and #07437c (blue)
+- German language content
+- Personal 'Ich' perspective throughout
+- Professional portfolio layout
