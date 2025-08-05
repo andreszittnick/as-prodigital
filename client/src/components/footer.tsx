@@ -28,7 +28,8 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <p className="text-slate-400">
-              © 2025 André Szittnick | AS-ProDigital. Alle Rechte vorbehalten.
+              © 2025 André Szittnick | AS-ProDigital.<br />
+              Alle Rechte vorbehalten.
             </p>
           </motion.div>
           

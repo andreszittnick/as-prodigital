@@ -4,8 +4,9 @@ import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { Mail, Phone, MapPin, Instagram, MessageCircle } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram } from "lucide-react";
 import { Facebook } from "lucide-react";
+import { SiWhatsapp } from "react-icons/si";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -18,7 +19,7 @@ import { apiRequest } from "@/lib/queryClient";
 const socialLinks = [
   { icon: Facebook, href: "#", label: "Facebook" },
   { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: MessageCircle, href: "#", label: "WhatsApp" }
+  { icon: SiWhatsapp, href: "#", label: "WhatsApp" }
 ];
 
 const contactInfo = [
