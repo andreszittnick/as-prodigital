@@ -77,13 +77,13 @@ export default function ServicesSection() {
                 {/* SEO Partnership Note - only for SEO card */}
                 {service.title === "SEO-Basisoptimierung" && (
                   <motion.div
-                    className="mb-4 pb-4 border-b border-slate-200"
+                    className="my-4 py-4 border-t border-b border-slate-200"
                     initial={{ opacity: 0 }}
                     animate={isInView ? { opacity: 1 } : {}}
                     transition={{ duration: 0.6, delay: (index * 0.2) + 0.8 }}
                   >
                     <p className="text-xs text-slate-500 leading-relaxed">
-                      Für tiefgehendes SEO, SEA-, Meta-Ads & Brandbuilding arbeite ich mit der{" "}
+                      Für tiefgehendes SEO, SEA- & Meta-Ads arbeite ich mit der{" "}
                       <a 
                         href="https://dmberatung.de/" 
                         target="_blank" 
