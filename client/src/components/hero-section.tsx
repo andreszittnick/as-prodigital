@@ -143,7 +143,7 @@ export default function HeroSection() {
                 whileTap={{ scale: 0.95 }}
                 data-testid="button-explore-services"
               >
-                Services entdecken
+                Meine Leistungen
               </motion.button>
               <motion.button
                 onClick={() => scrollToSection("portfolio")}
