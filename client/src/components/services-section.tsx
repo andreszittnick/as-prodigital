@@ -70,14 +70,14 @@ export default function ServicesSection() {
                 </motion.div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
+                <p className="text-slate-600 mb-3 leading-relaxed flex-grow">
                   {service.description}
                 </p>
                 
                 {/* SEO Partnership Note - only for SEO card */}
                 {service.title === "SEO-Basisoptimierung" && (
                   <motion.div
-                    className="my-4 py-4 border-t border-b border-slate-200"
+                    className="mt-2 mb-4 py-3 border-t border-b border-slate-200"
                     initial={{ opacity: 0 }}
                     animate={isInView ? { opacity: 1 } : {}}
                     transition={{ duration: 0.6, delay: (index * 0.2) + 0.8 }}
