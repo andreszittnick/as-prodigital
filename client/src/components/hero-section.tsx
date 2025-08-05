@@ -121,7 +121,16 @@ export default function HeroSection() {
             >
               <motion.button
                 onClick={() => scrollToSection("services")}
-                className="brand-gradient text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300"
+                className="brand-gradient text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-300 hover:bg-[#07437c]"
+                style={{
+                  background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = '#07437c';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)';
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 data-testid="button-explore-services"
