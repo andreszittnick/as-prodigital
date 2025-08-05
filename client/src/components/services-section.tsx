@@ -92,6 +92,41 @@ export default function ServicesSection() {
             </motion.div>
           ))}
         </div>
+        
+        {/* CTA Button */}
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 1.0 }}
+        >
+          <motion.button
+            onClick={() => {
+              const contactSection = document.getElementById("contact");
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
+            style={{
+              background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
+              transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#07437c';
+              e.currentTarget.style.color = '#fe7a33';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)';
+              e.currentTarget.style.color = 'white';
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            data-testid="button-questions-services"
+          >
+            Haben Sie Fragen?
+          </motion.button>
+        </motion.div>
       </div>
     </section>
   );
