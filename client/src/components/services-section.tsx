@@ -124,7 +124,7 @@ export default function ServicesSection() {
             whileTap={{ scale: 0.95 }}
             data-testid="button-questions-services"
           >
-            Haben Sie Fragen?
+            Lassen Sie uns starten
           </motion.button>
         </motion.div>
       </div>
