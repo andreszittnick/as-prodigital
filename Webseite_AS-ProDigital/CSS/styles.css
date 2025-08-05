@@ -301,15 +301,29 @@ body {
 }
 
 .hero-content {
-    display: block;
+    display: block !important;
 }
 
 @media (min-width: 1024px) {
     .hero-content {
-        display: grid;
+        display: grid !important;
         grid-template-columns: 1fr 1fr;
         gap: 4rem;
         align-items: center;
+    }
+}
+
+/* Hide all desktop hero elements on mobile */
+@media (max-width: 1023px) {
+    .hero-text,
+    .hero-image,
+    .hero-badge,
+    .hero-title,
+    .hero-subtitle,
+    .hero-description,
+    .hero-buttons,
+    .profile-container {
+        display: none !important;
     }
 }
 
@@ -531,7 +545,7 @@ body {
     animation: pulse 4s ease-in-out infinite;
 }
 
-/* Hero Layout Control - Force Mobile First */
+/* Hero Layout Control - Complete Mobile Override */
 .hero-desktop {
     display: none !important;
 }
@@ -546,19 +560,9 @@ body {
 }
 
 .hero-mobile {
-    display: block !important;
-}
-
-@media (min-width: 1024px) {
-    .hero-mobile {
-        display: none !important;
-    }
-}
-
-/* Ensure proper mobile section ordering */
-.hero-mobile {
     display: flex !important;
     flex-direction: column;
+    width: 100%;
 }
 
 @media (min-width: 1024px) {
@@ -567,24 +571,42 @@ body {
     }
 }
 
-/* Mobile Hero Sections */
+/* Mobile Section Order Control */
+.mobile-section-header {
+    order: 1;
+}
+
+.mobile-section-image {
+    order: 2;
+}
+
+.mobile-section-content {
+    order: 3;
+}
+
+/* Mobile Hero Sections - Explicit Control */
 .mobile-section-header,
 .mobile-section-image,
 .mobile-section-content {
     text-align: center;
     padding: 0 1rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .mobile-section-header {
     margin-bottom: 2rem;
+    order: 1 !important;
 }
 
 .mobile-section-image {
     margin-bottom: 2rem;
+    order: 2 !important;
 }
 
 .mobile-section-content {
     margin-bottom: 1rem;
+    order: 3 !important;
 }
 
 /* Mobile Section 1 - Welcome + Title + Typing */
