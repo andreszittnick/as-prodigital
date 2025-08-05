@@ -49,13 +49,14 @@ export default function WhyChooseSection() {
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.title}
-              className="group bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center"
+              className="group relative bg-white p-8 rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
               whileHover={{ y: -8 }}
               data-testid={`benefit-card-${benefit.title.toLowerCase().replace(/\s+/g, '-')}`}
             >
+              <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative">
                 <motion.div 
                   className={`w-20 h-20 ${benefit.colorClass} rounded-2xl flex items-center justify-center mb-6 mx-auto`}
