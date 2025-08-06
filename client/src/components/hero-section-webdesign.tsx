@@ -206,34 +206,7 @@ export default function HeroSectionWebdesign() {
                 
                 {/* Overlay gradient */}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl" />
-                
-                {/* Floating badge */}
-                <motion.div 
-                  className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-3 sm:p-4"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.2 }}
-                  whileHover={{ y: -5 }}
-                >
-                  <div className="flex items-center space-x-2 sm:space-x-3">
-                    <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-pulse" />
-                    <span className="text-xs sm:text-sm font-semibold text-slate-700">Verfügbar für Projekte</span>
-                  </div>
-                </motion.div>
-                
-                {/* Experience badge */}
-                <motion.div 
-                  className="absolute -top-4 -right-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-2xl shadow-xl p-3 sm:p-4"
-                  initial={{ opacity: 0, y: -20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ duration: 0.6, delay: 1.4 }}
-                  whileHover={{ y: -5, scale: 1.05 }}
-                >
-                  <div className="text-center">
-                    <div className="text-lg sm:text-xl font-bold">3+</div>
-                    <div className="text-xs font-medium opacity-90">Jahre</div>
-                  </div>
-                </motion.div>
+
               </motion.div>
             </div>
           </motion.div>
