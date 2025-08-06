@@ -115,7 +115,7 @@ export default function Navigation() {
                             <motion.div
                               initial={{ scale: 1, rotate: 0 }}
                               whileHover={{ scale: 1.1, rotate: 5 }}
-                              transition={{ duration: 0.2 }}
+                              transition={{ duration: 0.1, ease: "easeOut" }}
                               className={`mt-0.5 ${service.color}`}
                             >
                               <service.icon className="w-5 h-5" />
@@ -257,7 +257,7 @@ export default function Navigation() {
                             <motion.div
                               initial={{ scale: 1, rotate: 0 }}
                               whileHover={{ scale: 1.1, rotate: 5 }}
-                              transition={{ duration: 0.2 }}
+                              transition={{ duration: 0.1, ease: "easeOut" }}
                               className={service.color}
                             >
                               <service.icon className="w-4 h-4" />
