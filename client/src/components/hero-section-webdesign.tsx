@@ -111,9 +111,9 @@ export default function HeroSectionWebdesign() {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <p>
-                Ich helfe Ihnen dabei, Ihre digitale Präsenz sichtbar und erfolgreich zu machen.
+                Ich entwickle moderne, schnelle und optisch ansprechende Webseiten, die Ihre Marke perfekt präsentieren und Ihre Besucher in Kunden verwandeln.
                 <br /><br />
-                Als Ihr persönlicher Ansprechpartner entwickle ich maßgeschneiderte Webseiten, effektives SEO und individuelle KI‑Lösungen, die genau zu Ihrem Unternehmen passen.
+                Ob Unternehmensseite, Landingpage oder Online-Portfolio – ich gestalte Ihre Website individuell, nutzerfreundlich und SEO-optimiert
               </p>
               <br />
               <div className="space-y-2">
