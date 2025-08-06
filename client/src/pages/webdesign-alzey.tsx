@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation";
 import HeroSectionWebdesign from "@/components/hero-section-webdesign";
+import WebdesignContentSection from "@/components/webdesign-content-section";
 import Footer from "@/components/footer";
 import { motion } from "framer-motion";
 import { Code, Monitor, Smartphone, Search, CheckCircle, Star, MapPin, Phone, Mail } from "lucide-react";
@@ -69,6 +70,7 @@ export default function WebdesignAlzey() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Navigation />
       <HeroSectionWebdesign />
+      <WebdesignContentSection />
 
       {/* Benefits Section */}
       <section className="py-20 px-4">
