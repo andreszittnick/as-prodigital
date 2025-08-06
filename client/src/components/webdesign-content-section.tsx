@@ -28,19 +28,16 @@ export default function WebdesignContentSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-              Webdesign für moderne Unternehmen
+              Modernes Webdesign für einen starken ersten Eindruck
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              Ein professionelles Webdesign ist heutzutage weit mehr als nur ein optischer Blickfang – es ist das digitale Schaufenster Ihres Unternehmens und oft der erste Berührungspunkt für potenzielle Kunden. Studien zeigen, dass Besucher innerhalb weniger Sekunden entscheiden, ob sie auf einer Webseite bleiben oder sie wieder verlassen. Eine klare Struktur, ein modernes Design und eine benutzerfreundliche Navigation sind daher entscheidend, um Vertrauen zu schaffen und Besucher auf Ihrer Seite zu halten.
+              Ein professionelles Webdesign entscheidet heute darüber, ob ein Besucher auf Ihrer Website bleibt oder sie nach wenigen Sekunden wieder verlässt. Ihre Website ist das digitale Gesicht Ihres Unternehmens und vermittelt auf den ersten Blick, wie modern, zuverlässig und kompetent Sie sind. Deshalb sollte ein gelungener Internetauftritt nicht nur optisch ansprechend sein, sondern auch funktional und benutzerfreundlich.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              Eine erfolgreiche Website vereint Ästhetik, Funktionalität und Performance. Dazu gehört ein ansprechendes Layout, das Ihre Markenidentität widerspiegelt, ebenso wie kurze Ladezeiten, saubere Programmierung und die Optimierung für mobile Endgeräte. Immer mehr Nutzer greifen über Smartphones oder Tablets auf Webseiten zu – wer hier kein responsives Design bietet, verliert wertvolle Interessenten.
-            </p>
-            <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              Darüber hinaus spielt technisch sauberes und SEO-freundliches Webdesign eine zentrale Rolle. Nur wenn Ihre Seite für Suchmaschinen optimal vorbereitet ist, kann sie langfristig gute Platzierungen erreichen und kontinuierlich neue Besucher generieren. Ich setze auf individuelle, maßgeschneiderte Lösungen, die sowohl visuell begeistern als auch technisch überzeugen.
+              Ein erfolgreiches Webdesign kombiniert ästhetische Gestaltung, klare Strukturen und technische Optimierung. Dazu gehören kurze Ladezeiten, eine mobilfreundliche Darstellung und eine intuitive Navigation, die Besucher gezielt zu Ihren Angeboten führt. Suchmaschinen wie Google belohnen saubere und nutzerfreundliche Websites mit besseren Platzierungen – so erreichen Sie langfristig mehr Sichtbarkeit und gewinnen neue Kunden.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Von der Planung und Konzeption, über die kreative Gestaltung bis hin zur Umsetzung und Optimierung erhalten Sie bei mir alles aus einer Hand – damit Ihre Website nicht nur gut aussieht, sondern auch messbare Ergebnisse liefert. Ein starkes Webdesign ist die Grundlage für Ihren nachhaltigen digitalen Erfolg.
+              Mit einem individuell entwickelten Webdesign schaffen Sie die perfekte Basis für einen erfolgreichen Online-Auftritt und heben sich nachhaltig von Ihren Wettbewerbern ab.
             </p>
           </motion.div>
         </div>
