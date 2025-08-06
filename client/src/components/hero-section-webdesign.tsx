@@ -149,7 +149,6 @@ export default function HeroSectionWebdesign() {
               >
                 <span className="flex items-center gap-2">
                   Webdesign anfragen
-                  <Code className="w-4 h-4" />
                 </span>
               </motion.button>
               
