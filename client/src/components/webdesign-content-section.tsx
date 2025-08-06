@@ -151,6 +151,72 @@ export default function WebdesignContentSection() {
             </div>
           </motion.div>
         </div>
+
+        {/* Section 5: Bild links, Text rechts */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16 lg:mb-24">
+          <motion.div
+            className="order-2 lg:order-1"
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="aspect-[4/3] bg-gradient-to-br from-orange-100 to-blue-100 rounded-2xl flex items-center justify-center">
+              <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center">
+                <Monitor className="w-8 h-8 text-white" />
+              </div>
+            </div>
+          </motion.div>
+          <motion.div
+            className="order-1 lg:order-2"
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
+              Platzhalter Überschrift 5
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed mb-6">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+            </p>
+          </motion.div>
+        </div>
+
+        {/* Section 6: Text links, Bild rechts */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
+              Platzhalter Überschrift 6
+            </h2>
+            <p className="text-lg text-slate-600 leading-relaxed mb-6">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+            </p>
+          </motion.div>
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6 }}
+            viewport={{ once: true }}
+          >
+            <div className="aspect-[4/3] bg-gradient-to-br from-blue-100 to-orange-100 rounded-2xl flex items-center justify-center">
+              <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
+                <Brain className="w-8 h-8 text-white" />
+              </div>
+            </div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
