@@ -175,13 +175,19 @@ export default function WebdesignContentSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-              Platzhalter Überschrift 5
+              Erfolgreiches Webdesign kombiniert Design und Technik
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+              Viele unterschätzen, dass Webdesign weit mehr ist als ein schönes Layout. Eine erfolgreiche Website entsteht erst, wenn Design, Technik und Nutzerfreundlichkeit perfekt ineinandergreifen.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed mb-6">
+              Ein moderner Internetauftritt muss übersichtlich, schnell und mobiloptimiert sein. Wenn Besucher sofort finden, wonach sie suchen, steigt die Chance, dass sie länger auf der Seite bleiben und mit Ihrem Unternehmen in Kontakt treten.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed mb-6">
+              Gleichzeitig sollten Inhalte so aufbereitet sein, dass Google sie optimal erfassen kann. SEO-freundliches Webdesign sorgt dafür, dass Ihre Website langfristig sichtbar bleibt und kontinuierlich neue Interessenten erreicht.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+              Das Zusammenspiel aus starker Optik, intuitiver Bedienung und sauberer Technik macht Ihre Website zu einem echten Erfolgsfaktor für Ihr Business.
             </p>
           </motion.div>
         </div>
