@@ -1,7 +1,7 @@
 import Navigation from "@/components/navigation";
 import HeroSectionWebdesign from "@/components/hero-section-webdesign";
 import WebdesignContentSection from "@/components/webdesign-content-section";
-import ContactSection from "@/components/contact-section";
+import ContactSectionWebdesign from "@/components/contact-section-webdesign";
 import Footer from "@/components/footer";
 
 export default function WebdesignAlzey() {
@@ -13,7 +13,7 @@ export default function WebdesignAlzey() {
       <WebdesignContentSection />
       
       {/* Contact Section */}
-      <ContactSection />
+      <ContactSectionWebdesign />
 
       <Footer />
     </div>

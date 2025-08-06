@@ -43,7 +43,7 @@ const contactInfo = [
   }
 ];
 
-export default function ContactSection() {
+export default function ContactSectionWebdesign() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { toast } = useToast();
@@ -94,10 +94,10 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
-            Lassen Sie uns etwas <span className="gradient-text">Außergewöhnliches</span> schaffen
+            Bereit für Ihre neue <span className="gradient-text">Webseite</span>?
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto px-4 sm:px-0">
-            Bereit, Ihre digitale Präsenz auf das nächste Level zu bringen? Melden Sie sich bei mir – gemeinsam lassen wir Ihre Ideen Wirklichkeit werden.
+            Lassen Sie uns gemeinsam Ihre individuelle Webseite besprechen und den Ablauf definieren - Für Ihre professionelle Online-Präsenz!
           </p>
         </motion.div>
         
@@ -155,11 +155,11 @@ export default function ContactSection() {
                     name="email"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email</FormLabel>
+                        <FormLabel>E-Mail</FormLabel>
                         <FormControl>
                           <Input 
                             type="email" 
-                            placeholder="max@beispiel.de" 
+                            placeholder="max.mustermann@email.de" 
                             {...field} 
                             data-testid="input-email"
                           />
@@ -174,18 +174,19 @@ export default function ContactSection() {
                     name="service"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Service-Interesse</FormLabel>
+                        <FormLabel>Service</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger data-testid="select-service">
-                              <SelectValue placeholder="Service auswählen" />
+                              <SelectValue placeholder="Wählen Sie einen Service" />
                             </SelectTrigger>
                           </FormControl>
                           <SelectContent>
-                            <SelectItem value="web-design">Webdesign</SelectItem>
+                            <SelectItem value="webdesign">Webdesign</SelectItem>
                             <SelectItem value="seo">SEO-Optimierung</SelectItem>
-                            <SelectItem value="ai-solutions">KI-Lösungen</SelectItem>
-                            <SelectItem value="complete-package">Komplettes Digital-Paket</SelectItem>
+                            <SelectItem value="ki-loesungen">KI-Lösungen</SelectItem>
+                            <SelectItem value="beratung">Beratung</SelectItem>
+                            <SelectItem value="sonstiges">Sonstiges</SelectItem>
                           </SelectContent>
                         </Select>
                         <FormMessage />
@@ -198,11 +199,11 @@ export default function ContactSection() {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Projekt-Details</FormLabel>
+                        <FormLabel>Nachricht</FormLabel>
                         <FormControl>
                           <Textarea 
-                            rows={4}
-                            placeholder="Erzählen Sie mir von Ihrem Projekt..." 
+                            placeholder="Beschreiben Sie Ihr Projekt oder Ihre Anfrage..." 
+                            className="min-h-[120px]" 
                             {...field} 
                             data-testid="textarea-message"
                           />
@@ -214,9 +215,9 @@ export default function ContactSection() {
                   
                   <Button 
                     type="submit" 
-                    className="w-full brand-gradient text-white py-6 rounded-xl font-semibold hover:shadow-lg transition-all duration-300"
+                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
                     disabled={submitMutation.isPending}
-                    data-testid="button-submit-contact"
+                    data-testid="button-submit"
                   >
                     {submitMutation.isPending ? "Wird gesendet..." : "Nachricht senden"}
                   </Button>
@@ -229,62 +230,51 @@ export default function ContactSection() {
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
+            transition={{ duration: 0.8 }}
           >
-            <div className="space-y-8">
+            <div className="space-y-6 sm:space-y-8">
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Direkter Kontakt</h3>
-                <p className="text-sm sm:text-base text-slate-600 leading-relaxed mb-6 sm:mb-8">
-                  Jedes Projekt beginnt mit einem Gespräch. Erzählen Sie mir von Ihrer Idee, und gemeinsam finden wir den besten Weg, sie online erfolgreich umzusetzen.
-                </p>
+                <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Kontaktinformationen</h3>
+                <div className="space-y-4 sm:space-y-6">
+                  {contactInfo.map((info, index) => (
+                    <motion.div
+                      key={info.label}
+                      className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-slate-50 rounded-xl hover:bg-slate-100 transition-colors duration-300"
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={isInView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ duration: 0.6, delay: index * 0.1 }}
+                    >
+                      <div className={`w-10 h-10 sm:w-12 sm:h-12 ${info.colorClass} rounded-lg flex items-center justify-center flex-shrink-0`}>
+                        <info.icon className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                      </div>
+                      <div className="flex-1 min-w-0">
+                        <p className="text-sm text-slate-500 font-medium">{info.label}</p>
+                        <p className="text-slate-900 font-semibold text-sm sm:text-base break-all">{info.value}</p>
+                      </div>
+                    </motion.div>
+                  ))}
+                </div>
               </div>
               
-              <div className="space-y-4 sm:space-y-6">
-                {contactInfo.map((info, index) => (
-                  <motion.div
-                    key={info.label}
-                    className="flex items-center space-x-3 sm:space-x-4"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.6, delay: index * 0.1 + 0.4 }}
-                    data-testid={`contact-info-${info.label.toLowerCase()}`}
-                  >
-                    <div className={`w-10 h-10 sm:w-12 sm:h-12 ${info.colorClass} rounded-lg sm:rounded-xl flex items-center justify-center`}>
-                      <info.icon className="text-white w-4 h-4 sm:w-5 sm:h-5" />
-                    </div>
-                    <div>
-                      <div className="font-semibold text-slate-900 text-sm sm:text-base">{info.value}</div>
-                      <div className="text-slate-600 text-xs sm:text-sm">{info.label}</div>
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-              
-              <motion.div 
-                className="pt-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.8 }}
-              >
-                <div className="text-base sm:text-lg font-semibold text-slate-900 mb-3 sm:mb-4">Social-Media</div>
+              <div>
+                <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4">Folgen Sie mir</h4>
                 <div className="flex space-x-3 sm:space-x-4">
                   {socialLinks.map((social, index) => (
                     <motion.a
                       key={social.label}
                       href={social.href}
-                      className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-100 hover:bg-orange-500 text-slate-600 hover:text-white rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-300"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      initial={{ opacity: 0, scale: 0.8 }}
+                      className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg flex items-center justify-center hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110"
+                      aria-label={social.label}
+                      initial={{ opacity: 0, scale: 0 }}
                       animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ duration: 0.3, delay: index * 0.1 + 1 }}
-                      data-testid={`social-link-${social.label.toLowerCase()}`}
+                      transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
+                      whileHover={{ y: -2 }}
                     >
-                      <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
+                      <social.icon className="w-5 h-5 sm:w-6 sm:h-6" />
                     </motion.a>
                   ))}
                 </div>
-              </motion.div>
+              </div>
             </div>
           </motion.div>
         </div>
