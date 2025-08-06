@@ -1,44 +1,9 @@
 import { motion } from "framer-motion";
 import { Code, Brain } from "lucide-react";
+import TypingAnimation from "./typing-animation";
 import andreImage from "@assets/Bild_Andre_Szittnick_1754308315756.jpg";
 
-// Typing Animation Component for Webdesign
-function TypingAnimationWebdesign() {
-  const words = ["Funktional.", "Performant.", "Ausdrucksstark."];
-  
-  return (
-    <motion.span
-      className="text-slate-700"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.5, delay: 1.2 }}
-    >
-      {words.map((word, index) => (
-        <motion.span
-          key={index}
-          className="inline-block"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 0.5,
-            delay: 1.5 + index * 0.8,
-            repeat: Infinity,
-            repeatType: "loop",
-            repeatDelay: words.length * 0.8 - 0.5
-          }}
-          style={{
-            position: index === 0 ? "relative" : "absolute",
-            left: index === 0 ? "auto" : "0"
-          }}
-        >
-          {word}
-        </motion.span>
-      ))}
-    </motion.span>
-  );
-}
-
-export default function HeroSectionWebdesignModified() {
+export default function HeroSectionWebdesignTextOnly() {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
@@ -110,17 +75,17 @@ export default function HeroSectionWebdesignModified() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <motion.span 
-              className="inline-flex items-center px-3 sm:px-4 py-2 rounded-full bg-orange-100 text-orange-600 text-xs sm:text-sm font-medium mb-4 sm:mb-6"
+            <motion.div 
+              className="mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
             >
-              Professionelles Webdesign aus einer Hand
-            </motion.span>
+              <span className="text-slate-600 font-medium text-xl">Professionelles Webdesign aus einer Hand</span>
+            </motion.div>
             
             <motion.h1 
-              className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-4 sm:mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -130,68 +95,87 @@ export default function HeroSectionWebdesignModified() {
             </motion.h1>
             
             <motion.div 
-              className="text-xl sm:text-2xl lg:text-3xl font-semibold mb-6"
-              initial={{ opacity: 0, y: 30 }}
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-6 sm:mb-8 text-center lg:text-left"
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.8 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <span className="text-slate-700">Modern. Schnell. </span>
-              <TypingAnimationWebdesign />
+              <span className="text-slate-700">Modern. Schnell. Funktional.</span>
             </motion.div>
             
             <motion.div 
-              className="space-y-4 sm:space-y-6 text-base sm:text-lg text-slate-600 leading-relaxed mb-6 sm:mb-8"
-              initial={{ opacity: 0, y: 30 }}
+              className="text-base sm:text-lg lg:text-xl text-slate-600 mb-6 sm:mb-8 leading-relaxed max-w-2xl"
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <p>
-                Als erfahrener Digital Marketing Spezialist transformiere ich Ihr Business 
-                mit maßgeschneiderten Online-Strategien. Von professionellem Webdesign über 
-                effektive SEO bis hin zu innovativen KI-Lösungen – ich bringe Ihr 
-                Unternehmen erfolgreich in die digitale Zukunft.
+                Ich helfe Ihnen dabei, Ihre digitale Präsenz sichtbar und erfolgreich zu machen.
+                <br /><br />
+                Als Ihr persönlicher Ansprechpartner entwickle ich maßgeschneiderte Webseiten, effektives SEO und individuelle KI‑Lösungen, die genau zu Ihrem Unternehmen passen.
               </p>
               <br />
-              <motion.p 
-                className="text-lg sm:text-xl font-medium text-slate-800"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 0.6, delay: 1.0 }}
-              >
-                <span className="gradient-text font-bold">Gemeinsam erschaffen wir digitale Erlebnisse,</span><br />
-                die Ihre Kunden begeistern und Ihr Business vorantreiben.
-              </motion.p>
+              <div className="space-y-2">
+                <div className="text-lg font-bold text-slate-800">Ihre Vision. Meine Mission.</div>
+                <div className="font-medium text-slate-600">Damit Ihr Online-Auftritt begeistert</div>
+              </div>
             </motion.div>
             
             <motion.div 
-              className="flex flex-col sm:flex-row gap-3 sm:gap-4"
-              initial={{ opacity: 0, y: 30 }}
+              className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+              initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
             >
               <motion.button
-                onClick={() => scrollToSection("contact")}
-                className="group bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
-                data-testid="button-contact"
-              >
-                <span className="flex items-center gap-2">
-                  Jetzt Projekt starten
-                  <Code className="w-4 sm:w-5 h-4 sm:h-5 group-hover:rotate-12 transition-transform" />
-                </span>
-              </motion.button>
-              
-              <motion.button
                 onClick={() => scrollToSection("services")}
-                className="group bg-white text-slate-700 px-6 sm:px-8 py-3 sm:py-4 rounded-xl font-semibold text-base sm:text-lg shadow-lg hover:shadow-xl border border-slate-200 hover:border-orange-300 transition-all duration-300"
-                whileHover={{ scale: 1.02, y: -2 }}
-                whileTap={{ scale: 0.98 }}
+                className="text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
+                style={{
+                  background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
+                  transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = '#07437c';
+                  e.currentTarget.style.color = '#fe7a33';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)';
+                  e.currentTarget.style.color = 'white';
+                }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
                 data-testid="button-services"
               >
                 <span className="flex items-center gap-2">
                   Leistungen entdecken
-                  <Brain className="w-4 sm:w-5 h-4 sm:h-5 group-hover:rotate-12 transition-transform" />
+                  <Code className="w-4 h-4" />
+                </span>
+              </motion.button>
+              
+              <motion.button
+                onClick={() => scrollToSection("contact")}
+                className="border-2 border-slate-300 text-slate-700 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
+                style={{
+                  background: 'white',
+                  transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = '#07437c';
+                  e.currentTarget.style.color = '#fe7a33';
+                  e.currentTarget.style.borderColor = '#07437c';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'white';
+                  e.currentTarget.style.color = '#374151';
+                  e.currentTarget.style.borderColor = '#d1d5db';
+                }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                data-testid="button-contact"
+              >
+                <span className="flex items-center gap-2">
+                  Jetzt Kontakt aufnehmen
+                  <Brain className="w-4 h-4" />
                 </span>
               </motion.button>
             </motion.div>
