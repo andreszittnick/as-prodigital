@@ -128,9 +128,9 @@ export default function HeroSectionWebdesign() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
             >
-              <motion.button
-                onClick={() => scrollToSection("services")}
-                className="text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
+              <motion.a
+                href="/kontakt"
+                className="text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out text-center inline-block"
                 style={{
                   background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
                   transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.3s ease'
@@ -145,19 +145,19 @@ export default function HeroSectionWebdesign() {
                 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                data-testid="button-explore-services"
+                data-testid="button-contact-webdesign"
               >
-                Meine Leistungen
-              </motion.button>
-              <motion.button
-                onClick={() => scrollToSection("portfolio")}
-                className="border-2 border-slate-300 text-slate-700 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold hover:border-orange-500 hover:text-orange-500 transition-all duration-300"
+                Webdesign anfragen
+              </motion.a>
+              <motion.a
+                href="/services"
+                className="border-2 border-slate-300 text-slate-700 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold hover:border-orange-500 hover:text-orange-500 transition-all duration-300 text-center inline-block"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                data-testid="button-view-portfolio"
+                data-testid="button-services-overview"
               >
-                Portfolio ansehen
-              </motion.button>
+                Weitere Leistungen
+              </motion.a>
             </motion.div>
           </motion.div>
           
