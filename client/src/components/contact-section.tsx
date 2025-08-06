@@ -94,10 +94,10 @@ export default function ContactSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
-            Lassen Sie uns etwas <span className="gradient-text">Außergewöhnliches</span> schaffen
+            Bereit für Ihre neue <span className="gradient-text">Webseite</span>?
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto px-4 sm:px-0">
-            Bereit, Ihre digitale Präsenz auf das nächste Level zu bringen? Melden Sie sich bei mir – gemeinsam lassen wir Ihre Ideen Wirklichkeit werden.
+            Lassen Sie uns gemeinsam Ihre individuelle Webseite besprechen und den Ablauf definieren - Für Ihre professionelle Online-Präsenz!
           </p>
         </motion.div>
         
