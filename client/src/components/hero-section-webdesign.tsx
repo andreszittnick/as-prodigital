@@ -129,7 +129,7 @@ export default function HeroSectionWebdesign() {
               transition={{ duration: 0.6, delay: 0.7 }}
             >
               <motion.button
-                onClick={() => scrollToSection("services")}
+                onClick={() => scrollToSection("contact")}
                 className="text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
                 style={{
                   background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
@@ -145,10 +145,10 @@ export default function HeroSectionWebdesign() {
                 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                data-testid="button-services"
+                data-testid="button-webdesign-anfragen"
               >
                 <span className="flex items-center gap-2">
-                  Leistungen entdecken
+                  Webdesign anfragen
                   <Code className="w-4 h-4" />
                 </span>
               </motion.button>
