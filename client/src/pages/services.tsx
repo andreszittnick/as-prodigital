@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import ContactSection from "@/components/contact-section";
 import { motion } from "framer-motion";
 import { Code, Search, Brain } from "lucide-react";
 
@@ -151,6 +152,9 @@ Meine Lösungen sind praktisch orientiert und bringen echten Mehrwert für Ihr U
           </div>
         </div>
       </section>
+
+      {/* Contact Section */}
+      <ContactSection />
 
       <Footer />
     </div>
