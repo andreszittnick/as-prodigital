@@ -80,7 +80,7 @@ export default function HeroSectionWebdesign() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="text-slate-600 font-medium text-xl">Professionelles Webdesign aus einer Hand</span>
+              <span className="text-slate-600 font-medium text-xl">Suchmaschinenoptimierung für mehr Sichtbarkeit</span>
             </motion.div>
             
             <motion.h1 
@@ -89,8 +89,8 @@ export default function HeroSectionWebdesign() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <span className="gradient-text">Maßgeschneidertes Webdesign</span><br />
-              <span className="text-slate-900">für Ihren professionellen Online-Auftritt</span>
+              <span className="gradient-text">Effektives Basic-SEO</span><br />
+              <span className="text-slate-900">für mehr Reichweite und neue Kunden</span>
             </motion.h1>
             
             <motion.div 
@@ -99,7 +99,7 @@ export default function HeroSectionWebdesign() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <span className="text-slate-700">Modern. Schnell. </span>
+              <span className="text-slate-700">Sichtbar. Nachhaltig. </span>
               <TypingAnimationWebdesign />
             </motion.div>
             
@@ -110,14 +110,14 @@ export default function HeroSectionWebdesign() {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <p>
-                Ich entwickle moderne, schnelle und optisch ansprechende Webseiten, die Ihre Marke perfekt präsentieren und Ihre Besucher in Kunden verwandeln.
+                Ich helfe Ihnen dabei, Ihre Website bei Google sichtbarer zu machen und neue Besucher auf Ihre Angebote aufmerksam zu machen. Mit Basic-SEO optimiere ich Ihre Seite technisch und inhaltlich, damit sie langfristig besser gefunden wird.
                 <br /><br />
-                Ob Unternehmensseite, Landingpage oder Online-Portfolio – ich gestalte Ihre Website individuell, nutzerfreundlich und SEO-optimiert
+                Von der Keyword-Analyse über die OnPage-Optimierung bis hin zu strukturierten Inhalten – ich lege die Basis für eine bessere Platzierung in den Suchergebnissen und damit für mehr Anfragen über Ihre Website.
               </p>
               <br />
               <div className="space-y-2">
-                <div className="text-lg font-bold text-slate-800">Ihre Vision. Meine Mission.</div>
-                <div className="font-medium text-slate-600">Damit Ihr Online-Auftritt begeistert</div>
+                <div className="text-lg font-bold text-slate-800">Ihre Sichtbarkeit. Mein Ziel.</div>
+                <div className="font-medium text-slate-600">Damit Ihre Website von Kunden gefunden wird.</div>
               </div>
             </motion.div>
             
@@ -146,7 +146,7 @@ export default function HeroSectionWebdesign() {
                 whileTap={{ scale: 0.95 }}
                 data-testid="button-contact-webdesign"
               >
-                Webdesign anfragen
+                SEO anfragen
               </motion.a>
               <motion.a
                 href="/services"

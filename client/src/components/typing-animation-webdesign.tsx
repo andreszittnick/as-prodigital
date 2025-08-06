@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
-const words = ["performant.", "optimiert.", "funktional."];
+const words = ["Erfolgreich.", "Umsatzsteigernd.", "Gewinnbringend."];
 
 export default function TypingAnimationWebdesign() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
