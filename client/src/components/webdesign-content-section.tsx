@@ -28,7 +28,7 @@ export default function WebdesignContentSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-              Professionelles Webdesign für Ihren Online-Erfolg
+              <span className="text-orange-500">Professionelles Webdesign</span> für Ihren Online-Erfolg
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
               Eine moderne Website ist heute weit mehr als nur ein digitales Schaufenster – sie ist der zentrale Baustein Ihres Online-Marketings. Mit einem professionellen Webdesign hinterlassen Sie bei Besuchern sofort einen positiven Eindruck und steigern die Wahrscheinlichkeit, dass aus Interessenten Kunden werden.
@@ -51,7 +51,7 @@ export default function WebdesignContentSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-              Modernes Webdesign steigert Ihre Sichtbarkeit
+              <span className="text-orange-500">Modernes Webdesign</span> steigert Ihre Sichtbarkeit
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
               Ein professionelles Webdesign ist nicht nur für Ihre Besucher wichtig, sondern auch für Suchmaschinen wie Google. Technisch saubere und optisch ansprechende Websites werden von Suchmaschinen bevorzugt, weil sie den Nutzern ein besseres Erlebnis bieten.
@@ -100,7 +100,7 @@ export default function WebdesignContentSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-              Individuelle Webdesign-Lösungen für Ihr Unternehmen
+              <span className="text-orange-500">Individuelle Webdesign-Lösungen</span> für Ihr Unternehmen
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
               Jedes Unternehmen hat individuelle Anforderungen, die sich nicht mit einer Standard-Website erfüllen lassen. Deshalb setze ich auf maßgeschneiderte Webdesign-Lösungen, die exakt auf Ihre Marke, Ihre Zielgruppe und Ihre Geschäftsziele zugeschnitten sind.
@@ -123,7 +123,7 @@ export default function WebdesignContentSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-              Webdesign als Grundlage für digitale Kundengewinnung
+              <span className="text-orange-500">Webdesign</span> als Grundlage für digitale <span className="text-orange-500">Kundengewinnung</span>
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
               Ihre Website ist heute der wichtigste Vertriebskanal, denn die meisten Kunden informieren sich online, bevor sie eine Entscheidung treffen. Professionelles Webdesign ist daher die Grundlage für eine erfolgreiche Kundengewinnung im Internet.
@@ -175,7 +175,7 @@ export default function WebdesignContentSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-              Erfolgreiches Webdesign kombiniert Design und Technik
+              Erfolgreiches <span className="text-orange-500">Webdesign</span> kombiniert <span className="text-orange-500">Design</span> und <span className="text-orange-500">Technik</span>
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
               Viele unterschätzen, dass Webdesign weit mehr ist als ein schönes Layout. Eine erfolgreiche Website entsteht erst, wenn Design, Technik und Nutzerfreundlichkeit perfekt ineinandergreifen.
@@ -201,7 +201,7 @@ export default function WebdesignContentSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-              Mit Webdesign Vertrauen und Markenstärke aufbauen
+              Mit <span className="text-orange-500">Webdesign</span> Vertrauen und <span className="text-orange-500">Markenstärke</span> aufbauen
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
               Eine professionelle Website ist oft der erste Berührungspunkt zwischen Ihnen und Ihren Kunden. Ein modernes Webdesign schafft hier Vertrauen und vermittelt sofort Kompetenz und Seriosität.
