@@ -1,12 +1,14 @@
 import { useState, useEffect } from "react";
-import { motion } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { useScrollPosition } from "@/hooks/use-scroll";
 import logoImage from "@assets/Logo_1754308337340.png";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesHovered, setIsServicesHovered] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const [location] = useLocation();
   const scrollPosition = useScrollPosition();
 
@@ -48,8 +50,79 @@ export default function Navigation() {
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-6 lg:space-x-8">
+            {/* Services Dropdown */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setIsServicesHovered(true)}
+              onMouseLeave={() => setIsServicesHovered(false)}
+            >
+              <Link href="/services">
+                <span
+                  className={`flex items-center transition-colors duration-300 cursor-pointer ${
+                    location === "/services" 
+                      ? "text-orange-500 font-semibold" 
+                      : "text-slate-600 hover:text-orange-500"
+                  }`}
+                  data-testid="nav-leistungen"
+                >
+                  Leistungen
+                  <ChevronDown className={`ml-1 w-4 h-4 transition-transform duration-300 ${
+                    isServicesHovered ? "rotate-180" : ""
+                  }`} />
+                </span>
+              </Link>
+              
+              {/* Dropdown Menu */}
+              <AnimatePresence>
+                {isServicesHovered && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10, scale: 0.95 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 10, scale: 0.95 }}
+                    transition={{ duration: 0.2, ease: "easeOut" }}
+                    className="absolute top-full left-0 mt-2 w-64 bg-white dark:bg-gray-800 rounded-2xl shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
+                  >
+                    <div className="py-2">
+                      {[
+                        { 
+                          name: "Webdesign", 
+                          href: "/services#webdesign",
+                          description: "Moderne, responsive Websites"
+                        },
+                        { 
+                          name: "Basic-SEO", 
+                          href: "/services#seo",
+                          description: "Suchmaschinenoptimierung"
+                        },
+                        { 
+                          name: "Individuelle KI-Lösungen", 
+                          href: "/services#ki-loesungen",
+                          description: "Maßgeschneiderte KI-Anwendungen"
+                        }
+                      ].map((service, index) => (
+                        <Link key={index} href={service.href}>
+                          <motion.div
+                            whileHover={{ backgroundColor: "rgba(254, 122, 51, 0.1)" }}
+                            className="px-4 py-3 cursor-pointer transition-colors duration-200"
+                            data-testid={`dropdown-${service.name.toLowerCase().replace(/\s+/g, '-')}`}
+                          >
+                            <div className="font-medium text-gray-900 dark:text-white">
+                              {service.name}
+                            </div>
+                            <div className="text-sm text-gray-600 dark:text-gray-300">
+                              {service.description}
+                            </div>
+                          </motion.div>
+                        </Link>
+                      ))}
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
+            {/* Other Navigation Items */}
             {[
-              { name: "Leistungen", href: "/services" },
               { name: "Portfolio", href: "/portfolio" },
               { name: "Über mich", href: "/about" },
             ].map((item, index) => (
@@ -66,6 +139,7 @@ export default function Navigation() {
                 </span>
               </Link>
             ))}
+            
             <Link href="/contact">
               <motion.button
                 className={`text-white px-4 py-2 lg:px-6 lg:py-2 text-sm lg:text-base rounded-full font-medium hover:shadow-lg transition-all duration-300 ${
@@ -101,8 +175,65 @@ export default function Navigation() {
             className="md:hidden py-4 border-t border-slate-200"
           >
             <div className="flex flex-col space-y-4">
+              {/* Mobile Services Dropdown */}
+              <div>
+                <div className="flex items-center justify-between">
+                  <Link href="/services">
+                    <span
+                      onClick={() => setIsOpen(false)}
+                      className={`transition-colors duration-300 text-left cursor-pointer ${
+                        location === "/services" 
+                          ? "text-orange-500 font-semibold" 
+                          : "text-slate-600 hover:text-orange-500"
+                      }`}
+                      data-testid="mobile-nav-leistungen"
+                    >
+                      Leistungen
+                    </span>
+                  </Link>
+                  <button
+                    onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
+                    className="p-1 text-slate-600 hover:text-orange-500"
+                  >
+                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
+                      isMobileServicesOpen ? "rotate-180" : ""
+                    }`} />
+                  </button>
+                </div>
+                
+                <AnimatePresence>
+                  {isMobileServicesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, height: 0 }}
+                      animate={{ opacity: 1, height: "auto" }}
+                      exit={{ opacity: 0, height: 0 }}
+                      transition={{ duration: 0.3 }}
+                      className="mt-2 ml-4 space-y-2"
+                    >
+                      {[
+                        { name: "Webdesign", href: "/services#webdesign" },
+                        { name: "Basic-SEO", href: "/services#seo" },
+                        { name: "Individuelle KI-Lösungen", href: "/services#ki-loesungen" }
+                      ].map((service, index) => (
+                        <Link key={index} href={service.href}>
+                          <motion.div
+                            initial={{ opacity: 0, x: -10 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            transition={{ delay: index * 0.1 }}
+                            onClick={() => setIsOpen(false)}
+                            className="text-sm text-slate-500 hover:text-orange-500 cursor-pointer transition-colors duration-200 py-1"
+                          >
+                            {service.name}
+                          </motion.div>
+                        </Link>
+                      ))}
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+
+              {/* Other Mobile Navigation Items */}
               {[
-                { name: "Leistungen", href: "/services" },
                 { name: "Portfolio", href: "/portfolio" },
                 { name: "Über mich", href: "/about" },
               ].map((item, index) => (
@@ -120,6 +251,7 @@ export default function Navigation() {
                   </span>
                 </Link>
               ))}
+              
               <Link href="/contact">
                 <button
                   onClick={() => setIsOpen(false)}
