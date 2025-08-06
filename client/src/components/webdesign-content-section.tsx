@@ -28,13 +28,19 @@ export default function WebdesignContentSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-              Platzhalter Überschrift 1
+              Webdesign für moderne Unternehmen
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.
+              Ein professionelles Webdesign ist heutzutage weit mehr als nur ein optischer Blickfang – es ist das digitale Schaufenster Ihres Unternehmens und oft der erste Berührungspunkt für potenzielle Kunden. Studien zeigen, dass Besucher innerhalb weniger Sekunden entscheiden, ob sie auf einer Webseite bleiben oder sie wieder verlassen. Eine klare Struktur, ein modernes Design und eine benutzerfreundliche Navigation sind daher entscheidend, um Vertrauen zu schaffen und Besucher auf Ihrer Seite zu halten.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed mb-6">
+              Eine erfolgreiche Website vereint Ästhetik, Funktionalität und Performance. Dazu gehört ein ansprechendes Layout, das Ihre Markenidentität widerspiegelt, ebenso wie kurze Ladezeiten, saubere Programmierung und die Optimierung für mobile Endgeräte. Immer mehr Nutzer greifen über Smartphones oder Tablets auf Webseiten zu – wer hier kein responsives Design bietet, verliert wertvolle Interessenten.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed mb-6">
+              Darüber hinaus spielt technisch sauberes und SEO-freundliches Webdesign eine zentrale Rolle. Nur wenn Ihre Seite für Suchmaschinen optimal vorbereitet ist, kann sie langfristig gute Platzierungen erreichen und kontinuierlich neue Besucher generieren. Ich setze auf individuelle, maßgeschneiderte Lösungen, die sowohl visuell begeistern als auch technisch überzeugen.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.
+              Von der Planung und Konzeption, über die kreative Gestaltung bis hin zur Umsetzung und Optimierung erhalten Sie bei mir alles aus einer Hand – damit Ihre Website nicht nur gut aussieht, sondern auch messbare Ergebnisse liefert. Ein starkes Webdesign ist die Grundlage für Ihren nachhaltigen digitalen Erfolg.
             </p>
           </motion.div>
         </div>
