@@ -100,13 +100,16 @@ export default function WebdesignContentSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-              Platzhalter Überschrift 3
+              Individuelle Webdesign-Lösungen für Ihr Unternehmen
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias.
+              Jedes Unternehmen hat individuelle Anforderungen, die sich nicht mit einer Standard-Website erfüllen lassen. Deshalb setze ich auf maßgeschneiderte Webdesign-Lösungen, die exakt auf Ihre Marke, Ihre Zielgruppe und Ihre Geschäftsziele zugeschnitten sind.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed mb-6">
+              Individuelles Webdesign bedeutet, dass Farben, Layout, Schriftarten und Bildsprache perfekt zu Ihrem Unternehmen passen. Gleichzeitig wird die Website technisch optimiert, damit sie schnell lädt, auf allen Geräten funktioniert und von Google optimal gelesen werden kann.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga.
+              So entsteht ein Online-Auftritt, der nicht nur optisch überzeugt, sondern auch Vertrauen schafft, neue Kunden anzieht und langfristig messbare Ergebnisse liefert.
             </p>
           </motion.div>
         </div>
