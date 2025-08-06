@@ -81,7 +81,7 @@ export default function HeroSectionWebdesign() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="text-slate-600 font-medium text-xl">Professionelles Webdesign<br />aus einer Hand</span>
+              <span className="text-slate-600 font-medium text-xl">Professionelles Webdesign aus einer Hand</span>
             </motion.div>
             
             <motion.h1 
