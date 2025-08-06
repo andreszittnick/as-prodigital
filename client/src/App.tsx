@@ -8,6 +8,9 @@ import Services from "@/pages/services";
 import Portfolio from "@/pages/portfolio";
 import About from "@/pages/about";
 import Contact from "@/pages/contact";
+import WebdesignAlzey from "@/pages/webdesign-alzey";
+import SeoAlzey from "@/pages/seo-alzey";
+import KiLoesungenAlzey from "@/pages/ki-loesungen-alzey";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -18,6 +21,9 @@ function Router() {
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
+      <Route path="/webdesign-alzey" component={WebdesignAlzey} />
+      <Route path="/seo-alzey" component={SeoAlzey} />
+      <Route path="/ki-loesungen-alzey" component={KiLoesungenAlzey} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -86,21 +86,21 @@ export default function Navigation() {
                       {[
                         { 
                           name: "Webdesign", 
-                          href: "/services#webdesign",
+                          href: "/webdesign-alzey",
                           description: "Moderne, responsive Websites",
                           icon: Monitor,
                           color: "text-blue-500"
                         },
                         { 
                           name: "Basic-SEO", 
-                          href: "/services#seo",
+                          href: "/seo-alzey",
                           description: "Suchmaschinenoptimierung",
                           icon: Search,
                           color: "text-green-500"
                         },
                         { 
                           name: "Individuelle KI-Lösungen", 
-                          href: "/services#ki-loesungen",
+                          href: "/ki-loesungen-alzey",
                           description: "Maßgeschneiderte KI-Anwendungen",
                           icon: Brain,
                           color: "text-purple-500"
@@ -230,19 +230,19 @@ export default function Navigation() {
                       {[
                         { 
                           name: "Webdesign", 
-                          href: "/services#webdesign",
+                          href: "/webdesign-alzey",
                           icon: Monitor,
                           color: "text-blue-500"
                         },
                         { 
                           name: "Basic-SEO", 
-                          href: "/services#seo",
+                          href: "/seo-alzey",
                           icon: Search,
                           color: "text-green-500"
                         },
                         { 
                           name: "Individuelle KI-Lösungen", 
-                          href: "/services#ki-loesungen",
+                          href: "/ki-loesungen-alzey",
                           icon: Brain,
                           color: "text-purple-500"
                         }
