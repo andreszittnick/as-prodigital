@@ -1,7 +1,42 @@
 import { motion } from "framer-motion";
 import { Code, Brain } from "lucide-react";
-import TypingAnimation from "./typing-animation";
 import andreImage from "@assets/Bild_Andre_Szittnick_1754308315756.jpg";
+
+// Typing Animation Component for Webdesign
+function TypingAnimationWebdesign() {
+  const words = ["Funktional.", "Performant.", "Ausdrucksstark."];
+  
+  return (
+    <motion.span
+      className="text-slate-700"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5, delay: 1.2 }}
+    >
+      {words.map((word, index) => (
+        <motion.span
+          key={index}
+          className="inline-block"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 0.5,
+            delay: 1.5 + index * 0.8,
+            repeat: Infinity,
+            repeatType: "loop",
+            repeatDelay: words.length * 0.8 - 0.5
+          }}
+          style={{
+            position: index === 0 ? "relative" : "absolute",
+            left: index === 0 ? "auto" : "0"
+          }}
+        >
+          {word}
+        </motion.span>
+      ))}
+    </motion.span>
+  );
+}
 
 export default function HeroSectionWebdesignModified() {
   const scrollToSection = (sectionId: string) => {
@@ -100,8 +135,8 @@ export default function HeroSectionWebdesignModified() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.8 }}
             >
-              <span className="text-slate-700">Ich schaffe </span>
-              <TypingAnimation />
+              <span className="text-slate-700">Modern. Schnell. </span>
+              <TypingAnimationWebdesign />
             </motion.div>
             
             <motion.div 
