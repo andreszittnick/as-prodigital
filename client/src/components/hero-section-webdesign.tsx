@@ -154,61 +154,45 @@ export default function HeroSectionWebdesign() {
             </motion.div>
           </motion.div>
           
-          {/* Right side - Image */}
+          {/* Right side - Photo */}
           <motion.div 
-            className="relative flex justify-center lg:justify-end mt-8 sm:mt-12 lg:mt-0"
+            className="flex justify-center lg:justify-end relative"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
           >
-            <div className="relative">
-              {/* Background decorative elements */}
-              <motion.div 
-                className="absolute -top-4 -left-4 w-24 sm:w-32 h-24 sm:h-32 bg-orange-300 rounded-full filter blur-2xl opacity-30"
-                animate={{ 
-                  scale: [1, 1.2, 1],
-                  rotate: [0, 90, 0]
-                }}
-                transition={{ 
-                  duration: 8,
-                  repeat: Infinity,
-                  ease: "easeInOut"
-                }}
-              />
-              <motion.div 
-                className="absolute -bottom-6 -right-6 w-32 sm:w-40 h-32 sm:h-40 bg-blue-300 rounded-full filter blur-3xl opacity-25"
-                animate={{ 
-                  scale: [1, 1.15, 1],
-                  rotate: [0, -120, 0]
-                }}
-                transition={{ 
-                  duration: 10,
-                  repeat: Infinity,
-                  ease: "easeInOut",
-                  delay: 2
+            {/* Glow Effect Behind Image */}
+            <motion.div
+              className="absolute inset-0 -z-10"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 1.5, delay: 0.5 }}
+            >
+              <div 
+                className="w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-[500px] lg:w-96 lg:h-[600px] mx-auto rounded-3xl"
+                style={{
+                  background: 'radial-gradient(ellipse at center, rgba(254, 122, 51, 0.3) 0%, rgba(254, 122, 51, 0.15) 40%, rgba(7, 67, 124, 0.1) 70%, transparent 100%)',
+                  filter: 'blur(40px)',
+                  transform: 'scale(1.2)'
                 }}
               />
-              
-              {/* Main image container */}
-              <motion.div 
-                className="relative z-10 w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-96"
-                whileHover={{ scale: 1.05 }}
-                transition={{ duration: 0.3 }}
-              >
-                <motion.img
-                  src={andreImage}
-                  alt="André Szittnick - AS ProDigital"
-                  className="w-full h-full object-cover rounded-3xl shadow-2xl"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  animate={{ scale: 1, opacity: 1 }}
-                  transition={{ duration: 0.8, delay: 0.6 }}
-                />
-                
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl" />
-
-              </motion.div>
-            </div>
+            </motion.div>
+            
+            <motion.div 
+              className="w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-[500px] lg:w-96 lg:h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl ring-2 sm:ring-4 ring-white/50 backdrop-blur-sm drop-shadow-2xl relative z-10"
+              style={{
+                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+              }}
+              whileHover={{ scale: 1.02 }}
+              transition={{ duration: 0.3 }}
+            >
+              <img 
+                src={andreImage} 
+                alt="Andre Szittnick - Professioneller Webdesigner" 
+                className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                data-testid="img-hero-photo"
+              />
+            </motion.div>
           </motion.div>
         </div>
       </div>
