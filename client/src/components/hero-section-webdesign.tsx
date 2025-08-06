@@ -75,14 +75,23 @@ export default function HeroSectionWebdesign() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
+            <motion.div 
+              className="mb-6"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <span className="text-slate-600 font-medium text-xl">Professionelles Webdesign<br />aus einer Hand</span>
+            </motion.div>
+            
             <motion.h1 
               className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <span className="gradient-text">Professionelles Webdesign</span><br />
-              <span className="text-slate-900">aus einer Hand</span>
+              <span className="gradient-text">Maßgeschneidertes Webdesign</span><br />
+              <span className="text-slate-900">für Ihren professionellen Online-Auftritt</span>
             </motion.h1>
             
             <motion.div 
