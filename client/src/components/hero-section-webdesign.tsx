@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
-import TypingAnimationWebdesign from "./typing-animation-webdesign";
+import { Code, Brain } from "lucide-react";
+import TypingAnimation from "./typing-animation";
 import andreImage from "@assets/Bild_Andre_Szittnick_1754308315756.jpg";
 
 export default function HeroSectionWebdesign() {
@@ -80,7 +81,7 @@ export default function HeroSectionWebdesign() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="text-slate-600 font-medium text-xl">Suchmaschinenoptimierung für mehr Sichtbarkeit</span>
+              <span className="text-slate-600 font-medium text-xl">Professionelles Webdesign aus einer Hand</span>
             </motion.div>
             
             <motion.h1 
@@ -89,8 +90,8 @@ export default function HeroSectionWebdesign() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <span className="gradient-text">Effektives SEO</span><br />
-              <span className="text-slate-900">für mehr Reichweite und neue Kunden</span>
+              <span className="gradient-text">André Szittnick</span><br />
+              <span className="text-slate-900">AS-ProDigital</span>
             </motion.h1>
             
             <motion.div 
@@ -99,8 +100,8 @@ export default function HeroSectionWebdesign() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <span className="text-slate-700">Sichtbar. Nachhaltig. </span>
-              <TypingAnimationWebdesign />
+              <span className="text-slate-700">Verbessern Sie Ihre digitale </span>
+              <TypingAnimation />
             </motion.div>
             
             <motion.div 
@@ -110,14 +111,14 @@ export default function HeroSectionWebdesign() {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <p>
-                Ich helfe Ihnen dabei, Ihre Website bei Google sichtbarer zu machen und neue Besucher auf Ihre Angebote aufmerksam zu machen. Mit SEO optimiere ich Ihre Seite technisch und inhaltlich, damit sie langfristig besser gefunden wird.
+                Ich helfe Ihnen dabei, Ihre digitale Präsenz sichtbar und erfolgreich zu machen.
                 <br /><br />
-                Von der Keyword-Analyse über die OnPage-Optimierung bis hin zu strukturierten Inhalten – ich lege die Basis für eine bessere Platzierung in den Suchergebnissen und damit für mehr Anfragen über Ihre Website.
+                Als Ihr persönlicher Ansprechpartner entwickle ich maßgeschneiderte Webseiten, effektives SEO und individuelle KI‑Lösungen, die genau zu Ihrem Unternehmen passen.
               </p>
               <br />
               <div className="space-y-2">
-                <div className="text-lg font-bold text-slate-800">Ihre Sichtbarkeit. Mein Ziel.</div>
-                <div className="font-medium text-slate-600">Damit Ihre Website von Kunden gefunden wird.</div>
+                <div className="text-lg font-bold text-slate-800">Ihre Vision. Meine Mission.</div>
+                <div className="font-medium text-slate-600">Damit Ihr Online-Auftritt begeistert</div>
               </div>
             </motion.div>
             
@@ -127,9 +128,9 @@ export default function HeroSectionWebdesign() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.7 }}
             >
-              <motion.a
-                href="/contact"
-                className="text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out text-center inline-block"
+              <motion.button
+                onClick={() => scrollToSection("services")}
+                className="text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
                 style={{
                   background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
                   transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.3s ease'
@@ -144,61 +145,125 @@ export default function HeroSectionWebdesign() {
                 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                data-testid="button-contact-webdesign"
+                data-testid="button-services"
               >
-                SEO anfragen
-              </motion.a>
-              <motion.a
-                href="/services"
-                className="border-2 border-slate-300 text-slate-700 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold hover:border-orange-500 hover:text-orange-500 transition-all duration-300 text-center inline-block"
+                <span className="flex items-center gap-2">
+                  Leistungen entdecken
+                  <Code className="w-4 h-4" />
+                </span>
+              </motion.button>
+              
+              <motion.button
+                onClick={() => scrollToSection("contact")}
+                className="border-2 border-slate-300 text-slate-700 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
+                style={{
+                  background: 'white',
+                  transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = '#07437c';
+                  e.currentTarget.style.color = '#fe7a33';
+                  e.currentTarget.style.borderColor = '#07437c';
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'white';
+                  e.currentTarget.style.color = '#374151';
+                  e.currentTarget.style.borderColor = '#d1d5db';
+                }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                data-testid="button-services-overview"
+                data-testid="button-contact"
               >
-                Weitere Leistungen
-              </motion.a>
+                <span className="flex items-center gap-2">
+                  Jetzt Kontakt aufnehmen
+                  <Brain className="w-4 h-4" />
+                </span>
+              </motion.button>
             </motion.div>
           </motion.div>
           
-          {/* Right side - Photo */}
+          {/* Right side - Image */}
           <motion.div 
-            className="flex justify-center lg:justify-end relative"
+            className="relative flex justify-center lg:justify-end mt-8 sm:mt-12 lg:mt-0"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
-            {/* Glow Effect Behind Image */}
-            <motion.div
-              className="absolute inset-0 -z-10"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 1.5, delay: 0.5 }}
-            >
-              <div 
-                className="w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-[500px] lg:w-96 lg:h-[600px] mx-auto rounded-3xl"
-                style={{
-                  background: 'radial-gradient(ellipse at center, rgba(254, 122, 51, 0.3) 0%, rgba(254, 122, 51, 0.15) 40%, rgba(7, 67, 124, 0.1) 70%, transparent 100%)',
-                  filter: 'blur(40px)',
-                  transform: 'scale(1.2)'
+            <div className="relative">
+              {/* Background decorative elements */}
+              <motion.div 
+                className="absolute -top-4 -left-4 w-24 sm:w-32 h-24 sm:h-32 bg-orange-300 rounded-full filter blur-2xl opacity-30"
+                animate={{ 
+                  scale: [1, 1.2, 1],
+                  rotate: [0, 90, 0]
+                }}
+                transition={{ 
+                  duration: 8,
+                  repeat: Infinity,
+                  ease: "easeInOut"
                 }}
               />
-            </motion.div>
-            
-            <motion.div 
-              className="w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-[500px] lg:w-96 lg:h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl ring-2 sm:ring-4 ring-white/50 backdrop-blur-sm drop-shadow-2xl relative z-10"
-              style={{
-                boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05)'
-              }}
-              whileHover={{ scale: 1.02 }}
-              transition={{ duration: 0.3 }}
-            >
-              <img 
-                src={andreImage} 
-                alt="Andre Szittnick - Professioneller Webdesigner" 
-                className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
-                data-testid="img-hero-photo"
+              <motion.div 
+                className="absolute -bottom-6 -right-6 w-32 sm:w-40 h-32 sm:h-40 bg-blue-300 rounded-full filter blur-3xl opacity-25"
+                animate={{ 
+                  scale: [1, 1.15, 1],
+                  rotate: [0, -120, 0]
+                }}
+                transition={{ 
+                  duration: 10,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                  delay: 2
+                }}
               />
-            </motion.div>
+              
+              {/* Main image container */}
+              <motion.div 
+                className="relative z-10 w-64 sm:w-80 lg:w-96 h-64 sm:h-80 lg:h-96"
+                whileHover={{ scale: 1.05 }}
+                transition={{ duration: 0.3 }}
+              >
+                <motion.img
+                  src={andreImage}
+                  alt="André Szittnick - AS ProDigital"
+                  className="w-full h-full object-cover rounded-3xl shadow-2xl"
+                  initial={{ scale: 0.8, opacity: 0 }}
+                  animate={{ scale: 1, opacity: 1 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                />
+                
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent rounded-3xl" />
+                
+                {/* Floating badge */}
+                <motion.div 
+                  className="absolute -bottom-4 -left-4 bg-white rounded-2xl shadow-xl p-3 sm:p-4"
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.2 }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className="flex items-center space-x-2 sm:space-x-3">
+                    <div className="w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full animate-pulse" />
+                    <span className="text-xs sm:text-sm font-semibold text-slate-700">Verfügbar für Projekte</span>
+                  </div>
+                </motion.div>
+                
+                {/* Experience badge */}
+                <motion.div 
+                  className="absolute -top-4 -right-4 bg-gradient-to-r from-orange-500 to-orange-600 text-white rounded-2xl shadow-xl p-3 sm:p-4"
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.6, delay: 1.4 }}
+                  whileHover={{ y: -5, scale: 1.05 }}
+                >
+                  <div className="text-center">
+                    <div className="text-lg sm:text-xl font-bold">3+</div>
+                    <div className="text-xs font-medium opacity-90">Jahre</div>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </div>
           </motion.div>
         </div>
       </div>
