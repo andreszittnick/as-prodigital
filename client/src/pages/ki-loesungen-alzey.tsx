@@ -1,4 +1,5 @@
 import Navigation from "@/components/navigation";
+import HeroSection from "@/components/hero-section";
 import Footer from "@/components/footer";
 import { motion } from "framer-motion";
 import { Brain, Bot, Zap, Cpu, CheckCircle, Star, MapPin, Phone, Mail } from "lucide-react";
@@ -67,38 +68,7 @@ export default function KiLoesungenAlzey() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Navigation />
-      
-      {/* Hero Section */}
-      <section className="pt-20 pb-16 px-4 bg-gradient-to-br from-purple-600 to-purple-800">
-        <div className="max-w-6xl mx-auto text-center text-white">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-          >
-            <h1 className="text-4xl md:text-6xl font-bold mb-6">
-              KI-Lösungen in <span className="text-orange-400">Alzey</span>
-            </h1>
-            <p className="text-xl md:text-2xl mb-8 max-w-4xl mx-auto">
-              Individuelle KI-Anwendungen für Unternehmen in Alzey und Umgebung. 
-              Automatisierung, Effizienz und Innovation für Ihren Geschäftserfolg.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <motion.button
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                className="bg-orange-500 hover:bg-orange-600 text-white px-8 py-4 rounded-2xl font-semibold text-lg transition-colors shadow-lg"
-              >
-                KI-Potenzial entdecken
-              </motion.button>
-              <div className="flex items-center text-orange-400">
-                <MapPin className="w-5 h-5 mr-2" />
-                <span>Alzey & 25km Umkreis</span>
-              </div>
-            </div>
-          </motion.div>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* Benefits Section */}
       <section className="py-20 px-4">
