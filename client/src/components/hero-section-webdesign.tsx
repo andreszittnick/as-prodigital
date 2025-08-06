@@ -100,7 +100,7 @@ export default function HeroSectionWebdesign() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <span className="text-slate-700">Webdesign das begeistert: </span>
+              <span className="text-slate-700">Modern. Schnell. </span>
               <TypingAnimationWebdesign />
             </motion.div>
             
