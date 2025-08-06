@@ -201,13 +201,16 @@ export default function WebdesignContentSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-              Platzhalter Überschrift 6
+              Mit Webdesign Vertrauen und Markenstärke aufbauen
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+              Eine professionelle Website ist oft der erste Berührungspunkt zwischen Ihnen und Ihren Kunden. Ein modernes Webdesign schafft hier Vertrauen und vermittelt sofort Kompetenz und Seriosität.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed mb-6">
+              Neben der optischen Wirkung spielt auch die Benutzerfreundlichkeit eine entscheidende Rolle. Besucher erwarten heute eine klare Navigation, kurze Ladezeiten und eine optimale Darstellung auf allen Endgeräten. Wenn Ihre Website diese Erwartungen erfüllt, bleiben Nutzer länger und beschäftigen sich intensiver mit Ihren Angeboten.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+              Gleichzeitig stärken Sie Ihre Markenidentität, wenn Design, Bildwelt und Texte ein stimmiges Gesamtbild ergeben. Auf diese Weise wird Ihre Website nicht nur zum Aushängeschild Ihres Unternehmens, sondern auch zu einem zentralen Werkzeug für die Kundengewinnung und Markenbindung.
             </p>
           </motion.div>
           <motion.div
