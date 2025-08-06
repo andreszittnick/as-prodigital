@@ -123,13 +123,19 @@ export default function WebdesignContentSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-              Platzhalter Überschrift 4
+              Webdesign als Grundlage für digitale Kundengewinnung
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime.
+              Ihre Website ist heute der wichtigste Vertriebskanal, denn die meisten Kunden informieren sich online, bevor sie eine Entscheidung treffen. Professionelles Webdesign ist daher die Grundlage für eine erfolgreiche Kundengewinnung im Internet.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed mb-6">
+              Ein überzeugendes Design verbindet ästhetische Gestaltung mit klarer Nutzerführung und Conversion-Optimierung. Besucher finden sich schnell zurecht, können Ihre Angebote leicht erfassen und werden gezielt zu Kontaktanfragen oder Käufen geführt.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed mb-6">
+              Zusätzlich profitieren Sie von SEO-Vorteilen: Eine saubere technische Struktur, optimierte Inhalte und mobile Darstellung sorgen für bessere Google-Rankings und langfristig mehr Reichweite.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae.
+              So wird Ihre Website von einer einfachen Visitenkarte zu einem leistungsstarken Marketing- und Vertriebstool, das Ihrem Unternehmen messbaren Erfolg bringt.
             </p>
           </motion.div>
           <motion.div
