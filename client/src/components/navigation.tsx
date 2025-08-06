@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown, Monitor, Search, Brain } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { useScrollPosition } from "@/hooks/use-scroll";
 import logoImage from "@assets/Logo_1754308337340.png";
@@ -87,30 +87,46 @@ export default function Navigation() {
                         { 
                           name: "Webdesign", 
                           href: "/services#webdesign",
-                          description: "Moderne, responsive Websites"
+                          description: "Moderne, responsive Websites",
+                          icon: Monitor,
+                          color: "text-blue-500"
                         },
                         { 
                           name: "Basic-SEO", 
                           href: "/services#seo",
-                          description: "Suchmaschinenoptimierung"
+                          description: "Suchmaschinenoptimierung",
+                          icon: Search,
+                          color: "text-green-500"
                         },
                         { 
                           name: "Individuelle KI-Lösungen", 
                           href: "/services#ki-loesungen",
-                          description: "Maßgeschneiderte KI-Anwendungen"
+                          description: "Maßgeschneiderte KI-Anwendungen",
+                          icon: Brain,
+                          color: "text-purple-500"
                         }
                       ].map((service, index) => (
                         <Link key={index} href={service.href}>
                           <motion.div
                             whileHover={{ backgroundColor: "rgba(254, 122, 51, 0.1)" }}
-                            className="px-4 py-3 cursor-pointer transition-colors duration-200"
+                            className="px-4 py-3 cursor-pointer transition-colors duration-200 flex items-start space-x-3"
                             data-testid={`dropdown-${service.name.toLowerCase().replace(/\s+/g, '-')}`}
                           >
-                            <div className="font-medium text-gray-900 dark:text-white">
-                              {service.name}
-                            </div>
-                            <div className="text-sm text-gray-600 dark:text-gray-300">
-                              {service.description}
+                            <motion.div
+                              initial={{ scale: 1, rotate: 0 }}
+                              whileHover={{ scale: 1.1, rotate: 5 }}
+                              transition={{ duration: 0.2 }}
+                              className={`mt-0.5 ${service.color}`}
+                            >
+                              <service.icon className="w-5 h-5" />
+                            </motion.div>
+                            <div className="flex-1">
+                              <div className="font-medium text-gray-900 dark:text-white">
+                                {service.name}
+                              </div>
+                              <div className="text-sm text-gray-600 dark:text-gray-300">
+                                {service.description}
+                              </div>
                             </div>
                           </motion.div>
                         </Link>
@@ -211,9 +227,24 @@ export default function Navigation() {
                       className="mt-2 ml-4 space-y-2"
                     >
                       {[
-                        { name: "Webdesign", href: "/services#webdesign" },
-                        { name: "Basic-SEO", href: "/services#seo" },
-                        { name: "Individuelle KI-Lösungen", href: "/services#ki-loesungen" }
+                        { 
+                          name: "Webdesign", 
+                          href: "/services#webdesign",
+                          icon: Monitor,
+                          color: "text-blue-500"
+                        },
+                        { 
+                          name: "Basic-SEO", 
+                          href: "/services#seo",
+                          icon: Search,
+                          color: "text-green-500"
+                        },
+                        { 
+                          name: "Individuelle KI-Lösungen", 
+                          href: "/services#ki-loesungen",
+                          icon: Brain,
+                          color: "text-purple-500"
+                        }
                       ].map((service, index) => (
                         <Link key={index} href={service.href}>
                           <motion.div
@@ -221,9 +252,17 @@ export default function Navigation() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
                             onClick={() => setIsOpen(false)}
-                            className="text-sm text-slate-500 hover:text-orange-500 cursor-pointer transition-colors duration-200 py-1"
+                            className="flex items-center space-x-2 text-sm text-slate-500 hover:text-orange-500 cursor-pointer transition-colors duration-200 py-1"
                           >
-                            {service.name}
+                            <motion.div
+                              initial={{ scale: 1, rotate: 0 }}
+                              whileHover={{ scale: 1.1, rotate: 5 }}
+                              transition={{ duration: 0.2 }}
+                              className={service.color}
+                            >
+                              <service.icon className="w-4 h-4" />
+                            </motion.div>
+                            <span>{service.name}</span>
                           </motion.div>
                         </Link>
                       ))}
