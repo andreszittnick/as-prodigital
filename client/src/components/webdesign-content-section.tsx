@@ -283,7 +283,7 @@ function PremiumDigitalServicesSection() {
     },
     {
       icon: Search,
-      title: "SEO-Basisoptimierung",
+      title: "SEO",
       description: "Ich kümmere mich darum, dass Ihre Website die wichtigsten SEO-Grundlagen erfüllt – von der technischen Struktur bis zu schnellen Ladezeiten. So legen wir den Grundstein dafür, dass Sie online sichtbar werden und mehr Menschen Ihre Seite finden.",
       features: ["Keyword-Recherche", "Technisches SEO", "Content-Strategie"],
       colorClass: "brand-blue"
@@ -341,7 +341,7 @@ function PremiumDigitalServicesSection() {
                 </p>
                 
                 {/* SEO Partnership Note - only for SEO card */}
-                {service.title === "SEO-Basisoptimierung" && (
+                {service.title === "SEO" && (
                   <motion.div
                     className="mt-2 mb-4 py-3 border-t border-b border-slate-200"
                     initial={{ opacity: 0 }}

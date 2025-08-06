@@ -25,7 +25,7 @@ Von der ersten Konzeption bis zur finalen Umsetzung begleite ich Sie durch den g
     },
     {
       icon: Search,
-      title: "Basic-SEO",
+      title: "SEO",
       description: "Bessere Sichtbarkeit in Suchmaschinen durch professionelle SEO-Strategien, die nachhaltig mehr organischen Traffic bringen.",
       features: [
         "Keyword-Analyse und -Optimierung",
@@ -35,7 +35,7 @@ Von der ersten Konzeption bis zur finalen Umsetzung begleite ich Sie durch den g
         "SEO-Monitoring und Reporting",
         "Technisches SEO"
       ],
-      textContent: `Suchmaschinenoptimierung ist essentiell für den Erfolg Ihrer Website. Mit meiner Basic-SEO Leistung sorge ich dafür, dass Ihre Website bei Google und anderen Suchmaschinen besser gefunden wird. Ich analysiere Ihre Zielgruppe, recherchiere relevante Keywords und optimiere Ihre Inhalte gezielt.
+      textContent: `Suchmaschinenoptimierung ist essentiell für den Erfolg Ihrer Website. Mit meiner SEO Leistung sorge ich dafür, dass Ihre Website bei Google und anderen Suchmaschinen besser gefunden wird. Ich analysiere Ihre Zielgruppe, recherchiere relevante Keywords und optimiere Ihre Inhalte gezielt.
 
 Mein Ansatz umfasst technische Optimierungen, On-Page-SEO und die Verbesserung der Ladegeschwindigkeit. Dabei achte ich darauf, dass alle Maßnahmen nachhaltig und Google-konform sind. Sie erhalten regelmäßige Reports über die Fortschritte und können den Erfolg der Optimierungen direkt verfolgen.`,
       color: "bg-green-500"

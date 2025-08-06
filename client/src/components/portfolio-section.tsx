@@ -7,19 +7,19 @@ const portfolioItems = [
     title: "Projekt 1",
     description: "Projekt 1 - Beschreibung",
     image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    tags: ["Webdesign", "Basic-SEO", "KI-Integration"]
+    tags: ["Webdesign", "SEO", "KI-Integration"]
   },
   {
     title: "Projekt 2",
     description: "Projekt 2 - Beschreibung",
     image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    tags: ["Webdesign", "Basic-SEO"]
+    tags: ["Webdesign", "SEO"]
   },
   {
     title: "Projekt 3",
     description: "Projekt 3 - Beschreibung",
     image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=800&h=600",
-    tags: ["Webdesign", "Basic-SEO"]
+    tags: ["Webdesign", "SEO"]
   }
 ];
 

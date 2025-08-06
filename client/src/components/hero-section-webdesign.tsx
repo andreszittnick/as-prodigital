@@ -89,7 +89,7 @@ export default function HeroSectionWebdesign() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <span className="gradient-text">Effektives Basic-SEO</span><br />
+              <span className="gradient-text">Effektives SEO</span><br />
               <span className="text-slate-900">für mehr Reichweite und neue Kunden</span>
             </motion.h1>
             
@@ -110,7 +110,7 @@ export default function HeroSectionWebdesign() {
               transition={{ duration: 0.6, delay: 0.5 }}
             >
               <p>
-                Ich helfe Ihnen dabei, Ihre Website bei Google sichtbarer zu machen und neue Besucher auf Ihre Angebote aufmerksam zu machen. Mit Basic-SEO optimiere ich Ihre Seite technisch und inhaltlich, damit sie langfristig besser gefunden wird.
+                Ich helfe Ihnen dabei, Ihre Website bei Google sichtbarer zu machen und neue Besucher auf Ihre Angebote aufmerksam zu machen. Mit SEO optimiere ich Ihre Seite technisch und inhaltlich, damit sie langfristig besser gefunden wird.
                 <br /><br />
                 Von der Keyword-Analyse über die OnPage-Optimierung bis hin zu strukturierten Inhalten – ich lege die Basis für eine bessere Platzierung in den Suchergebnissen und damit für mehr Anfragen über Ihre Website.
               </p>

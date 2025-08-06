@@ -92,7 +92,7 @@ export default function Navigation() {
                           color: "text-blue-500"
                         },
                         { 
-                          name: "Basic-SEO", 
+                          name: "SEO", 
                           href: "/seo-alzey",
                           description: "Suchmaschinenoptimierung",
                           icon: Search,
@@ -235,7 +235,7 @@ export default function Navigation() {
                           color: "text-blue-500"
                         },
                         { 
-                          name: "Basic-SEO", 
+                          name: "SEO", 
                           href: "/seo-alzey",
                           icon: Search,
                           color: "text-green-500"
