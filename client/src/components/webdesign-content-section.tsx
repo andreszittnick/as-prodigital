@@ -349,7 +349,7 @@ function PremiumDigitalServicesSection() {
                     transition={{ duration: 0.6, delay: (index * 0.2) + 0.8 }}
                   >
                     <p className="text-xs text-slate-500 leading-relaxed">
-                      Für tiefgehendes SEO, SEA- & Meta-Ads arbeite ich mit der{" "}
+                      Für SEA-, Meta-Ads & Brandbuilding arbeite ich mit der{" "}
                       <a 
                         href="https://dmberatung.de/" 
                         target="_blank" 
