@@ -7,6 +7,7 @@ This is a modern full-stack web application built for a digital agency called "A
 Preferred communication style: Simple, everyday language.
 Brand colors: Use #fe7a33 (orange) and #07437c (blue) separately - do not mix/gradient the colors together.
 Website language: German (all content translated from English to German).
+Page-specific modifications: When user requests changes to a specific subpage (e.g., "Webdesign-Unterseite"), only modify that exact page. Do not apply changes to other subpages unless explicitly requested.
 
 # System Architecture
 
