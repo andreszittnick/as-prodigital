@@ -6,7 +6,7 @@ export default function WebdesignContentSection() {
     <section className="py-16 lg:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section 1: Bild links, Text rechts */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16 lg:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16 lg:mb-24">
           <motion.div
             className="order-2 lg:order-1"
             initial={{ opacity: 0, x: -50 }}
@@ -14,7 +14,7 @@ export default function WebdesignContentSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="aspect-[4/3] bg-gradient-to-br from-orange-100 to-blue-100 rounded-2xl flex items-center justify-center">
+            <div className="h-full min-h-[300px] bg-gradient-to-br from-orange-100 to-blue-100 rounded-2xl flex items-center justify-center">
               <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center">
                 <Monitor className="w-8 h-8 text-white" />
               </div>
@@ -43,7 +43,7 @@ export default function WebdesignContentSection() {
         </div>
 
         {/* Section 2: Text links, Bild rechts */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16 lg:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16 lg:mb-24">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -69,7 +69,7 @@ export default function WebdesignContentSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="aspect-[4/3] bg-gradient-to-br from-blue-100 to-orange-100 rounded-2xl flex items-center justify-center">
+            <div className="h-full min-h-[300px] bg-gradient-to-br from-blue-100 to-orange-100 rounded-2xl flex items-center justify-center">
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
                 <Search className="w-8 h-8 text-white" />
               </div>
@@ -78,7 +78,7 @@ export default function WebdesignContentSection() {
         </div>
 
         {/* Section 3: Bild links, Text rechts */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16 lg:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16 lg:mb-24">
           <motion.div
             className="order-2 lg:order-1"
             initial={{ opacity: 0, x: -50 }}
@@ -86,7 +86,7 @@ export default function WebdesignContentSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="aspect-[4/3] bg-gradient-to-br from-orange-100 to-blue-100 rounded-2xl flex items-center justify-center">
+            <div className="h-full min-h-[300px] bg-gradient-to-br from-orange-100 to-blue-100 rounded-2xl flex items-center justify-center">
               <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center">
                 <Brain className="w-8 h-8 text-white" />
               </div>
@@ -115,7 +115,7 @@ export default function WebdesignContentSection() {
         </div>
 
         {/* Section 4: Text links, Bild rechts */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16 lg:mb-24">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -144,7 +144,7 @@ export default function WebdesignContentSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="aspect-[4/3] bg-gradient-to-br from-blue-100 to-orange-100 rounded-2xl flex items-center justify-center">
+            <div className="h-full min-h-[300px] bg-gradient-to-br from-blue-100 to-orange-100 rounded-2xl flex items-center justify-center">
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
                 <Code className="w-8 h-8 text-white" />
               </div>
@@ -153,7 +153,7 @@ export default function WebdesignContentSection() {
         </div>
 
         {/* Section 5: Bild links, Text rechts */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center mb-16 lg:mb-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16 lg:mb-24">
           <motion.div
             className="order-2 lg:order-1"
             initial={{ opacity: 0, x: -50 }}
@@ -161,7 +161,7 @@ export default function WebdesignContentSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="aspect-[4/3] bg-gradient-to-br from-orange-100 to-blue-100 rounded-2xl flex items-center justify-center">
+            <div className="h-full min-h-[300px] bg-gradient-to-br from-orange-100 to-blue-100 rounded-2xl flex items-center justify-center">
               <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center">
                 <Monitor className="w-8 h-8 text-white" />
               </div>
@@ -193,7 +193,7 @@ export default function WebdesignContentSection() {
         </div>
 
         {/* Section 6: Text links, Bild rechts */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -219,7 +219,7 @@ export default function WebdesignContentSection() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <div className="aspect-[4/3] bg-gradient-to-br from-blue-100 to-orange-100 rounded-2xl flex items-center justify-center">
+            <div className="h-full min-h-[300px] bg-gradient-to-br from-blue-100 to-orange-100 rounded-2xl flex items-center justify-center">
               <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
                 <Brain className="w-8 h-8 text-white" />
               </div>
