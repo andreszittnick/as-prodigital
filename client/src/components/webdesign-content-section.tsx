@@ -424,10 +424,10 @@ function PremiumDigitalServicesSection() {
 export default function WebdesignContentSection() {
   return (
     <>
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section 1: Bild links, Text rechts */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16 lg:mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16">
             <motion.div
               className="order-2 lg:order-1"
               initial={{ opacity: 0, x: -50 }}
@@ -464,7 +464,7 @@ export default function WebdesignContentSection() {
           </div>
 
           {/* Section 2: Text links, Bild rechts */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16 lg:mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -501,10 +501,10 @@ export default function WebdesignContentSection() {
       </section>
 
       {/* Why Choose Section */}
-      <section className="py-16 lg:py-24 bg-slate-50">
+      <section className="py-20 bg-slate-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div 
-            className="text-center mb-12 sm:mb-16"
+            className="text-center mb-16"
             initial={{ opacity: 0, y: 50 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
@@ -598,10 +598,10 @@ export default function WebdesignContentSection() {
       </section>
 
       {/* Content Section continued */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section 3: Bild links, Text rechts */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16 lg:mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16">
             <motion.div
               className="order-2 lg:order-1"
               initial={{ opacity: 0, x: -50 }}
@@ -638,7 +638,7 @@ export default function WebdesignContentSection() {
           </div>
 
           {/* Section 4: Text links, Bild rechts */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16 lg:mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -678,7 +678,7 @@ export default function WebdesignContentSection() {
       </section>
 
       {/* Von Ihrer Idee zum digitalen Erfolg - Process Timeline Section */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+      <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 opacity-5">
           <div className="absolute top-20 left-10 w-32 h-32 bg-[#fe7a33] rounded-full blur-3xl"></div>
@@ -692,10 +692,10 @@ export default function WebdesignContentSection() {
       </section>
 
       {/* Content Section continued */}
-      <section className="py-16 lg:py-24 bg-white">
+      <section className="py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Section 5: Bild links, Text rechts */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16 lg:mb-24">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16">
             <motion.div
               className="order-2 lg:order-1"
               initial={{ opacity: 0, x: -50 }}

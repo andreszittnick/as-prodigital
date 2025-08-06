@@ -64,7 +64,7 @@ Meine Lösungen sind praktisch orientiert und bringen echten Mehrwert für Ihr U
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 px-4">
+      <section className="py-20 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -82,7 +82,7 @@ Meine Lösungen sind praktisch orientiert und bringen echten Mehrwert für Ihr U
       </section>
 
       {/* Main Services Section */}
-      <section className="pb-20 px-4">
+      <section className="py-20 px-4">
         <div className="max-w-7xl mx-auto">
           <div className="space-y-16">
             {mainServices.map((service, index) => (

@@ -114,10 +114,10 @@ export default function PortfolioSection() {
   const statsInView = useInView(statsRef, { once: true, margin: "-100px" });
 
   return (
-    <section id="portfolio" className="py-16 sm:py-20 bg-slate-50" ref={ref}>
+    <section id="portfolio" className="py-20 bg-slate-50" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-16"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}

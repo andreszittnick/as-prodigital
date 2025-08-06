@@ -50,7 +50,7 @@ const ProcessTimeline = () => {
   ];
 
   return (
-    <section id="process" className="py-16 sm:py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+    <section id="process" className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-32 h-32 bg-[#fe7a33] rounded-full blur-3xl"></div>
@@ -59,7 +59,7 @@ const ProcessTimeline = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative">
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
+        <div className="text-center mb-16">
           <motion.div
             className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-slate-200 mb-6"
             initial={{ opacity: 0, y: 20 }}
