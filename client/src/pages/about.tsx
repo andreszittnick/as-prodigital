@@ -1,0 +1,243 @@
+import Navigation from "@/components/navigation";
+import Footer from "@/components/footer";
+import { motion } from "framer-motion";
+import { Award, Users, Coffee, Code2, Target, Heart } from "lucide-react";
+import profileImage from "@assets/Bild_Andre_Szittnick_1754308315756.jpg";
+
+export default function About() {
+  const stats = [
+    { number: "50+", label: "Erfolgreiche Projekte", icon: Award },
+    { number: "30+", label: "Zufriedene Kunden", icon: Users },
+    { number: "1000+", label: "Kaffees getrunken", icon: Coffee },
+    { number: "5+", label: "Jahre Erfahrung", icon: Code2 }
+  ];
+
+  const values = [
+    {
+      icon: Target,
+      title: "Perfektion im Detail",
+      description: "Jedes Projekt bekommt meine volle Aufmerksamkeit. Ich glaube, dass Exzellenz in den Details liegt und jeder Pixel zählt."
+    },
+    {
+      icon: Heart,
+      title: "Leidenschaft für Technologie",
+      description: "Technologie ist nicht nur mein Beruf, sondern meine Berufung. Ich liebe es, innovative Lösungen zu entwickeln, die wirklich einen Unterschied machen."
+    },
+    {
+      icon: Users,
+      title: "Partnerschaftlicher Ansatz",
+      description: "Ich sehe meine Kunden als Partner. Gemeinsam entwickeln wir Lösungen, die nicht nur funktionieren, sondern begeistern."
+    }
+  ];
+
+  const timeline = [
+    {
+      year: "2019",
+      title: "Die Anfänge",
+      description: "Erste Schritte in der Webentwicklung während des Studiums. Entwicklung von einfachen Websites für lokale Unternehmen."
+    },
+    {
+      year: "2020",
+      title: "Spezialisierung",
+      description: "Fokus auf moderne JavaScript-Frameworks und responsive Design. Erste größere E-Commerce Projekte."
+    },
+    {
+      year: "2021",
+      title: "KI-Integration",
+      description: "Beginn der Arbeit mit KI-Technologien und Machine Learning. Entwicklung intelligenter Automatisierungslösungen."
+    },
+    {
+      year: "2022",
+      title: "AS-ProDigital Gründung",
+      description: "Offizielle Gründung von AS-ProDigital. Fokus auf ganzheitliche digitale Transformationsprojekte."
+    },
+    {
+      year: "2023",
+      title: "Expansion der Services",
+      description: "Erweiterung des Portfolios um SEO-Optimierung und Digital Marketing. Aufbau eines Netzwerks von Partnern."
+    },
+    {
+      year: "2024",
+      title: "Innovation & Zukunft",
+      description: "Kontinuierliche Weiterentwicklung mit neuesten Technologien. Fokus auf nachhaltige und zukunftsfähige Lösungen."
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+      <Navigation />
+      
+      {/* Hero Section */}
+      <section className="pt-20 pb-16 px-4">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8 }}
+            >
+              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+                Über <span className="text-orange-500">André Szittnick</span>
+              </h1>
+              <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300">
+                <p>
+                  Hallo! Ich bin André, ein leidenschaftlicher Webentwickler und digitaler Stratege 
+                  aus München. Seit über 5 Jahren verwandle ich die Visionen meiner Kunden in 
+                  beeindruckende digitale Realitäten.
+                </p>
+                <p>
+                  Meine Mission ist es, Unternehmen dabei zu helfen, ihr volles digitales Potenzial 
+                  zu entfalten. Durch die Kombination von modernem Design, neuesten Technologien 
+                  und strategischem Denken schaffe ich Lösungen, die nicht nur funktionieren, 
+                  sondern begeistern.
+                </p>
+                <p>
+                  Was mich besonders antreibt, ist die enge Zusammenarbeit mit meinen Kunden. 
+                  Jedes Projekt ist eine Partnerschaft, in der ich nicht nur als Entwickler, 
+                  sondern als strategischer Berater agiere.
+                </p>
+              </div>
+            </motion.div>
+            
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative w-full max-w-md mx-auto">
+                <div className="absolute inset-0 bg-gradient-to-br from-orange-500 to-blue-600 rounded-3xl transform rotate-6"></div>
+                <img 
+                  src={profileImage} 
+                  alt="André Szittnick"
+                  className="relative w-full h-auto rounded-3xl shadow-2xl"
+                />
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-16 bg-white dark:bg-gray-800">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+            {stats.map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.1 }}
+                className="text-center"
+              >
+                <div className="bg-orange-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                  <stat.icon className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
+                  {stat.number}
+                </div>
+                <div className="text-gray-600 dark:text-gray-300">
+                  {stat.label}
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-20 px-4">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Meine <span className="text-orange-500">Werte</span>
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              Was mich bei jedem Projekt antreibt
+            </p>
+          </motion.div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            {values.map((value, index) => (
+              <motion.div
+                key={value.title}
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg text-center"
+              >
+                <div className="bg-blue-600 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-6">
+                  <value.icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4">
+                  {value.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {value.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="py-20 bg-white dark:bg-gray-800">
+        <div className="max-w-4xl mx-auto px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+              Meine <span className="text-orange-500">Reise</span>
+            </h2>
+            <p className="text-xl text-gray-600 dark:text-gray-300">
+              Von den ersten Schritten bis heute
+            </p>
+          </motion.div>
+
+          <div className="relative">
+            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-orange-500"></div>
+            
+            {timeline.map((item, index) => (
+              <motion.div
+                key={item.year}
+                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className={`relative flex items-center mb-12 ${
+                  index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+                }`}
+              >
+                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
+                  <div className="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg">
+                    <div className="text-orange-500 font-bold text-xl mb-2">
+                      {item.year}
+                    </div>
+                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
+                      {item.title}
+                    </h3>
+                    <p className="text-gray-600 dark:text-gray-300">
+                      {item.description}
+                    </p>
+                  </div>
+                </div>
+                
+                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-orange-500 rounded-full border-4 border-white dark:border-gray-800"></div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <Footer />
+    </div>
+  );
+}
