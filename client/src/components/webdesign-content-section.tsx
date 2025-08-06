@@ -51,13 +51,16 @@ export default function WebdesignContentSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-              Platzhalter Überschrift 2
+              Modernes Webdesign steigert Ihre Sichtbarkeit
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
+              Ein professionelles Webdesign ist nicht nur für Ihre Besucher wichtig, sondern auch für Suchmaschinen wie Google. Technisch saubere und optisch ansprechende Websites werden von Suchmaschinen bevorzugt, weil sie den Nutzern ein besseres Erlebnis bieten.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed mb-6">
+              Ein gutes Webdesign umfasst daher schnelle Ladezeiten, mobilfreundliche Strukturen und eine intuitive Navigation. Wenn Ihre Besucher schnell finden, was sie suchen, steigt die Verweildauer – ein wichtiger Faktor für Ihr Ranking.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
+              Darüber hinaus trägt ein modernes Design dazu bei, dass Ihre Marke kompetent, vertrauenswürdig und professionell wahrgenommen wird. Wer beim ersten Eindruck überzeugt, gewinnt nicht nur neue Kunden, sondern stärkt auch langfristig seine Markenpräsenz im digitalen Raum.
             </p>
           </motion.div>
           <motion.div
