@@ -109,7 +109,8 @@ export default function Navigation() {
                         <Link key={index} href={service.href}>
                           <motion.div
                             whileHover={{ backgroundColor: "rgba(254, 122, 51, 0.1)" }}
-                            className="px-4 py-3 cursor-pointer transition-colors duration-200 flex items-start space-x-3"
+                            transition={{ duration: 0.05 }}
+                            className="px-4 py-3 cursor-pointer flex items-start space-x-3"
                             data-testid={`dropdown-${service.name.toLowerCase().replace(/\s+/g, '-')}`}
                           >
                             <motion.div
@@ -252,7 +253,7 @@ export default function Navigation() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
                             onClick={() => setIsOpen(false)}
-                            className="flex items-center space-x-2 text-sm text-slate-500 hover:text-orange-500 cursor-pointer transition-colors duration-200 py-1"
+                            className="flex items-center space-x-2 text-sm text-slate-500 hover:text-orange-500 cursor-pointer transition-colors duration-75 py-1"
                           >
                             <motion.div
                               initial={{ scale: 1, rotate: 0 }}
