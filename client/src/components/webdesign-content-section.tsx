@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Code, Brain, Monitor, Search } from "lucide-react";
+import { Code, Brain, Monitor, Search, DollarSign, Users, Zap } from "lucide-react";
 
 export default function WebdesignContentSection() {
   return (
@@ -75,6 +75,103 @@ export default function WebdesignContentSection() {
               </div>
             </div>
           </motion.div>
+        </div>
+
+        {/* Why Choose Section */}
+        <div className="py-16 lg:py-24 bg-slate-50 rounded-3xl mb-16 lg:mb-24">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div 
+              className="text-center mb-12 sm:mb-16"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
+                Warum ich der richtige <span className="text-orange-500">Partner</span> für Ihr Projekt bin
+              </h2>
+              <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto px-4 sm:px-0">
+                Erleben Sie den Unterschied bei der Zusammenarbeit mit einem engagierten Digitalspezialisten, der Ihren Erfolg an erste Stelle setzt.
+              </p>
+            </motion.div>
+            
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+              <motion.div
+                className="group relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0 }}
+                whileHover={{ y: -8 }}
+                viewport={{ once: true }}
+              >
+                <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative">
+                  <motion.div 
+                    className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <DollarSign className="text-white w-10 h-10" />
+                  </motion.div>
+                  
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Keine Agentur-Preise</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    Direkte Zusammenarbeit ohne Agentur-Aufschläge - transparente, faire Preise für Premium-Qualität.
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                className="group relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                whileHover={{ y: -8 }}
+                viewport={{ once: true }}
+              >
+                <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative">
+                  <motion.div 
+                    className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Users className="text-white w-10 h-10" />
+                  </motion.div>
+                  
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Persönliche Beratung von Anfang bis Ende</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    Individuelle Betreuung während Ihres gesamten Projekts mit persönlicher Aufmerksamkeit.
+                  </p>
+                </div>
+              </motion.div>
+
+              <motion.div
+                className="group relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center"
+                initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6, delay: 0.4 }}
+                whileHover={{ y: -8 }}
+                viewport={{ once: true }}
+              >
+                <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative">
+                  <motion.div 
+                    className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Zap className="text-white w-10 h-10" />
+                  </motion.div>
+                  
+                  <h3 className="text-2xl font-bold text-slate-900 mb-4">Schnelle Umsetzung</h3>
+                  <p className="text-slate-600 leading-relaxed">
+                    Kurze Umsetzungszeiten ohne Qualitätsverlust - Ihr Projekt wird effizient und professionell geliefert.
+                  </p>
+                </div>
+              </motion.div>
+            </div>
+          </div>
         </div>
 
         {/* Section 3: Bild links, Text rechts */}
