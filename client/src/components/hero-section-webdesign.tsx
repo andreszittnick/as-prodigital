@@ -151,33 +151,6 @@ export default function HeroSectionWebdesign() {
                   Webdesign anfragen
                 </span>
               </motion.button>
-              
-              <motion.button
-                onClick={() => scrollToSection("contact")}
-                className="border-2 border-slate-300 text-slate-700 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
-                style={{
-                  background: 'white',
-                  transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.background = '#07437c';
-                  e.currentTarget.style.color = '#fe7a33';
-                  e.currentTarget.style.borderColor = '#07437c';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'white';
-                  e.currentTarget.style.color = '#374151';
-                  e.currentTarget.style.borderColor = '#d1d5db';
-                }}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                data-testid="button-contact"
-              >
-                <span className="flex items-center gap-2">
-                  Jetzt Kontakt aufnehmen
-                  <Brain className="w-4 h-4" />
-                </span>
-              </motion.button>
             </motion.div>
           </motion.div>
           
