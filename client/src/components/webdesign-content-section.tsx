@@ -28,16 +28,16 @@ export default function WebdesignContentSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-              Modernes Webdesign für einen starken ersten Eindruck
+              Professionelles Webdesign für Ihren Online-Erfolg
             </h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              Ein professionelles Webdesign entscheidet heute darüber, ob ein Besucher auf Ihrer Website bleibt oder sie nach wenigen Sekunden wieder verlässt. Ihre Website ist das digitale Gesicht Ihres Unternehmens und vermittelt auf den ersten Blick, wie modern, zuverlässig und kompetent Sie sind. Deshalb sollte ein gelungener Internetauftritt nicht nur optisch ansprechend sein, sondern auch funktional und benutzerfreundlich.
+              Eine moderne Website ist heute weit mehr als nur ein digitales Schaufenster – sie ist der zentrale Baustein Ihres Online-Marketings. Mit einem professionellen Webdesign hinterlassen Sie bei Besuchern sofort einen positiven Eindruck und steigern die Wahrscheinlichkeit, dass aus Interessenten Kunden werden.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
-              Ein erfolgreiches Webdesign kombiniert ästhetische Gestaltung, klare Strukturen und technische Optimierung. Dazu gehören kurze Ladezeiten, eine mobilfreundliche Darstellung und eine intuitive Navigation, die Besucher gezielt zu Ihren Angeboten führt. Suchmaschinen wie Google belohnen saubere und nutzerfreundliche Websites mit besseren Platzierungen – so erreichen Sie langfristig mehr Sichtbarkeit und gewinnen neue Kunden.
+              Ein durchdachtes Webdesign überzeugt durch klare Strukturen, schnelle Ladezeiten und mobile Optimierung. Da immer mehr Nutzer über Smartphones auf Websites zugreifen, ist Responsive Design unverzichtbar. Gleichzeitig sorgt eine saubere technische Umsetzung dafür, dass Google Ihre Seite als benutzerfreundlich einstuft und mit besseren Platzierungen belohnt.
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
-              Mit einem individuell entwickelten Webdesign schaffen Sie die perfekte Basis für einen erfolgreichen Online-Auftritt und heben sich nachhaltig von Ihren Wettbewerbern ab.
+              So wird Ihre Website nicht nur optisch zum Aushängeschild Ihres Unternehmens, sondern auch zu einem wirksamen Marketinginstrument, das Ihnen langfristig mehr Sichtbarkeit und neue Kunden bringt.
             </p>
           </motion.div>
         </div>
