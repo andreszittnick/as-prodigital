@@ -110,8 +110,8 @@ export default function HeroSectionSeoSimple() {
               </p>
               <br />
               <div className="space-y-2">
-                <div className="text-lg font-bold text-slate-800">Ihre Vision. Meine Mission.</div>
-                <div className="font-medium text-slate-600">Damit Ihr Online-Auftritt begeistert</div>
+                <div className="text-lg font-bold text-slate-800">Ihre Sichtbarkeit. Mein Ziel.</div>
+                <div className="font-medium text-slate-600">Damit Ihre Website von Kunden gefunden wird.</div>
               </div>
             </motion.div>
             
