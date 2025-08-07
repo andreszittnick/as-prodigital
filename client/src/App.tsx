@@ -17,13 +17,13 @@ function Router() {
   return (
     <Switch>
       <Route path="/" component={Home} />
-      <Route path="/services" component={Services} />
+      <Route path="/Leistungen" component={Services} />
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
-      <Route path="/webdesign-alzey" component={WebdesignAlzey} />
-      <Route path="/seo-alzey" component={SeoAlzey} />
-      <Route path="/ki-loesungen-alzey" component={KiLoesungenAlzey} />
+      <Route path="/Webdesign" component={WebdesignAlzey} />
+      <Route path="/SEO" component={SeoAlzey} />
+      <Route path="/KI-Lösungen" component={KiLoesungenAlzey} />
       <Route component={NotFound} />
     </Switch>
   );

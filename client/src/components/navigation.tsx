@@ -56,10 +56,10 @@ export default function Navigation() {
               onMouseEnter={() => setIsServicesHovered(true)}
               onMouseLeave={() => setIsServicesHovered(false)}
             >
-              <Link href="/services">
+              <Link href="/Leistungen">
                 <span
                   className={`flex items-center transition-colors duration-300 cursor-pointer ${
-                    location === "/services" 
+                    location === "/Leistungen" 
                       ? "text-orange-500 font-semibold" 
                       : "text-slate-600 hover:text-orange-500"
                   }`}
@@ -86,21 +86,21 @@ export default function Navigation() {
                       {[
                         { 
                           name: "Webdesign", 
-                          href: "/webdesign-alzey",
+                          href: "/Webdesign",
                           description: "Moderne, responsive Websites",
                           icon: Monitor,
                           color: "text-blue-500"
                         },
                         { 
                           name: "SEO", 
-                          href: "/seo-alzey",
+                          href: "/SEO",
                           description: "Suchmaschinenoptimierung",
                           icon: Search,
                           color: "text-green-500"
                         },
                         { 
                           name: "Individuelle KI-Lösungen", 
-                          href: "/ki-loesungen-alzey",
+                          href: "/KI-Lösungen",
                           description: "Maßgeschneiderte KI-Anwendungen",
                           icon: Brain,
                           color: "text-purple-500"
@@ -195,11 +195,11 @@ export default function Navigation() {
               {/* Mobile Services Dropdown */}
               <div>
                 <div className="flex items-center justify-between">
-                  <Link href="/services">
+                  <Link href="/Leistungen">
                     <span
                       onClick={() => setIsOpen(false)}
                       className={`transition-colors duration-300 text-left cursor-pointer ${
-                        location === "/services" 
+                        location === "/Leistungen" 
                           ? "text-orange-500 font-semibold" 
                           : "text-slate-600 hover:text-orange-500"
                       }`}
@@ -230,19 +230,19 @@ export default function Navigation() {
                       {[
                         { 
                           name: "Webdesign", 
-                          href: "/webdesign-alzey",
+                          href: "/Webdesign",
                           icon: Monitor,
                           color: "text-blue-500"
                         },
                         { 
                           name: "SEO", 
-                          href: "/seo-alzey",
+                          href: "/SEO",
                           icon: Search,
                           color: "text-green-500"
                         },
                         { 
                           name: "Individuelle KI-Lösungen", 
-                          href: "/ki-loesungen-alzey",
+                          href: "/KI-Lösungen",
                           icon: Brain,
                           color: "text-purple-500"
                         }
