@@ -472,16 +472,16 @@ export default function WebdesignContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                <span className="text-orange-500">Modernes Webdesign</span> steigert Ihre Sichtbarkeit
+                Technisches SEO: Die Basis für gute Google-Rankings
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Ein professionelles Webdesign ist nicht nur für Ihre Besucher wichtig, sondern auch für Suchmaschinen wie Google. Technisch saubere und optisch ansprechende Websites werden von Suchmaschinen bevorzugt, weil sie den Nutzern ein besseres Erlebnis bieten.
+                Technisches SEO ist das unsichtbare Fundament Ihrer Website – und unverzichtbar, wenn Sie bei Google erfolgreich sein möchten. Denn nur wenn Ihre Seite technisch sauber aufgebaut ist, kann sie von Suchmaschinen vollständig erfasst und korrekt bewertet werden.
               </p>
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Ein gutes Webdesign umfasst daher schnelle Ladezeiten, mobilfreundliche Strukturen und eine intuitive Navigation. Wenn Ihre Besucher schnell finden, was sie suchen, steigt die Verweildauer – ein wichtiger Faktor für Ihr Ranking.
+                Zu den wichtigsten Maßnahmen zählen die Optimierung von Ladezeiten, die Mobilfreundlichkeit (Responsive Design), eine fehlerfreie Indexierung sowie die Strukturierung mit sprechenden URLs, H1/H2-Hierarchien und internen Verlinkungen.
               </p>
               <p className="text-lg text-slate-600 leading-relaxed">
-                Darüber hinaus trägt ein modernes Design dazu bei, dass Ihre Marke kompetent, vertrauenswürdig und professionell wahrgenommen wird. Wer beim ersten Eindruck überzeugt, gewinnt nicht nur neue Kunden, sondern stärkt auch langfristig seine Markenpräsenz im digitalen Raum.
+                Ich überprüfe Ihre Website auf technische Schwächen und behebe sie gezielt – damit Ihre Seite eine stabile Grundlage für erfolgreiche SEO-Strategien bietet.
               </p>
             </motion.div>
             <motion.div
