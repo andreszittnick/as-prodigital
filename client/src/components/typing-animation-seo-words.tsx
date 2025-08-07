@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useState, useEffect } from "react";
 
-const words = ["Sichtbar", "Nachhaltig", "Erfolgreich", "Umsatzsteigernd", "Gewinnbringend"];
+const words = ["Erfolgreich", "Umsatzsteigernd", "Gewinnbringend"];
 
 export default function TypingAnimationSeoWords() {
   const [currentWordIndex, setCurrentWordIndex] = useState(0);
@@ -35,12 +35,12 @@ export default function TypingAnimationSeoWords() {
   }, [charIndex, isDeleting, currentWordIndex]);
 
   return (
-    <span className="gradient-text">
+    <span className="text-orange-500 font-semibold">
       {currentWord}
       <motion.span
         animate={{ opacity: [1, 0] }}
         transition={{ duration: 0.8, repeat: Infinity }}
-        className="ml-1 text-orange-500"
+        className="ml-1"
       >
         |
       </motion.span>

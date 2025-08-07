@@ -93,6 +93,7 @@ export default function HeroSectionSeoSimple() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
+              <span className="text-slate-700">Sichtbar. Nachhaltig. </span>
               <TypingAnimationSeoWords />
             </motion.div>
             
