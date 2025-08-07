@@ -23,7 +23,7 @@ function Router() {
       <Route path="/Kontakt" component={Contact} />
       <Route path="/Webdesign" component={WebdesignAlzey} />
       <Route path="/SEO" component={SeoAlzey} />
-      <Route path="/KI-Lösungen" component={KiLoesungenAlzey} />
+      <Route path="/KI-Loesungen" component={KiLoesungenAlzey} />
       <Route component={NotFound} />
     </Switch>
   );

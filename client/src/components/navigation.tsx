@@ -100,7 +100,7 @@ export default function Navigation() {
                         },
                         { 
                           name: "Individuelle KI-Lösungen", 
-                          href: "/KI-Lösungen",
+                          href: "/KI-Loesungen",
                           description: "Maßgeschneiderte KI-Anwendungen",
                           icon: Brain,
                           color: "text-purple-500"
@@ -242,7 +242,7 @@ export default function Navigation() {
                         },
                         { 
                           name: "Individuelle KI-Lösungen", 
-                          href: "/KI-Lösungen",
+                          href: "/KI-Loesungen",
                           icon: Brain,
                           color: "text-purple-500"
                         }
