@@ -1,6 +1,6 @@
 import Navigation from "@/components/navigation";
 import HeroSectionSeoSimple from "@/components/hero-section-seo-simple";
-import WebdesignContentSection from "@/components/webdesign-content-section";
+import SeoContentSection from "@/components/seo-content-section";
 import ContactSectionWebdesign from "@/components/contact-section-webdesign";
 import Footer from "@/components/footer";
 
@@ -10,7 +10,7 @@ export default function SeoAlzey() {
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Navigation />
       <HeroSectionSeoSimple />
-      <WebdesignContentSection />
+      <SeoContentSection />
       
       {/* Contact Section */}
       <ContactSectionWebdesign />
