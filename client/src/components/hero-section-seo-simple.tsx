@@ -122,7 +122,7 @@ export default function HeroSectionSeoSimple() {
               transition={{ duration: 0.6, delay: 0.7 }}
             >
               <motion.button
-                onClick={() => scrollToSection("services")}
+                onClick={() => window.location.href = '/Kontakt'}
                 className="text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
                 style={{
                   background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
@@ -138,9 +138,9 @@ export default function HeroSectionSeoSimple() {
                 }}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                data-testid="button-explore-services"
+                data-testid="button-seo-request"
               >
-                Meine Leistungen
+                SEO anfragen
               </motion.button>
               <motion.button
                 onClick={() => scrollToSection("portfolio")}
