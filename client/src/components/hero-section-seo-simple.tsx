@@ -83,7 +83,7 @@ export default function HeroSectionSeoSimple() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <span className="gradient-text">Effektives Basic-SEO</span><br />
+              <span className="gradient-text">Effektive SEO</span><br />
               <span className="text-slate-900">für mehr Reichweite und neue Kunden</span>
             </motion.h1>
             
