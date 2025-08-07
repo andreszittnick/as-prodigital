@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
 import andreImage from "@assets/Bild_Andre_Szittnick_1754308315756.jpg";
-import TypingAnimation from "./typing-animation";
+import TypingAnimationSeoWords from "./typing-animation-seo-words";
 
 export default function HeroSectionSeoSimple() {
   const scrollToSection = (sectionId: string) => {
@@ -93,8 +93,7 @@ export default function HeroSectionSeoSimple() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <span className="text-slate-700">Verbessern Sie Ihre digitale </span>
-              <TypingAnimation />
+              <TypingAnimationSeoWords />
             </motion.div>
             
             <motion.div 
