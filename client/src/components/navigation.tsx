@@ -157,10 +157,10 @@ export default function Navigation() {
               </Link>
             ))}
             
-            <Link href="/contact">
+            <Link href="/Kontakt">
               <motion.button
                 className={`text-white px-4 py-2 lg:px-6 lg:py-2 text-sm lg:text-base rounded-full font-medium hover:shadow-lg transition-all duration-300 ${
-                  location === "/contact" 
+                  location === "/Kontakt" 
                     ? "bg-orange-600" 
                     : "brand-gradient"
                 }`}
@@ -292,11 +292,11 @@ export default function Navigation() {
                 </Link>
               ))}
               
-              <Link href="/contact">
+              <Link href="/Kontakt">
                 <button
                   onClick={() => setIsOpen(false)}
                   className={`transition-colors duration-300 text-left ${
-                    location === "/contact" 
+                    location === "/Kontakt" 
                       ? "text-orange-500 font-semibold" 
                       : "text-slate-600 hover:text-orange-500"
                   }`}

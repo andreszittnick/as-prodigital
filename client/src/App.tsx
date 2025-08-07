@@ -20,7 +20,7 @@ function Router() {
       <Route path="/Leistungen" component={Services} />
       <Route path="/portfolio" component={Portfolio} />
       <Route path="/ueber-mich" component={About} />
-      <Route path="/contact" component={Contact} />
+      <Route path="/Kontakt" component={Contact} />
       <Route path="/Webdesign" component={WebdesignAlzey} />
       <Route path="/SEO" component={SeoAlzey} />
       <Route path="/KI-Lösungen" component={KiLoesungenAlzey} />
