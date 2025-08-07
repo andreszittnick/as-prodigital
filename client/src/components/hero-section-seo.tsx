@@ -51,10 +51,10 @@ export default function HeroSectionSeo() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.3 }}
             >
-              Professionelle SEO für Ihren 
+              Effektives Basic-SEO
               <br />
               <span className="relative">
-                <span className="gradient-text">nachhaltigen Erfolg</span>
+                <span className="gradient-text">für mehr Reichweite und neue Kunden</span>
                 <motion.div 
                   className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-orange-500 to-orange-300 rounded-full"
                   initial={{ width: 0 }}
