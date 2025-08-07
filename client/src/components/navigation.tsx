@@ -141,7 +141,7 @@ export default function Navigation() {
             {/* Other Navigation Items */}
             {[
               { name: "Portfolio", href: "/portfolio" },
-              { name: "Über mich", href: "/about" },
+              { name: "Über mich", href: "/ueber-mich" },
             ].map((item, index) => (
               <Link key={index} href={item.href}>
                 <span
@@ -275,7 +275,7 @@ export default function Navigation() {
               {/* Other Mobile Navigation Items */}
               {[
                 { name: "Portfolio", href: "/portfolio" },
-                { name: "Über mich", href: "/about" },
+                { name: "Über mich", href: "/ueber-mich" },
               ].map((item, index) => (
                 <Link key={index} href={item.href}>
                   <span

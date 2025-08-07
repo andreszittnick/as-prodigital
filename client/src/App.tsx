@@ -19,7 +19,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/Leistungen" component={Services} />
       <Route path="/portfolio" component={Portfolio} />
-      <Route path="/about" component={About} />
+      <Route path="/ueber-mich" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/Webdesign" component={WebdesignAlzey} />
       <Route path="/SEO" component={SeoAlzey} />
