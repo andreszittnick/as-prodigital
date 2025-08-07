@@ -449,16 +449,16 @@ export default function WebdesignContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                <span className="text-orange-500">Professionelles Webdesign</span> für Ihren Online-Erfolg
+                SEO-Optimierung: Sichtbarkeit steigern und Kunden gewinnen
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Eine moderne Website ist heute weit mehr als nur ein digitales Schaufenster – sie ist der zentrale Baustein Ihres Online-Marketings. Mit einem professionellen Webdesign hinterlassen Sie bei Besuchern sofort einen positiven Eindruck und steigern die Wahrscheinlichkeit, dass aus Interessenten Kunden werden.
+                Wer bei Google nicht gefunden wird, existiert online kaum. Mit professioneller SEO-Optimierung sorgen Sie dafür, dass Ihre Website in den Suchergebnissen sichtbar wird – genau dann, wenn potenzielle Kunden nach Ihren Produkten oder Dienstleistungen suchen.
               </p>
               <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Ein durchdachtes Webdesign überzeugt durch klare Strukturen, schnelle Ladezeiten und mobile Optimierung. Da immer mehr Nutzer über Smartphones auf Websites zugreifen, ist Responsive Design unverzichtbar. Gleichzeitig sorgt eine saubere technische Umsetzung dafür, dass Google Ihre Seite als benutzerfreundlich einstuft und mit besseren Platzierungen belohnt.
+                Die Optimierung umfasst technische Aspekte wie Ladegeschwindigkeit, mobile Darstellung und Indexierbarkeit, aber auch inhaltliche Faktoren wie Keyword-Platzierung, strukturierte Inhalte und Meta-Texte.
               </p>
               <p className="text-lg text-slate-600 leading-relaxed">
-                So wird Ihre Website nicht nur optisch zum Aushängeschild Ihres Unternehmens, sondern auch zu einem wirksamen Marketinginstrument, das Ihnen langfristig mehr Sichtbarkeit und neue Kunden bringt.
+                Ich analysiere Ihre aktuelle Website und entwickle eine maßgeschneiderte SEO-Strategie, die langfristig wirkt. So steigern Sie nicht nur Ihre Reichweite, sondern auch die Qualität der Besucher – und damit Ihre Chancen auf echte Anfragen und Verkäufe.
               </p>
             </motion.div>
           </div>
