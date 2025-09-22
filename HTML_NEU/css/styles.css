@@ -546,7 +546,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Transform */
 .transform { transform: translateZ(0); }
-.-translate-x-1\\/2 { transform: translateX(-50%); }
+.-translate-x-1-2 { transform: translateX(-50%); }
 
 /* Cursor */
 .cursor-pointer { cursor: pointer; }

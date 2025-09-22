@@ -1,10 +1,15 @@
 import type { Express } from "express";
 import { createServer, type Server } from "http";
+import path from "path";
+import express from "express";
 import { storage } from "./storage";
 import { insertContactInquirySchema } from "@shared/schema";
 import { z } from "zod";
 
 export async function registerRoutes(app: Express): Promise<Server> {
+  
+  // Serve static HTML files from HTML_NEU folder
+  app.use('/HTML_NEU', express.static(path.join(process.cwd(), 'HTML_NEU')));
   
   // Contact form submission endpoint
   app.post("/api/contact", async (req, res) => {
