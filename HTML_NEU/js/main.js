@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initScrollAnimations();
   initButtonEffects();
   initFloatingOrbs();
+  initContactForm();
 });
 
 // Mobile Navigation Toggle
@@ -261,19 +262,60 @@ function initContactForm() {
     const message = document.getElementById('message')?.value.trim();
     
     if (!name || !email || !message) {
-      alert('Bitte füllen Sie alle Felder aus.');
+      showAlert('Bitte füllen Sie alle Pflichtfelder aus.', 'error');
       return;
     }
     
     if (!isValidEmail(email)) {
-      alert('Bitte geben Sie eine gültige E-Mail-Adresse ein.');
+      showAlert('Bitte geben Sie eine gültige E-Mail-Adresse ein.', 'error');
       return;
     }
     
     // Here you would typically send the form data to your server
-    alert('Vielen Dank für Ihre Nachricht! Ich werde mich schnellstmöglich bei Ihnen melden.');
+    showAlert('Vielen Dank für Ihre Nachricht! Ich werde mich innerhalb von 24 Stunden bei Ihnen melden.', 'success');
     contactForm.reset();
   });
+}
+
+// Show Alert Function
+function showAlert(message, type = 'info') {
+  // Remove existing alerts
+  const existingAlerts = document.querySelectorAll('.alert-message');
+  existingAlerts.forEach(alert => alert.remove());
+  
+  // Create alert element
+  const alertDiv = document.createElement('div');
+  alertDiv.className = `alert-message fixed top-20 left-1/2 transform -translate-x-1/2 z-50 px-6 py-4 rounded-lg shadow-lg max-w-md w-full mx-4`;
+  alertDiv.setAttribute('role', 'alert');
+  
+  if (type === 'success') {
+    alertDiv.className += ' bg-green-500 text-white';
+  } else if (type === 'error') {
+    alertDiv.className += ' bg-red-500 text-white';
+  } else {
+    alertDiv.className += ' bg-blue-500 text-white';
+  }
+  
+  alertDiv.innerHTML = `
+    <div class="flex items-center justify-between">
+      <span>${message}</span>
+      <button onclick="this.parentElement.parentElement.remove()" class="ml-4 text-white hover:text-gray-200">
+        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+  `;
+  
+  // Add to document
+  document.body.appendChild(alertDiv);
+  
+  // Auto remove after 5 seconds
+  setTimeout(() => {
+    if (alertDiv.parentElement) {
+      alertDiv.remove();
+    }
+  }, 5000);
 }
 
 // Email validation helper
