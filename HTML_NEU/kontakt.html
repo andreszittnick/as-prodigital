@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - André Szittnick | AS-ProDigital</title>
+    <meta name="description" content="Kontaktieren Sie André Szittnick für professionelles Webdesign und SEO in Alzey. Kostenlose Beratung für Ihr digitales Projekt.">
+    
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="icon" type="image/png" href="img/favicon_1754308330285.png">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-300 bg-white/90 backdrop-filter border-b border-slate-200/50 shadow-sm">
+        <div class="container">
+            <div class="flex justify-between items-center h-16">
+                <a href="index.html" class="flex items-center" data-testid="logo-link">
+                    <img src="img/Logo_1754308337340.png" alt="AS-ProDigital Logo" class="h-10 w-auto object-contain">
+                </a>
+                
+                <div class="hidden md:flex items-center space-x-6 lg:space-x-8">
+                    <div class="relative" id="services-dropdown-container">
+                        <a href="leistungen.html" class="flex items-center transition-colors duration-300 cursor-pointer text-slate-600 hover:text-orange-500" data-testid="nav-leistungen">
+                            Leistungen
+                            <svg class="ml-1 w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                            </svg>
+                        </a>
+                        
+                        <div id="services-dropdown" class="hidden absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-gray-200 overflow-hidden z-50">
+                            <div class="py-2">
+                                <a href="webdesign.html" class="px-4 py-3 cursor-pointer flex items-start space-x-3 hover:bg-orange-50 transition-all duration-200" data-testid="dropdown-webdesign">
+                                    <div class="mt-0.5 text-blue-500">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="font-medium text-gray-900">Webdesign</div>
+                                        <div class="text-sm text-gray-600">Moderne, responsive Websites</div>
+                                    </div>
+                                </a>
+                                <a href="seo.html" class="px-4 py-3 cursor-pointer flex items-start space-x-3 hover:bg-orange-50 transition-all duration-200" data-testid="dropdown-seo">
+                                    <div class="mt-0.5 text-green-500">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <circle cx="11" cy="11" r="8"></circle>
+                                            <path d="m21 21-4.35-4.35"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="font-medium text-gray-900">SEO</div>
+                                        <div class="text-sm text-gray-600">Suchmaschinenoptimierung</div>
+                                    </div>
+                                </a>
+                                <a href="ki-loesungen.html" class="px-4 py-3 cursor-pointer flex items-start space-x-3 hover:bg-orange-50 transition-all duration-200" data-testid="dropdown-ki-loesungen">
+                                    <div class="mt-0.5 text-purple-500">
+                                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.51 2.51 0 0 1-2.96-3.08 3.001 3.001 0 0 1-.38-5.72 2.99 2.99 0 0 1 .1-3.54 3.007 3.007 0 0 1 2.68-2.62A2.5 2.5 0 0 1 9.5 2Z"></path>
+                                            <path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.51 2.51 0 0 0 2.96-3.08 3.001 3.001 0 0 0 .38-5.72 2.99 2.99 0 0 0-.1-3.54 3.007 3.007 0 0 0-2.68-2.62A2.5 2.5 0 0 0 14.5 2Z"></path>
+                                        </svg>
+                                    </div>
+                                    <div class="flex-1">
+                                        <div class="font-medium text-gray-900">Individuelle KI-Lösungen</div>
+                                        <div class="text-sm text-gray-600">Maßgeschneiderte KI-Anwendungen</div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="portfolio.html" class="transition-colors duration-300 cursor-pointer text-slate-600 hover:text-orange-500" data-testid="nav-portfolio">Portfolio</a>
+                    <a href="ueber-mich.html" class="transition-colors duration-300 cursor-pointer text-slate-600 hover:text-orange-500" data-testid="nav-ueber-mich">Über mich</a>
+                    <a href="kontakt.html"><button class="btn-primary bg-orange-600" data-testid="nav-contact">Kontakt</button></a>
+                </div>
+                
+                <button class="md:hidden p-2" id="mobile-menu-button" data-testid="mobile-menu-button">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </div>
+
+        <div id="mobile-menu" class="hidden md:hidden">
+            <div class="bg-white border-t border-slate-200 py-4">
+                <div class="container flex flex-col space-y-4">
+                    <a href="leistungen.html" class="text-slate-600 hover:text-orange-500 transition-colors duration-300">Leistungen</a>
+                    <a href="webdesign.html" class="ml-4 text-sm text-slate-500 hover:text-orange-500 transition-colors duration-300">→ Webdesign</a>
+                    <a href="seo.html" class="ml-4 text-sm text-slate-500 hover:text-orange-500 transition-colors duration-300">→ SEO</a>
+                    <a href="ki-loesungen.html" class="ml-4 text-sm text-slate-500 hover:text-orange-500 transition-colors duration-300">→ KI-Lösungen</a>
+                    <a href="portfolio.html" class="text-slate-600 hover:text-orange-500 transition-colors duration-300">Portfolio</a>
+                    <a href="ueber-mich.html" class="text-slate-600 hover:text-orange-500 transition-colors duration-300">Über mich</a>
+                    <a href="kontakt.html" class="text-orange-500 font-semibold">Kontakt</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br" style="background: linear-gradient(to bottom right, var(--slate-50), white, var(--orange-50));">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="floating-orb orb1 animate-float1"></div>
+            <div class="floating-orb orb2 animate-float2"></div>
+            <div class="floating-orb orb3 animate-float3"></div>
+        </div>
+        
+        <div class="relative container pt-16 sm:pt-20">
+            <div class="text-center max-w-4xl mx-auto">
+                <div class="mb-6 animate-fade-in delay-200">
+                    <span class="text-slate-600 font-medium text-xl">Lassen Sie uns sprechen</span>
+                </div>
+                
+                <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6 animate-fade-in delay-300">
+                    <span class="gradient-text">Kontakt</span> <span class="text-slate-900">aufnehmen</span>
+                </h1>
+                
+                <p class="text-base sm:text-lg lg:text-xl text-slate-600 mb-8 sm:mb-12 leading-relaxed animate-fade-in delay-500">
+                    Haben Sie Fragen zu meinen Leistungen oder möchten Sie ein Projekt besprechen?<br />
+                    Ich freue mich auf Ihre Nachricht!
+                </p>
+                
+                <div class="scroll-indicator animate-fade-in delay-1000" onclick="scrollToSection('contact-form')">
+                    <svg class="w-6 h-6 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section id="contact-form" class="py-16 sm:py-20 lg:py-24 bg-white">
+        <div class="container">
+            <div class="max-w-4xl mx-auto">
+                <div class="grid lg:grid-cols-2 gap-12 lg:gap-16">
+                    <!-- Contact Information -->
+                    <div class="animate-on-scroll">
+                        <div class="animate-child">
+                            <h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 text-slate-900">
+                                Bereit für Ihr <span class="gradient-text">digitales Projekt</span>?
+                            </h2>
+                            
+                            <p class="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">
+                                Gerne berate ich Sie kostenlos und unverbindlich zu Ihren Möglichkeiten. Lassen Sie uns gemeinsam Ihre digitale Zukunft gestalten.
+                            </p>
+                            
+                            <!-- Contact Details -->
+                            <div class="space-y-6 mb-8">
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-orange-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-6 h-6 text-orange-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-slate-900 mb-1">E-Mail</h3>
+                                        <p class="text-slate-600">info@as-prodigital.de</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-slate-900 mb-1">Standort</h3>
+                                        <p class="text-slate-600">Alzey, Rheinhessen</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="flex items-start gap-4">
+                                    <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0">
+                                        <svg class="w-6 h-6 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                        </svg>
+                                    </div>
+                                    <div>
+                                        <h3 class="font-semibold text-slate-900 mb-1">Antwortzeit</h3>
+                                        <p class="text-slate-600">Innerhalb von 24 Stunden</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Contact Form -->
+                    <div class="animate-on-scroll">
+                        <div class="animate-child">
+                            <form id="contact-form" class="space-y-6">
+                                <div class="grid sm:grid-cols-2 gap-6">
+                                    <div>
+                                        <label for="name" class="block text-sm font-medium text-slate-700 mb-2">Name *</label>
+                                        <input 
+                                            type="text" 
+                                            id="name" 
+                                            name="name" 
+                                            required 
+                                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200"
+                                            placeholder="Ihr vollständiger Name"
+                                        >
+                                    </div>
+                                    
+                                    <div>
+                                        <label for="email" class="block text-sm font-medium text-slate-700 mb-2">E-Mail *</label>
+                                        <input 
+                                            type="email" 
+                                            id="email" 
+                                            name="email" 
+                                            required 
+                                            class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200"
+                                            placeholder="ihre.email@beispiel.de"
+                                        >
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <label for="subject" class="block text-sm font-medium text-slate-700 mb-2">Betreff</label>
+                                    <input 
+                                        type="text" 
+                                        id="subject" 
+                                        name="subject" 
+                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200"
+                                        placeholder="Worum geht es?"
+                                    >
+                                </div>
+                                
+                                <div>
+                                    <label for="message" class="block text-sm font-medium text-slate-700 mb-2">Nachricht *</label>
+                                    <textarea 
+                                        id="message" 
+                                        name="message" 
+                                        rows="6" 
+                                        required 
+                                        class="w-full px-4 py-3 border border-slate-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 transition-colors duration-200 resize-none"
+                                        placeholder="Erzählen Sie mir von Ihrem Projekt oder Ihren Fragen..."
+                                    ></textarea>
+                                </div>
+                                
+                                <div>
+                                    <button 
+                                        type="submit" 
+                                        class="btn-primary w-full" 
+                                        data-testid="button-send-message"
+                                    >
+                                        Nachricht senden
+                                    </button>
+                                </div>
+                                
+                                <div class="text-sm text-slate-500">
+                                    <p>* Pflichtfelder. Ihre Daten werden vertraulich behandelt und nicht an Dritte weitergegeben.</p>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-white py-12">
+        <div class="container">
+            <div class="grid md:grid-cols-3 gap-8 items-center">
+                <div class="flex items-center animate-fade-in">
+                    <img src="img/Logo_1754308337340.png" alt="AS-ProDigital Logo" class="h-8 w-auto object-contain">
+                </div>
+                
+                <div class="text-center md:text-center animate-fade-in delay-200">
+                    <p class="text-slate-400">
+                        © 2025 André Szittnick | AS-ProDigital.<br />
+                        Alle Rechte vorbehalten.
+                    </p>
+                </div>
+                
+                <div class="flex justify-start md:justify-end space-x-6 animate-fade-in delay-400">
+                    <a href="#" class="text-slate-400 hover:text-orange-500 transition-colors duration-300" data-testid="link-privacy">Datenschutz</a>
+                    <a href="#" class="text-slate-400 hover:text-orange-500 transition-colors duration-300" data-testid="link-terms">AGB</a>
+                    <a href="#" class="text-slate-400 hover:text-orange-500 transition-colors duration-300" data-testid="link-imprint">Impressum</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>

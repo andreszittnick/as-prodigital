@@ -312,6 +312,18 @@ h1, h2, h3, h4, h5, h6 {
   50% { transform: translateY(-8px); }
 }
 
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 @keyframes typing {
   from { width: 0; }
   to { width: 100%; }
@@ -327,6 +339,13 @@ h1, h2, h3, h4, h5, h6 {
 .animate-float2 { animation: float2 18s ease-in-out infinite 3s; }
 .animate-float3 { animation: float3 20s ease-in-out infinite 6s; }
 .animate-bounce { animation: bounce 2s ease-in-out infinite; }
+
+/* Dynamic Background Animation */
+.dynamic-background {
+  background: linear-gradient(-45deg, #fe7a33, #07437c, #fe7a33, #07437c, #fe7a33);
+  background-size: 500% 500%;
+  animation: gradient-flow 12s ease infinite;
+}
 
 .animate-fade-in { animation: fadeInUp 0.8s ease-out forwards; }
 .animate-fade-in-left { animation: fadeInLeft 0.8s ease-out forwards; }
