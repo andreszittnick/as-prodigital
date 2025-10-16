@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kontakt - AS-ProDigital | André Szittnick</title>
+    <meta name="description" content="Kontaktieren Sie André Szittnick für Ihr digitales Projekt. Webdesign, SEO und KI-Lösungen in München. Kostenloses Erstberatungsgespräch.">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- SVG Icons -->
+    <svg style="display: none;">
+        <symbol id="icon-menu" viewBox="0 0 24 24">
+            <path d="M3 12h18M3 6h18M3 18h18"/>
+        </symbol>
+        <symbol id="icon-close" viewBox="0 0 24 24">
+            <path d="M18 6L6 18M6 6l12 12"/>
+        </symbol>
+    </svg>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo" data-testid="logo">
+                <img src="assets/Logo_AS_ProDigital_white_1751812009653.png" alt="AS-ProDigital Logo">
+            </a>
+            
+            <ul class="navbar-menu">
+                <li class="navbar-item dropdown">
+                    <a href="leistungen.html" class="navbar-link dropdown-toggle" data-testid="nav-leistungen">
+                        Leistungen
+                        <svg class="dropdown-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </a>
+                    <div class="dropdown-menu">
+                        <a href="webdesign.html" class="dropdown-item">
+                            <svg class="dropdown-item-icon" style="color: #fe7a33;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M20 8h-2.81a5.985 5.985 0 0 0 .82-3c0-3.31-2.69-6-6-6S6 1.69 6 5c0 1.11.31 2.14.82 3H4c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zM12 1c2.21 0 4 1.79 4 4s-1.79 4-4 4-4-1.79-4-4 1.79-4 4-4zm8 19H4V10h16v10z"/>
+                            </svg>
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-title">Webdesign</div>
+                                <div class="dropdown-item-desc">Moderne, responsive Websites</div>
+                            </div>
+                        </a>
+                        <a href="seo.html" class="dropdown-item">
+                            <svg class="dropdown-item-icon" style="color: #10b981;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/>
+                                <path d="m21 21-4.35-4.35"/>
+                            </svg>
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-title">SEO</div>
+                                <div class="dropdown-item-desc">Suchmaschinenoptimierung</div>
+                            </div>
+                        </a>
+                        <a href="ki-loesungen.html" class="dropdown-item">
+                            <svg class="dropdown-item-icon" style="color: #8b5cf6;" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M12 2a2 2 0 0 1 2 2c0 .74-.4 1.39-1 1.73V7h1a7 7 0 0 1 7 7h-1.73c.34.6.73 1.26.73 2a2 2 0 0 1-2 2c-.74 0-1.39-.4-1.73-1H15v1.27c.6.34 1 .99 1 1.73 0 1.11-.89 2-2 2a2 2 0 0 1-2-2c0-.74.4-1.39 1-1.73V17H9.73c-.34.6-.99 1-1.73 1a2 2 0 0 1-2-2c0-.74.4-1.39 1-1.73V13H5.73c-.34.6-.99 1-1.73 1a2 2 0 0 1-2-2c0-1.11.89-2 2-2 .74 0 1.39.4 1.73 1H7a7 7 0 0 1 7-7h1V5.73c-.6-.34-1-.99-1-1.73a2 2 0 0 1 2-2z"/>
+                            </svg>
+                            <div class="dropdown-item-content">
+                                <div class="dropdown-item-title">Individuelle KI-Lösungen</div>
+                                <div class="dropdown-item-desc">Maßgeschneiderte KI-Anwendungen</div>
+                            </div>
+                        </a>
+                    </div>
+                </li>
+                <li class="navbar-item">
+                    <a href="portfolio.html" class="navbar-link">Portfolio</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="ueber-mich.html" class="navbar-link">Über mich</a>
+                </li>
+                <li class="navbar-item">
+                    <a href="kontakt.html" class="navbar-link btn-contact">Kontakt</a>
+                </li>
+            </ul>
+            
+            <button class="mobile-menu-btn">
+                <svg width="24" height="24"><use href="#icon-menu"/></svg>
+            </button>
+        </div>
+        
+        <div class="mobile-menu">
+            <div class="mobile-menu-items">
+                <div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <a href="leistungen.html" class="navbar-link">Leistungen</a>
+                        <button class="mobile-dropdown-toggle">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M6 9l6 6 6-6"/>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mobile-dropdown">
+                        <a href="webdesign.html" class="mobile-dropdown-item">Webdesign</a>
+                        <a href="seo.html" class="mobile-dropdown-item">SEO</a>
+                        <a href="ki-loesungen.html" class="mobile-dropdown-item">KI-Lösungen</a>
+                    </div>
+                </div>
+                <a href="portfolio.html" class="navbar-link">Portfolio</a>
+                <a href="ueber-mich.html" class="navbar-link">Über mich</a>
+                <a href="kontakt.html" class="navbar-link">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero">
+        <div class="container">
+            <div class="contact-hero-content">
+                <h1>Lassen Sie uns über Ihr <span class="gradient-text">Projekt</span> sprechen</h1>
+                <p>Ich freue mich darauf, von Ihnen zu hören und gemeinsam Ihre digitale Vision zu verwirklichen. Kontaktieren Sie mich für ein unverbindliches Beratungsgespräch.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-main">
+        <div class="container">
+            <div class="contact-grid">
+                <!-- Contact Form -->
+                <div class="contact-form-card">
+                    <div class="form-header">
+                        <div class="form-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                            </svg>
+                        </div>
+                        <h2>Projekt anfragen</h2>
+                    </div>
+                    
+                    <form id="contactForm" class="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="name">Name *</label>
+                                <input type="text" id="name" name="name" placeholder="Ihr vollständiger Name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-Mail *</label>
+                                <input type="email" id="email" name="email" placeholder="ihre@email.de" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">Telefon (optional)</label>
+                                <input type="tel" id="phone" name="phone" placeholder="+49 ...">
+                            </div>
+                            <div class="form-group">
+                                <label for="projectType">Projekttyp *</label>
+                                <select id="projectType" name="projectType" required>
+                                    <option value="">Projekttyp auswählen</option>
+                                    <option value="webdesign">Webdesign & Entwicklung</option>
+                                    <option value="seo">SEO-Optimierung</option>
+                                    <option value="ki">KI-gestützte Lösungen</option>
+                                    <option value="ecommerce">E-Commerce</option>
+                                    <option value="mobile">Mobile App</option>
+                                    <option value="other">Sonstiges</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Betreff *</label>
+                            <input type="text" id="subject" name="subject" placeholder="Kurze Beschreibung Ihres Projekts" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Nachricht *</label>
+                            <textarea id="message" name="message" rows="5" placeholder="Beschreiben Sie Ihr Projekt im Detail. Je mehr Informationen Sie mir geben, desto besser kann ich Ihnen helfen." required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn-primary btn-full">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="m22 2-7 20-4-9-9-4 20-7z"/>
+                                <path d="M22 2 11 13"/>
+                            </svg>
+                            Nachricht senden
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Contact Info -->
+                <div class="contact-info">
+                    <div class="contact-info-header">
+                        <h2>Kontaktinformationen</h2>
+                        <p>Ich bin gerne für Sie da! Nutzen Sie eine der folgenden Möglichkeiten, um mit mir in Kontakt zu treten.</p>
+                    </div>
+                    
+                    <div class="contact-info-cards">
+                        <a href="mailto:Info@AS-ProDigital.de" class="info-card">
+                            <div class="info-icon brand-gradient">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                    <path d="m22 6-10 7L2 6"/>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h3>E-Mail</h3>
+                                <p>Info@AS-ProDigital.de</p>
+                            </div>
+                        </a>
+                        
+                        <a href="tel:+4989123456789" class="info-card">
+                            <div class="info-icon brand-blue">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h3>Telefon</h3>
+                                <p>+49 (0) 89 123 456 789</p>
+                            </div>
+                        </a>
+                        
+                        <div class="info-card">
+                            <div class="info-icon brand-gradient">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h3>Standort</h3>
+                                <p>München, Bayern</p>
+                            </div>
+                        </div>
+                        
+                        <div class="info-card">
+                            <div class="info-icon brand-blue">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 6v6l4 2"/>
+                                </svg>
+                            </div>
+                            <div class="info-content">
+                                <h3>Verfügbarkeit</h3>
+                                <p>Mo-Fr: 9:00 - 18:00 Uhr</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="consultation-box">
+                        <h3>Kostenloses Erstberatungsgespräch</h3>
+                        <p>Lassen Sie uns gemeinsam über Ihr Projekt sprechen. Das erste Beratungsgespräch ist für Sie völlig kostenfrei und unverbindlich.</p>
+                        <div class="consultation-duration">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="M12 6v6l4 2"/>
+                            </svg>
+                            <span>30 Minuten - Ohne Verpflichtung</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <img src="assets/Logo_AS_ProDigital_white_1751812009653.png" alt="AS-ProDigital">
+                    </div>
+                    <p>Ihr Partner für professionelles Webdesign, SEO-Optimierung und innovative KI-Lösungen.</p>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.4 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.5c-1.5 0-1.96.93-1.96 1.89v2.26h3.32l-.53 3.5h-2.8V24C19.62 23.1 24 18.1 24 12.07"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.97.24 2.43.4.61.24 1.04.52 1.5.98.46.46.74.89.98 1.5.16.46.35 1.26.4 2.43.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.24 1.97-.4 2.43-.24.61-.52 1.04-.98 1.5-.46.46-.89.74-1.5.98-.46.16-1.26.35-2.43.4-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.97-.24-2.43-.4-.61-.24-1.04-.52-1.5-.98-.46-.46-.74-.89-.98-1.5-.16-.46-.35-1.26-.4-2.43C2.17 15.58 2.16 15.2 2.16 12s.01-3.58.07-4.85c.05-1.17.24-1.97.4-2.43.24-.61.52-1.04.98-1.5.46-.46.89-.74 1.5-.98.46-.16 1.26-.35 2.43-.4C8.42 2.17 8.8 2.16 12 2.16M12 0C8.74 0 8.33.01 7.05.07 5.78.13 4.9.33 4.14.63c-.79.3-1.46.72-2.13 1.39C1.35 2.68.93 3.35.63 4.14.33 4.9.13 5.78.07 7.05.01 8.33 0 8.74 0 12s.01 3.67.07 4.95c.06 1.27.26 2.15.56 2.91.3.79.72 1.46 1.39 2.13.67.67 1.34 1.09 2.13 1.39.76.3 1.64.5 2.91.56C8.33 23.99 8.74 24 12 24s3.67-.01 4.95-.07c1.27-.06 2.15-.26 2.91-.56.79-.3 1.46-.72 2.13-1.39.67-.67 1.09-1.34 1.39-2.13.3-.76.5-1.64.56-2.91.06-1.28.07-1.69.07-4.95s-.01-3.67-.07-4.95c-.06-1.27-.26-2.15-.56-2.91-.3-.79-.72-1.46-1.39-2.13-.67-.67-1.34-1.09-2.13-1.39-.76-.3-1.64-.5-2.91-.56C15.67.01 15.26 0 12 0z"/>
+                                <path d="M12 5.84a6.16 6.16 0 1 0 0 12.32 6.16 6.16 0 0 0 0-12.32zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8z"/>
+                                <circle cx="18.41" cy="5.59" r="1.44"/>
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="WhatsApp">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Leistungen</h4>
+                    <ul>
+                        <li><a href="webdesign.html">Webdesign</a></li>
+                        <li><a href="seo.html">SEO-Optimierung</a></li>
+                        <li><a href="ki-loesungen.html">KI-Lösungen</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Unternehmen</h4>
+                    <ul>
+                        <li><a href="ueber-mich.html">Über mich</a></li>
+                        <li><a href="portfolio.html">Portfolio</a></li>
+                        <li><a href="kontakt.html">Kontakt</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Rechtliches</h4>
+                    <ul>
+                        <li><a href="#">Impressum</a></li>
+                        <li><a href="#">Datenschutz</a></li>
+                        <li><a href="#">AGB</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 AS-ProDigital | André Szittnick. Alle Rechte vorbehalten.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
