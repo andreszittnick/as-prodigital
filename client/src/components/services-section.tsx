@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Palette, Search, Check } from "lucide-react";
+import { Palette, Search, TrendingUp, Check } from "lucide-react";
 
 const services = [
   {
@@ -13,10 +13,17 @@ const services = [
   },
   {
     icon: Search,
-    title: "SEO",
+    title: "SEO-Setup",
     description: "Ich kümmere mich darum, dass Ihre Website die wichtigsten SEO-Grundlagen erfüllt – von der technischen Struktur bis zu schnellen Ladezeiten. So legen wir den Grundstein dafür, dass Sie online sichtbar werden und mehr Menschen Ihre Seite finden.",
     features: ["Keyword-Recherche", "Technisches SEO", "Content-Strategie"],
     colorClass: "brand-blue"
+  },
+  {
+    icon: TrendingUp,
+    title: "SEO-Management",
+    description: "Ich optimiere Ihre Website fortlaufend, damit sie langfristig sichtbar bleibt und wächst. Durch regelmäßige Analysen, neue Inhalte und gezielte Anpassungen stärken wir Ihr Ranking bei Google – nachhaltig, transparent und auf Ihre Ziele abgestimmt.",
+    features: ["Laufende Analyse", "Content-Pflege", "Strategische Weiterentwicklung"],
+    colorClass: "brand-gradient"
   }
 ];
 
@@ -41,7 +48,7 @@ export default function ServicesSection() {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
