@@ -3,7 +3,6 @@ import HeroSection from "@/components/hero-section";
 import WhyChooseSection from "@/components/why-choose-section";
 import ProcessTimeline from "@/components/process-timeline";
 import ServicesSection from "@/components/services-section";
-import PortfolioSection from "@/components/portfolio-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
 
@@ -15,7 +14,6 @@ export default function Home() {
       <WhyChooseSection />
       <ProcessTimeline />
       <ServicesSection />
-      <PortfolioSection />
       <ContactSection />
       <Footer />
     </div>
