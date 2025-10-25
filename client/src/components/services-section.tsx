@@ -41,7 +41,7 @@ export default function ServicesSection() {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -63,32 +63,9 @@ export default function ServicesSection() {
                 </motion.div>
                 
                 <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                <p className="text-slate-600 mb-3 leading-relaxed flex-grow">
+                <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
                   {service.description}
                 </p>
-                
-                {/* SEO Partnership Note - only for SEO card */}
-                {service.title === "SEO" && (
-                  <motion.div
-                    className="mt-2 mb-4 py-3 border-t border-b border-slate-200"
-                    initial={{ opacity: 0 }}
-                    animate={isInView ? { opacity: 1 } : {}}
-                    transition={{ duration: 0.6, delay: (index * 0.2) + 0.8 }}
-                  >
-                    <p className="text-xs text-slate-500 leading-relaxed">
-                      Für SEA-, Meta-Ads & Brandbuilding arbeite ich mit der{" "}
-                      <a 
-                        href="https://dmberatung.de/" 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="text-blue-600 hover:text-blue-700 hover:underline transition-colors duration-200"
-                      >
-                        Deutschen Marketing Beratung
-                      </a>{" "}
-                      zusammen.
-                    </p>
-                  </motion.div>
-                )}
                 
                 <ul className="space-y-2 text-sm text-slate-600 mt-auto">
                   {service.features.map((feature, featureIndex) => (
