@@ -5,7 +5,7 @@ import { Code, Monitor, Search, DollarSign, Users, Zap, Target, TrendingUp, Rock
 // Process Timeline Content Component
 function ProcessTimelineContent() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.05 });
 
   const steps = [
     {
@@ -271,7 +271,7 @@ function ProcessTimelineContent() {
 // Premium Digital Services Component
 function PremiumDigitalServicesSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-300px" });
 
   const services = [
     {

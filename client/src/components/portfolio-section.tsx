@@ -110,8 +110,8 @@ function StatCard({ stat, index, isInView }: { stat: typeof stats[0], index: num
 export default function PortfolioSection() {
   const ref = useRef(null);
   const statsRef = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const statsInView = useInView(statsRef, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-300px" });
+  const statsInView = useInView(statsRef, { once: true, margin: "-300px" });
 
   return (
     <section id="portfolio" className="py-20 bg-slate-50" ref={ref}>

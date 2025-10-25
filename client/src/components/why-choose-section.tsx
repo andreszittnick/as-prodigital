@@ -26,7 +26,7 @@ const benefits = [
 
 export default function WhyChooseSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-300px" });
 
   return (
     <section id="why-choose" className="py-20 bg-slate-50" ref={ref}>

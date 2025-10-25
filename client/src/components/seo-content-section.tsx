@@ -5,7 +5,7 @@ import { Code, Brain, Monitor, Search, DollarSign, Users, Zap, Target, TrendingU
 // Process Timeline Content Component
 function ProcessTimelineContent() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.05 });
 
   const steps = [
     {
@@ -149,7 +149,7 @@ function ProcessTimelineContent() {
 
 export default function SeoContentSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.2 });
+  const isInView = useInView(ref, { once: true, amount: 0.05 });
 
   return (
     <section 
