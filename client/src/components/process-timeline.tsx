@@ -67,7 +67,7 @@ const ProcessTimeline = () => {
             transition={{ duration: 0.6 }}
           >
             <Sparkles className="w-5 h-5 text-[#fe7a33]" />
-            <span className="text-sm font-medium text-slate-600">Unser bewährter Prozess</span>
+            <span className="text-sm font-medium text-slate-600">Bewährter Prozess</span>
           </motion.div>
           
           <motion.h2 
