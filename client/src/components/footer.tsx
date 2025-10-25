@@ -43,6 +43,13 @@ export default function Footer() {
             <a 
               href="#" 
               className="text-slate-400 hover:text-orange-500 transition-colors duration-300"
+              data-testid="link-imprint"
+            >
+              Impressum
+            </a>
+            <a 
+              href="#" 
+              className="text-slate-400 hover:text-orange-500 transition-colors duration-300"
               data-testid="link-privacy"
             >
               Datenschutz
@@ -53,13 +60,6 @@ export default function Footer() {
               data-testid="link-terms"
             >
               AGB
-            </a>
-            <a 
-              href="#" 
-              className="text-slate-400 hover:text-orange-500 transition-colors duration-300"
-              data-testid="link-imprint"
-            >
-              Impressum
             </a>
           </motion.div>
         </div>
