@@ -604,7 +604,7 @@ export default function WebdesignContentSection() {
             >
               <div className="h-full min-h-[300px] bg-gradient-to-br from-orange-100 to-blue-100 rounded-2xl flex items-center justify-center">
                 <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center">
-                  <Brain className="w-8 h-8 text-white" />
+                  <Monitor className="w-8 h-8 text-white" />
                 </div>
               </div>
             </motion.div>
@@ -756,7 +756,7 @@ export default function WebdesignContentSection() {
             >
               <div className="h-full min-h-[300px] bg-gradient-to-br from-blue-100 to-orange-100 rounded-2xl flex items-center justify-center">
                 <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
-                  <Brain className="w-8 h-8 text-white" />
+                  <Code className="w-8 h-8 text-white" />
                 </div>
               </div>
             </motion.div>
