@@ -122,39 +122,19 @@ export default function About() {
                 />
               </motion.div>
               
-              {/* Profile Image Container */}
-              <motion.div
-                className="relative z-10"
+              <motion.div 
+                className="w-72 h-96 sm:w-80 sm:h-[500px] md:w-96 md:h-[600px] lg:w-[450px] lg:h-[650px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl ring-2 sm:ring-4 ring-white/50 backdrop-blur-sm drop-shadow-2xl relative z-10"
+                style={{
+                  boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05)'
+                }}
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
               >
-                <div className="relative w-72 h-96 sm:w-80 sm:h-[500px] md:w-96 md:h-[600px] lg:w-[450px] lg:h-[650px]">
-                  {/* Gradient Border Effect */}
-                  <div 
-                    className="absolute inset-0 rounded-3xl p-[3px]"
-                    style={{
-                      background: 'linear-gradient(135deg, #fe7a33 0%, #07437c 50%, #fe7a33 100%)',
-                      backgroundSize: '200% 200%',
-                      animation: 'gradient-shift 3s ease infinite'
-                    }}
-                  >
-                    <div className="w-full h-full bg-white rounded-3xl overflow-hidden">
-                      <img 
-                        src={profileImage} 
-                        alt="André Szittnick"
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </div>
-                  
-                  {/* Shadow overlay */}
-                  <div 
-                    className="absolute inset-0 rounded-3xl pointer-events-none"
-                    style={{
-                      boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 60px -15px rgba(254, 122, 51, 0.3)'
-                    }}
-                  />
-                </div>
+                <img 
+                  src={profileImage} 
+                  alt="André Szittnick"
+                  className="w-full h-full object-cover object-top transition-transform duration-500 hover:scale-105"
+                />
               </motion.div>
             </motion.div>
           </div>
