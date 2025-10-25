@@ -193,23 +193,6 @@ export default function HeroSectionSeoSimple() {
             </motion.div>
           </motion.div>
         </div>
-        
-        {/* Scroll indicator */}
-        <motion.div 
-          className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 1.0 }}
-        >
-          <motion.div
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="cursor-pointer"
-            onClick={() => scrollToSection("content")}
-          >
-            <ChevronDown className="w-6 h-6 text-slate-400" />
-          </motion.div>
-        </motion.div>
       </div>
     </section>
   );
