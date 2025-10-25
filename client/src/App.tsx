@@ -1,4 +1,5 @@
-import { Switch, Route } from "wouter";
+import { Switch, Route, useLocation } from "wouter";
+import { useEffect } from "react";
 import { queryClient } from "./lib/queryClient";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
@@ -12,18 +13,31 @@ import WebdesignAlzey from "@/pages/webdesign-alzey";
 import SeoAlzey from "@/pages/seo-alzey";
 import NotFound from "@/pages/not-found";
 
+function ScrollToTop() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
+  return null;
+}
+
 function Router() {
   return (
-    <Switch>
-      <Route path="/" component={Home} />
-      <Route path="/Leistungen" component={Services} />
-      <Route path="/portfolio" component={Portfolio} />
-      <Route path="/ueber-mich" component={About} />
-      <Route path="/Kontakt" component={Contact} />
-      <Route path="/Webdesign" component={WebdesignAlzey} />
-      <Route path="/SEO" component={SeoAlzey} />
-      <Route component={NotFound} />
-    </Switch>
+    <>
+      <ScrollToTop />
+      <Switch>
+        <Route path="/" component={Home} />
+        <Route path="/Leistungen" component={Services} />
+        <Route path="/portfolio" component={Portfolio} />
+        <Route path="/ueber-mich" component={About} />
+        <Route path="/Kontakt" component={Contact} />
+        <Route path="/Webdesign" component={WebdesignAlzey} />
+        <Route path="/SEO" component={SeoAlzey} />
+        <Route component={NotFound} />
+      </Switch>
+    </>
   );
 }
 
