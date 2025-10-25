@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Palette, Search, TrendingUp, Brain, Check } from "lucide-react";
+import { Palette, Search, TrendingUp, Check } from "lucide-react";
 
 const services = [
   {
@@ -24,13 +24,6 @@ const services = [
     description: "Ich optimiere Ihre Website fortlaufend, damit sie langfristig sichtbar bleibt und wächst. Durch regelmäßige Analysen, neue Inhalte und gezielte Anpassungen stärken wir Ihr Ranking bei Google – nachhaltig, transparent und auf Ihre Ziele abgestimmt.",
     features: ["Laufende Analyse", "Content-Pflege", "Strategische Weiterentwicklung"],
     colorClass: "brand-gradient"
-  },
-  {
-    icon: Brain,
-    title: "GEO – Generative Engine Optimization",
-    description: "Ich optimiere Ihre Inhalte gezielt für KI-Suchsysteme wie ChatGPT, Perplexity oder Copilot. Durch klare Strukturen, präzise Antworten und semantische Relevanz sorgen ich dafür, dass Ihre Website auch in KI-Ergebnissen erkannt, zitiert und bevorzugt wird.",
-    features: ["KI-kompatible Inhalte", "Strukturierte Daten & FAQs", "Sichtbarkeit in KI-Suchen"],
-    colorClass: "brand-blue"
   }
 ];
 
@@ -55,7 +48,7 @@ export default function ServicesSection() {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
