@@ -97,7 +97,7 @@ export default function Contact() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-20 pb-16 px-4">
+      <section className="pt-32 sm:pt-36 pb-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
