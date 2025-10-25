@@ -12,38 +12,45 @@ export default function HeroSectionSeoSimple() {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-gradient-to-br from-slate-50 via-white to-orange-50">
-      {/* Floating Elements */}
-      <div className="absolute inset-0 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden dynamic-background">
+      {/* Dynamic Background Elements */}
+      <div className="absolute inset-0">
+        {/* Overlay for content readability */}
+        <div className="absolute inset-0 bg-white/80 backdrop-blur-[2px]" />
+        
+        {/* Floating animated elements - responsive sizes */}
         <motion.div 
-          className="absolute top-16 left-16 w-20 h-20 bg-orange-200 rounded-full filter blur-xl opacity-60"
+          className="absolute top-10 sm:top-20 left-4 sm:left-20 w-48 sm:w-80 lg:w-96 h-48 sm:h-80 lg:h-96 bg-white/20 rounded-full filter blur-3xl floating-orb"
           animate={{ 
-            y: [0, -40, 0],
-            x: [0, 20, 0],
+            x: [0, 30, 0],
+            y: [0, -20, 0],
+            scale: [1, 1.1, 1]
           }}
           transition={{ 
-            duration: 15,
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut"
           }}
         />
         <motion.div 
-          className="absolute top-1/3 right-16 w-32 h-32 bg-blue-200 rounded-full filter blur-2xl opacity-50"
+          className="absolute top-20 sm:top-40 right-4 sm:right-20 w-32 sm:w-64 lg:w-80 h-32 sm:h-64 lg:h-80 bg-white/30 rounded-full filter blur-2xl floating-orb"
           animate={{ 
-            y: [0, 30, 0],
-            x: [0, -15, 0],
+            x: [0, -25, 0],
+            y: [0, 25, 0],
+            scale: [1, 1.05, 1]
           }}
           transition={{ 
-            duration: 18,
+            duration: 16,
             repeat: Infinity,
             ease: "easeInOut",
             delay: 3
           }}
         />
         <motion.div 
-          className="absolute bottom-32 left-1/4 w-24 h-24 bg-orange-300 rounded-full filter blur-xl opacity-40"
+          className="absolute bottom-10 sm:bottom-20 left-1/2 w-32 sm:w-48 lg:w-64 h-32 sm:h-48 lg:h-64 bg-white/25 rounded-full filter blur-xl pulse-orb"
           animate={{ 
-            scale: [1, 1.2, 1],
+            x: [-15, 15, -15],
+            y: [0, -15, 0],
             rotate: [0, 180, 360]
           }}
           transition={{ 
