@@ -2,7 +2,7 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import ContactSection from "@/components/contact-section";
 import { motion } from "framer-motion";
-import { Code, Search, Brain } from "lucide-react";
+import { Code, Search } from "lucide-react";
 
 export default function Services() {
   const mainServices = [
@@ -39,23 +39,6 @@ Von der ersten Konzeption bis zur finalen Umsetzung begleite ich Sie durch den g
 
 Mein Ansatz umfasst technische Optimierungen, On-Page-SEO und die Verbesserung der Ladegeschwindigkeit. Dabei achte ich darauf, dass alle Maßnahmen nachhaltig und Google-konform sind. Sie erhalten regelmäßige Reports über die Fortschritte und können den Erfolg der Optimierungen direkt verfolgen.`,
       color: "bg-green-500"
-    },
-    {
-      icon: Brain,
-      title: "Individuelle KI-Lösungen",
-      description: "Innovative KI-Anwendungen, die Ihre Geschäftsprozesse automatisieren und neue Möglichkeiten für Ihr Unternehmen schaffen.",
-      features: [
-        "Chatbots und virtuelle Assistenten",
-        "Automatisierung von Workflows",
-        "Datenanalyse und Insights",
-        "Personalisierte Kundenerlebnisse",
-        "KI-gestützte Content-Erstellung",
-        "Predictive Analytics"
-      ],
-      textContent: `Künstliche Intelligenz revolutioniert die Art, wie Unternehmen arbeiten. Ich entwickle maßgeschneiderte KI-Lösungen, die perfekt auf Ihre Geschäftsprozesse zugeschnitten sind. Von intelligenten Chatbots bis hin zu automatisierten Workflows - ich helfe Ihnen dabei, das Potenzial der KI voll auszuschöpfen.
-
-Meine Lösungen sind praktisch orientiert und bringen echten Mehrwert für Ihr Unternehmen. Ob Kundensupport-Automatisierung, Datenanalyse oder personalisierte Empfehlungssysteme - ich finde die richtige KI-Anwendung für Ihre Herausforderungen und implementiere sie benutzerfreundlich und zuverlässig.`,
-      color: "bg-purple-500"
     }
   ];
 
@@ -75,7 +58,7 @@ Meine Lösungen sind praktisch orientiert und bringen echten Mehrwert für Ihr U
               Meine <span className="text-orange-500">Leistungen</span>
             </h1>
             <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-              Drei Kernbereiche, die Ihr Unternehmen digital transformieren und erfolgreich machen.
+              Zwei Kernbereiche, die Ihr Unternehmen digital transformieren und erfolgreich machen.
             </p>
           </motion.div>
         </div>

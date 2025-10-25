@@ -10,7 +10,6 @@ import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import WebdesignAlzey from "@/pages/webdesign-alzey";
 import SeoAlzey from "@/pages/seo-alzey";
-import KiLoesungenAlzey from "@/pages/ki-loesungen-alzey";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -23,7 +22,6 @@ function Router() {
       <Route path="/Kontakt" component={Contact} />
       <Route path="/Webdesign" component={WebdesignAlzey} />
       <Route path="/SEO" component={SeoAlzey} />
-      <Route path="/KI-Loesungen" component={KiLoesungenAlzey} />
       <Route component={NotFound} />
     </Switch>
   );

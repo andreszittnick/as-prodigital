@@ -184,7 +184,6 @@ export default function ContactSectionWebdesign() {
                           <SelectContent>
                             <SelectItem value="webdesign">Webdesign</SelectItem>
                             <SelectItem value="seo">SEO-Optimierung</SelectItem>
-                            <SelectItem value="ki-loesungen">KI-Lösungen</SelectItem>
                             <SelectItem value="beratung">Beratung</SelectItem>
                             <SelectItem value="sonstiges">Sonstiges</SelectItem>
                           </SelectContent>

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, ChevronDown, Monitor, Search, Brain } from "lucide-react";
+import { Menu, X, ChevronDown, Monitor, Search } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { useScrollPosition } from "@/hooks/use-scroll";
 import logoImage from "@assets/Logo_1754308337340.png";
@@ -97,13 +97,6 @@ export default function Navigation() {
                           description: "Suchmaschinenoptimierung",
                           icon: Search,
                           color: "text-green-500"
-                        },
-                        { 
-                          name: "Individuelle KI-Lösungen", 
-                          href: "/KI-Loesungen",
-                          description: "Maßgeschneiderte KI-Anwendungen",
-                          icon: Brain,
-                          color: "text-purple-500"
                         }
                       ].map((service, index) => (
                         <Link key={index} href={service.href}>
@@ -239,12 +232,6 @@ export default function Navigation() {
                           href: "/SEO",
                           icon: Search,
                           color: "text-green-500"
-                        },
-                        { 
-                          name: "Individuelle KI-Lösungen", 
-                          href: "/KI-Loesungen",
-                          icon: Brain,
-                          color: "text-purple-500"
                         }
                       ].map((service, index) => (
                         <Link key={index} href={service.href}>

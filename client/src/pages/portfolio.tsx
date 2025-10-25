@@ -15,10 +15,10 @@ export default function Portfolio() {
       github: "#"
     },
     {
-      title: "KI-gestütztes CRM System",
-      description: "Intelligentes Kundenmanagementsystem mit automatischer Lead-Bewertung und Predictive Analytics.",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      tags: ["KI", "Python", "React", "PostgreSQL"],
+      title: "Intelligentes CRM System",
+      description: "Modernes Kundenmanagementsystem mit automatischer Lead-Bewertung und umfassenden Analytics.",
+      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+      tags: ["CRM", "Python", "React", "PostgreSQL"],
       year: "2024",
       link: "#",
       github: "#"
@@ -42,10 +42,10 @@ export default function Portfolio() {
       github: "#"
     },
     {
-      title: "Fitness App mit Personal Trainer KI",
-      description: "Mobile Fitness-Anwendung mit KI-basiertem Personal Trainer und Ernährungsberatung.",
+      title: "Fitness App mit Personal Trainer",
+      description: "Mobile Fitness-Anwendung mit digitalem Personal Trainer und Ernährungsberatung.",
       image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=600&h=400&fit=crop",
-      tags: ["Mobile App", "KI", "Health Tech", "React Native"],
+      tags: ["Mobile App", "Health Tech", "React Native"],
       year: "2023",
       link: "#",
       github: "#"
@@ -75,7 +75,7 @@ export default function Portfolio() {
       rating: 5
     },
     {
-      text: "Das KI-gestützte CRM System hat unsere Vertriebsprozesse revolutioniert. Danke für die exzellente Umsetzung!",
+      text: "Das intelligente CRM System hat unsere Vertriebsprozesse revolutioniert. Danke für die exzellente Umsetzung!",
       author: "Sarah Klein",
       company: "TechStart Solutions",
       rating: 5

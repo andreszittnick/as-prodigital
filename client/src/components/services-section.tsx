@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Palette, Search, Bot, Check } from "lucide-react";
+import { Palette, Search, Check } from "lucide-react";
 
 const services = [
   {
@@ -17,13 +17,6 @@ const services = [
     description: "Ich kümmere mich darum, dass Ihre Website die wichtigsten SEO-Grundlagen erfüllt – von der technischen Struktur bis zu schnellen Ladezeiten. So legen wir den Grundstein dafür, dass Sie online sichtbar werden und mehr Menschen Ihre Seite finden.",
     features: ["Keyword-Recherche", "Technisches SEO", "Content-Strategie"],
     colorClass: "brand-blue"
-  },
-  {
-    icon: Bot,
-    title: "KI-Lösungen",
-    description: "Ich zeige Ihnen, wie Sie KI in Ihrem Unternehmen sinnvoll nutzen können – von kleinen Automatisierungen bis zu individuellen Lösungen. Mein Ziel: Mehr Zeit für das Wesentliche und weniger Routinearbeit.",
-    features: ["Individuelle KI-Integration", "Prozess-Automatisierung", "Intelligente Analytik"],
-    colorClass: "brand-gradient"
   }
 ];
 

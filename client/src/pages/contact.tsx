@@ -87,7 +87,6 @@ export default function Contact() {
   const projectTypes = [
     "Webdesign & Entwicklung",
     "SEO-Optimierung", 
-    "KI-gestützte Lösungen",
     "E-Commerce",
     "Mobile App",
     "Sonstiges"

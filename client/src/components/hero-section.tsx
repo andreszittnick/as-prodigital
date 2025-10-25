@@ -113,7 +113,7 @@ export default function HeroSection() {
               <p>
                 Ich helfe Ihnen dabei, Ihre digitale Präsenz sichtbar und erfolgreich zu machen.
                 <br /><br />
-                Als Ihr persönlicher Ansprechpartner entwickle ich maßgeschneiderte Webseiten, effektives SEO und individuelle KI‑Lösungen, die genau zu Ihrem Unternehmen passen.
+                Als Ihr persönlicher Ansprechpartner entwickle ich maßgeschneiderte Webseiten und effektives SEO, die genau zu Ihrem Unternehmen passen.
               </p>
               <br />
               <div className="space-y-2">
