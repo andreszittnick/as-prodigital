@@ -283,10 +283,17 @@ function PremiumDigitalServicesSection() {
     },
     {
       icon: Search,
-      title: "SEO-Basisoptimierung",
+      title: "SEO-Setup",
       description: "Ich kümmere mich darum, dass Ihre Website die wichtigsten SEO-Grundlagen erfüllt – von der technischen Struktur bis zu schnellen Ladezeiten. So legen wir den Grundstein dafür, dass Sie online sichtbar werden und mehr Menschen Ihre Seite finden.",
       features: ["Keyword-Recherche", "Technisches SEO", "Content-Strategie"],
       colorClass: "brand-blue"
+    },
+    {
+      icon: TrendingUp,
+      title: "SEO-Management",
+      description: "Ich optimiere Ihre Website fortlaufend, damit sie langfristig sichtbar bleibt und wächst. Durch regelmäßige Analysen, neue Inhalte und gezielte Anpassungen stärken wir Ihr Ranking bei Google – nachhaltig, transparent und auf Ihre Ziele abgestimmt.",
+      features: ["Laufende Analyse", "Content-Pflege", "Strategische Weiterentwicklung"],
+      colorClass: "brand-gradient"
     }
   ];
 
@@ -307,7 +314,7 @@ function PremiumDigitalServicesSection() {
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
@@ -488,7 +495,7 @@ export default function WebdesignContentSection() {
             </p>
           </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             <motion.div
               className="group relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center"
               initial={{ opacity: 0, y: 50 }}
