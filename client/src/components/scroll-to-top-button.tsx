@@ -34,7 +34,7 @@ export default function ScrollToTopButton() {
       {isVisible && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-8 right-8 z-50 p-4 rounded-full shadow-2xl text-white hover:shadow-3xl transition-all duration-300"
+          className="fixed bottom-8 right-8 z-50 w-14 h-14 rounded-2xl shadow-2xl text-white hover:shadow-3xl transition-all duration-300 flex items-center justify-center"
           style={{
             background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
           }}
