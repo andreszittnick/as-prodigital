@@ -588,16 +588,10 @@ export default function WebdesignContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                <span className="text-orange-500">Individuelle Webdesign-Lösungen</span> für Ihr Unternehmen
+                Individuelles Webdesign – maßgeschneidert für Ihr Unternehmen
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Jedes Unternehmen hat individuelle Anforderungen, die sich nicht mit einer Standard-Website erfüllen lassen. Deshalb setze ich auf maßgeschneiderte Webdesign-Lösungen, die exakt auf Ihre Marke, Ihre Zielgruppe und Ihre Geschäftsziele zugeschnitten sind.
-              </p>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Individuelles Webdesign bedeutet, dass Farben, Layout, Schriftarten und Bildsprache perfekt zu Ihrem Unternehmen passen. Gleichzeitig wird die Website technisch optimiert, damit sie schnell lädt, auf allen Geräten funktioniert und von Google optimal gelesen werden kann.
-              </p>
               <p className="text-lg text-slate-600 leading-relaxed">
-                So entsteht ein Online-Auftritt, der nicht nur optisch überzeugt, sondern auch Vertrauen schafft, neue Kunden anzieht und langfristig messbare Ergebnisse liefert.
+                Keine Website von der Stange: Wir gestalten jedes Projekt individuell nach Ihren Anforderungen. Ihr Unternehmen hat eine eigene Identität – und genau das soll sich auch online widerspiegeln. Farben, Schriften und Layouts werden gezielt auf Ihr Corporate Design abgestimmt. So entsteht eine Website, die authentisch wirkt und Wiedererkennung schafft. Von der ersten Idee bis zur fertigen Umsetzung legen wir Wert auf jedes Detail. Das Ergebnis: Ein einzigartiger Internetauftritt, der Ihre Marke stärkt, Vertrauen aufbaut und Kunden überzeugt.
               </p>
             </motion.div>
           </div>
