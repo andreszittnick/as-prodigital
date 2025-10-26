@@ -605,19 +605,10 @@ export default function WebdesignContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                <span className="text-orange-500">Webdesign</span> als Grundlage für digitale <span className="text-orange-500">Kundengewinnung</span>
+                SEO-freundliches Webdesign für bessere Google-Rankings
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Ihre Website ist heute der wichtigste Vertriebskanal, denn die meisten Kunden informieren sich online, bevor sie eine Entscheidung treffen. Professionelles Webdesign ist daher die Grundlage für eine erfolgreiche Kundengewinnung im Internet.
-              </p>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Ein überzeugendes Design verbindet ästhetische Gestaltung mit klarer Nutzerführung und Conversion-Optimierung. Besucher finden sich schnell zurecht, können Ihre Angebote leicht erfassen und werden gezielt zu Kontaktanfragen oder Käufen geführt.
-              </p>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Zusätzlich profitieren Sie von SEO-Vorteilen: Eine saubere technische Struktur, optimierte Inhalte und mobile Darstellung sorgen für bessere Google-Rankings und langfristig mehr Reichweite.
-              </p>
               <p className="text-lg text-slate-600 leading-relaxed">
-                So wird Ihre Website von einer einfachen Visitenkarte zu einem leistungsstarken Marketing- und Vertriebstool, das Ihrem Unternehmen messbaren Erfolg bringt.
+                Eine schöne Website allein reicht nicht – sie muss auch gefunden werden. Deshalb kombinieren wir modernes Webdesign mit effektiver Suchmaschinenoptimierung. Schon beim Aufbau achten wir auf sauberen Code, schnelle Ladezeiten und klare Seitenstrukturen. Relevante Keywords, optimierte Bilder und übersichtliche Inhalte sorgen dafür, dass Google Ihre Seite besser versteht. So verbessern Sie langfristig Ihre Sichtbarkeit und gewinnen neue Besucher. Unser Ziel: Ein Webdesign, das nicht nur begeistert, sondern auch messbar mehr Reichweite und Anfragen bringt.
               </p>
             </motion.div>
             <motion.div
