@@ -1,6 +1,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code, Brain, Monitor, Search, DollarSign, Users, Zap, Target, TrendingUp, Rocket, Sparkles, ArrowRight, Palette, Bot, Check } from "lucide-react";
+import { Search, DollarSign, Users, Zap, Target, TrendingUp, Rocket, Sparkles, ArrowRight, Palette, Check } from "lucide-react";
+import {
+  ProfessionalWebdesignAnimation,
+  ResponsiveDesignAnimation,
+  IndividualWebdesignAnimation,
+  SeoWebdesignAnimation,
+  ConversionWebdesignAnimation,
+  MaintenanceWebdesignAnimation
+} from "./webdesign-animations";
 
 // Process Timeline Content Component
 function ProcessTimelineContent() {
@@ -74,20 +82,27 @@ function ProcessTimelineContent() {
         </motion.h2>
         
         <motion.p 
-          className="text-base sm:text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0"
+          className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.4 }}
         >
-          Vertrauen Sie auf einen strukturierten Entwicklungsprozess, der Ihre spezifischen Anforderungen in den Mittelpunkt stellt
+          In vier klaren Schritten begleite ich Sie von der ersten Idee bis zum erfolgreichen Online-Auftritt
         </motion.p>
       </div>
-      
-      <div ref={ref} className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Central timeline line */}
-        <div className="hidden lg:block absolute left-1/2 transform -translate-x-px h-full w-px bg-gradient-to-b from-[#fe7a33] via-[#07437c] to-[#fe7a33] opacity-30"></div>
-        
-        <div className="space-y-12 lg:space-y-24">
+
+      <div ref={ref} className="relative max-w-6xl mx-auto">
+        {/* Central timeline */}
+        <div className="absolute left-1/2 top-0 w-1 h-full bg-gradient-to-b from-transparent via-slate-300 to-transparent transform -translate-x-1/2 hidden lg:block">
+          <motion.div 
+            className="w-full bg-gradient-to-b from-[#fe7a33] via-[#07437c] to-[#fe7a33] rounded-full"
+            initial={{ height: 0 }}
+            animate={isInView ? { height: "100%" } : {}}
+            transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
+          />
+        </div>
+
+        <div className="space-y-12 sm:space-y-16 lg:space-y-32">
           {steps.map((step, index) => {
             const Icon = step.icon;
             const isLeft = step.position === "left";
@@ -95,32 +110,92 @@ function ProcessTimelineContent() {
             return (
               <motion.div
                 key={step.id}
-                className={`relative flex flex-col lg:flex-row items-center ${isLeft ? 'lg:text-right' : 'lg:text-left'}`}
-                initial={{ opacity: 0, x: isLeft ? -50 : 50 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
+                className={`relative flex items-center ${isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'} flex-col gap-6 sm:gap-8 lg:gap-16`}
+                initial={{ opacity: 0, y: 80 }}
+                animate={isInView ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.8, delay: index * 0.3 + 0.6 }}
               >
-                {/* Content */}
-                <div className={`lg:w-5/12 ${isLeft ? 'lg:pr-16' : 'lg:pl-16 lg:order-2'}`}>
-                  <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 sm:p-8 border border-white/50 shadow-xl hover:shadow-2xl transition-all duration-500 group">
-                    <div className="flex items-center gap-3 mb-4 justify-center lg:justify-start">
-                      <div 
-                        className="w-10 h-10 rounded-xl flex items-center justify-center text-white shadow-lg"
-                        style={{ backgroundColor: step.primaryColor }}
-                      >
-                        <Icon className="w-5 h-5" />
-                      </div>
-                      <div className="text-2xl font-bold text-slate-800">{step.id.toString().padStart(2, '0')}</div>
-                    </div>
+                {/* Content Card */}
+                <motion.div 
+                  className="flex-1 max-w-lg"
+                  whileHover={{ scale: 1.02, y: -5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <motion.div 
+                    className="bg-white/70 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl border border-white/50 relative overflow-hidden group"
+                    style={{ 
+                      boxShadow: `0 20px 40px -12px ${step.primaryColor}20` 
+                    }}
+                    whileHover={{ 
+                      boxShadow: `0 30px 60px -12px ${step.primaryColor}30` 
+                    }}
+                  >
+                    {/* Background gradient */}
+                    <div 
+                      className="absolute inset-0 opacity-0 group-hover:opacity-5 transition-opacity duration-500"
+                      style={{ 
+                        background: `linear-gradient(135deg, ${step.primaryColor} 0%, ${step.secondaryColor} 100%)` 
+                      }}
+                    />
                     
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-2">{step.title}</h3>
-                    <p className="text-sm sm:text-base font-medium text-slate-500 mb-4">{step.subtitle}</p>
-                    <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{step.description}</p>
-                  </div>
-                </div>
-                
-                {/* Center icon for large screens */}
-                <div className="hidden lg:flex lg:w-2/12 justify-center lg:order-1">
+                    <div className="relative z-10">
+                      {/* Step number */}
+                      <motion.div 
+                        className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 text-white font-bold text-base sm:text-lg"
+                        style={{ backgroundColor: step.primaryColor }}
+                        animate={{ 
+                          rotate: [0, 5, -5, 0],
+                          scale: [1, 1.05, 1]
+                        }}
+                        transition={{ 
+                          duration: 4,
+                          repeat: Infinity,
+                          delay: index * 0.5
+                        }}
+                      >
+                        {step.id}
+                      </motion.div>
+                      
+                      <h3 className="text-2xl lg:text-3xl font-bold mb-2 text-slate-900">
+                        {step.title}
+                      </h3>
+                      
+                      {step.subtitle && (
+                        <h4 className="text-lg font-semibold mb-4" style={{ color: step.primaryColor }}>
+                          {step.subtitle}
+                        </h4>
+                      )}
+                      
+                      <p className="text-slate-600 leading-relaxed mb-6">
+                        {step.description}
+                      </p>
+                      
+                      {/* Action indicator */}
+                      <motion.div 
+                        className="flex items-center gap-2 text-sm font-medium cursor-pointer"
+                        style={{ color: step.primaryColor }}
+                        animate={{ x: [0, 5, 0] }}
+                        transition={{ 
+                          duration: 2,
+                          repeat: Infinity,
+                          delay: index * 0.3
+                        }}
+                        onClick={() => {
+                          const contactSection = document.getElementById("contact");
+                          if (contactSection) {
+                            contactSection.scrollIntoView({ behavior: "smooth" });
+                          }
+                        }}
+                      >
+                        Mehr erfahren
+                        <ArrowRight className="w-4 h-4" />
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                </motion.div>
+
+                {/* Center Icon */}
+                <div className="flex-shrink-0 lg:mx-8">
                   <motion.div 
                     className="w-16 h-16 rounded-2xl flex items-center justify-center text-white shadow-2xl z-10 relative"
                     style={{
@@ -143,72 +218,452 @@ function ProcessTimelineContent() {
           })}
         </div>
       </div>
+
+      {/* Bottom CTA */}
+      <motion.div 
+        className="text-center mt-20"
+        initial={{ opacity: 0, y: 30 }}
+        animate={isInView ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 2 }}
+      >
+        <motion.button 
+          onClick={() => {
+            const contactSection = document.getElementById("contact");
+            if (contactSection) {
+              contactSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+          className="bg-gradient-to-r from-[#fe7a33] to-[#ff6b1a] text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 group"
+          whileHover={{ scale: 1.05, y: -2 }}
+          whileTap={{ scale: 0.98 }}
+          data-testid="button-contact-process"
+        >
+          <span className="flex items-center gap-2">
+            Projekt starten
+            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+          </span>
+        </motion.button>
+      </motion.div>
     </>
   );
 }
 
-export default function SeoContentSection() {
+// Premium Digital Services Component
+function PremiumDigitalServicesSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, amount: 0.05 });
+  const isInView = useInView(ref, { once: true, margin: "-300px" });
+
+  const services = [
+    {
+      icon: Palette,
+      title: "Webdesign",
+      description: "Ich gestalte Ihre Website so, dass sie Ihre Marke authentisch widerspiegelt und Ihre Besucher begeistert. Jede Seite entsteht in enger Abstimmung mit Ihnen – modern, klar und für alle Geräte optimiert.",
+      features: ["Responsive Design", "UX/UI Optimierung", "Performance-Fokus"],
+      colorClass: "brand-gradient"
+    },
+    {
+      icon: Search,
+      title: "SEO-Setup",
+      description: "Ich kümmere mich darum, dass Ihre Website die wichtigsten SEO-Grundlagen erfüllt – von der technischen Struktur bis zu schnellen Ladezeiten. So legen wir den Grundstein dafür, dass Sie online sichtbar werden und mehr Menschen Ihre Seite finden.",
+      features: ["Keyword-Recherche", "Technisches SEO", "Content-Strategie"],
+      colorClass: "brand-blue"
+    },
+    {
+      icon: TrendingUp,
+      title: "SEO-Management",
+      description: "Ich optimiere Ihre Website fortlaufend, damit sie langfristig sichtbar bleibt und wächst. Durch regelmäßige Analysen, neue Inhalte und gezielte Anpassungen stärken wir Ihr Ranking bei Google – nachhaltig, transparent und auf Ihre Ziele abgestimmt.",
+      features: ["Laufende Analyse", "Content-Pflege", "Strategische Weiterentwicklung"],
+      colorClass: "brand-gradient"
+    }
+  ];
 
   return (
-    <section 
-      id="content" 
-      ref={ref}
-      className="py-16 sm:py-20 lg:py-24 bg-gradient-to-br from-slate-50 via-white to-blue-50 relative overflow-hidden"
-    >
-      {/* Background Elements */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-32 h-32 bg-orange-200 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
-        <div className="absolute bottom-1/3 right-1/4 w-48 h-48 bg-blue-200 rounded-full filter blur-3xl opacity-20 animate-pulse"></div>
-      </div>
-      
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header Section */}
-        <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-          <motion.div
-            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-slate-200 mb-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            <Search className="w-5 h-5 text-[#fe7a33]" />
-            <span className="text-sm font-medium text-slate-600">SEO-Optimierung</span>
-          </motion.div>
-          
-          <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent px-4 sm:px-0"
-            style={{ lineHeight: '1.4' }}
-            initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            SEO-Optimierung: Sichtbarkeit steigern und Kunden gewinnen
-          </motion.h2>
-          
-          <motion.div 
-            className="text-base sm:text-lg md:text-xl text-slate-600 max-w-4xl mx-auto leading-relaxed px-4 sm:px-0 space-y-6"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.4 }}
-          >
-            <p>
-              Wer bei Google nicht gefunden wird, existiert online kaum. Mit professioneller SEO-Optimierung sorgen Sie dafür, dass Ihre Website in den Suchergebnissen sichtbar wird – genau dann, wenn potenzielle Kunden nach Ihren Produkten oder Dienstleistungen suchen.
-            </p>
-            
-            <p>
-              Die Optimierung umfasst technische Aspekte wie Ladegeschwindigkeit, mobile Darstellung und Indexierbarkeit, aber auch inhaltliche Faktoren wie Keyword-Platzierung, strukturierte Inhalte und Meta-Texte.
-            </p>
-            
-            <p>
-              Ich analysiere Ihre aktuelle Website und entwickle eine maßgeschneiderte SEO-Strategie, die langfristig wirkt. So steigern Sie nicht nur Ihre Reichweite, sondern auch die Qualität der Besucher – und damit Ihre Chancen auf echte Anfragen und Verkäufe.
-            </p>
-          </motion.div>
+    <section className="py-20 bg-white" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 50 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
+            Premium <span className="gradient-text">Digital Services</span>
+          </h2>
+          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto px-4 sm:px-0">
+            Modernste Lösungen, die Wachstum fördern, Sichtbarkeit erhöhen und Erfolg für zukunftsorientierte Unternehmen automatisieren.
+          </p>
+        </motion.div>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {services.map((service, index) => (
+            <motion.div
+              key={service.title}
+              className="group relative bg-gradient-to-br from-white to-slate-50 p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 h-full"
+              initial={{ opacity: 0, y: 50 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: index * 0.2 }}
+              whileHover={{ y: -8 }}
+              data-testid={`service-card-${service.title.toLowerCase().replace(/\s+/g, '-')}`}
+            >
+              <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative h-full flex flex-col">
+                <motion.div 
+                  className={`w-16 h-16 ${service.colorClass} rounded-2xl flex items-center justify-center mb-6`}
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <service.icon className="text-white w-8 h-8" />
+                </motion.div>
+                
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
+                <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
+                  {service.description}
+                </p>
+                
+                <ul className="space-y-2 text-sm text-slate-600 mt-auto">
+                  {service.features.map((feature, featureIndex) => (
+                    <motion.li 
+                      key={feature}
+                      className="flex items-center"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={isInView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ duration: 0.4, delay: (index * 0.2) + (featureIndex * 0.1) + 0.5 }}
+                    >
+                      <Check className="text-orange-500 w-4 h-4 mr-2" />
+                      {feature}
+                    </motion.li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
         </div>
-
-        {/* Process Timeline */}
-        <ProcessTimelineContent />
+        
+        {/* CTA Button */}
+        <motion.div
+          className="text-center mt-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 1.0 }}
+        >
+          <motion.button
+            onClick={() => {
+              const contactSection = document.getElementById("contact");
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
+            style={{
+              background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
+              transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.3s ease'
+            }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.background = '#07437c';
+              e.currentTarget.style.color = '#fe7a33';
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.background = 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)';
+              e.currentTarget.style.color = 'white';
+            }}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            data-testid="button-questions-services"
+          >
+            Lassen Sie uns starten
+          </motion.button>
+        </motion.div>
       </div>
     </section>
+  );
+}
+
+export default function SeoContentSection() {
+  return (
+    <>
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section 1: Bild links, Text rechts */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16">
+            <motion.div
+              className="order-2 lg:order-1"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <SeoWebdesignAnimation />
+            </motion.div>
+            <motion.div
+              className="order-1 lg:order-2"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
+                SEO-Optimierung: Sichtbarkeit steigern und Kunden gewinnen
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Wer bei Google nicht gefunden wird, existiert online kaum. Mit professioneller SEO-Optimierung sorgen Sie dafür, dass Ihre Website in den Suchergebnissen sichtbar wird – genau dann, wenn potenzielle Kunden nach Ihren Produkten oder Dienstleistungen suchen. Die Optimierung umfasst technische Aspekte wie Ladegeschwindigkeit, mobile Darstellung und Indexierbarkeit, aber auch inhaltliche Faktoren wie Keyword-Platzierung, strukturierte Inhalte und Meta-Texte. Ich analysiere Ihre aktuelle Website und entwickle eine maßgeschneiderte SEO-Strategie, die langfristig wirkt.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Section 2: Text links, Bild rechts */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
+                Technisches SEO: Die Basis für gute Google-Rankings
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Technisches SEO ist das unsichtbare Fundament Ihrer Website – und unverzichtbar, wenn Sie bei Google erfolgreich sein möchten. Denn nur wenn Ihre Seite technisch sauber aufgebaut ist, kann sie von Suchmaschinen vollständig erfasst und korrekt bewertet werden. Zu den wichtigsten Maßnahmen zählen die Optimierung von Ladezeiten, die Mobilfreundlichkeit (Responsive Design), eine fehlerfreie Indexierung sowie die Strukturierung mit sprechenden URLs, H1/H2-Hierarchien und internen Verlinkungen. Ich überprüfe Ihre Website auf technische Schwächen und behebe sie gezielt.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <MaintenanceWebdesignAnimation />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Section */}
+      <section className="py-20 bg-slate-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
+              Warum ich der richtige <span className="gradient-text">Partner</span> für Ihr Projekt bin
+            </h2>
+            <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto px-4 sm:px-0">
+              Erleben Sie den Unterschied bei der Zusammenarbeit mit einem engagierten Digitalspezialisten, der Ihren Erfolg an erste Stelle setzt.
+            </p>
+          </motion.div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+            <motion.div
+              className="group relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0 }}
+              whileHover={{ y: -8 }}
+              viewport={{ once: true }}
+            >
+              <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative">
+                <motion.div 
+                  className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <DollarSign className="text-white w-10 h-10" />
+                </motion.div>
+                
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Keine Agentur-Preise</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Direkte Zusammenarbeit ohne Agentur-Aufschläge - transparente, faire Preise für Premium-Qualität.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="group relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ y: -8 }}
+              viewport={{ once: true }}
+            >
+              <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative">
+                <motion.div 
+                  className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Users className="text-white w-10 h-10" />
+                </motion.div>
+                
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Persönliche Beratung von Anfang bis Ende</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Individuelle Betreuung während Ihres gesamten Projekts mit persönlicher Aufmerksamkeit.
+                </p>
+              </div>
+            </motion.div>
+
+            <motion.div
+              className="group relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              whileHover={{ y: -8 }}
+              viewport={{ once: true }}
+            >
+              <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative">
+                <motion.div 
+                  className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <Zap className="text-white w-10 h-10" />
+                </motion.div>
+                
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Schnelle Umsetzung</h3>
+                <p className="text-slate-600 leading-relaxed">
+                  Kurze Umsetzungszeiten ohne Qualitätsverlust - Ihr Projekt wird effizient und professionell geliefert.
+                </p>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Content Section continued */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section 3: Bild links, Text rechts */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16">
+            <motion.div
+              className="order-2 lg:order-1"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <IndividualWebdesignAnimation />
+            </motion.div>
+            <motion.div
+              className="order-1 lg:order-2"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
+                Keyword-Recherche: Die richtigen Begriffe für maximale Sichtbarkeit
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Die Keyword-Recherche ist der erste und wichtigste Schritt jeder SEO-Strategie. Nur wenn Sie die Suchbegriffe kennen, die Ihre Zielgruppe wirklich verwendet, können Sie gezielt gefunden werden. Ich analysiere relevante Keywords nach Suchvolumen, Wettbewerb und Nutzerabsicht. So entstehen Inhalte, die nicht nur Rankings bringen, sondern auch echte Anfragen generieren. Mit der richtigen Keyword-Strategie schaffen Sie eine solide Basis für langfristigen SEO-Erfolg.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Section 4: Text links, Bild rechts */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
+                Content-Optimierung: Inhalte, die Google und Nutzer überzeugen
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Guter Content ist das Herzstück jeder erfolgreichen SEO-Strategie. Es reicht nicht, einfach nur viel Text zu schreiben – Inhalte müssen relevant, strukturiert und auf die Bedürfnisse Ihrer Zielgruppe zugeschnitten sein. Ich optimiere bestehende Texte und erstelle neue Inhalte, die sowohl für Suchmaschinen als auch für Ihre Besucher wertvoll sind. Mit der richtigen Mischung aus Keywords, Struktur und Mehrwert steigern Sie Rankings und Conversions gleichzeitig.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <ResponsiveDesignAnimation />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Von Ihrer Idee zum digitalen Erfolg - Process Timeline Section */}
+      <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+        {/* Background decorative elements */}
+        <div className="absolute inset-0 opacity-5">
+          <div className="absolute top-20 left-10 w-32 h-32 bg-[#fe7a33] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#07437c] rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-[#fe7a33] rounded-full blur-2xl"></div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+          <ProcessTimelineContent />
+        </div>
+      </section>
+
+      {/* Content Section continued */}
+      <section className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section 5: Bild links, Text rechts */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch mb-16">
+            <motion.div
+              className="order-2 lg:order-1"
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <ConversionWebdesignAnimation />
+            </motion.div>
+            <motion.div
+              className="order-1 lg:order-2"
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
+                Local SEO: Gezielt Kunden in Ihrer Region erreichen
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                Für Unternehmen mit lokalem Fokus ist Local SEO unverzichtbar. Wenn Kunden in Ihrer Nähe nach Ihren Produkten oder Dienstleistungen suchen, sollten Sie an erster Stelle stehen. Ich optimiere Ihren Google My Business Eintrag, lokale Keywords und Ihre NAP-Daten (Name, Adresse, Telefonnummer), damit Sie in lokalen Suchergebnissen und auf Google Maps prominent erscheinen. So gewinnen Sie gezielt Kunden aus Ihrer Region – genau dann, wenn sie nach Ihnen suchen.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Section 6: Text links, Bild rechts */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-stretch">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
+                SEO-Monitoring: Fortschritte messen und kontinuierlich optimieren
+              </h2>
+              <p className="text-lg text-slate-600 leading-relaxed">
+                SEO ist kein einmaliges Projekt, sondern ein fortlaufender Prozess. Nur durch regelmäßiges Monitoring können Sie den Erfolg Ihrer Maßnahmen messen und rechtzeitig gegensteuern. Ich überwache Rankings, Traffic-Entwicklung und wichtige SEO-Kennzahlen kontinuierlich. Auf Basis der Daten optimiere ich Ihre Strategie laufend weiter, damit Ihre Website nicht nur kurzfristig, sondern dauerhaft erfolgreich bleibt. So bleiben Sie der Konkurrenz immer einen Schritt voraus.
+              </p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6 }}
+              viewport={{ once: true }}
+            >
+              <ProfessionalWebdesignAnimation />
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Premium Digital Services Section */}
+      <PremiumDigitalServicesSection />
+    </>
   );
 }
