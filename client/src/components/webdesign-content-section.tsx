@@ -426,16 +426,10 @@ export default function WebdesignContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                SEO-Optimierung: Sichtbarkeit steigern und Kunden gewinnen
+                Professionelles Webdesign für einen starken ersten Eindruck
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Wer bei Google nicht gefunden wird, existiert online kaum. Mit professioneller SEO-Optimierung sorgen Sie dafür, dass Ihre Website in den Suchergebnissen sichtbar wird – genau dann, wenn potenzielle Kunden nach Ihren Produkten oder Dienstleistungen suchen.
-              </p>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Die Optimierung umfasst technische Aspekte wie Ladegeschwindigkeit, mobile Darstellung und Indexierbarkeit, aber auch inhaltliche Faktoren wie Keyword-Platzierung, strukturierte Inhalte und Meta-Texte.
-              </p>
               <p className="text-lg text-slate-600 leading-relaxed">
-                Ich analysiere Ihre aktuelle Website und entwickle eine maßgeschneiderte SEO-Strategie, die langfristig wirkt. So steigern Sie nicht nur Ihre Reichweite, sondern auch die Qualität der Besucher – und damit Ihre Chancen auf echte Anfragen und Verkäufe.
+                Ein gelungenes Webdesign entscheidet in Sekunden über den ersten Eindruck. Wir entwickeln Webseiten, die nicht nur optisch überzeugen, sondern auch technisch perfekt umgesetzt sind. Klare Strukturen, moderne Gestaltung und schnelle Ladezeiten sorgen dafür, dass Ihre Besucher bleiben. Dabei achten wir auf Benutzerfreundlichkeit, mobile Optimierung und ein ansprechendes Design, das Ihre Marke widerspiegelt. Mit einer professionell gestalteten Website steigern Sie Ihre Sichtbarkeit, stärken Ihr Vertrauen bei Kunden und schaffen eine nachhaltige Online-Präsenz, die wirklich wirkt.
               </p>
             </motion.div>
           </div>
