@@ -430,7 +430,7 @@ export default function WebdesignContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                Professionelles Webdesign für einen starken ersten Eindruck
+                <span className="text-[#fe7a33]">Professionelles Webdesign</span> für einen starken ersten Eindruck
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Ein gelungenes Webdesign entscheidet in Sekunden über den ersten Eindruck. Wir entwickeln Webseiten, die nicht nur optisch überzeugen, sondern auch technisch perfekt umgesetzt sind. Klare Strukturen, moderne Gestaltung und schnelle Ladezeiten sorgen dafür, dass Ihre Besucher bleiben. Dabei achten wir auf Benutzerfreundlichkeit, mobile Optimierung und ein ansprechendes Design, das Ihre Marke widerspiegelt. Mit einer professionell gestalteten Website steigern Sie Ihre Sichtbarkeit, stärken Ihr Vertrauen bei Kunden und schaffen eine nachhaltige Online-Präsenz, die wirklich wirkt.
@@ -447,7 +447,7 @@ export default function WebdesignContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                Responsive Design – Ihre Website auf jedem Gerät perfekt dargestellt
+                <span className="text-[#fe7a33]">Responsive Design</span> – Ihre Website auf jedem Gerät perfekt dargestellt
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Heutzutage greifen mehr als die Hälfte aller Nutzer über mobile Geräte auf Websites zu. Deshalb setzen wir auf vollständig responsives Webdesign. Egal ob Smartphone, Tablet oder Desktop – Ihre Seite passt sich automatisch jeder Bildschirmgröße an. Das sorgt nicht nur für eine bessere Nutzererfahrung, sondern verbessert auch Ihr Ranking bei Google. Wir optimieren Bilder, Texte und Layouts so, dass sie überall optimal dargestellt werden. So bleibt Ihre Website modern, flexibel und zukunftssicher – und Sie erreichen Ihre Zielgruppe jederzeit, auf jedem Gerät.
@@ -584,7 +584,7 @@ export default function WebdesignContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                Individuelles Webdesign – maßgeschneidert für Ihr Unternehmen
+                <span className="text-[#fe7a33]">Individuelles Webdesign</span> – maßgeschneidert für Ihr Unternehmen
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Keine Website von der Stange: Wir gestalten jedes Projekt individuell nach Ihren Anforderungen. Ihr Unternehmen hat eine eigene Identität – und genau das soll sich auch online widerspiegeln. Farben, Schriften und Layouts werden gezielt auf Ihr Corporate Design abgestimmt. So entsteht eine Website, die authentisch wirkt und Wiedererkennung schafft. Von der ersten Idee bis zur fertigen Umsetzung legen wir Wert auf jedes Detail. Das Ergebnis: Ein einzigartiger Internetauftritt, der Ihre Marke stärkt, Vertrauen aufbaut und Kunden überzeugt.
@@ -601,7 +601,7 @@ export default function WebdesignContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                SEO-freundliches Webdesign für bessere Google-Rankings
+                <span className="text-[#fe7a33]">SEO-freundliches Webdesign</span> für bessere <span className="text-[#fe7a33]">Google-Rankings</span>
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Eine schöne Website allein reicht nicht – sie muss auch gefunden werden. Deshalb kombinieren wir modernes Webdesign mit effektiver Suchmaschinenoptimierung. Schon beim Aufbau achten wir auf sauberen Code, schnelle Ladezeiten und klare Seitenstrukturen. Relevante Keywords, optimierte Bilder und übersichtliche Inhalte sorgen dafür, dass Google Ihre Seite besser versteht. So verbessern Sie langfristig Ihre Sichtbarkeit und gewinnen neue Besucher. Unser Ziel: Ein Webdesign, das nicht nur begeistert, sondern auch messbar mehr Reichweite und Anfragen bringt.
@@ -655,7 +655,7 @@ export default function WebdesignContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                Conversion-orientiertes Webdesign – mehr Anfragen und Kunden
+                <span className="text-[#fe7a33]">Conversion-orientiertes Webdesign</span> – mehr Anfragen und Kunden
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Gutes Webdesign ist mehr als nur Ästhetik – es führt Ihre Besucher gezielt zum Ziel. Durch eine klare Struktur, überzeugende Texte und gezielt platzierte Call-to-Action-Elemente steigern wir die Conversion-Rate Ihrer Website. Jede Seite wird so gestaltet, dass Nutzer sich intuitiv zurechtfinden und schnell Kontakt aufnehmen können. So wird aus einem Interessenten ein echter Kunde. Unser Fokus liegt auf einer harmonischen Verbindung von Design, Funktion und Marketingstrategie – für mehr Umsatz und langfristigen Erfolg.
@@ -672,7 +672,7 @@ export default function WebdesignContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                Wartung & Weiterentwicklung – Ihre Website bleibt aktuell
+                <span className="text-[#fe7a33]">Wartung & Weiterentwicklung</span> – Ihre Website bleibt aktuell
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Eine Website ist kein einmaliges Projekt, sondern ein fortlaufender Prozess. Damit Ihre Seite sicher, schnell und modern bleibt, übernehmen wir regelmäßige Wartung und technische Updates. Wir analysieren Nutzerverhalten, optimieren Inhalte und passen das Design an aktuelle Trends an. So bleibt Ihr Webauftritt nicht nur optisch frisch, sondern auch technisch auf dem neuesten Stand. Mit unserem Rundum-Service im Webdesign sorgen wir dafür, dass Ihre Website langfristig erfolgreich bleibt und stetig wächst.
