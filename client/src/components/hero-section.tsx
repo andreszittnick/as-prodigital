@@ -149,15 +149,6 @@ export default function HeroSection() {
               >
                 Meine Leistungen
               </motion.button>
-              <motion.button
-                onClick={() => scrollToSection("portfolio")}
-                className="border-2 border-slate-300 text-slate-700 px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold hover:border-orange-500 hover:text-orange-500 transition-all duration-300"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                data-testid="button-view-portfolio"
-              >
-                Portfolio ansehen
-              </motion.button>
             </motion.div>
           </motion.div>
           

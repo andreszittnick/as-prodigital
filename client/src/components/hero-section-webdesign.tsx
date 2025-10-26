@@ -113,7 +113,7 @@ export default function HeroSectionWebdesign() {
               <p>
                 „Ich entwickle moderne, schnelle und optisch ansprechende Webseiten, die Ihre Marke perfekt präsentieren und Ihre Besucher in Kunden verwandeln.
                 <br /><br />
-                Ob Unternehmensseite, Landingpage oder Online-Portfolio – ich gestalte Ihre Website individuell, nutzerfreundlich und funktional"
+                Ob Unternehmensseite oder Landingpage – ich gestalte Ihre Website individuell, nutzerfreundlich und funktional"
               </p>
               <br />
               <div className="space-y-2">

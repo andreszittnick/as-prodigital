@@ -43,19 +43,14 @@ export default function About() {
       description: "Fokus auf moderne JavaScript-Frameworks und responsive Design. Erste größere E-Commerce Projekte."
     },
     {
-      year: "2021",
-      title: "KI-Integration",
-      description: "Beginn der Arbeit mit KI-Technologien und Machine Learning. Entwicklung intelligenter Automatisierungslösungen."
-    },
-    {
       year: "2022",
       title: "AS-ProDigital Gründung",
-      description: "Offizielle Gründung von AS-ProDigital. Fokus auf ganzheitliche digitale Transformationsprojekte."
+      description: "Offizielle Gründung von AS-ProDigital. Fokus auf professionelles Webdesign und ganzheitliche digitale Lösungen."
     },
     {
       year: "2023",
       title: "Expansion der Services",
-      description: "Erweiterung des Portfolios um SEO-Optimierung und Digital Marketing. Aufbau eines Netzwerks von Partnern."
+      description: "Erweiterung der Dienstleistungen um professionelle SEO-Optimierung und Digital Marketing. Aufbau eines Netzwerks von Partnern."
     },
     {
       year: "2024",
