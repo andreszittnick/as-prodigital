@@ -1,6 +1,6 @@
 # Overview
 
-This is a modern full-stack web application built for a digital agency called "AS ProDigital". The application serves as a professional portfolio and contact website, featuring services like web design, SEO optimization, and AI solutions. It's built with a React frontend using modern UI components and an Express.js backend with PostgreSQL database integration.
+This is a modern full-stack web application built for a digital agency called "AS ProDigital". The application serves as a professional portfolio and contact website, featuring services like web design and SEO optimization. It includes a comprehensive blog with category filtering and SEO-optimized articles. It's built with a React frontend using modern UI components and an Express.js backend with PostgreSQL database integration.
 
 # User Preferences
 
@@ -8,7 +8,8 @@ Preferred communication style: Simple, everyday language.
 Brand colors: Use #fe7a33 (orange) and #07437c (blue) separately - do not mix/gradient the colors together.
 Website language: German (all content translated from English to German).
 Page-specific modifications: When user requests changes to a specific subpage (e.g., "Webdesign-Unterseite"), only modify that exact page. Do not apply changes to other subpages unless explicitly requested.
-URL Structure: New simplified URLs - /Leistungen (services overview), /Webdesign (webdesign subpage), /SEO (SEO subpage), /KI-Loesungen (AI solutions subpage), /ueber-mich (about page), /Kontakt (contact page).
+URL Structure: URLs - / (home), /Leistungen (services overview), /Webdesign (webdesign subpage), /SEO (SEO subpage), /ueber-mich (about page), /Kontakt (contact page), /blog (blog overview), /blog/:slug (individual blog posts).
+Services: ONLY Webdesign and SEO - NO KI/AI services whatsoever.
 
 # System Architecture
 
@@ -33,7 +34,14 @@ URL Structure: New simplified URLs - /Leistungen (services overview), /Webdesign
 - **Tables**: 
   - `users` - User authentication and management
   - `contact_inquiries` - Contact form submissions with validation
+  - `blog_posts` - Blog articles with categories, tags, and SEO metadata
 - **Schema Management**: Drizzle migrations with push-based deployment
+
+## Blog System
+- **Content**: 12 SEO-optimized blog posts (6 Webdesign, 6 SEO topics)
+- **Features**: Category filtering (All, Webdesign, SEO), Individual blog detail pages, Related posts suggestions, Share functionality, SEO metadata (title, description, keywords)
+- **Storage**: Static content in client/src/data/blog-posts.ts
+- **Categories**: Webdesign and SEO only
 
 ## Data Storage Solutions
 - **Production**: PostgreSQL database via Neon serverless
