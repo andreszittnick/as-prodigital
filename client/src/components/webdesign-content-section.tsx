@@ -667,19 +667,10 @@ export default function WebdesignContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                Erfolgreiches <span className="text-orange-500">Webdesign</span> kombiniert <span className="text-orange-500">Design</span> und <span className="text-orange-500">Technik</span>
+                Conversion-orientiertes Webdesign – mehr Anfragen und Kunden
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Viele unterschätzen, dass Webdesign weit mehr ist als ein schönes Layout. Eine erfolgreiche Website entsteht erst, wenn Design, Technik und Nutzerfreundlichkeit perfekt ineinandergreifen.
-              </p>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Ein moderner Internetauftritt muss übersichtlich, schnell und mobiloptimiert sein. Wenn Besucher sofort finden, wonach sie suchen, steigt die Chance, dass sie länger auf der Seite bleiben und mit Ihrem Unternehmen in Kontakt treten.
-              </p>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Gleichzeitig sollten Inhalte so aufbereitet sein, dass Google sie optimal erfassen kann. SEO-freundliches Webdesign sorgt dafür, dass Ihre Website langfristig sichtbar bleibt und kontinuierlich neue Interessenten erreicht.
-              </p>
               <p className="text-lg text-slate-600 leading-relaxed">
-                Das Zusammenspiel aus starker Optik, intuitiver Bedienung und sauberer Technik macht Ihre Website zu einem echten Erfolgsfaktor für Ihr Business.
+                Gutes Webdesign ist mehr als nur Ästhetik – es führt Ihre Besucher gezielt zum Ziel. Durch eine klare Struktur, überzeugende Texte und gezielt platzierte Call-to-Action-Elemente steigern wir die Conversion-Rate Ihrer Website. Jede Seite wird so gestaltet, dass Nutzer sich intuitiv zurechtfinden und schnell Kontakt aufnehmen können. So wird aus einem Interessenten ein echter Kunde. Unser Fokus liegt auf einer harmonischen Verbindung von Design, Funktion und Marketingstrategie – für mehr Umsatz und langfristigen Erfolg.
               </p>
             </motion.div>
           </div>
