@@ -84,12 +84,17 @@ export default function About() {
                 <p>
                   Ich bin André – jemand, der sich mit Leidenschaft in jedes Projekt hineindenkt. 
                   Webdesign ist für mich mehr als nur Gestaltung: Es ist die Verbindung aus Technik, 
-                  Kreativität und Strategie. Ich arbeite gerne strukturiert und präzise, Schritt für 
-                  Schritt, bis alles perfekt passt – vom ersten Entwurf bis zur fertigen Website. 
-                  Besonders wichtig ist mir, dass jede Seite authentisch wirkt und wirklich zu meinem 
-                  Kunden passt. Ich mag klare Designs, logische Abläufe und Lösungen, die langfristig 
-                  funktionieren. Was mich antreibt: der Moment, in dem aus einer Idee eine Website wird, 
-                  die Menschen begeistert.
+                  Kreativität und Strategie.
+                </p>
+                <p>
+                  Ich arbeite gerne strukturiert und präzise, Schritt für Schritt, bis alles perfekt 
+                  passt – vom ersten Entwurf bis zur fertigen Website. Besonders wichtig ist mir, dass 
+                  jede Seite authentisch wirkt und wirklich zu meinem Kunden passt.
+                </p>
+                <p>
+                  Ich mag klare Designs, logische Abläufe und Lösungen, die langfristig funktionieren. 
+                  Was mich antreibt: der Moment, in dem aus einer Idee eine Website wird, die Menschen 
+                  begeistert.
                 </p>
               </div>
             </motion.div>
