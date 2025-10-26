@@ -2,13 +2,13 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Search, DollarSign, Users, Zap, Target, TrendingUp, Rocket, Sparkles, ArrowRight, Palette, Check } from "lucide-react";
 import {
-  ProfessionalWebdesignAnimation,
-  ResponsiveDesignAnimation,
-  IndividualWebdesignAnimation,
-  SeoWebdesignAnimation,
-  ConversionWebdesignAnimation,
-  MaintenanceWebdesignAnimation
-} from "./webdesign-animations";
+  SeoRankingsAnimation,
+  TechnicalSeoAnimation,
+  KeywordResearchAnimation,
+  ContentOptimizationAnimation,
+  LocalSeoAnimation,
+  SeoMonitoringAnimation
+} from "./seo-animations";
 
 // Process Timeline Content Component
 function ProcessTimelineContent() {
@@ -392,7 +392,7 @@ export default function SeoContentSection() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <SeoWebdesignAnimation />
+              <SeoRankingsAnimation />
             </motion.div>
             <motion.div
               className="order-1 lg:order-2"
@@ -431,7 +431,7 @@ export default function SeoContentSection() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <MaintenanceWebdesignAnimation />
+              <TechnicalSeoAnimation />
             </motion.div>
           </div>
         </div>
@@ -546,7 +546,7 @@ export default function SeoContentSection() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <IndividualWebdesignAnimation />
+              <KeywordResearchAnimation />
             </motion.div>
             <motion.div
               className="order-1 lg:order-2"
@@ -585,7 +585,7 @@ export default function SeoContentSection() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <ResponsiveDesignAnimation />
+              <ContentOptimizationAnimation />
             </motion.div>
           </div>
         </div>
@@ -617,7 +617,7 @@ export default function SeoContentSection() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <ConversionWebdesignAnimation />
+              <LocalSeoAnimation />
             </motion.div>
             <motion.div
               className="order-1 lg:order-2"
@@ -656,7 +656,7 @@ export default function SeoContentSection() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <ProfessionalWebdesignAnimation />
+              <SeoMonitoringAnimation />
             </motion.div>
           </div>
         </div>
