@@ -466,6 +466,25 @@ export function LocalSeoAnimation() {
 // Animation 6: SEO Monitoring - Analytics Dashboard
 export function SeoMonitoringAnimation() {
   const chartData = [40, 65, 55, 80, 70, 90, 85];
+  
+  // Data points for line graph
+  const lineData = [
+    { x: 10, y: 80 },
+    { x: 25, y: 65 },
+    { x: 40, y: 70 },
+    { x: 55, y: 50 },
+    { x: 70, y: 35 },
+    { x: 85, y: 20 },
+    { x: 95, y: 10 },
+  ];
+
+  // Create SVG path
+  const createPath = () => {
+    return lineData.map((point, i) => {
+      if (i === 0) return `M ${point.x} ${point.y}`;
+      return `L ${point.x} ${point.y}`;
+    }).join(' ');
+  };
 
   return (
     <div className="h-full min-h-[300px] bg-gradient-to-br from-orange-50 to-slate-100 rounded-2xl flex items-center justify-center p-8 relative overflow-hidden">
@@ -520,8 +539,104 @@ export function SeoMonitoringAnimation() {
             </motion.div>
           </div>
 
+          {/* Line Graph Container */}
+          <div className="relative h-32 mb-4 bg-gradient-to-br from-slate-50 to-blue-50 rounded-xl p-4">
+            <svg className="w-full h-full" viewBox="0 0 100 100" preserveAspectRatio="none">
+              {/* Grid lines */}
+              {[0, 25, 50, 75, 100].map((y) => (
+                <line
+                  key={y}
+                  x1="0"
+                  y1={y}
+                  x2="100"
+                  y2={y}
+                  stroke="#e2e8f0"
+                  strokeWidth="0.5"
+                />
+              ))}
+              
+              {/* Animated gradient area under line */}
+              <motion.path
+                d={`${createPath()} L 95 100 L 10 100 Z`}
+                fill="url(#lineGradient)"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 0.3 }}
+                transition={{ duration: 1, delay: 1 }}
+              />
+              
+              {/* Main line */}
+              <motion.path
+                d={createPath()}
+                fill="none"
+                stroke="#fe7a33"
+                strokeWidth="3"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                initial={{ pathLength: 0 }}
+                animate={{ pathLength: 1 }}
+                transition={{ duration: 2, delay: 0.8, ease: "easeInOut" }}
+              />
+              
+              {/* Data points */}
+              {lineData.map((point, index) => (
+                <motion.circle
+                  key={index}
+                  cx={point.x}
+                  cy={point.y}
+                  r="2"
+                  fill="#fe7a33"
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ duration: 0.3, delay: 0.8 + index * 0.2 }}
+                />
+              ))}
+              
+              {/* Moving indicator dot */}
+              <motion.circle
+                cx={lineData[lineData.length - 1].x}
+                cy={lineData[lineData.length - 1].y}
+                r="4"
+                fill="#fe7a33"
+                animate={{
+                  scale: [1, 1.5, 1],
+                  opacity: [1, 0.5, 1],
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: Infinity,
+                  delay: 2.5,
+                }}
+              />
+              
+              {/* Gradient definition */}
+              <defs>
+                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+                  <stop offset="0%" stopColor="#fe7a33" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#fe7a33" stopOpacity="0.05" />
+                </linearGradient>
+              </defs>
+            </svg>
+            
+            {/* Upward arrow indicator */}
+            <motion.div
+              className="absolute top-2 right-2"
+              initial={{ y: 10, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{ duration: 0.6, delay: 2.5 }}
+            >
+              <motion.div
+                animate={{ y: [-3, 3, -3] }}
+                transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+              >
+                <svg className="w-6 h-6 text-green-600" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clipRule="evenodd" />
+                </svg>
+              </motion.div>
+            </motion.div>
+          </div>
+
           {/* Bar Chart */}
-          <div className="flex items-end justify-between h-32 gap-2">
+          <div className="flex items-end justify-between h-24 gap-2">
             {chartData.map((value, index) => (
               <div key={index} className="flex-1 flex flex-col items-center gap-2">
                 <motion.div
