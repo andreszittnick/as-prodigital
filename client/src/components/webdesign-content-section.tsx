@@ -443,16 +443,10 @@ export default function WebdesignContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                Technisches SEO: Die Basis für gute Google-Rankings
+                Responsive Design – Ihre Website auf jedem Gerät perfekt dargestellt
               </h2>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Technisches SEO ist das unsichtbare Fundament Ihrer Website – und unverzichtbar, wenn Sie bei Google erfolgreich sein möchten. Denn nur wenn Ihre Seite technisch sauber aufgebaut ist, kann sie von Suchmaschinen vollständig erfasst und korrekt bewertet werden.
-              </p>
-              <p className="text-lg text-slate-600 leading-relaxed mb-6">
-                Zu den wichtigsten Maßnahmen zählen die Optimierung von Ladezeiten, die Mobilfreundlichkeit (Responsive Design), eine fehlerfreie Indexierung sowie die Strukturierung mit sprechenden URLs, H1/H2-Hierarchien und internen Verlinkungen.
-              </p>
               <p className="text-lg text-slate-600 leading-relaxed">
-                Ich überprüfe Ihre Website auf technische Schwächen und behebe sie gezielt – damit Ihre Seite eine stabile Grundlage für erfolgreiche SEO-Strategien bietet.
+                Heutzutage greifen mehr als die Hälfte aller Nutzer über mobile Geräte auf Websites zu. Deshalb setzen wir auf vollständig responsives Webdesign. Egal ob Smartphone, Tablet oder Desktop – Ihre Seite passt sich automatisch jeder Bildschirmgröße an. Das sorgt nicht nur für eine bessere Nutzererfahrung, sondern verbessert auch Ihr Ranking bei Google. Wir optimieren Bilder, Texte und Layouts so, dass sie überall optimal dargestellt werden. So bleibt Ihre Website modern, flexibel und zukunftssicher – und Sie erreichen Ihre Zielgruppe jederzeit, auf jedem Gerät.
               </p>
             </motion.div>
             <motion.div
