@@ -402,7 +402,7 @@ export default function SeoContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                SEO-Optimierung: Sichtbarkeit steigern und Kunden gewinnen
+                <span className="text-[#fe7a33]">SEO-Optimierung</span>: Sichtbarkeit steigern und Kunden gewinnen
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Wer bei Google nicht gefunden wird, existiert online kaum. Mit professioneller SEO-Optimierung sorgen Sie dafür, dass Ihre Website in den Suchergebnissen sichtbar wird – genau dann, wenn potenzielle Kunden nach Ihren Produkten oder Dienstleistungen suchen. Die Optimierung umfasst technische Aspekte wie Ladegeschwindigkeit, mobile Darstellung und Indexierbarkeit, aber auch inhaltliche Faktoren wie Keyword-Platzierung, strukturierte Inhalte und Meta-Texte. Ich analysiere Ihre aktuelle Website und entwickle eine maßgeschneiderte SEO-Strategie, die langfristig wirkt.
@@ -419,7 +419,7 @@ export default function SeoContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                Technisches SEO: Die Basis für gute Google-Rankings
+                <span className="text-[#fe7a33]">Technisches SEO</span>: Die Basis für gute <span className="text-[#fe7a33]">Google-Rankings</span>
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Technisches SEO ist das unsichtbare Fundament Ihrer Website – und unverzichtbar, wenn Sie bei Google erfolgreich sein möchten. Denn nur wenn Ihre Seite technisch sauber aufgebaut ist, kann sie von Suchmaschinen vollständig erfasst und korrekt bewertet werden. Zu den wichtigsten Maßnahmen zählen die Optimierung von Ladezeiten, die Mobilfreundlichkeit (Responsive Design), eine fehlerfreie Indexierung sowie die Strukturierung mit sprechenden URLs, H1/H2-Hierarchien und internen Verlinkungen. Ich überprüfe Ihre Website auf technische Schwächen und behebe sie gezielt.
@@ -556,7 +556,7 @@ export default function SeoContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                Keyword-Recherche: Die richtigen Begriffe für maximale Sichtbarkeit
+                <span className="text-[#fe7a33]">Keyword-Recherche</span>: Die richtigen Begriffe für maximale Sichtbarkeit
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Die Keyword-Recherche ist der erste und wichtigste Schritt jeder SEO-Strategie. Nur wenn Sie die Suchbegriffe kennen, die Ihre Zielgruppe wirklich verwendet, können Sie gezielt gefunden werden. Ich analysiere relevante Keywords nach Suchvolumen, Wettbewerb und Nutzerabsicht. So entstehen Inhalte, die nicht nur Rankings bringen, sondern auch echte Anfragen generieren. Mit der richtigen Keyword-Strategie schaffen Sie eine solide Basis für langfristigen SEO-Erfolg.
@@ -573,7 +573,7 @@ export default function SeoContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                Content-Optimierung: Inhalte, die Google und Nutzer überzeugen
+                <span className="text-[#fe7a33]">Content-Optimierung</span>: Inhalte, die Google und Nutzer überzeugen
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Guter Content ist das Herzstück jeder erfolgreichen SEO-Strategie. Es reicht nicht, einfach nur viel Text zu schreiben – Inhalte müssen relevant, strukturiert und auf die Bedürfnisse Ihrer Zielgruppe zugeschnitten sein. Ich optimiere bestehende Texte und erstelle neue Inhalte, die sowohl für Suchmaschinen als auch für Ihre Besucher wertvoll sind. Mit der richtigen Mischung aus Keywords, Struktur und Mehrwert steigern Sie Rankings und Conversions gleichzeitig.
@@ -627,7 +627,7 @@ export default function SeoContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                Local SEO: Gezielt Kunden in Ihrer Region erreichen
+                <span className="text-[#fe7a33]">Local SEO</span>: Gezielt Kunden in Ihrer Region erreichen
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Für Unternehmen mit lokalem Fokus ist Local SEO unverzichtbar. Wenn Kunden in Ihrer Nähe nach Ihren Produkten oder Dienstleistungen suchen, sollten Sie an erster Stelle stehen. Ich optimiere Ihren Google My Business Eintrag, lokale Keywords und Ihre NAP-Daten (Name, Adresse, Telefonnummer), damit Sie in lokalen Suchergebnissen und auf Google Maps prominent erscheinen. So gewinnen Sie gezielt Kunden aus Ihrer Region – genau dann, wenn sie nach Ihnen suchen.
@@ -644,7 +644,7 @@ export default function SeoContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                SEO-Monitoring: Fortschritte messen und kontinuierlich optimieren
+                <span className="text-[#fe7a33]">SEO-Monitoring</span>: Fortschritte messen und kontinuierlich optimieren
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 SEO ist kein einmaliges Projekt, sondern ein fortlaufender Prozess. Nur durch regelmäßiges Monitoring können Sie den Erfolg Ihrer Maßnahmen messen und rechtzeitig gegensteuern. Ich überwache Rankings, Traffic-Entwicklung und wichtige SEO-Kennzahlen kontinuierlich. Auf Basis der Daten optimiere ich Ihre Strategie laufend weiter, damit Ihre Website nicht nur kurzfristig, sondern dauerhaft erfolgreich bleibt. So bleiben Sie der Konkurrenz immer einen Schritt voraus.
