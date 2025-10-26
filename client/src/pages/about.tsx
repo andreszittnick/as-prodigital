@@ -31,33 +31,6 @@ export default function About() {
     }
   ];
 
-  const timeline = [
-    {
-      year: "2019",
-      title: "Die Anfänge",
-      description: "Erste Schritte in der Webentwicklung während des Studiums. Entwicklung von einfachen Websites für lokale Unternehmen."
-    },
-    {
-      year: "2020",
-      title: "Spezialisierung",
-      description: "Fokus auf moderne JavaScript-Frameworks und responsive Design. Erste größere E-Commerce Projekte."
-    },
-    {
-      year: "2022",
-      title: "AS-ProDigital Gründung",
-      description: "Offizielle Gründung von AS-ProDigital. Fokus auf professionelles Webdesign und ganzheitliche digitale Lösungen."
-    },
-    {
-      year: "2023",
-      title: "Expansion der Services",
-      description: "Erweiterung der Dienstleistungen um professionelle SEO-Optimierung und Digital Marketing. Aufbau eines Netzwerks von Partnern."
-    },
-    {
-      year: "2024",
-      title: "Innovation & Zukunft",
-      description: "Kontinuierliche Weiterentwicklung mit neuesten Technologien. Fokus auf nachhaltige und zukunftsfähige Lösungen."
-    }
-  ];
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -198,57 +171,6 @@ export default function About() {
                 <p className="text-gray-600 dark:text-gray-300">
                   {value.description}
                 </p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Timeline Section */}
-      <section className="py-20 bg-white dark:bg-gray-800">
-        <div className="max-w-4xl mx-auto px-4">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Meine <span className="text-orange-500">Reise</span>
-            </h2>
-            <p className="text-xl text-gray-600 dark:text-gray-300">
-              Von den ersten Schritten bis heute
-            </p>
-          </motion.div>
-
-          <div className="relative">
-            <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-orange-500"></div>
-            
-            {timeline.map((item, index) => (
-              <motion.div
-                key={item.year}
-                initial={{ opacity: 0, x: index % 2 === 0 ? -30 : 30 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                className={`relative flex items-center mb-12 ${
-                  index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
-                }`}
-              >
-                <div className={`w-1/2 ${index % 2 === 0 ? 'pr-8' : 'pl-8'}`}>
-                  <div className="bg-white dark:bg-gray-900 p-6 rounded-2xl shadow-lg">
-                    <div className="text-orange-500 font-bold text-xl mb-2">
-                      {item.year}
-                    </div>
-                    <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">
-                      {item.title}
-                    </h3>
-                    <p className="text-gray-600 dark:text-gray-300">
-                      {item.description}
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-orange-500 rounded-full border-4 border-white dark:border-gray-800"></div>
               </motion.div>
             ))}
           </div>
