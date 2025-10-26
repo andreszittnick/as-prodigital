@@ -1,6 +1,14 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import { Code, Monitor, Search, DollarSign, Users, Zap, Target, TrendingUp, Rocket, Sparkles, ArrowRight, Palette, Check } from "lucide-react";
+import {
+  ProfessionalWebdesignAnimation,
+  ResponsiveDesignAnimation,
+  IndividualWebdesignAnimation,
+  SeoWebdesignAnimation,
+  ConversionWebdesignAnimation,
+  MaintenanceWebdesignAnimation
+} from "./webdesign-animations";
 
 // Process Timeline Content Component
 function ProcessTimelineContent() {
@@ -412,11 +420,7 @@ export default function WebdesignContentSection() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="h-full min-h-[300px] bg-gradient-to-br from-orange-100 to-blue-100 rounded-2xl flex items-center justify-center">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center">
-                  <Monitor className="w-8 h-8 text-white" />
-                </div>
-              </div>
+              <ProfessionalWebdesignAnimation />
             </motion.div>
             <motion.div
               className="order-1 lg:order-2"
@@ -455,11 +459,7 @@ export default function WebdesignContentSection() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="h-full min-h-[300px] bg-gradient-to-br from-blue-100 to-orange-100 rounded-2xl flex items-center justify-center">
-                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
-                  <Search className="w-8 h-8 text-white" />
-                </div>
-              </div>
+              <ResponsiveDesignAnimation />
             </motion.div>
           </div>
         </div>
@@ -574,11 +574,7 @@ export default function WebdesignContentSection() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="h-full min-h-[300px] bg-gradient-to-br from-orange-100 to-blue-100 rounded-2xl flex items-center justify-center">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center">
-                  <Monitor className="w-8 h-8 text-white" />
-                </div>
-              </div>
+              <IndividualWebdesignAnimation />
             </motion.div>
             <motion.div
               className="order-1 lg:order-2"
@@ -617,11 +613,7 @@ export default function WebdesignContentSection() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="h-full min-h-[300px] bg-gradient-to-br from-blue-100 to-orange-100 rounded-2xl flex items-center justify-center">
-                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
-                  <Code className="w-8 h-8 text-white" />
-                </div>
-              </div>
+              <SeoWebdesignAnimation />
             </motion.div>
           </div>
         </div>
@@ -653,11 +645,7 @@ export default function WebdesignContentSection() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="h-full min-h-[300px] bg-gradient-to-br from-orange-100 to-blue-100 rounded-2xl flex items-center justify-center">
-                <div className="w-16 h-16 bg-orange-500 rounded-full flex items-center justify-center">
-                  <Monitor className="w-8 h-8 text-white" />
-                </div>
-              </div>
+              <ConversionWebdesignAnimation />
             </motion.div>
             <motion.div
               className="order-1 lg:order-2"
@@ -696,11 +684,7 @@ export default function WebdesignContentSection() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div className="h-full min-h-[300px] bg-gradient-to-br from-blue-100 to-orange-100 rounded-2xl flex items-center justify-center">
-                <div className="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center">
-                  <Code className="w-8 h-8 text-white" />
-                </div>
-              </div>
+              <MaintenanceWebdesignAnimation />
             </motion.div>
           </div>
         </div>
