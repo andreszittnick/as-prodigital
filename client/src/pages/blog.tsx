@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import { Calendar, Clock, Tag, ArrowRight } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { blogPosts } from "@/data/blog-posts";
@@ -22,6 +23,21 @@ export default function Blog() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Helmet>
+        <title>Blog & Ratgeber - Webdesign & SEO Tipps | AS ProDigital</title>
+        <meta 
+          name="description" 
+          content="Praktische Tipps, Anleitungen und Insights zu Webdesign, SEO und digitalem Marketing. Experten-Wissen von AS ProDigital aus Alzey." 
+        />
+        <meta 
+          name="keywords" 
+          content="Webdesign Blog, SEO Ratgeber, Webdesign Tipps, SEO Tipps, Digital Marketing, Webentwicklung, Suchmaschinenoptimierung" 
+        />
+        <meta property="og:title" content="Blog & Ratgeber - Webdesign & SEO Tipps | AS ProDigital" />
+        <meta property="og:description" content="Praktische Tipps, Anleitungen und Insights zu Webdesign, SEO und digitalem Marketing." />
+        <meta property="og:type" content="website" />
+        <link rel="canonical" href="https://asprodigital.de/blog" />
+      </Helmet>
       <Navigation />
       
       {/* Hero Section */}

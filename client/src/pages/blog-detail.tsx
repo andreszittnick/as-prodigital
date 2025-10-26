@@ -1,6 +1,7 @@
 import { useRoute, Link } from "wouter";
 import { motion } from "framer-motion";
 import { Calendar, Clock, Tag, ArrowLeft, Share2 } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { blogPosts } from "@/data/blog-posts";
@@ -17,6 +18,10 @@ export default function BlogDetail() {
   if (!post) {
     return (
       <div className="min-h-screen bg-gray-50">
+        <Helmet>
+          <title>Artikel nicht gefunden | AS ProDigital Blog</title>
+          <meta name="robots" content="noindex, nofollow" />
+        </Helmet>
         <Navigation />
         <div className="pt-32 pb-16 px-4">
           <div className="max-w-4xl mx-auto text-center">
@@ -42,6 +47,22 @@ export default function BlogDetail() {
 
   return (
     <div className="min-h-screen bg-gray-50">
+      <Helmet>
+        <title>{post.title} | AS ProDigital Blog</title>
+        <meta name="description" content={post.metaDescription} />
+        <meta name="keywords" content={post.metaKeywords.join(', ')} />
+        <meta name="author" content={post.author} />
+        <meta property="og:title" content={post.title} />
+        <meta property="og:description" content={post.metaDescription} />
+        <meta property="og:type" content="article" />
+        <meta property="article:published_time" content={post.publishedAt} />
+        <meta property="article:author" content={post.author} />
+        <meta property="article:section" content={post.category} />
+        {post.tags.map((tag) => (
+          <meta key={tag} property="article:tag" content={tag} />
+        ))}
+        <link rel="canonical" href={`https://asprodigital.de/blog/${post.slug}`} />
+      </Helmet>
       <Navigation />
       
       {/* Article Header */}
