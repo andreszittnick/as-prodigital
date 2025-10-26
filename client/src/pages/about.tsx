@@ -82,20 +82,14 @@ export default function About() {
               </h1>
               <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300">
                 <p>
-                  Hallo! Ich bin André, ein leidenschaftlicher Webentwickler und digitaler Stratege 
-                  aus München. Seit über 5 Jahren verwandle ich die Visionen meiner Kunden in 
-                  beeindruckende digitale Realitäten.
-                </p>
-                <p>
-                  Meine Mission ist es, Unternehmen dabei zu helfen, ihr volles digitales Potenzial 
-                  zu entfalten. Durch die Kombination von modernem Design, neuesten Technologien 
-                  und strategischem Denken schaffe ich Lösungen, die nicht nur funktionieren, 
-                  sondern begeistern.
-                </p>
-                <p>
-                  Was mich besonders antreibt, ist die enge Zusammenarbeit mit meinen Kunden. 
-                  Jedes Projekt ist eine Partnerschaft, in der ich nicht nur als Entwickler, 
-                  sondern als strategischer Berater agiere.
+                  Ich bin André – jemand, der sich mit Leidenschaft in jedes Projekt hineindenkt. 
+                  Webdesign ist für mich mehr als nur Gestaltung: Es ist die Verbindung aus Technik, 
+                  Kreativität und Strategie. Ich arbeite gerne strukturiert und präzise, Schritt für 
+                  Schritt, bis alles perfekt passt – vom ersten Entwurf bis zur fertigen Website. 
+                  Besonders wichtig ist mir, dass jede Seite authentisch wirkt und wirklich zu meinem 
+                  Kunden passt. Ich mag klare Designs, logische Abläufe und Lösungen, die langfristig 
+                  funktionieren. Was mich antreibt: der Moment, in dem aus einer Idee eine Website wird, 
+                  die Menschen begeistert.
                 </p>
               </div>
             </motion.div>
