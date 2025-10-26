@@ -133,6 +133,7 @@ export default function Navigation() {
 
             {/* Other Navigation Items */}
             {[
+              { name: "Blog", href: "/blog" },
               { name: "Über mich", href: "/ueber-mich" },
             ].map((item, index) => (
               <Link key={index} href={item.href}>
@@ -260,6 +261,7 @@ export default function Navigation() {
 
               {/* Other Mobile Navigation Items */}
               {[
+                { name: "Blog", href: "/blog" },
                 { name: "Über mich", href: "/ueber-mich" },
               ].map((item, index) => (
                 <Link key={index} href={item.href}>

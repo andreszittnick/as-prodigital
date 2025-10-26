@@ -42,3 +42,22 @@ export type InsertUser = z.infer<typeof insertUserSchema>;
 export type User = typeof users.$inferSelect;
 export type InsertContactInquiry = z.infer<typeof insertContactInquirySchema>;
 export type ContactInquiry = typeof contactInquiries.$inferSelect;
+
+// Blog Post Schema
+export const blogPostSchema = z.object({
+  id: z.string(),
+  title: z.string(),
+  slug: z.string(),
+  excerpt: z.string(),
+  content: z.string(),
+  category: z.enum(["webdesign", "seo"]),
+  author: z.string(),
+  publishedAt: z.string(),
+  readTime: z.number(),
+  image: z.string().optional(),
+  tags: z.array(z.string()),
+  metaDescription: z.string(),
+  metaKeywords: z.array(z.string()),
+});
+
+export type BlogPost = z.infer<typeof blogPostSchema>;

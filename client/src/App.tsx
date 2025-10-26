@@ -10,6 +10,8 @@ import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import WebdesignAlzey from "@/pages/webdesign-alzey";
 import SeoAlzey from "@/pages/seo-alzey";
+import Blog from "@/pages/blog";
+import BlogDetail from "@/pages/blog-detail";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
@@ -33,6 +35,8 @@ function Router() {
         <Route path="/Kontakt" component={Contact} />
         <Route path="/Webdesign" component={WebdesignAlzey} />
         <Route path="/SEO" component={SeoAlzey} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/:slug" component={BlogDetail} />
         <Route component={NotFound} />
       </Switch>
     </>
