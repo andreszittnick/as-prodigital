@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { motion } from "framer-motion";
 import { Award, Users, Coffee, Code2, Target, Heart } from "lucide-react";
 import profileImage from "@assets/Bild_Andre_Szittnick_1754308315756.jpg";
@@ -261,6 +262,7 @@ export default function About() {
       </section>
 
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

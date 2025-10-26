@@ -1,5 +1,6 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { motion } from "framer-motion";
 import { ExternalLink, Github, Calendar, Tag } from "lucide-react";
 
@@ -227,6 +228,7 @@ export default function Portfolio() {
       </section>
 
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

@@ -1,6 +1,7 @@
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import ContactSection from "@/components/contact-section";
+import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { motion } from "framer-motion";
 import { Code, Search } from "lucide-react";
 
@@ -140,6 +141,7 @@ Mein Ansatz umfasst technische Optimierungen, On-Page-SEO und die Verbesserung d
       <ContactSection />
 
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }

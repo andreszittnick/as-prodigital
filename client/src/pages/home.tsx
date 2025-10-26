@@ -5,6 +5,7 @@ import ProcessTimeline from "@/components/process-timeline";
 import ServicesSection from "@/components/services-section";
 import ContactSection from "@/components/contact-section";
 import Footer from "@/components/footer";
+import ScrollToTopButton from "@/components/scroll-to-top-button";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
       <ServicesSection />
       <ContactSection />
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }
