@@ -67,18 +67,18 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Telefon",
-      details: "+49 (0) 89 123 456 789",
-      action: "tel:+4989123456789"
+      details: "+49 (0) 170 810 94 82",
+      action: "tel:+4917081094082"
     },
     {
       icon: MapPin,
       title: "Standort",
-      details: "München, Bayern",
+      details: "Alzey",
       action: "#"
     },
     {
       icon: Clock,
-      title: "Verfügbarkeit",
+      title: "Öffnungszeiten",
       details: "Mo-Fr: 9:00 - 18:00 Uhr",
       action: "#"
     }
