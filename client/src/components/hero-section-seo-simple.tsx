@@ -130,14 +130,14 @@ export default function HeroSectionSeoSimple() {
             >
               <motion.button
                 onClick={() => window.location.href = '/Kontakt'}
-                className="text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-lg font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
+                className="text-white px-6 py-3 text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
                 style={{
                   background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
                   border: '2px solid transparent',
                   transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.background = 'white';
+                  e.currentTarget.style.background = 'transparent';
                   e.currentTarget.style.color = '#fe7a33';
                   e.currentTarget.style.borderColor = '#fe7a33';
                 }}
