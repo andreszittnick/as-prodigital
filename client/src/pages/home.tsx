@@ -31,8 +31,8 @@ export default function Home() {
         <meta property="twitter:description" content="Individuelle Websites und SEO-Optimierung aus Alzey. Persönliche Beratung und maßgeschneiderte Lösungen." />
         
         {/* Structured Data - Local Business */}
-        <script type="application/ld+json">
-          {JSON.stringify({
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
             "name": "AS-ProDigital",
@@ -61,8 +61,8 @@ export default function Home() {
             },
             "priceRange": "€€",
             "areaServed": "DE"
-          })}
-        </script>
+          })
+        }} />
       </Helmet>
       
       <div className="min-h-screen overflow-x-hidden">

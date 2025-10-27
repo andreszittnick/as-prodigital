@@ -22,8 +22,8 @@ export default function SeoAlzey() {
         <meta property="og:description" content="Erreichen Sie Top-Rankings bei Google. Professionelle SEO-Optimierung aus Alzey mit messbaren Erfolgen." />
         <meta property="og:locale" content="de_DE" />
         
-        <script type="application/ld+json">
-          {JSON.stringify({
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
             "serviceType": "SEO-Optimierung",
@@ -37,8 +37,8 @@ export default function SeoAlzey() {
             },
             "areaServed": "Alzey, Deutschland",
             "description": "Professionelle Suchmaschinenoptimierung für bessere Google-Rankings und mehr Sichtbarkeit"
-          })}
-        </script>
+          })
+        }} />
       </Helmet>
       
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">

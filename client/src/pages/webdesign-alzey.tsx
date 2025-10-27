@@ -22,8 +22,8 @@ export default function WebdesignAlzey() {
         <meta property="og:description" content="Moderne, responsive Websites für Ihr Unternehmen. Individuelle Lösungen aus Alzey." />
         <meta property="og:locale" content="de_DE" />
         
-        <script type="application/ld+json">
-          {JSON.stringify({
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
             "serviceType": "Webdesign",
@@ -37,8 +37,8 @@ export default function WebdesignAlzey() {
             },
             "areaServed": "Alzey, Deutschland",
             "description": "Professionelles Webdesign: Moderne, responsive Websites, die Ihre Kunden begeistern"
-          })}
-        </script>
+          })
+        }} />
       </Helmet>
       
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">

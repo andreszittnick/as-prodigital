@@ -58,8 +58,8 @@ Mein Ansatz umfasst technische Optimierungen, On-Page-SEO und die Verbesserung d
         <meta property="og:description" content="Entdecken Sie meine professionellen Webdesign- und SEO-Leistungen für Ihren digitalen Erfolg." />
         <meta property="og:locale" content="de_DE" />
         
-        <script type="application/ld+json">
-          {JSON.stringify({
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Service",
             "serviceType": ["Webdesign", "SEO-Optimierung"],
@@ -72,8 +72,8 @@ Mein Ansatz umfasst technische Optimierungen, On-Page-SEO und die Verbesserung d
               }
             },
             "areaServed": "Alzey, Deutschland"
-          })}
-        </script>
+          })
+        }} />
       </Helmet>
       
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">

@@ -129,12 +129,10 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
 
       {/* Content */}
       <div className="p-5 md:p-6 flex-1 flex flex-col">
-        <Link href={`/blog/${post.slug}`}>
-          <a className="block mb-3">
-            <h2 className="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-[#fe7a33] transition-colors duration-300">
-              {post.title}
-            </h2>
-          </a>
+        <Link href={`/blog/${post.slug}`} className="block mb-3">
+          <h2 className="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-[#fe7a33] transition-colors duration-300">
+            {post.title}
+          </h2>
         </Link>
         
         <p className="text-sm md:text-base text-slate-600 mb-4 line-clamp-3 flex-1">
@@ -170,12 +168,13 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
         )}
 
         {/* Read More Link */}
-        <Link href={`/blog/${post.slug}`}>
-          <a className="inline-flex items-center gap-2 text-[#fe7a33] font-semibold hover:gap-3 transition-all duration-300 text-sm md:text-base"
-            data-testid={`read-more-${post.slug}`}>
-            Weiterlesen
-            <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" />
-          </a>
+        <Link 
+          href={`/blog/${post.slug}`}
+          className="inline-flex items-center gap-2 text-[#fe7a33] font-semibold hover:gap-3 transition-all duration-300 text-sm md:text-base"
+          data-testid={`read-more-${post.slug}`}
+        >
+          Weiterlesen
+          <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" />
         </Link>
       </div>
     </motion.article>

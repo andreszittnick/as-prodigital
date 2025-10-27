@@ -106,6 +106,25 @@ export default function Contact() {
         <meta property="og:title" content="Kontakt - AS-ProDigital Alzey" />
         <meta property="og:description" content="Jetzt unverbindlich anfragen! Professionelles Webdesign & SEO aus Alzey." />
         <meta property="og:locale" content="de_DE" />
+        
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "AS-ProDigital",
+            "founder": {
+              "@type": "Person",
+              "name": "André Szittnick"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Alzey",
+              "addressCountry": "DE"
+            },
+            "telephone": "+4917081094082",
+            "email": "Info@AS-ProDigital.de"
+          })
+        }} />
       </Helmet>
       
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">

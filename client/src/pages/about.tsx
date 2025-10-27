@@ -47,8 +47,8 @@ export default function About() {
         <meta property="og:description" content="5+ Jahre Erfahrung in Webdesign & SEO. Leidenschaft für Technologie und perfekte digitale Lösungen." />
         <meta property="og:locale" content="de_DE" />
         
-        <script type="application/ld+json">
-          {JSON.stringify({
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Person",
             "name": "André Szittnick",
@@ -62,8 +62,8 @@ export default function About() {
               "addressLocality": "Alzey",
               "addressCountry": "DE"
             }
-          })}
-        </script>
+          })
+        }} />
       </Helmet>
       
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
