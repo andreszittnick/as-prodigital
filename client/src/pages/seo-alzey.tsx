@@ -11,7 +11,7 @@ export default function SeoAlzey() {
   return (
     <>
       <Helmet>
-        <title>SEO Alzey - Suchmaschinenoptimierung für mehr Sichtbarkeit | AS-ProDigital</title>
+        <title>SEO Alzey - Suchmaschinenoptimierung | AS-ProDigital</title>
         <meta name="description" content="Professionelle SEO-Optimierung aus Alzey: Bessere Google-Rankings, mehr organischer Traffic. ✓ Local SEO ✓ On-Page & Off-Page ✓ Transparente Ergebnisse" />
         <meta name="keywords" content="SEO Alzey, Suchmaschinenoptimierung Alzey, Google Ranking, Local SEO, SEO Beratung Alzey" />
         <link rel="canonical" href="https://asprodigital.de/SEO" />

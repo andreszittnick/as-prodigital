@@ -214,7 +214,22 @@ export default function ContactSectionWebdesign() {
                   
                   <Button 
                     type="submit" 
-                    className="w-full bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white font-semibold py-3 px-6 rounded-lg transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                    className="w-full text-white font-semibold py-3 px-6 rounded-lg transition-all duration-500 shadow-lg hover:shadow-xl"
+                    style={{
+                      background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
+                      border: '2px solid transparent',
+                      transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
+                    }}
+                    onMouseEnter={(e: any) => {
+                      e.currentTarget.style.background = 'white';
+                      e.currentTarget.style.color = '#fe7a33';
+                      e.currentTarget.style.borderColor = '#fe7a33';
+                    }}
+                    onMouseLeave={(e: any) => {
+                      e.currentTarget.style.background = 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)';
+                      e.currentTarget.style.color = 'white';
+                      e.currentTarget.style.borderColor = 'transparent';
+                    }}
                     disabled={submitMutation.isPending}
                     data-testid="button-submit"
                   >

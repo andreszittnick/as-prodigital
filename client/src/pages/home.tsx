@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Helmet>
-        <title>AS-ProDigital - Professionelles Webdesign & SEO aus Alzey | André Szittnick</title>
+        <title>Webdesign & SEO Alzey - AS-ProDigital André Szittnick</title>
         <meta name="description" content="AS-ProDigital bietet professionelles Webdesign und SEO-Optimierung in Alzey. Individuelle Websites, die begeistern und bei Google gefunden werden. Jetzt unverbindlich anfragen!" />
         <meta name="keywords" content="Webdesign Alzey, SEO Alzey, Webentwicklung, Suchmaschinenoptimierung, André Szittnick, AS-ProDigital, Website erstellen" />
         <link rel="canonical" href="https://asprodigital.de/" />
