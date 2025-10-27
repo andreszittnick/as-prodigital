@@ -90,8 +90,8 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <span className="gradient-text">André Szittnick</span><br />
-              <span className="text-slate-900">AS-ProDigital</span>
+              <span className="gradient-text">Webdesign & SEO</span><br />
+              <span className="text-slate-900">aus Alzey</span>
             </motion.h1>
             
             <motion.div 

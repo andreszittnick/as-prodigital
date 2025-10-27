@@ -91,7 +91,7 @@ export default function HeroSectionWebdesign() {
               transition={{ duration: 0.8, delay: 0.3 }}
             >
               <span className="gradient-text">Maßgeschneidertes Webdesign</span><br />
-              <span className="text-slate-900">für Ihren professionellen Online-Auftritt</span>
+              <span className="text-slate-900">aus Alzey für Ihren Online-Auftritt</span>
             </motion.h1>
             
             <motion.div 
