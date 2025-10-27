@@ -140,9 +140,14 @@ Mein Ansatz umfasst technische Optimierungen, On-Page-SEO und die Verbesserung d
                   </div>
                   
                   <motion.button
+                    onClick={() => {
+                      const contactSection = document.getElementById('contact');
+                      contactSection?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }}
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     className="w-full bg-orange-500 hover:bg-orange-600 text-white py-4 rounded-2xl font-semibold text-lg transition-colors shadow-lg"
+                    data-testid={`button-contact-${service.title.toLowerCase()}`}
                   >
                     Jetzt anfragen
                   </motion.button>
