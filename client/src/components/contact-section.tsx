@@ -45,7 +45,7 @@ const contactInfo = [
 
 export default function ContactSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-300px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
   const { toast } = useToast();
 
   const form = useForm<InsertContactInquiry>({

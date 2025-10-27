@@ -29,7 +29,7 @@ const services = [
 
 export default function ServicesSection() {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-300px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
     <section id="services" className="py-16 md:py-20 bg-white" ref={ref}>
