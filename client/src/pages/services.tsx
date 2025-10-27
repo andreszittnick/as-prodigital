@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import ContactSection from "@/components/contact-section";
@@ -44,8 +45,39 @@ Mein Ansatz umfasst technische Optimierungen, On-Page-SEO und die Verbesserung d
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <Navigation />
+    <>
+      <Helmet>
+        <title>Leistungen - Webdesign & SEO Alzey | AS-ProDigital</title>
+        <meta name="description" content="Professionelle Webdesign & SEO-Leistungen aus Alzey. ✓ Responsive Websites ✓ Suchmaschinenoptimierung ✓ Local SEO ✓ Content-Optimierung. Jetzt informieren!" />
+        <meta name="keywords" content="Webdesign Leistungen, SEO Services, Webentwicklung Alzey, Suchmaschinenoptimierung, Online Marketing" />
+        <link rel="canonical" href="https://asprodigital.de/Leistungen" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://asprodigital.de/Leistungen" />
+        <meta property="og:title" content="Leistungen - Webdesign & SEO Alzey" />
+        <meta property="og:description" content="Entdecken Sie meine professionellen Webdesign- und SEO-Leistungen für Ihren digitalen Erfolg." />
+        <meta property="og:locale" content="de_DE" />
+        
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": ["Webdesign", "SEO-Optimierung"],
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "AS-ProDigital",
+              "founder": {
+                "@type": "Person",
+                "name": "André Szittnick"
+              }
+            },
+            "areaServed": "Alzey, Deutschland"
+          })}
+        </script>
+      </Helmet>
+      
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <Navigation />
       
       {/* Hero Section */}
       <section className="py-20 px-4">
@@ -142,6 +174,7 @@ Mein Ansatz umfasst technische Optimierungen, On-Page-SEO und die Verbesserung d
 
       <Footer />
       <ScrollToTopButton />
-    </div>
+      </div>
+    </>
   );
 }

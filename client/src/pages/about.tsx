@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import ScrollToTopButton from "@/components/scroll-to-top-button";
@@ -33,8 +34,40 @@ export default function About() {
 
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <Navigation />
+    <>
+      <Helmet>
+        <title>Über André Szittnick - Webdesigner & SEO-Experte aus Alzey | AS-ProDigital</title>
+        <meta name="description" content="André Szittnick - Ihr Partner für professionelles Webdesign & SEO in Alzey. 5+ Jahre Erfahrung, 50+ erfolgreiche Projekte, 30+ zufriedene Kunden. Lernen Sie mich kennen!" />
+        <meta name="keywords" content="André Szittnick, Webdesigner Alzey, SEO-Experte, AS-ProDigital, Über mich, Portfolio" />
+        <link rel="canonical" href="https://asprodigital.de/ueber-mich" />
+        
+        <meta property="og:type" content="profile" />
+        <meta property="og:url" content="https://asprodigital.de/ueber-mich" />
+        <meta property="og:title" content="Über André Szittnick - Webdesigner & SEO-Experte" />
+        <meta property="og:description" content="5+ Jahre Erfahrung in Webdesign & SEO. Leidenschaft für Technologie und perfekte digitale Lösungen." />
+        <meta property="og:locale" content="de_DE" />
+        
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "André Szittnick",
+            "jobTitle": "Webdesigner & SEO-Experte",
+            "worksFor": {
+              "@type": "LocalBusiness",
+              "name": "AS-ProDigital"
+            },
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Alzey",
+              "addressCountry": "DE"
+            }
+          })}
+        </script>
+      </Helmet>
+      
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <Navigation />
       
       {/* Hero Section */}
       <section className="pt-32 sm:pt-36 pb-16 px-4">
@@ -179,6 +212,7 @@ export default function About() {
 
       <Footer />
       <ScrollToTopButton />
-    </div>
+      </div>
+    </>
   );
 }
