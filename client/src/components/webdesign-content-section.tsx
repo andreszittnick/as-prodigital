@@ -262,14 +262,33 @@ function ProcessTimelineContent() {
         transition={{ duration: 0.6, delay: 2 }}
       >
         <motion.button 
-          className="bg-gradient-to-r from-[#fe7a33] to-[#ff6b1a] text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 group"
-          whileHover={{ scale: 1.05, y: -2 }}
-          whileTap={{ scale: 0.98 }}
+          onClick={() => {
+            const contactSection = document.getElementById("contact");
+            if (contactSection) {
+              contactSection.scrollIntoView({ behavior: "smooth" });
+            }
+          }}
+          className="text-white px-6 py-3 rounded-full font-semibold text-base shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out"
+          style={{
+            background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
+            border: '2px solid transparent',
+            transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
+          }}
+          onMouseEnter={(e) => {
+            e.currentTarget.style.background = 'transparent';
+            e.currentTarget.style.color = '#fe7a33';
+            e.currentTarget.style.borderColor = '#fe7a33';
+          }}
+          onMouseLeave={(e) => {
+            e.currentTarget.style.background = 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)';
+            e.currentTarget.style.color = 'white';
+            e.currentTarget.style.borderColor = 'transparent';
+          }}
+          whileHover={{ scale: 1.05 }}
+          whileTap={{ scale: 0.95 }}
+          data-testid="button-project-start-timeline"
         >
-          <span className="flex items-center gap-2">
-            Projekt starten
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
-          </span>
+          Projekt starten
         </motion.button>
       </motion.div>
     </>
@@ -381,14 +400,14 @@ function PremiumDigitalServicesSection() {
                 contactSection.scrollIntoView({ behavior: "smooth" });
               }
             }}
-            className="text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
+            className="text-white px-6 py-3 rounded-full font-semibold text-base hover:shadow-xl transition-all duration-500 ease-in-out"
             style={{
               background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
               border: '2px solid transparent',
               transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'white';
+              e.currentTarget.style.background = 'transparent';
               e.currentTarget.style.color = '#fe7a33';
               e.currentTarget.style.borderColor = '#fe7a33';
             }}
