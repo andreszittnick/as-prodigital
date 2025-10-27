@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { motion } from "framer-motion";
@@ -93,8 +94,22 @@ export default function Contact() {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
-      <Navigation />
+    <>
+      <Helmet>
+        <title>Kontakt - AS-ProDigital Alzey | Kostenlose Beratung & Anfrage</title>
+        <meta name="description" content="Kontaktieren Sie AS-ProDigital für professionelles Webdesign & SEO in Alzey. ✓ Kostenlose Beratung ✓ Schnelle Antwort ✓ Unverbindliches Angebot. Telefon: +49 170 810 94 82" />
+        <meta name="keywords" content="Kontakt AS-ProDigital, Webdesign Anfrage Alzey, SEO Beratung, André Szittnick Kontakt" />
+        <link rel="canonical" href="https://asprodigital.de/Kontakt" />
+        
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://asprodigital.de/Kontakt" />
+        <meta property="og:title" content="Kontakt - AS-ProDigital Alzey" />
+        <meta property="og:description" content="Jetzt unverbindlich anfragen! Professionelles Webdesign & SEO aus Alzey." />
+        <meta property="og:locale" content="de_DE" />
+      </Helmet>
+      
+      <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
+        <Navigation />
       
       {/* Hero Section */}
       <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4">
@@ -323,6 +338,7 @@ export default function Contact() {
       </section>
 
       <Footer />
-    </div>
+      </div>
+    </>
   );
 }
