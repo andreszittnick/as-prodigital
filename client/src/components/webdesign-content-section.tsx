@@ -315,10 +315,10 @@ function PremiumDigitalServicesSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
-            Premium <span className="gradient-text">Digital Services</span>
+            Meine <span className="gradient-text">Leistungen</span>
           </h2>
           <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto px-4 sm:px-0">
-            Modernste Lösungen, die Wachstum fördern, Sichtbarkeit erhöhen und Erfolg für zukunftsorientierte Unternehmen automatisieren.
+            Ich schaffe Sichtbarkeit und Vertrauen mit modernem Webdesign und wirkungsvoller SEO-Optimierung.
           </p>
         </motion.div>
         
@@ -381,18 +381,21 @@ function PremiumDigitalServicesSection() {
                 contactSection.scrollIntoView({ behavior: "smooth" });
               }
             }}
-            className="text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
+            className="text-white px-8 py-4 rounded-lg font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
             style={{
               background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
-              transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.3s ease'
+              border: '2px solid transparent',
+              transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.background = '#07437c';
+              e.currentTarget.style.background = 'white';
               e.currentTarget.style.color = '#fe7a33';
+              e.currentTarget.style.borderColor = '#fe7a33';
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.background = 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)';
               e.currentTarget.style.color = 'white';
+              e.currentTarget.style.borderColor = 'transparent';
             }}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}

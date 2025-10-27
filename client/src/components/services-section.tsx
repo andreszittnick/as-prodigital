@@ -41,10 +41,10 @@ export default function ServicesSection() {
           transition={{ duration: 0.8 }}
         >
           <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6">
-            Premium <span className="gradient-text">Digital Services</span>
+            Meine <span className="gradient-text">Leistungen</span>
           </h2>
           <p className="text-base md:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto">
-            Modernste Lösungen, die Wachstum fördern, Sichtbarkeit erhöhen und Erfolg für zukunftsorientierte Unternehmen automatisieren.
+            Ich schaffe Sichtbarkeit und Vertrauen mit modernem Webdesign und wirkungsvoller SEO-Optimierung.
           </p>
         </motion.div>
         
