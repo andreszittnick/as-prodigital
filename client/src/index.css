@@ -64,14 +64,34 @@
 
   html {
     scroll-behavior: smooth;
+    /* Touch scrolling optimization for iOS */
+    -webkit-overflow-scrolling: touch;
   }
 
   * {
     scroll-behavior: smooth;
+    /* Prevent tap highlight on mobile */
+    -webkit-tap-highlight-color: transparent;
   }
   
   body {
     scroll-padding-top: 80px;
+    /* Better font rendering on mobile */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Prevent iOS text size adjust */
+    -webkit-text-size-adjust: 100%;
+  }
+
+  /* Smooth scrolling for mobile */
+  @media (max-width: 768px) {
+    html {
+      scroll-padding-top: 64px;
+    }
+    
+    body {
+      scroll-padding-top: 64px;
+    }
   }
 
   @keyframes gradient-flow {

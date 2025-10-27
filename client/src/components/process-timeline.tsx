@@ -50,7 +50,7 @@ const ProcessTimeline = () => {
   ];
 
   return (
-    <section id="process" className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
+    <section id="process" className="py-16 md:py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-32 h-32 bg-[#fe7a33] rounded-full blur-3xl"></div>
@@ -59,19 +59,19 @@ const ProcessTimeline = () => {
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative">
-        <div className="text-center mb-16">
+        <div className="text-center mb-12 md:mb-16">
           <motion.div
-            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-6 py-3 rounded-full border border-slate-200 mb-6"
+            className="inline-flex items-center gap-2 bg-white/80 backdrop-blur-sm px-5 py-2.5 md:px-6 md:py-3 rounded-full border border-slate-200 mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <Sparkles className="w-5 h-5 text-[#fe7a33]" />
+            <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-[#fe7a33]" />
             <span className="text-sm font-medium text-slate-600">Bewährter Prozess</span>
           </motion.div>
           
           <motion.h2 
-            className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 sm:mb-8 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent px-4 sm:px-0"
+            className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-slate-900 via-slate-800 to-slate-900 bg-clip-text text-transparent"
             style={{ lineHeight: '1.4' }}
             initial={{ opacity: 0, y: 30 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -81,7 +81,7 @@ const ProcessTimeline = () => {
           </motion.h2>
           
           <motion.p 
-            className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-4 sm:px-0"
+            className="text-base md:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -121,7 +121,7 @@ const ProcessTimeline = () => {
                     transition={{ duration: 0.3 }}
                   >
                     <motion.div 
-                      className="bg-white/70 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-xl border border-white/50 relative overflow-hidden group"
+                      className="bg-white/70 backdrop-blur-sm rounded-2xl md:rounded-3xl p-6 md:p-8 shadow-xl border border-white/50 relative overflow-hidden group"
                       style={{ 
                         boxShadow: `0 20px 40px -12px ${step.primaryColor}20` 
                       }}
@@ -140,7 +140,7 @@ const ProcessTimeline = () => {
                       <div className="relative z-10">
                         {/* Step number */}
                         <motion.div 
-                          className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 rounded-xl sm:rounded-2xl mb-4 sm:mb-6 text-white font-bold text-base sm:text-lg"
+                          className="inline-flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-xl md:rounded-2xl mb-4 md:mb-6 text-white font-bold text-lg md:text-xl"
                           style={{ backgroundColor: step.primaryColor }}
                           animate={{ 
                             rotate: [0, 5, -5, 0],
@@ -155,17 +155,17 @@ const ProcessTimeline = () => {
                           {step.id}
                         </motion.div>
                         
-                        <h3 className="text-2xl lg:text-3xl font-bold mb-2 text-slate-900">
+                        <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-2 text-slate-900">
                           {step.title}
                         </h3>
                         
                         {step.subtitle && (
-                          <h4 className="text-lg font-semibold mb-4" style={{ color: step.primaryColor }}>
+                          <h4 className="text-base md:text-lg font-semibold mb-4" style={{ color: step.primaryColor }}>
                             {step.subtitle}
                           </h4>
                         )}
                         
-                        <p className="text-slate-600 leading-relaxed mb-6">
+                        <p className="text-base md:text-base text-slate-600 leading-relaxed mb-6">
                           {step.description}
                         </p>
                         
@@ -255,17 +255,24 @@ const ProcessTimeline = () => {
 
         {/* Bottom CTA */}
         <motion.div 
-          className="text-center mt-20"
+          className="text-center mt-16 md:mt-20"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 2 }}
         >
           <motion.button 
-            className="bg-gradient-to-r from-[#fe7a33] to-[#ff6b1a] text-white px-8 py-4 rounded-2xl font-semibold text-lg shadow-lg hover:shadow-2xl transition-all duration-300 group"
+            onClick={() => {
+              const contactSection = document.getElementById("contact");
+              if (contactSection) {
+                contactSection.scrollIntoView({ behavior: "smooth" });
+              }
+            }}
+            className="bg-gradient-to-r from-[#fe7a33] to-[#ff6b1a] text-white px-8 py-4 rounded-2xl font-semibold text-base md:text-lg shadow-lg hover:shadow-2xl transition-all duration-300 group"
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.98 }}
+            data-testid="button-start-project"
           >
-            <span className="flex items-center gap-2">
+            <span className="flex items-center gap-2 justify-center">
               Projekt starten
               <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </span>

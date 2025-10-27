@@ -97,17 +97,17 @@ export default function Contact() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 sm:pt-36 pb-16 px-4">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6">
               Lassen Sie uns über Ihr <span className="text-orange-500">Projekt</span> sprechen
             </h1>
-            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+            <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Ich freue mich darauf, von Ihnen zu hören und gemeinsam Ihre digitale Vision zu verwirklichen. 
               Kontaktieren Sie mich für ein unverbindliches Beratungsgespräch.
             </p>
@@ -116,29 +116,29 @@ export default function Contact() {
       </section>
 
       {/* Contact Section */}
-      <section className="pb-20 px-4">
+      <section className="pb-16 md:pb-20 px-4">
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
             
             {/* Contact Form */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
-              className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg"
+              className="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-lg"
             >
-              <div className="flex items-center mb-8">
-                <div className="bg-orange-500 p-3 rounded-xl mr-4">
-                  <MessageSquare className="w-6 h-6 text-white" />
+              <div className="flex items-center mb-6 md:mb-8">
+                <div className="bg-orange-500 p-3 rounded-xl mr-3 md:mr-4">
+                  <MessageSquare className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+                <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
                   Projekt anfragen
                 </h2>
               </div>
 
               <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-6">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 md:space-y-6">
+                  <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                     <FormField
                       control={form.control}
                       name="name"
@@ -146,7 +146,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Name *</FormLabel>
                           <FormControl>
-                            <Input placeholder="Ihr vollständiger Name" {...field} />
+                            <Input placeholder="Ihr vollständiger Name" className="h-12 text-base" {...field} data-testid="input-name" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -160,7 +160,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>E-Mail *</FormLabel>
                           <FormControl>
-                            <Input type="email" placeholder="ihre@email.de" {...field} />
+                            <Input type="email" placeholder="ihre@email.de" className="h-12 text-base" {...field} data-testid="input-email" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -168,7 +168,7 @@ export default function Contact() {
                     />
                   </div>
 
-                  <div className="grid md:grid-cols-2 gap-6">
+                  <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                     <FormField
                       control={form.control}
                       name="phone"
@@ -176,7 +176,7 @@ export default function Contact() {
                         <FormItem>
                           <FormLabel>Telefon (optional)</FormLabel>
                           <FormControl>
-                            <Input placeholder="+49 ..." {...field} />
+                            <Input placeholder="+49 ..." className="h-12 text-base" {...field} data-testid="input-phone" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -192,7 +192,8 @@ export default function Contact() {
                           <FormControl>
                             <select 
                               {...field}
-                              className="w-full h-10 px-3 py-2 border border-input bg-background rounded-md text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                              className="w-full h-12 px-3 py-2 border border-input bg-background rounded-md text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                              data-testid="select-projectType"
                             >
                               <option value="">Projekttyp auswählen</option>
                               {projectTypes.map((type) => (
@@ -213,7 +214,7 @@ export default function Contact() {
                       <FormItem>
                         <FormLabel>Betreff *</FormLabel>
                         <FormControl>
-                          <Input placeholder="Kurze Beschreibung Ihres Projekts" {...field} />
+                          <Input placeholder="Kurze Beschreibung Ihres Projekts" className="h-12 text-base" {...field} data-testid="input-subject" />
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -229,8 +230,9 @@ export default function Contact() {
                         <FormControl>
                           <Textarea 
                             placeholder="Beschreiben Sie Ihr Projekt im Detail. Je mehr Informationen Sie mir geben, desto besser kann ich Ihnen helfen."
-                            className="min-h-[120px]"
+                            className="min-h-[140px] md:min-h-[160px] text-base"
                             {...field}
+                            data-testid="textarea-message"
                           />
                         </FormControl>
                         <FormMessage />
@@ -240,8 +242,9 @@ export default function Contact() {
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white h-12 text-lg"
+                    className="w-full bg-orange-500 hover:bg-orange-600 text-white h-12 md:h-14 text-base md:text-lg"
                     disabled={form.formState.isSubmitting}
+                    data-testid="button-submit"
                   >
                     {form.formState.isSubmitting ? (
                       "Wird gesendet..."
@@ -262,18 +265,18 @@ export default function Contact() {
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="space-y-8">
+              <div className="space-y-6 md:space-y-8">
                 <div>
-                  <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                  <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white mb-3 md:mb-4">
                     Kontaktinformationen
                   </h2>
-                  <p className="text-gray-600 dark:text-gray-300 mb-8">
+                  <p className="text-sm md:text-base text-gray-600 dark:text-gray-300 mb-6 md:mb-8">
                     Ich bin gerne für Sie da! Nutzen Sie eine der folgenden Möglichkeiten, 
                     um mit mir in Kontakt zu treten.
                   </p>
                 </div>
 
-                <div className="space-y-6">
+                <div className="space-y-4 md:space-y-6">
                   {contactInfo.map((info, index) => (
                     <motion.a
                       key={info.title}
@@ -281,16 +284,17 @@ export default function Contact() {
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
                       transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                      className="flex items-center p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+                      className="flex items-center p-5 md:p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+                      data-testid={`contact-info-${info.title.toLowerCase()}`}
                     >
-                      <div className="bg-blue-600 p-4 rounded-xl mr-6 group-hover:scale-110 transition-transform">
-                        <info.icon className="w-6 h-6 text-white" />
+                      <div className="bg-blue-600 p-3 md:p-4 rounded-xl mr-4 md:mr-6 group-hover:scale-110 transition-transform">
+                        <info.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900 dark:text-white mb-1">
+                        <h3 className="font-semibold text-sm md:text-base text-gray-900 dark:text-white mb-1">
                           {info.title}
                         </h3>
-                        <p className="text-gray-600 dark:text-gray-300">
+                        <p className="text-sm md:text-base text-gray-600 dark:text-gray-300">
                           {info.details}
                         </p>
                       </div>
@@ -298,17 +302,17 @@ export default function Contact() {
                   ))}
                 </div>
 
-                <div className="bg-gradient-to-br from-orange-500 to-blue-600 p-8 rounded-2xl text-white">
-                  <h3 className="text-xl font-bold mb-4">
+                <div className="bg-gradient-to-br from-orange-500 to-blue-600 p-6 md:p-8 rounded-2xl text-white">
+                  <h3 className="text-lg md:text-xl font-bold mb-3 md:mb-4">
                     Kostenloses Erstberatungsgespräch
                   </h3>
-                  <p className="mb-6">
+                  <p className="text-sm md:text-base mb-5 md:mb-6">
                     Lassen Sie uns gemeinsam über Ihr Projekt sprechen. 
                     Das erste Beratungsgespräch ist für Sie völlig kostenfrei 
                     und unverbindlich.
                   </p>
-                  <div className="flex items-center">
-                    <Clock className="w-5 h-5 mr-2" />
+                  <div className="flex items-center text-sm md:text-base">
+                    <Clock className="w-4 h-4 md:w-5 md:h-5 mr-2" />
                     <span>30 Minuten - Ohne Verpflichtung</span>
                   </div>
                 </div>

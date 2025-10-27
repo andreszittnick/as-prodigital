@@ -29,27 +29,27 @@ export default function WhyChooseSection() {
   const isInView = useInView(ref, { once: true, margin: "-300px" });
 
   return (
-    <section id="why-choose" className="py-20 bg-slate-50" ref={ref}>
+    <section id="why-choose" className="py-16 md:py-20 bg-slate-50" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6">
             Warum ich der richtige <span className="gradient-text">Partner</span> für Ihr Projekt bin
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto px-4 sm:px-0">
+          <p className="text-base md:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto">
             Erleben Sie den Unterschied bei der Zusammenarbeit mit einem engagierten Digitalspezialisten, der Ihren Erfolg an erste Stelle setzt.
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {benefits.map((benefit, index) => (
             <motion.div
               key={benefit.title}
-              className="group relative bg-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center"
+              className="group relative bg-white p-8 md:p-8 rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 text-center"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -66,8 +66,8 @@ export default function WhyChooseSection() {
                   <benefit.icon className="text-white w-10 h-10" />
                 </motion.div>
                 
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">{benefit.title}</h3>
-                <p className="text-slate-600 leading-relaxed">
+                <h3 className="text-xl md:text-2xl font-bold text-slate-900 mb-4">{benefit.title}</h3>
+                <p className="text-base md:text-base text-slate-600 leading-relaxed">
                   {benefit.description}
                 </p>
               </div>
@@ -77,7 +77,7 @@ export default function WhyChooseSection() {
         
         {/* CTA Button */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-12 md:mt-16"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -89,7 +89,7 @@ export default function WhyChooseSection() {
                 contactSection.scrollIntoView({ behavior: "smooth" });
               }
             }}
-            className="text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
+            className="text-white px-8 py-4 text-base md:text-lg rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
             style={{
               background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
               transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.3s ease'

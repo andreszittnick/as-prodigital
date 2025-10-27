@@ -31,11 +31,11 @@ export default function Navigation() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-16 md:h-20">
           {/* Logo */}
           <Link href="/">
             <motion.div 
-              className="flex items-center cursor-pointer"
+              className="flex items-center cursor-pointer -ml-2 md:ml-0"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               data-testid="logo-link"
@@ -43,7 +43,7 @@ export default function Navigation() {
               <img 
                 src={logoImage} 
                 alt="AS-ProDigital Logo" 
-                className="h-10 w-auto object-contain"
+                className="h-7 md:h-10 w-auto object-contain"
               />
             </motion.div>
           </Link>
@@ -167,48 +167,52 @@ export default function Navigation() {
           </div>
           
           {/* Mobile menu button */}
-          <button
-            className="md:hidden p-2"
+          <motion.button
+            className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors min-w-[44px] min-h-[44px] flex items-center justify-center"
             onClick={() => setIsOpen(!isOpen)}
             data-testid="mobile-menu-button"
+            whileTap={{ scale: 0.95 }}
           >
             {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
+          </motion.button>
         </div>
 
         {/* Mobile Navigation */}
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden py-4 border-t border-slate-200"
-          >
-            <div className="flex flex-col space-y-4">
+        <AnimatePresence>
+          {isOpen && (
+            <motion.div
+              initial={{ opacity: 0, height: 0 }}
+              animate={{ opacity: 1, height: "auto" }}
+              exit={{ opacity: 0, height: 0 }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+              className="md:hidden py-6 border-t border-slate-200"
+            >
+              <div className="flex flex-col space-y-6">
               {/* Mobile Services Dropdown */}
               <div>
-                <div className="flex items-center justify-between">
+                <div className="flex items-center justify-between py-2">
                   <Link href="/Leistungen">
                     <span
                       onClick={() => setIsOpen(false)}
-                      className={`transition-colors duration-300 text-left cursor-pointer ${
+                      className={`text-lg transition-colors duration-300 text-left cursor-pointer ${
                         location === "/Leistungen" 
                           ? "text-orange-500 font-semibold" 
-                          : "text-slate-600 hover:text-orange-500"
+                          : "text-slate-700 hover:text-orange-500"
                       }`}
                       data-testid="mobile-nav-leistungen"
                     >
                       Leistungen
                     </span>
                   </Link>
-                  <button
+                  <motion.button
                     onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                    className="p-1 text-slate-600 hover:text-orange-500"
+                    className="p-2 text-slate-600 hover:text-orange-500"
+                    whileTap={{ scale: 0.95 }}
                   >
-                    <ChevronDown className={`w-4 h-4 transition-transform duration-300 ${
+                    <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${
                       isMobileServicesOpen ? "rotate-180" : ""
                     }`} />
-                  </button>
+                  </motion.button>
                 </div>
                 
                 <AnimatePresence>
@@ -218,7 +222,7 @@ export default function Navigation() {
                       animate={{ opacity: 1, height: "auto" }}
                       exit={{ opacity: 0, height: 0 }}
                       transition={{ duration: 0.3 }}
-                      className="mt-2 ml-4 space-y-2"
+                      className="mt-3 ml-6 space-y-3"
                     >
                       {[
                         { 
@@ -240,7 +244,8 @@ export default function Navigation() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
                             onClick={() => setIsOpen(false)}
-                            className="flex items-center space-x-2 text-sm text-slate-500 hover:text-orange-500 cursor-pointer transition-colors duration-75 py-1"
+                            className="flex items-center space-x-3 text-base text-slate-600 hover:text-orange-500 cursor-pointer transition-colors duration-200 py-2"
+                            whileTap={{ scale: 0.98 }}
                           >
                             <motion.div
                               initial={{ scale: 1, rotate: 0 }}
@@ -248,7 +253,7 @@ export default function Navigation() {
                               transition={{ duration: 0.1, ease: "easeOut" }}
                               className={service.color}
                             >
-                              <service.icon className="w-4 h-4" />
+                              <service.icon className="w-5 h-5" />
                             </motion.div>
                             <span>{service.name}</span>
                           </motion.div>
@@ -265,36 +270,35 @@ export default function Navigation() {
                 { name: "Über mich", href: "/ueber-mich" },
               ].map((item, index) => (
                 <Link key={index} href={item.href}>
-                  <span
+                  <motion.span
                     onClick={() => setIsOpen(false)}
-                    className={`transition-colors duration-300 text-left cursor-pointer ${
+                    className={`block py-2 text-lg transition-colors duration-300 text-left cursor-pointer ${
                       location === item.href 
                         ? "text-orange-500 font-semibold" 
-                        : "text-slate-600 hover:text-orange-500"
+                        : "text-slate-700 hover:text-orange-500"
                     }`}
                     data-testid={`mobile-nav-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
+                    whileTap={{ scale: 0.98 }}
                   >
                     {item.name}
-                  </span>
+                  </motion.span>
                 </Link>
               ))}
               
               <Link href="/Kontakt">
-                <button
+                <motion.button
                   onClick={() => setIsOpen(false)}
-                  className={`transition-colors duration-300 text-left ${
-                    location === "/Kontakt" 
-                      ? "text-orange-500 font-semibold" 
-                      : "text-slate-600 hover:text-orange-500"
-                  }`}
+                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 mt-2"
                   data-testid="mobile-nav-contact"
+                  whileTap={{ scale: 0.98 }}
                 >
-                  Kontakt
-                </button>
+                  Kontakt aufnehmen
+                </motion.button>
               </Link>
-            </div>
-          </motion.div>
-        )}
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.nav>
   );

@@ -12,7 +12,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden dynamic-background">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden dynamic-background pt-16 md:pt-0">
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0">
         {/* Overlay for content readability */}
@@ -66,26 +66,26 @@ export default function HeroSection() {
         <div className="hidden sm:block absolute bottom-1/3 left-1/4 w-32 sm:w-48 h-32 sm:h-48 bg-white/10 rounded-full filter blur-2xl pulse-orb" />
       </div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 sm:pt-20">
-        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 md:py-16">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           {/* Left side - Content */}
           <motion.div 
-            className="text-center lg:text-left"
+            className="text-center lg:text-left order-2 lg:order-1"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
           >
             <motion.div 
-              className="mb-6"
+              className="mb-4 md:mb-6"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <span className="text-slate-600 font-medium text-xl">Willkommen bei</span>
+              <span className="text-slate-600 font-medium text-lg md:text-xl">Willkommen bei</span>
             </motion.div>
             
             <motion.h1 
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 sm:mb-6"
+              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight mb-4 md:mb-6"
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
@@ -95,7 +95,7 @@ export default function HeroSection() {
             </motion.h1>
             
             <motion.div 
-              className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-6 sm:mb-8 text-center lg:text-left"
+              className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-medium mb-6 md:mb-8 text-center lg:text-left"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
@@ -105,19 +105,19 @@ export default function HeroSection() {
             </motion.div>
             
             <motion.div 
-              className="text-base sm:text-lg lg:text-xl text-slate-600 mb-6 sm:mb-8 leading-relaxed max-w-2xl"
+              className="text-base md:text-lg lg:text-xl text-slate-600 mb-6 md:mb-8 leading-relaxed max-w-2xl mx-auto lg:mx-0"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.5 }}
             >
-              <p>
+              <p className="mb-4">
                 Ich helfe Ihnen dabei, Ihre digitale Präsenz sichtbar und erfolgreich zu machen.
-                <br /><br />
+              </p>
+              <p className="mb-6">
                 Als Ihr persönlicher Ansprechpartner entwickle ich maßgeschneiderte Webseiten und effektives SEO, die genau zu Ihrem Unternehmen passen.
               </p>
-              <br />
-              <div className="space-y-2">
-                <div className="text-lg font-bold text-slate-800">Ihre Vision. Meine Mission.</div>
+              <div className="space-y-2 mt-6">
+                <div className="text-lg md:text-xl font-bold text-slate-800">Ihre Vision. Meine Mission.</div>
                 <div className="font-medium text-slate-600">Damit Ihr Online-Auftritt begeistert</div>
               </div>
             </motion.div>
@@ -130,7 +130,7 @@ export default function HeroSection() {
             >
               <motion.button
                 onClick={() => scrollToSection("services")}
-                className="text-white px-6 sm:px-8 py-3 sm:py-4 text-sm sm:text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
+                className="text-white px-8 py-4 text-base md:text-lg rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
                 style={{
                   background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
                   transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.3s ease'
@@ -154,10 +154,10 @@ export default function HeroSection() {
           
           {/* Right side - Photo */}
           <motion.div 
-            className="flex justify-center lg:justify-end relative"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+            className="flex justify-center lg:justify-end relative order-1 lg:order-2"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
           >
             {/* Glow Effect Behind Image */}
             <motion.div
@@ -167,7 +167,7 @@ export default function HeroSection() {
               transition={{ duration: 1.5, delay: 0.5 }}
             >
               <div 
-                className="w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-[500px] lg:w-96 lg:h-[600px] mx-auto rounded-3xl"
+                className="w-48 h-56 sm:w-64 sm:h-80 md:w-80 md:h-[400px] lg:w-96 lg:h-[600px] mx-auto rounded-3xl"
                 style={{
                   background: 'radial-gradient(ellipse at center, rgba(254, 122, 51, 0.3) 0%, rgba(254, 122, 51, 0.15) 40%, rgba(7, 67, 124, 0.1) 70%, transparent 100%)',
                   filter: 'blur(40px)',
@@ -177,7 +177,7 @@ export default function HeroSection() {
             </motion.div>
             
             <motion.div 
-              className="w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-[500px] lg:w-96 lg:h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl ring-2 sm:ring-4 ring-white/50 backdrop-blur-sm drop-shadow-2xl relative z-10"
+              className="w-48 h-56 sm:w-64 sm:h-80 md:w-80 md:h-[400px] lg:w-96 lg:h-[600px] rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl ring-2 sm:ring-4 ring-white/50 backdrop-blur-sm drop-shadow-2xl relative z-10"
               style={{
                 boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.05)'
               }}

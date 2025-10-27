@@ -41,10 +41,10 @@ export default function Blog() {
       <Navigation />
       
       {/* Hero Section */}
-      <section className="pt-32 pb-16 px-4 bg-gradient-to-br from-slate-50 via-white to-slate-100">
+      <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4 bg-gradient-to-br from-slate-50 via-white to-slate-100">
         <div className="max-w-7xl mx-auto text-center">
           <motion.h1
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 md:mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
@@ -52,7 +52,7 @@ export default function Blog() {
             <span className="text-[#fe7a33]">Blog</span> & Ratgeber
           </motion.h1>
           <motion.p
-            className="text-xl text-slate-600 max-w-3xl mx-auto"
+            className="text-base md:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
@@ -63,39 +63,40 @@ export default function Blog() {
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 bg-white border-b border-gray-200 sticky top-16 z-40">
+      <section className="py-6 md:py-8 bg-white border-b border-gray-200 sticky top-16 md:top-20 z-40">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="flex flex-wrap justify-center gap-4">
+          <div className="flex flex-wrap justify-center gap-3 md:gap-4">
             {categories.map((category) => (
-              <button
+              <motion.button
                 key={category.id}
                 onClick={() => setSelectedCategory(category.id as typeof selectedCategory)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
+                className={`px-5 py-2.5 md:px-6 md:py-3 rounded-full font-medium transition-all duration-300 text-sm md:text-base ${
                   selectedCategory === category.id
                     ? "bg-[#fe7a33] text-white shadow-lg"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
                 data-testid={`category-${category.id}`}
+                whileTap={{ scale: 0.95 }}
               >
                 {category.label} ({category.count})
-              </button>
+              </motion.button>
             ))}
           </div>
         </div>
       </section>
 
       {/* Blog Posts Grid */}
-      <section className="py-16 px-4">
+      <section className="py-12 md:py-16 px-4">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
             {filteredPosts.map((post, index) => (
               <BlogCard key={post.id} post={post} index={index} />
             ))}
           </div>
 
           {filteredPosts.length === 0 && (
-            <div className="text-center py-16">
-              <p className="text-xl text-gray-500">Keine Beiträge in dieser Kategorie gefunden.</p>
+            <div className="text-center py-12 md:py-16">
+              <p className="text-lg md:text-xl text-gray-500">Keine Beiträge in dieser Kategorie gefunden.</p>
             </div>
           )}
         </div>
@@ -116,8 +117,8 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
       data-testid={`blog-card-${post.slug}`}
     >
       {/* Category Badge */}
-      <div className="p-6 pb-0">
-        <span className={`inline-block px-3 py-1 rounded-full text-sm font-medium ${
+      <div className="p-5 md:p-6 pb-0">
+        <span className={`inline-block px-3 py-1 rounded-full text-xs md:text-sm font-medium ${
           post.category === "webdesign" 
             ? "bg-blue-100 text-blue-700"
             : "bg-green-100 text-green-700"
@@ -127,23 +128,23 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
       </div>
 
       {/* Content */}
-      <div className="p-6 flex-1 flex flex-col">
+      <div className="p-5 md:p-6 flex-1 flex flex-col">
         <Link href={`/blog/${post.slug}`}>
           <a className="block mb-3">
-            <h2 className="text-2xl font-bold text-slate-900 group-hover:text-[#fe7a33] transition-colors duration-300">
+            <h2 className="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-[#fe7a33] transition-colors duration-300">
               {post.title}
             </h2>
           </a>
         </Link>
         
-        <p className="text-slate-600 mb-4 line-clamp-3 flex-1">
+        <p className="text-sm md:text-base text-slate-600 mb-4 line-clamp-3 flex-1">
           {post.excerpt}
         </p>
 
         {/* Meta Information */}
-        <div className="flex flex-wrap items-center gap-4 text-sm text-slate-500 mb-4">
+        <div className="flex flex-wrap items-center gap-3 md:gap-4 text-xs md:text-sm text-slate-500 mb-4">
           <div className="flex items-center gap-1">
-            <Calendar className="w-4 h-4" />
+            <Calendar className="w-3.5 h-3.5 md:w-4 md:h-4" />
             <span>{new Date(post.publishedAt).toLocaleDateString('de-DE', { 
               day: '2-digit',
               month: 'short',
@@ -151,7 +152,7 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
             })}</span>
           </div>
           <div className="flex items-center gap-1">
-            <Clock className="w-4 h-4" />
+            <Clock className="w-3.5 h-3.5 md:w-4 md:h-4" />
             <span>{post.readTime} Min.</span>
           </div>
         </div>
@@ -170,10 +171,10 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
 
         {/* Read More Link */}
         <Link href={`/blog/${post.slug}`}>
-          <a className="inline-flex items-center gap-2 text-[#fe7a33] font-semibold hover:gap-3 transition-all duration-300"
+          <a className="inline-flex items-center gap-2 text-[#fe7a33] font-semibold hover:gap-3 transition-all duration-300 text-sm md:text-base"
             data-testid={`read-more-${post.slug}`}>
             Weiterlesen
-            <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
+            <ArrowRight className="w-4 h-4 md:w-5 md:h-5 group-hover:translate-x-1 transition-transform duration-300" />
           </a>
         </Link>
       </div>

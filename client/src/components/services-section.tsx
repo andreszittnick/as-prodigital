@@ -32,27 +32,27 @@ export default function ServicesSection() {
   const isInView = useInView(ref, { once: true, margin: "-300px" });
 
   return (
-    <section id="services" className="py-20 bg-white" ref={ref}>
+    <section id="services" className="py-16 md:py-20 bg-white" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-12 md:mb-16"
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
+          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6">
             Premium <span className="gradient-text">Digital Services</span>
           </h2>
-          <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto px-4 sm:px-0">
+          <p className="text-base md:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto">
             Modernste Lösungen, die Wachstum fördern, Sichtbarkeit erhöhen und Erfolg für zukunftsorientierte Unternehmen automatisieren.
           </p>
         </motion.div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
           {services.map((service, index) => (
             <motion.div
               key={service.title}
-              className="group relative bg-gradient-to-br from-white to-slate-50 p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 h-full"
+              className="group relative bg-gradient-to-br from-white to-slate-50 p-8 md:p-8 rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 h-full"
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
@@ -62,15 +62,15 @@ export default function ServicesSection() {
               <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative h-full flex flex-col">
                 <motion.div 
-                  className={`w-16 h-16 ${service.colorClass} rounded-2xl flex items-center justify-center mb-6`}
+                  className={`w-16 h-16 md:w-18 md:h-18 ${service.colorClass} rounded-2xl flex items-center justify-center mb-6`}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   transition={{ duration: 0.3 }}
                 >
-                  <service.icon className="text-white w-8 h-8" />
+                  <service.icon className="text-white w-8 h-8 md:w-9 md:h-9" />
                 </motion.div>
                 
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                <p className="text-slate-600 mb-6 leading-relaxed flex-grow">
+                <h3 className="text-2xl md:text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
+                <p className="text-base md:text-base text-slate-600 mb-6 leading-relaxed flex-grow">
                   {service.description}
                 </p>
                 
@@ -95,7 +95,7 @@ export default function ServicesSection() {
         
         {/* CTA Button */}
         <motion.div
-          className="text-center mt-16"
+          className="text-center mt-12 md:mt-16"
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1.0 }}
@@ -107,7 +107,7 @@ export default function ServicesSection() {
                 contactSection.scrollIntoView({ behavior: "smooth" });
               }
             }}
-            className="text-white px-8 py-4 rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
+            className="text-white px-8 py-4 text-base md:text-lg rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
             style={{
               background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
               transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, box-shadow 0.3s ease'
