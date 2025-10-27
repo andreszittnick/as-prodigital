@@ -32,7 +32,7 @@ export default function ServicesSection() {
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <section id="services" className="py-16 md:py-20 bg-white" ref={ref}>
+    <section id="services" className="py-16 md:py-20 bg-white overflow-x-hidden" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div 
           className="text-center mb-12 md:mb-16"
