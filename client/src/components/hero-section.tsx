@@ -12,7 +12,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden dynamic-background pt-16 md:pt-0">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden dynamic-background pt-20 md:pt-28 lg:pt-32">
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Overlay for content readability */}
