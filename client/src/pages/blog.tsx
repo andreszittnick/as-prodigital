@@ -5,6 +5,7 @@ import { Calendar, Clock, Tag, ArrowRight } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { blogPosts } from "@/data/blog-posts";
 import { BlogPost } from "@shared/schema";
 
@@ -153,6 +154,7 @@ export default function Blog() {
       </section>
 
       <Footer />
+      <ScrollToTopButton />
     </div>
   );
 }
