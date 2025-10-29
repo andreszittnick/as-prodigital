@@ -20,39 +20,42 @@ export default function FloatingContactButtons() {
   };
 
   return (
-    <div className="fixed right-6 bottom-32 z-50 flex flex-col gap-3">
-      {/* WhatsApp Button - statisch */}
-      <a
-        href="https://wa.me/491708109482"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all duration-300 hover:scale-110 active:scale-90"
-        style={{
-          background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
-        }}
-        data-testid="button-whatsapp-float"
-      >
-        <SiWhatsapp className="w-7 h-7 text-white" />
-      </a>
+    <>
+      {/* WhatsApp und Mail Buttons - IMMER an fester Position */}
+      <div className="fixed right-6 bottom-32 z-50 flex flex-col gap-3">
+        {/* WhatsApp Button */}
+        <a
+          href="https://wa.me/491708109482"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all duration-300 hover:scale-110 active:scale-90"
+          style={{
+            background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
+          }}
+          data-testid="button-whatsapp-float"
+        >
+          <SiWhatsapp className="w-7 h-7 text-white" />
+        </a>
 
-      {/* Mail Button - statisch */}
-      <a
-        href="mailto:info@as-prodigital.de"
-        className="w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all duration-300 hover:scale-110 active:scale-90"
-        style={{
-          background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
-        }}
-        data-testid="button-mail-float"
-      >
-        <Mail className="w-6 h-6 text-white" />
-      </a>
+        {/* Mail Button */}
+        <a
+          href="mailto:info@as-prodigital.de"
+          className="w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all duration-300 hover:scale-110 active:scale-90"
+          style={{
+            background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
+          }}
+          data-testid="button-mail-float"
+        >
+          <Mail className="w-6 h-6 text-white" />
+        </a>
+      </div>
 
-      {/* Scroll to Top Button - etwas weiter unten zur Abgrenzung */}
+      {/* Scroll to Top Button - ganz unten rechts, unabhängig von den anderen */}
       <AnimatePresence>
         {showScrollTop && (
           <motion.button
             onClick={scrollToTop}
-            className="w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all duration-300 mt-6"
+            className="fixed right-6 bottom-6 z-50 w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all duration-300"
             style={{
               background: 'linear-gradient(135deg, #07437c 0%, #0a5a9e 100%)',
             }}
@@ -68,6 +71,6 @@ export default function FloatingContactButtons() {
           </motion.button>
         )}
       </AnimatePresence>
-    </div>
+    </>
   );
 }
