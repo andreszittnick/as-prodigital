@@ -12,7 +12,7 @@ export default function HeroSection() {
   };
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden dynamic-background pt-20">
+    <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden dynamic-background" style={{ paddingTop: 'calc(4rem + 3mm)' }}>
       {/* Dynamic Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
         {/* Overlay for content readability */}
