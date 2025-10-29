@@ -4,7 +4,6 @@ import HeroSectionWebdesign from "@/components/hero-section-webdesign";
 import WebdesignContentSection from "@/components/webdesign-content-section";
 import ContactSectionWebdesign from "@/components/contact-section-webdesign";
 import Footer from "@/components/footer";
-import ScrollToTopButton from "@/components/scroll-to-top-button";
 
 export default function WebdesignAlzey() {
 
@@ -50,7 +49,6 @@ export default function WebdesignAlzey() {
       <ContactSectionWebdesign />
 
       <Footer />
-      <ScrollToTopButton />
       </div>
     </>
   );

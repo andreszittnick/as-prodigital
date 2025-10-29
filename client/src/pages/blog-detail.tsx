@@ -4,7 +4,6 @@ import { Calendar, Clock, Tag, ArrowLeft, Share2 } from "lucide-react";
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { blogPosts } from "@/data/blog-posts";
 import { useEffect } from "react";
 
@@ -245,7 +244,6 @@ export default function BlogDetail() {
       )}
 
       <Footer />
-      <ScrollToTopButton />
     </div>
   );
 }

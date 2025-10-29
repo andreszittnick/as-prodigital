@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { motion } from "framer-motion";
 
 export default function AGB() {
@@ -214,7 +213,6 @@ export default function AGB() {
         </section>
 
         <Footer />
-        <ScrollToTopButton />
       </div>
     </>
   );

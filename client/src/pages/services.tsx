@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "wouter";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { motion } from "framer-motion";
 import { Code, Search, ArrowRight, Sparkles, Target, TrendingUp } from "lucide-react";
 
@@ -328,7 +327,6 @@ Besonders für lokale Unternehmen in Alzey und Umgebung ist Local SEO entscheide
         </section>
 
         <Footer />
-        <ScrollToTopButton />
       </div>
     </>
   );

@@ -1,7 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
-import ScrollToTopButton from "@/components/scroll-to-top-button";
 import { motion } from "framer-motion";
 
 export default function Datenschutz() {
@@ -205,7 +204,6 @@ export default function Datenschutz() {
         </section>
 
         <Footer />
-        <ScrollToTopButton />
       </div>
     </>
   );
