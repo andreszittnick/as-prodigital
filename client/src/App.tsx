@@ -14,6 +14,7 @@ import SeoAlzey from "@/pages/seo-alzey";
 import Blog from "@/pages/blog";
 import BlogDetail from "@/pages/blog-detail";
 import Impressum from "@/pages/impressum";
+import Datenschutz from "@/pages/datenschutz";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
@@ -40,6 +41,7 @@ function Router() {
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogDetail} />
         <Route path="/impressum" component={Impressum} />
+        <Route path="/datenschutz" component={Datenschutz} />
         <Route component={NotFound} />
       </Switch>
     </>

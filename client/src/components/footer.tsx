@@ -48,7 +48,7 @@ export default function Footer() {
               Impressum
             </a>
             <a 
-              href="#" 
+              href="/datenschutz" 
               className="text-slate-400 hover:text-orange-500 transition-colors duration-300 text-sm md:text-base"
               data-testid="link-privacy"
             >
