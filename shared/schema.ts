@@ -13,9 +13,11 @@ export const contactInquiries = pgTable("contact_inquiries", {
   id: varchar("id").primaryKey().default(sql`gen_random_uuid()`),
   firstName: text("first_name").notNull(),
   lastName: text("last_name").notNull(),
+  companyName: text("company_name"),
   email: text("email").notNull(),
+  phone: text("phone"),
   service: text("service").notNull(),
-  message: text("message").notNull(),
+  message: text("message"),
   createdAt: timestamp("created_at").defaultNow().notNull(),
 });
 
@@ -27,15 +29,19 @@ export const insertUserSchema = createInsertSchema(users).pick({
 export const insertContactInquirySchema = createInsertSchema(contactInquiries).pick({
   firstName: true,
   lastName: true,
+  companyName: true,
   email: true,
+  phone: true,
   service: true,
   message: true,
 }).extend({
-  email: z.string().email("Please enter a valid email address"),
-  firstName: z.string().min(1, "First name is required"),
-  lastName: z.string().min(1, "Last name is required"),
-  service: z.string().min(1, "Please select a service"),
-  message: z.string().min(10, "Please provide more details about your project"),
+  email: z.string().email("Bitte geben Sie eine gültige E-Mail-Adresse ein"),
+  firstName: z.string().min(1, "Vorname ist erforderlich"),
+  lastName: z.string().min(1, "Nachname ist erforderlich"),
+  companyName: z.string().optional(),
+  phone: z.string().optional(),
+  service: z.string().min(1, "Bitte wählen Sie einen Service"),
+  message: z.string().optional(),
 });
 
 export type InsertUser = z.infer<typeof insertUserSchema>;

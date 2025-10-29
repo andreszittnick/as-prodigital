@@ -53,7 +53,9 @@ export default function ContactSection() {
     defaultValues: {
       firstName: "",
       lastName: "",
+      companyName: "",
       email: "",
+      phone: "",
       service: "",
       message: "",
     },
@@ -119,7 +121,7 @@ export default function ContactSection() {
                       name="firstName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Vorname</FormLabel>
+                          <FormLabel>Vorname *</FormLabel>
                           <FormControl>
                             <Input 
                               placeholder="Max" 
@@ -136,7 +138,7 @@ export default function ContactSection() {
                       name="lastName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Nachname</FormLabel>
+                          <FormLabel>Nachname *</FormLabel>
                           <FormControl>
                             <Input 
                               placeholder="Mustermann" 
@@ -152,16 +154,15 @@ export default function ContactSection() {
                   
                   <FormField
                     control={form.control}
-                    name="email"
+                    name="companyName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Email</FormLabel>
+                        <FormLabel>Unternehmensname (optional)</FormLabel>
                         <FormControl>
                           <Input 
-                            type="email" 
-                            placeholder="max@beispiel.de" 
+                            placeholder="Ihr Unternehmen" 
                             {...field} 
-                            data-testid="input-email"
+                            data-testid="input-company-name"
                           />
                         </FormControl>
                         <FormMessage />
@@ -169,12 +170,51 @@ export default function ContactSection() {
                     )}
                   />
                   
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                    <FormField
+                      control={form.control}
+                      name="email"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>E-Mail *</FormLabel>
+                          <FormControl>
+                            <Input 
+                              type="email" 
+                              placeholder="max@beispiel.de" 
+                              {...field} 
+                              data-testid="input-email"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                    <FormField
+                      control={form.control}
+                      name="phone"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Telefonnummer (optional)</FormLabel>
+                          <FormControl>
+                            <Input 
+                              type="tel"
+                              placeholder="+49 ..." 
+                              {...field} 
+                              data-testid="input-phone"
+                            />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+                  
                   <FormField
                     control={form.control}
                     name="service"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Service-Interesse</FormLabel>
+                        <FormLabel>Service-Interesse *</FormLabel>
                         <Select onValueChange={field.onChange} defaultValue={field.value}>
                           <FormControl>
                             <SelectTrigger data-testid="select-service">
@@ -197,7 +237,7 @@ export default function ContactSection() {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Projekt-Details</FormLabel>
+                        <FormLabel>Kommentar (optional)</FormLabel>
                         <FormControl>
                           <Textarea 
                             rows={4}

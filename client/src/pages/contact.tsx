@@ -13,12 +13,13 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 
 const contactFormSchema = z.object({
-  name: z.string().min(2, "Name muss mindestens 2 Zeichen lang sein"),
+  firstName: z.string().min(1, "Vorname ist erforderlich"),
+  lastName: z.string().min(1, "Nachname ist erforderlich"),
+  companyName: z.string().optional(),
   email: z.string().email("Bitte geben Sie eine gültige E-Mail-Adresse ein"),
   phone: z.string().optional(),
-  subject: z.string().min(5, "Betreff muss mindestens 5 Zeichen lang sein"),
-  message: z.string().min(10, "Nachricht muss mindestens 10 Zeichen lang sein"),
-  projectType: z.string().min(1, "Bitte wählen Sie einen Projekttyp")
+  service: z.string().min(1, "Bitte wählen Sie einen Service"),
+  message: z.string().optional(),
 });
 
 type ContactFormData = z.infer<typeof contactFormSchema>;
@@ -29,12 +30,13 @@ export default function Contact() {
   const form = useForm<ContactFormData>({
     resolver: zodResolver(contactFormSchema),
     defaultValues: {
-      name: "",
+      firstName: "",
+      lastName: "",
+      companyName: "",
       email: "",
       phone: "",
-      subject: "",
-      message: "",
-      projectType: ""
+      service: "",
+      message: ""
     }
   });
 
@@ -85,11 +87,11 @@ export default function Contact() {
     }
   ];
 
-  const projectTypes = [
-    "Webdesign & Entwicklung",
+  const serviceTypes = [
+    "Webdesign",
     "SEO-Optimierung", 
-    "E-Commerce",
-    "Mobile App",
+    "Webdesign & SEO",
+    "Beratung",
     "Sonstiges"
   ];
 
@@ -175,18 +177,48 @@ export default function Contact() {
                   <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                     <FormField
                       control={form.control}
-                      name="name"
+                      name="firstName"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Name *</FormLabel>
+                          <FormLabel>Vorname *</FormLabel>
                           <FormControl>
-                            <Input placeholder="Ihr vollständiger Name" className="h-12 text-base" {...field} data-testid="input-name" />
+                            <Input placeholder="Max" className="h-12 text-base" {...field} data-testid="input-first-name" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
                     
+                    <FormField
+                      control={form.control}
+                      name="lastName"
+                      render={({ field }) => (
+                        <FormItem>
+                          <FormLabel>Nachname *</FormLabel>
+                          <FormControl>
+                            <Input placeholder="Mustermann" className="h-12 text-base" {...field} data-testid="input-last-name" />
+                          </FormControl>
+                          <FormMessage />
+                        </FormItem>
+                      )}
+                    />
+                  </div>
+
+                  <FormField
+                    control={form.control}
+                    name="companyName"
+                    render={({ field }) => (
+                      <FormItem>
+                        <FormLabel>Unternehmensname (optional)</FormLabel>
+                        <FormControl>
+                          <Input placeholder="Ihr Unternehmen" className="h-12 text-base" {...field} data-testid="input-company-name" />
+                        </FormControl>
+                        <FormMessage />
+                      </FormItem>
+                    )}
+                  />
+
+                  <div className="grid md:grid-cols-2 gap-5 md:gap-6">
                     <FormField
                       control={form.control}
                       name="email"
@@ -200,40 +232,15 @@ export default function Contact() {
                         </FormItem>
                       )}
                     />
-                  </div>
-
-                  <div className="grid md:grid-cols-2 gap-5 md:gap-6">
+                    
                     <FormField
                       control={form.control}
                       name="phone"
                       render={({ field }) => (
                         <FormItem>
-                          <FormLabel>Telefon (optional)</FormLabel>
+                          <FormLabel>Telefonnummer (optional)</FormLabel>
                           <FormControl>
-                            <Input placeholder="+49 ..." className="h-12 text-base" {...field} data-testid="input-phone" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-                    
-                    <FormField
-                      control={form.control}
-                      name="projectType"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Projekttyp *</FormLabel>
-                          <FormControl>
-                            <select 
-                              {...field}
-                              className="w-full h-12 px-3 py-2 border border-input bg-background rounded-md text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
-                              data-testid="select-projectType"
-                            >
-                              <option value="">Projekttyp auswählen</option>
-                              {projectTypes.map((type) => (
-                                <option key={type} value={type}>{type}</option>
-                              ))}
-                            </select>
+                            <Input type="tel" placeholder="+49 ..." className="h-12 text-base" {...field} data-testid="input-phone" />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -243,12 +250,21 @@ export default function Contact() {
 
                   <FormField
                     control={form.control}
-                    name="subject"
+                    name="service"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Betreff *</FormLabel>
+                        <FormLabel>Service-Interesse *</FormLabel>
                         <FormControl>
-                          <Input placeholder="Kurze Beschreibung Ihres Projekts" className="h-12 text-base" {...field} data-testid="input-subject" />
+                          <select 
+                            {...field}
+                            className="w-full h-12 px-3 py-2 border border-input bg-background rounded-md text-base ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
+                            data-testid="select-service"
+                          >
+                            <option value="">Service auswählen</option>
+                            {serviceTypes.map((type) => (
+                              <option key={type} value={type}>{type}</option>
+                            ))}
+                          </select>
                         </FormControl>
                         <FormMessage />
                       </FormItem>
@@ -260,7 +276,7 @@ export default function Contact() {
                     name="message"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel>Nachricht *</FormLabel>
+                        <FormLabel>Kommentar (optional)</FormLabel>
                         <FormControl>
                           <Textarea 
                             placeholder="Beschreiben Sie Ihr Projekt im Detail. Je mehr Informationen Sie mir geben, desto besser kann ich Ihnen helfen."
