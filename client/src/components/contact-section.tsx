@@ -4,9 +4,7 @@ import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { Mail, Phone, MapPin, Instagram } from "lucide-react";
-import { Facebook } from "lucide-react";
-import { SiWhatsapp } from "react-icons/si";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,12 +13,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { insertContactInquirySchema, type InsertContactInquiry } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
-
-const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: SiWhatsapp, href: "#", label: "WhatsApp" }
-];
 
 const contactInfo = [
   {
@@ -298,32 +290,6 @@ export default function ContactSection() {
                   </motion.div>
                 ))}
               </div>
-              
-              <motion.div 
-                className="pt-8"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.8 }}
-              >
-                <div className="text-base sm:text-lg font-semibold text-slate-900 mb-3 sm:mb-4">Social-Media</div>
-                <div className="flex space-x-3 sm:space-x-4">
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={social.label}
-                      href={social.href}
-                      className="w-10 h-10 sm:w-12 sm:h-12 bg-slate-100 hover:bg-orange-500 text-slate-600 hover:text-white rounded-lg sm:rounded-xl flex items-center justify-center transition-all duration-300"
-                      whileHover={{ scale: 1.1 }}
-                      whileTap={{ scale: 0.95 }}
-                      initial={{ opacity: 0, scale: 0.8 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ duration: 0.3, delay: index * 0.1 + 1 }}
-                      data-testid={`social-link-${social.label.toLowerCase()}`}
-                    >
-                      <social.icon className="w-4 h-4 sm:w-5 sm:h-5" />
-                    </motion.a>
-                  ))}
-                </div>
-              </motion.div>
             </div>
           </motion.div>
         </div>

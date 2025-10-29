@@ -5,6 +5,7 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { HelmetProvider } from "react-helmet-async";
+import FloatingContactButtons from "@/components/floating-contact-buttons";
 import Home from "@/pages/home";
 import Services from "@/pages/services";
 import About from "@/pages/about";
@@ -32,6 +33,7 @@ function Router() {
   return (
     <>
       <ScrollToTop />
+      <FloatingContactButtons />
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/Leistungen" component={Services} />

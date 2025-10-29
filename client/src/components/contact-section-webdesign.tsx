@@ -4,9 +4,7 @@ import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { Mail, Phone, MapPin, Instagram } from "lucide-react";
-import { Facebook } from "lucide-react";
-import { SiWhatsapp } from "react-icons/si";
+import { Mail, Phone, MapPin } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -15,12 +13,6 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 import { useToast } from "@/hooks/use-toast";
 import { insertContactInquirySchema, type InsertContactInquiry } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
-
-const socialLinks = [
-  { icon: Facebook, href: "#", label: "Facebook" },
-  { icon: Instagram, href: "#", label: "Instagram" },
-  { icon: SiWhatsapp, href: "#", label: "WhatsApp" }
-];
 
 const contactInfo = [
   {
@@ -306,26 +298,6 @@ export default function ContactSectionWebdesign() {
                         <p className="text-slate-900 font-semibold text-sm sm:text-base break-all">{info.value}</p>
                       </div>
                     </motion.div>
-                  ))}
-                </div>
-              </div>
-              
-              <div>
-                <h4 className="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4">Folgen Sie mir</h4>
-                <div className="flex space-x-3 sm:space-x-4">
-                  {socialLinks.map((social, index) => (
-                    <motion.a
-                      key={social.label}
-                      href={social.href}
-                      className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-br from-slate-100 to-slate-200 rounded-lg flex items-center justify-center hover:from-orange-500 hover:to-orange-600 hover:text-white transition-all duration-300 shadow-md hover:shadow-lg transform hover:scale-110"
-                      aria-label={social.label}
-                      initial={{ opacity: 0, scale: 0 }}
-                      animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                      transition={{ duration: 0.4, delay: 1 + index * 0.1 }}
-                      whileHover={{ y: -2 }}
-                    >
-                      <social.icon className="w-5 h-5 sm:w-6 sm:h-6" />
-                    </motion.a>
                   ))}
                 </div>
               </div>
