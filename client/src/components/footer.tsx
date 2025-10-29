@@ -41,7 +41,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <a 
-              href="#" 
+              href="/impressum" 
               className="text-slate-400 hover:text-orange-500 transition-colors duration-300 text-sm md:text-base"
               data-testid="link-imprint"
             >

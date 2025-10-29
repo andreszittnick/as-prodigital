@@ -13,6 +13,7 @@ import WebdesignAlzey from "@/pages/webdesign-alzey";
 import SeoAlzey from "@/pages/seo-alzey";
 import Blog from "@/pages/blog";
 import BlogDetail from "@/pages/blog-detail";
+import Impressum from "@/pages/impressum";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
@@ -38,6 +39,7 @@ function Router() {
         <Route path="/SEO" component={SeoAlzey} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogDetail} />
+        <Route path="/impressum" component={Impressum} />
         <Route component={NotFound} />
       </Switch>
     </>
