@@ -1,0 +1,86 @@
+Datenschutzerklärung
+1. Verantwortlicher
+
+André Szittnick
+AS ProDigital
+Am Schlosspark 21
+55232 Alzey
+
+Telefon: 0170 810 9482
+E-Mail: info@as-prodigital.de
+
+Website: https://www.as-prodigital.de
+
+2. Allgemeines zur Datenverarbeitung
+
+Wir verarbeiten personenbezogene Daten unserer Website-Besucher grundsätzlich nur, soweit dies zur Bereitstellung einer funktionsfähigen Website sowie unserer Inhalte und Leistungen erforderlich ist.
+Die Verarbeitung personenbezogener Daten erfolgt regelmäßig nur nach Einwilligung der betroffenen Person oder auf Grundlage gesetzlicher Vorschriften (Art. 6 Abs. 1 DSGVO).
+
+3. Zugriffsdaten und Logfiles
+
+Beim Aufrufen dieser Website erhebt und speichert der Server automatisch Informationen in sogenannten Logfiles.
+Diese Daten umfassen:
+
+IP-Adresse
+
+Datum und Uhrzeit des Zugriffs
+
+Name der abgerufenen Datei
+
+verwendeter Browser und Betriebssystem
+
+Referrer-URL
+
+Die Verarbeitung erfolgt gemäß Art. 6 Abs. 1 lit. f DSGVO auf Basis unseres berechtigten Interesses an der technischen Sicherheit und Stabilität der Website.
+Eine Weitergabe oder Zusammenführung dieser Daten mit anderen Quellen findet nicht statt.
+
+4. Kontaktaufnahme
+
+Wenn Sie uns per E-Mail oder über ein Kontaktformular kontaktieren, werden Ihre Angaben zwecks Bearbeitung der Anfrage sowie für den Fall von Anschlussfragen gespeichert.
+Rechtsgrundlage für die Verarbeitung ist Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung oder vorvertragliche Maßnahmen).
+
+5. Cookies
+
+Diese Website verwendet Cookies, um die Benutzerfreundlichkeit zu verbessern.
+Cookies sind kleine Textdateien, die auf Ihrem Endgerät gespeichert werden.
+Sie können Ihren Browser so einstellen, dass Sie über das Setzen von Cookies informiert werden und einzeln entscheiden, ob Sie diese akzeptieren möchten.
+Die Nutzung technisch notwendiger Cookies erfolgt auf Grundlage von Art. 6 Abs. 1 lit. f DSGVO.
+
+6. Einbindung von Google Fonts
+
+Zur einheitlichen Darstellung von Schriftarten nutzt diese Website Google Fonts, bereitgestellt von Google Ireland Limited (Gordon House, Barrow Street, Dublin 4, Irland).
+Beim Aufruf der Seite werden die benötigten Schriftarten von Google-Servern geladen.
+Dabei kann Google Ihre IP-Adresse erfassen.
+Die Nutzung von Google Fonts erfolgt im Interesse einer ansprechenden Darstellung unserer Website (Art. 6 Abs. 1 lit. f DSGVO).
+Weitere Informationen: https://policies.google.com/privacy
+
+7. Analyse-Tools (optional, falls eingesetzt)
+
+Sofern Analyse-Tools wie Google Analytics verwendet werden, erfolgt dies ausschließlich auf Grundlage Ihrer Einwilligung gemäß Art. 6 Abs. 1 lit. a DSGVO.
+Sie können Ihre Einwilligung jederzeit mit Wirkung für die Zukunft widerrufen.
+(Dieser Abschnitt kann entfernt werden, wenn keine Analyse-Tools eingesetzt werden.)
+
+8. Rechte der betroffenen Personen
+
+Sie haben jederzeit das Recht auf:
+
+Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)
+
+Berichtigung unrichtiger Daten (Art. 16 DSGVO)
+
+Löschung Ihrer Daten (Art. 17 DSGVO)
+
+Einschränkung der Verarbeitung (Art. 18 DSGVO)
+
+Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)
+
+Datenübertragbarkeit (Art. 20 DSGVO)
+
+Zudem besteht ein Beschwerderecht bei einer Aufsichtsbehörde (Art. 77 DSGVO).
+
+9. Aktualität und Änderung dieser Datenschutzerklärung
+
+Diese Datenschutzerklärung ist aktuell gültig und hat den Stand: Oktober 2025.
+Wir behalten uns vor, sie bei Änderungen unserer Website oder gesetzlichen Vorgaben anzupassen.
+
+Möchtest du, dass ich sie noch leicht anpasse, z. B. für deine konkrete Website-Funktionen (Kontaktformular, YouTube, Google Maps oder Newsletter-Einbindung), damit sie perfekt zu deiner Seite passt?
