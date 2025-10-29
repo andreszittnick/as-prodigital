@@ -40,16 +40,66 @@ export default function Blog() {
       </Helmet>
       <Navigation />
       
-      {/* Hero Section */}
-      <section className="pt-24 md:pt-32 pb-12 md:pb-16 px-4 bg-gradient-to-br from-slate-50 via-white to-slate-100">
-        <div className="max-w-7xl mx-auto text-center">
+      {/* Hero Section with Dynamic Background */}
+      <section className="relative pt-24 md:pt-32 pb-12 md:pb-16 px-4 overflow-hidden dynamic-background">
+        {/* Dynamic Background Elements */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute inset-0 bg-white/80 backdrop-blur-[2px]" />
+          
+          <motion.div 
+            className="absolute top-10 sm:top-20 left-4 sm:left-20 w-48 sm:w-80 lg:w-96 h-48 sm:h-80 lg:h-96 bg-white/20 rounded-full filter blur-3xl floating-orb"
+            animate={{ 
+              x: [0, 30, 0],
+              y: [0, -20, 0],
+              scale: [1, 1.1, 1]
+            }}
+            transition={{ 
+              duration: 12,
+              repeat: Infinity,
+              ease: "easeInOut"
+            }}
+          />
+          <motion.div 
+            className="absolute top-20 sm:top-40 right-4 sm:right-20 w-32 sm:w-64 lg:w-80 h-32 sm:h-64 lg:h-80 bg-white/30 rounded-full filter blur-2xl floating-orb"
+            animate={{ 
+              x: [0, -25, 0],
+              y: [0, 25, 0],
+              scale: [1, 1.05, 1]
+            }}
+            transition={{ 
+              duration: 16,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 3
+            }}
+          />
+          <motion.div 
+            className="absolute bottom-10 sm:bottom-20 left-1/2 w-32 sm:w-48 lg:w-64 h-32 sm:h-48 lg:h-64 bg-white/25 rounded-full filter blur-xl pulse-orb"
+            animate={{ 
+              x: [-15, 15, -15],
+              y: [0, -15, 0],
+              rotate: [0, 180, 360]
+            }}
+            transition={{ 
+              duration: 20,
+              repeat: Infinity,
+              ease: "easeInOut",
+              delay: 6
+            }}
+          />
+          
+          <div className="hidden sm:block absolute top-1/4 right-1/4 w-24 sm:w-32 h-24 sm:h-32 bg-white/15 rounded-full filter blur-xl floating-orb" />
+          <div className="hidden sm:block absolute bottom-1/3 left-1/4 w-32 sm:w-48 h-32 sm:h-48 bg-white/10 rounded-full filter blur-2xl pulse-orb" />
+        </div>
+
+        <div className="relative max-w-7xl mx-auto text-center">
           <motion.h1
             className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 mb-4 md:mb-6"
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <span className="text-[#fe7a33]">Blog</span> & Ratgeber
+            <span className="gradient-text">Blog</span> & Ratgeber
           </motion.h1>
           <motion.p
             className="text-base md:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto"
