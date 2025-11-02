@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Monitor, Search } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { useScrollPosition } from "@/hooks/use-scroll";
-import logoImage from "@assets/Logo_1754308337340.png";
+import logoImage from "@assets/Logo_AS-ProDigital_1762107241090.png";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);

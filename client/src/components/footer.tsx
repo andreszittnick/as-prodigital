@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import logoImage from "@assets/Logo_1754308337340.png";
+import logoImage from "@assets/Logo_AS-ProDigital_1762107241090.png";
 
 export default function Footer() {
   return (
