@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { ChevronDown } from "lucide-react";
-import andreImage from "@assets/Bild_Andre_Szittnick_1754308315756.jpg";
+import andreImage from "@assets/Andre-Szittnick_1762107465807.webp";
 import TypingAnimationSeoWords from "./typing-animation-seo-words";
 
 export default function HeroSectionSeoSimple() {

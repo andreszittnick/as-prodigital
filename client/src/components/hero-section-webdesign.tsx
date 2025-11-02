@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Code, Brain } from "lucide-react";
 import TypingAnimationWebdesign from "./typing-animation-webdesign";
-import andreImage from "@assets/Bild_Andre_Szittnick_1754308315756.jpg";
+import andreImage from "@assets/Andre-Szittnick_1762107465807.webp";
 
 export default function HeroSectionWebdesign() {
   const scrollToSection = (sectionId: string) => {

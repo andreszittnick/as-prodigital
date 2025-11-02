@@ -3,7 +3,7 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { motion } from "framer-motion";
 import { Award, Users, Coffee, Code2, Target, Heart } from "lucide-react";
-import profileImage from "@assets/Bild_Andre_Szittnick_1754308315756.jpg";
+import profileImage from "@assets/Andre-Szittnick_1762107465807.webp";
 
 export default function About() {
   const stats = [
