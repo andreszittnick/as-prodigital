@@ -28,7 +28,7 @@ export default function Navigation() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-16 md:h-20">
+        <div className="flex justify-between items-center h-20 md:h-24">
           {/* Logo */}
           <Link href="/">
             <motion.div 
@@ -40,7 +40,7 @@ export default function Navigation() {
               <img 
                 src="/logo-new.png" 
                 alt="AS-ProDigital Logo" 
-                className="h-10 md:h-14 w-auto object-contain"
+                className="h-14 md:h-20 w-auto object-contain"
               />
             </motion.div>
           </Link>

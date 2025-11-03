@@ -15,7 +15,7 @@ export default function Footer() {
             <img 
               src="/logo-new.png" 
               alt="AS-ProDigital Logo" 
-              className="h-10 md:h-12 w-auto object-contain"
+              className="h-14 md:h-18 w-auto object-contain"
             />
           </motion.div>
           
