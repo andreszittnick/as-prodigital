@@ -5,10 +5,10 @@ This is a modern full-stack web application built for a digital agency called "A
 # User Preferences
 
 Preferred communication style: Simple, everyday language.
-Brand colors: Use #fe7a33 (orange) and #07437c (blue) separately - do not mix/gradient the colors together.
+Brand colors: Use #fa5219 (orange) and #19243b (blue) separately - do not mix/gradient the colors together.
 Website language: German (all content translated from English to German).
 Page-specific modifications: When user requests changes to a specific subpage (e.g., "Webdesign-Unterseite"), only modify that exact page. Do not apply changes to other subpages unless explicitly requested.
-URL Structure: URLs - / (home), /Leistungen (services overview), /Webdesign (webdesign subpage), /SEO (SEO subpage), /ueber-mich (about page), /Kontakt (contact page), /blog (blog overview), /blog/:slug (individual blog posts).
+URL Structure: URLs - / (home), /Leistungen (services overview), /Webdesign (webdesign subpage), /SEO (SEO subpage), /ueber-mich (about page), /Kontakt (contact page), /blog (blog overview), /blog/:slug (individual blog posts), /datenschutz (privacy policy - lowercase only), /impressum (legal notice).
 Services: ONLY Webdesign and SEO - NO KI/AI services whatsoever.
 Contact: WhatsApp: 06731 8789, Email: info@as-prodigital.de, Phone: 06731 8789, Location: Alzey
 UI Features: Floating contact buttons (WhatsApp & Email) visible on all pages, NO social media sections or icons.
@@ -24,6 +24,28 @@ UI Features: Floating contact buttons (WhatsApp & Email) visible on all pages, N
 - **State Management**: TanStack Query for server state management
 - **Form Handling**: React Hook Form with Zod validation
 - **UI Components**: FloatingContactButtons component (fixed position WhatsApp & Email buttons on all pages)
+- **Privacy Compliance**: GDPR-compliant cookie consent system with banner, settings modal, and footer access
+
+## Cookie Consent System (GDPR-Compliant)
+- **Implementation Date**: November 2025
+- **Hook**: `use-cookie-consent.tsx` - Context-based state management with LocalStorage persistence
+- **Components**: 
+  - `CookieBanner` - Initial consent banner with 3 action buttons
+  - `CookieSettingsModal` - Detailed preferences for 4 cookie categories
+  - Footer integration - "Cookie-Einstellungen" link for permanent access
+- **Cookie Categories**: Notwendige (always active), Präferenzen, Analyse, Marketing
+- **Consent Status**: Explicit tracking ('accepted' | 'rejected' | 'custom' | null)
+- **Version Management**: v1.0 with automatic reset on updates
+- **Helper Methods**: `hasAcceptedAll`, `hasRejectedOptional` for future analytics integration
+- **GDPR Features**: 
+  - Opt-in required for non-essential cookies
+  - Withdrawal right accessible anytime via footer
+  - Clear category descriptions with examples
+  - Link to privacy policy (/datenschutz) in banner and modal
+  - LocalStorage-based preference persistence
+  - Version tracking for compliance updates
+- **Storage Key**: `cookie-consent-preferences`
+- **Future Integration**: Wire analytics/marketing loaders to consent helpers before initializing third-party scripts
 
 ## Backend Architecture
 - **Framework**: Express.js with TypeScript
