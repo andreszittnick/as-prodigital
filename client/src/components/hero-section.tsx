@@ -66,11 +66,11 @@ export default function HeroSection() {
         <div className="hidden sm:block absolute bottom-1/3 left-1/4 w-32 sm:w-48 h-32 sm:h-48 bg-white/10 rounded-full filter blur-2xl pulse-orb" />
       </div>
       
-      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ paddingTop: 'calc(4rem + 3mm)' }}>
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      <div className="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-8" style={{ paddingTop: 'calc(4rem + 3mm)' }}>
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
           {/* Left side - Content */}
           <motion.div 
-            className="text-center lg:text-left order-2 lg:order-1"
+            className="text-center lg:text-left order-2 lg:order-1 px-2 sm:px-0"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -91,12 +91,12 @@ export default function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <span className="gradient-text whitespace-nowrap">Webdesign & SEO</span><br />
+              <span className="gradient-text lg:whitespace-nowrap">Webdesign & SEO</span><br />
               <span className="text-slate-900">aus Alzey</span>
             </motion.h1>
             
             <motion.div 
-              className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-medium mb-6 md:mb-8 text-center lg:text-left whitespace-nowrap overflow-visible"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-medium mb-6 md:mb-8 text-center lg:text-left lg:whitespace-nowrap overflow-visible"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
