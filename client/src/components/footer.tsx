@@ -36,7 +36,7 @@ export default function Footer() {
           </motion.div>
           
           <motion.div 
-            className="flex justify-center md:justify-end space-x-5 md:space-x-6"
+            className="flex flex-nowrap justify-center md:justify-end gap-3 md:gap-5"
             initial={{ opacity: 0, x: 20 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
@@ -44,28 +44,28 @@ export default function Footer() {
           >
             <a 
               href="/impressum" 
-              className="text-slate-400 hover:text-[#fa5219] transition-colors duration-300 text-sm md:text-base"
+              className="text-slate-400 hover:text-[#fa5219] transition-colors duration-300 text-sm md:text-base whitespace-nowrap"
               data-testid="link-imprint"
             >
               Impressum
             </a>
             <a 
               href="/datenschutz" 
-              className="text-slate-400 hover:text-[#fa5219] transition-colors duration-300 text-sm md:text-base"
+              className="text-slate-400 hover:text-[#fa5219] transition-colors duration-300 text-sm md:text-base whitespace-nowrap"
               data-testid="link-privacy"
             >
               Datenschutz
             </a>
             <a 
               href="/agb" 
-              className="text-slate-400 hover:text-[#fa5219] transition-colors duration-300 text-sm md:text-base"
+              className="text-slate-400 hover:text-[#fa5219] transition-colors duration-300 text-sm md:text-base whitespace-nowrap"
               data-testid="link-terms"
             >
               AGB
             </a>
             <button
               onClick={openSettings}
-              className="text-slate-400 hover:text-[#fa5219] transition-colors duration-300 text-sm md:text-base cursor-pointer"
+              className="text-slate-400 hover:text-[#fa5219] transition-colors duration-300 text-sm md:text-base cursor-pointer whitespace-nowrap"
               data-testid="button-cookie-settings-footer"
             >
               Cookie-Einstellungen
