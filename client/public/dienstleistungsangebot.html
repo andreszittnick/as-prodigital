@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dienstleistungsangebot - AS-ProDigital</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #1e293b;
+            background: white;
+            padding: 40px;
+            max-width: 210mm;
+            margin: 0 auto;
+        }
+        
+        @media print {
+            body {
+                padding: 0;
+                max-width: 100%;
+            }
+            .no-print {
+                display: none;
+            }
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 50px;
+            padding-bottom: 30px;
+            border-bottom: 3px solid #fe7a33;
+        }
+        
+        .logo-section h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: #07437c;
+            margin-bottom: 5px;
+        }
+        
+        .logo-section p {
+            font-size: 14px;
+            color: #64748b;
+        }
+        
+        .contact-info {
+            text-align: right;
+            font-size: 12px;
+            color: #64748b;
+        }
+        
+        .contact-info div {
+            margin-bottom: 3px;
+        }
+        
+        .document-title {
+            font-size: 32px;
+            font-weight: 800;
+            color: #07437c;
+            margin-bottom: 10px;
+        }
+        
+        .document-subtitle {
+            font-size: 16px;
+            color: #64748b;
+            margin-bottom: 40px;
+        }
+        
+        .intro-text {
+            background: #f8fafc;
+            padding: 25px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+            border-left: 4px solid #fe7a33;
+        }
+        
+        .intro-text p {
+            font-size: 14px;
+            color: #475569;
+        }
+        
+        .services-section {
+            margin-bottom: 40px;
+        }
+        
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #07437c;
+            margin-bottom: 25px;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+        
+        .service-card {
+            background: white;
+            border: 2px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+            page-break-inside: avoid;
+        }
+        
+        .service-card h3 {
+            font-size: 20px;
+            font-weight: 700;
+            color: #fe7a33;
+            margin-bottom: 15px;
+        }
+        
+        .service-card ul {
+            list-style: none;
+            margin-bottom: 15px;
+        }
+        
+        .service-card ul li {
+            padding: 8px 0 8px 25px;
+            position: relative;
+            font-size: 14px;
+            color: #475569;
+        }
+        
+        .service-card ul li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #fe7a33;
+            font-weight: bold;
+        }
+        
+        .benefits-section {
+            background: linear-gradient(135deg, #07437c 0%, #0a5a9e 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 40px;
+        }
+        
+        .benefits-section h3 {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+        
+        .benefit-item {
+            font-size: 14px;
+            padding-left: 25px;
+            position: relative;
+        }
+        
+        .benefit-item:before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: #fe7a33;
+            font-weight: bold;
+        }
+        
+        .footer {
+            margin-top: 60px;
+            padding-top: 30px;
+            border-top: 2px solid #e2e8f0;
+            text-align: center;
+            font-size: 12px;
+            color: #64748b;
+        }
+        
+        .cta-section {
+            background: #fef3ef;
+            border: 2px solid #fe7a33;
+            border-radius: 8px;
+            padding: 25px;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .cta-section h3 {
+            color: #07437c;
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .cta-section p {
+            color: #475569;
+            font-size: 14px;
+        }
+        
+        .print-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #fe7a33;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 6px;
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 14px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .print-button:hover {
+            background: #ff6b35;
+        }
+    </style>
+</head>
+<body>
+    <button class="print-button no-print" onclick="window.print()">Als PDF speichern</button>
+    
+    <div class="header">
+        <div class="logo-section">
+            <h1>AS-ProDigital</h1>
+            <p>André Szittnick</p>
+        </div>
+        <div class="contact-info">
+            <div><strong>Telefon:</strong> +49 (0) 170 810 94 82</div>
+            <div><strong>E-Mail:</strong> info@as-prodigital.de</div>
+            <div><strong>Standort:</strong> Alzey</div>
+        </div>
+    </div>
+    
+    <h2 class="document-title">Dienstleistungsangebot</h2>
+    <p class="document-subtitle">Professionelle Digitallösungen für Ihren Erfolg</p>
+    
+    <div class="intro-text">
+        <p>Sehr geehrte Interessentin, sehr geehrter Interessent,</p>
+        <br>
+        <p>vielen Dank für Ihr Interesse an meinen Dienstleistungen. Als spezialisierter Digitalexperte in Alzey biete ich Ihnen maßgeschneiderte Lösungen für Webdesign und Suchmaschinenoptimierung (SEO). Mit über 5 Jahren Erfahrung und mehr als 50 erfolgreich abgeschlossenen Projekten garantiere ich Ihnen höchste Qualität und messbare Ergebnisse.</p>
+    </div>
+    
+    <div class="services-section">
+        <h3 class="section-title">Meine Leistungen im Überblick</h3>
+        
+        <div class="service-card">
+            <h3>🎨 Webdesign</h3>
+            <ul>
+                <li>Individuelle, responsive Website-Entwicklung für alle Endgeräte</li>
+                <li>Modernes, nutzerfreundliches Design nach aktuellen Standards</li>
+                <li>Optimierte Ladezeiten für beste Performance</li>
+                <li>Professionelle Content-Integration und Bildbearbeitung</li>
+                <li>Suchmaschinenoptimierte Struktur von Anfang an</li>
+                <li>Mobile-First Ansatz für optimale Smartphone-Darstellung</li>
+                <li>Barrierefreie Umsetzung (WCAG-konform)</li>
+                <li>Integration von Kontaktformularen und Newsletter-Systemen</li>
+            </ul>
+        </div>
+        
+        <div class="service-card">
+            <h3>🔍 Suchmaschinenoptimierung (SEO)</h3>
+            <ul>
+                <li>Umfassende SEO-Analyse und Potenzialermittlung</li>
+                <li>Keyword-Recherche und Wettbewerbsanalyse</li>
+                <li>OnPage-Optimierung (Technik, Content, Struktur)</li>
+                <li>OffPage-Optimierung und Linkbuilding-Strategien</li>
+                <li>Local SEO für bessere regionale Sichtbarkeit</li>
+                <li>Regelmäßige Erfolgsberichte und Ranking-Monitoring</li>
+                <li>Google My Business Optimierung</li>
+                <li>Content-Strategie für nachhaltiges Wachstum</li>
+            </ul>
+        </div>
+    </div>
+    
+    <div class="benefits-section">
+        <h3>Warum AS-ProDigital?</h3>
+        <div class="benefits-grid">
+            <div class="benefit-item">Persönliche Beratung und Betreuung</div>
+            <div class="benefit-item">Transparente, faire Preisgestaltung</div>
+            <div class="benefit-item">Kurze Reaktionszeiten</div>
+            <div class="benefit-item">Messbare Erfolge durch Analytics</div>
+            <div class="benefit-item">5+ Jahre Erfahrung</div>
+            <div class="benefit-item">Lokaler Ansprechpartner in Alzey</div>
+            <div class="benefit-item">Moderne Technologien</div>
+            <div class="benefit-item">Langfristige Partnerschaft</div>
+        </div>
+    </div>
+    
+    <div class="cta-section">
+        <h3>Bereit für Ihr digitales Projekt?</h3>
+        <p>Kontaktieren Sie mich für ein unverbindliches Erstgespräch und individuelle Beratung.</p>
+        <p style="margin-top: 15px; font-weight: 600; color: #fe7a33;">
+            📞 +49 (0) 170 810 94 82 | ✉️ info@as-prodigital.de
+        </p>
+    </div>
+    
+    <div class="footer">
+        <p><strong>AS-ProDigital</strong> | André Szittnick | Alzey</p>
+        <p style="margin-top: 5px;">Webdesign & SEO mit Leidenschaft</p>
+    </div>
+</body>
+</html>
