@@ -70,7 +70,7 @@ export default function HeroSectionWebdesign() {
         <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-center">
           {/* Left side - Content */}
           <motion.div 
-            className="text-center lg:text-left"
+            className="text-center lg:text-left order-2 lg:order-1"
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
@@ -158,7 +158,7 @@ export default function HeroSectionWebdesign() {
           
           {/* Right side - Photo */}
           <motion.div 
-            className="flex justify-center lg:justify-end relative"
+            className="flex justify-center lg:justify-end relative order-1 lg:order-2"
             initial={{ opacity: 0, x: 50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}

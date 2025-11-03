@@ -76,6 +76,7 @@ export default function About() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
+              className="order-2 lg:order-1"
             >
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
                 Über <span className="text-[#fa5219]">André Szittnick</span>
@@ -103,7 +104,7 @@ export default function About() {
               initial={{ opacity: 0, x: 30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="flex justify-center lg:justify-end relative"
+              className="flex justify-center lg:justify-end relative order-1 lg:order-2"
             >
               {/* Glow Effect Behind Image */}
               <motion.div
