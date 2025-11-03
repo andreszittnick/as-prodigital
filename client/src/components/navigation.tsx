@@ -40,7 +40,7 @@ export default function Navigation() {
               <img 
                 src="/logo-new.png" 
                 alt="AS-ProDigital Logo" 
-                className="h-7 md:h-10 w-auto object-contain"
+                className="h-10 md:h-14 w-auto object-contain"
               />
             </motion.div>
           </Link>
