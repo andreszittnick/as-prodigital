@@ -96,12 +96,12 @@ export default function HeroSection() {
             </motion.h1>
             
             <motion.div 
-              className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-medium mb-6 md:mb-8 text-center lg:text-left flex flex-wrap lg:flex-nowrap items-center justify-center lg:justify-start gap-x-2"
+              className="text-xl sm:text-2xl md:text-2xl lg:text-3xl font-medium mb-6 md:mb-8 text-center lg:text-left whitespace-nowrap overflow-visible"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.4 }}
             >
-              <span className="text-slate-700">Verbessern Sie Ihre digitale</span>
+              <span className="text-slate-700">Verbessern Sie Ihre digitale </span>
               <TypingAnimation />
             </motion.div>
             
