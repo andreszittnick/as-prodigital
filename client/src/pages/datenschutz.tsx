@@ -58,8 +58,8 @@ export default function Datenschutz() {
                   <br />
                   <p>
                     <span className="font-semibold">Telefon:</span>{" "}
-                    <a href="tel:+491708109482" className="text-orange-600 hover:text-orange-700 transition-colors">
-                      0170 810 9482
+                    <a href="tel:+4967318789" className="text-orange-600 hover:text-orange-700 transition-colors">
+                      06731 8789
                     </a>
                   </p>
                   <p>

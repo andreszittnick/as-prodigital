@@ -41,7 +41,7 @@ export default function Home() {
             },
             "description": "Professionelles Webdesign und SEO-Optimierung aus Alzey",
             "url": "https://asprodigital.de",
-            "telephone": "+49-170-810-94-82",
+            "telephone": "+49-6731-8789",
             "email": "Info@AS-ProDigital.de",
             "address": {
               "@type": "PostalAddress",

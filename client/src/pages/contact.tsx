@@ -70,8 +70,8 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Telefon",
-      details: "+49 (0) 170 810 94 82",
-      action: "tel:+4917081094082"
+      details: "06731 8789",
+      action: "tel:+4967318789"
     },
     {
       icon: MapPin,
@@ -99,7 +99,7 @@ export default function Contact() {
     <>
       <Helmet>
         <title>Kontakt - AS-ProDigital Alzey | Kostenlose Beratung & Anfrage</title>
-        <meta name="description" content="Kontaktieren Sie AS-ProDigital für professionelles Webdesign & SEO in Alzey. ✓ Kostenlose Beratung ✓ Schnelle Antwort ✓ Unverbindliches Angebot. Telefon: +49 170 810 94 82" />
+        <meta name="description" content="Kontaktieren Sie AS-ProDigital für professionelles Webdesign & SEO in Alzey. ✓ Kostenlose Beratung ✓ Schnelle Antwort ✓ Unverbindliches Angebot. Telefon: 06731 8789" />
         <meta name="keywords" content="Kontakt AS-ProDigital, Webdesign Anfrage Alzey, SEO Beratung, André Szittnick Kontakt" />
         <link rel="canonical" href="https://asprodigital.de/Kontakt" />
         
@@ -123,7 +123,7 @@ export default function Contact() {
               "addressLocality": "Alzey",
               "addressCountry": "DE"
             },
-            "telephone": "+4917081094082",
+            "telephone": "+4967318789",
             "email": "Info@AS-ProDigital.de"
           })
         }} />
