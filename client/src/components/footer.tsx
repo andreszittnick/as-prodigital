@@ -1,6 +1,9 @@
 import { motion } from "framer-motion";
+import { useCookieConsent } from "@/hooks/use-cookie-consent";
 
 export default function Footer() {
+  const { openSettings } = useCookieConsent();
+
   return (
     <footer className="bg-slate-900 text-white py-10 md:py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -60,6 +63,13 @@ export default function Footer() {
             >
               AGB
             </a>
+            <button
+              onClick={openSettings}
+              className="text-slate-400 hover:text-[#fa5219] transition-colors duration-300 text-sm md:text-base cursor-pointer"
+              data-testid="button-cookie-settings-footer"
+            >
+              Cookie-Einstellungen
+            </button>
           </motion.div>
         </div>
       </div>
