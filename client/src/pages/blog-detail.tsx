@@ -28,7 +28,7 @@ export default function BlogDetail() {
             <h1 className="text-4xl font-bold text-slate-900 mb-4">Artikel nicht gefunden</h1>
             <p className="text-xl text-slate-600 mb-8">Der gesuchte Blogartikel existiert nicht.</p>
             <Link href="/blog">
-              <a className="inline-flex items-center gap-2 text-[#fe7a33] font-semibold hover:gap-3 transition-all duration-300"
+              <a className="inline-flex items-center gap-2 text-[#fa5219] font-semibold hover:gap-3 transition-all duration-300"
                 data-testid="back-to-blog">
                 <ArrowLeft className="w-5 h-5" />
                 Zurück zum Blog
@@ -70,7 +70,7 @@ export default function BlogDetail() {
         <div className="max-w-4xl mx-auto">
           {/* Back Link */}
           <Link href="/blog">
-            <a className="inline-flex items-center gap-2 text-slate-600 hover:text-[#fe7a33] mb-8 transition-colors duration-300"
+            <a className="inline-flex items-center gap-2 text-slate-600 hover:text-[#fa5219] mb-8 transition-colors duration-300"
               data-testid="back-link">
               <ArrowLeft className="w-5 h-5" />
               Zurück zum Blog
@@ -112,7 +112,7 @@ export default function BlogDetail() {
             transition={{ duration: 0.5, delay: 0.2 }}
           >
             <div className="flex items-center gap-2">
-              <Calendar className="w-5 h-5 text-[#fe7a33]" />
+              <Calendar className="w-5 h-5 text-[#fa5219]" />
               <span>{new Date(post.publishedAt).toLocaleDateString('de-DE', { 
                 day: '2-digit',
                 month: 'long',
@@ -120,7 +120,7 @@ export default function BlogDetail() {
               })}</span>
             </div>
             <div className="flex items-center gap-2">
-              <Clock className="w-5 h-5 text-[#fe7a33]" />
+              <Clock className="w-5 h-5 text-[#fa5219]" />
               <span>{post.readTime} Min. Lesezeit</span>
             </div>
             <div className="flex items-center gap-2">
@@ -131,7 +131,7 @@ export default function BlogDetail() {
 
           {/* Excerpt */}
           <motion.p
-            className="text-xl text-slate-700 mb-12 leading-relaxed italic border-l-4 border-[#fe7a33] pl-6"
+            className="text-xl text-slate-700 mb-12 leading-relaxed italic border-l-4 border-[#fa5219] pl-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: 0.3 }}
@@ -193,7 +193,7 @@ export default function BlogDetail() {
                   });
                 }
               }}
-              className="inline-flex items-center gap-2 px-6 py-3 bg-[#fe7a33] text-white rounded-full font-semibold hover:bg-[#e66a23] transition-colors duration-300"
+              className="inline-flex items-center gap-2 px-6 py-3 bg-[#fa5219] text-white rounded-full font-semibold hover:bg-[#e66a23] transition-colors duration-300"
               data-testid="share-button"
             >
               <Share2 className="w-5 h-5" />
@@ -208,7 +208,7 @@ export default function BlogDetail() {
         <section className="py-16 px-4 bg-white">
           <div className="max-w-7xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-12 text-center">
-              Weitere <span className="text-[#fe7a33]">Beiträge</span> zum Thema
+              Weitere <span className="text-[#fa5219]">Beiträge</span> zum Thema
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {relatedPosts.map((relatedPost) => (
@@ -222,7 +222,7 @@ export default function BlogDetail() {
                       }`}>
                         {relatedPost.category === "webdesign" ? "Webdesign" : "SEO"}
                       </span>
-                      <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#fe7a33] transition-colors duration-300">
+                      <h3 className="text-xl font-bold text-slate-900 mb-3 group-hover:text-[#fa5219] transition-colors duration-300">
                         {relatedPost.title}
                       </h3>
                       <p className="text-slate-600 mb-4 line-clamp-2">

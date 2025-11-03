@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 // Animation 1: SEO Rankings - Steigende Positionen
 export function SeoRankingsAnimation() {
   const rankings = [
-    { position: 1, url: "ihre-website.de", color: "#fe7a33" },
+    { position: 1, url: "ihre-website.de", color: "#fa5219" },
     { position: 2, url: "konkurrent-a.de", color: "#94a3b8" },
     { position: 3, url: "konkurrent-b.de", color: "#cbd5e1" },
   ];
@@ -16,7 +16,7 @@ export function SeoRankingsAnimation() {
         animate={{ rotate: [0, 360] }}
         transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
       >
-        <svg className="w-5 h-5 text-[#07437c]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-5 h-5 text-[#19243b]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
         </svg>
       </motion.div>
@@ -45,7 +45,7 @@ export function SeoRankingsAnimation() {
             </div>
             {index === 0 && (
               <motion.div
-                className="text-[#fe7a33]"
+                className="text-[#fa5219]"
                 animate={{ y: [-5, 5, -5] }}
                 transition={{ duration: 2, repeat: Infinity }}
               >
@@ -62,7 +62,7 @@ export function SeoRankingsAnimation() {
       {[...Array(5)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-2 h-2 bg-[#fe7a33] rounded-full opacity-40"
+          className="absolute w-2 h-2 bg-[#fa5219] rounded-full opacity-40"
           style={{
             left: `${20 + i * 15}%`,
             top: `${30 + i * 10}%`,
@@ -86,8 +86,8 @@ export function SeoRankingsAnimation() {
 export function TechnicalSeoAnimation() {
   const metrics = [
     { label: "Speed", value: 95, color: "#10b981" },
-    { label: "Mobile", value: 88, color: "#fe7a33" },
-    { label: "Security", value: 100, color: "#07437c" },
+    { label: "Mobile", value: 88, color: "#fa5219" },
+    { label: "Security", value: 100, color: "#19243b" },
   ];
 
   return (
@@ -98,7 +98,7 @@ export function TechnicalSeoAnimation() {
         animate={{ scale: [1, 1.05, 1] }}
         transition={{ duration: 2, repeat: Infinity }}
       >
-        <div className="w-12 h-12 bg-[#07437c] rounded-lg flex items-center justify-center">
+        <div className="w-12 h-12 bg-[#19243b] rounded-lg flex items-center justify-center">
           <svg className="w-7 h-7 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01" />
           </svg>
@@ -215,7 +215,7 @@ export function KeywordResearchAnimation() {
                 </motion.div>
               </div>
               <div className="flex items-center gap-2">
-                <svg className="w-4 h-4 text-[#07437c]" fill="currentColor" viewBox="0 0 20 20">
+                <svg className="w-4 h-4 text-[#19243b]" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 11a1 1 0 011-1h2a1 1 0 011 1v5a1 1 0 01-1 1H3a1 1 0 01-1-1v-5zM8 7a1 1 0 011-1h2a1 1 0 011 1v9a1 1 0 01-1 1H9a1 1 0 01-1-1V7zM14 4a1 1 0 011-1h2a1 1 0 011 1v12a1 1 0 01-1 1h-2a1 1 0 01-1-1V4z" />
                 </svg>
                 <span className="text-xs text-slate-500">{keyword.volume} Suchanfragen/Monat</span>
@@ -249,7 +249,7 @@ export function ContentOptimizationAnimation() {
         {/* Document Header */}
         <div className="mb-6">
           <motion.div
-            className="h-3 bg-gradient-to-r from-[#fe7a33] to-[#07437c] rounded-full mb-3"
+            className="h-3 bg-gradient-to-r from-[#fa5219] to-[#19243b] rounded-full mb-3"
             animate={{ scaleX: [0.8, 1, 0.8] }}
             transition={{ duration: 3, repeat: Infinity }}
           />
@@ -269,7 +269,7 @@ export function ContentOptimizationAnimation() {
               whileHover={{ scale: 1.05 }}
             >
               <div className="flex items-center justify-between mb-2">
-                <div className="w-8 h-8 bg-gradient-to-br from-[#fe7a33] to-[#ff6b35] rounded-lg flex items-center justify-center text-white font-bold text-xs">
+                <div className="w-8 h-8 bg-gradient-to-br from-[#fa5219] to-[#ff6b35] rounded-lg flex items-center justify-center text-white font-bold text-xs">
                   {element.icon}
                 </div>
                 {element.status && (
@@ -353,7 +353,7 @@ export function LocalSeoAnimation() {
         <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
           <defs>
             <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#07437c" strokeWidth="1"/>
+              <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#19243b" strokeWidth="1"/>
             </pattern>
           </defs>
           <rect width="100%" height="100%" fill="url(#grid)" />
@@ -385,7 +385,7 @@ export function LocalSeoAnimation() {
               <svg className="w-10 h-10" viewBox="0 0 24 24" fill="none">
                 <path
                   d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"
-                  fill={index === 0 ? "#fe7a33" : "#07437c"}
+                  fill={index === 0 ? "#fa5219" : "#19243b"}
                   stroke="white"
                   strokeWidth="2"
                 />
@@ -395,7 +395,7 @@ export function LocalSeoAnimation() {
               {/* Location Label */}
               <motion.div
                 className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 whitespace-nowrap bg-white px-3 py-1 rounded-full shadow-lg text-xs font-semibold"
-                style={{ color: index === 0 ? "#fe7a33" : "#07437c" }}
+                style={{ color: index === 0 ? "#fa5219" : "#19243b" }}
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: index * 0.3 + 0.5 }}
@@ -408,7 +408,7 @@ export function LocalSeoAnimation() {
             <motion.div
               className="absolute top-0 left-1/2 transform -translate-x-1/2 w-16 h-16 rounded-full"
               style={{
-                backgroundColor: index === 0 ? "#fe7a33" : "#07437c",
+                backgroundColor: index === 0 ? "#fa5219" : "#19243b",
                 opacity: 0.2,
               }}
               animate={{
@@ -432,7 +432,7 @@ export function LocalSeoAnimation() {
           transition={{ delay: 1.2 }}
         >
           <div className="flex items-start gap-3">
-            <div className="w-10 h-10 bg-gradient-to-br from-[#fe7a33] to-[#ff6b35] rounded-lg flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 bg-gradient-to-br from-[#fa5219] to-[#ff6b35] rounded-lg flex items-center justify-center flex-shrink-0">
               <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
               </svg>
@@ -493,8 +493,8 @@ export function SeoMonitoringAnimation() {
         {/* Header Stats */}
         <div className="grid grid-cols-3 gap-3 mb-6">
           {[
-            { label: "Traffic", value: "+48%", color: "#fe7a33" },
-            { label: "Rankings", value: "+12", color: "#07437c" },
+            { label: "Traffic", value: "+48%", color: "#fa5219" },
+            { label: "Rankings", value: "+12", color: "#19243b" },
             { label: "CTR", value: "5.2%", color: "#10b981" },
           ].map((stat, index) => (
             <motion.div
@@ -568,7 +568,7 @@ export function SeoMonitoringAnimation() {
               <motion.path
                 d={createPath()}
                 fill="none"
-                stroke="#fe7a33"
+                stroke="#fa5219"
                 strokeWidth="3"
                 strokeLinecap="round"
                 strokeLinejoin="round"
@@ -584,7 +584,7 @@ export function SeoMonitoringAnimation() {
                   cx={point.x}
                   cy={point.y}
                   r="2"
-                  fill="#fe7a33"
+                  fill="#fa5219"
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   transition={{ duration: 0.3, delay: 0.8 + index * 0.2 }}
@@ -596,7 +596,7 @@ export function SeoMonitoringAnimation() {
                 cx={lineData[lineData.length - 1].x}
                 cy={lineData[lineData.length - 1].y}
                 r="4"
-                fill="#fe7a33"
+                fill="#fa5219"
                 animate={{
                   scale: [1, 1.5, 1],
                   opacity: [1, 0.5, 1],
@@ -611,8 +611,8 @@ export function SeoMonitoringAnimation() {
               {/* Gradient definition */}
               <defs>
                 <linearGradient id="lineGradient" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#fe7a33" stopOpacity="0.6" />
-                  <stop offset="100%" stopColor="#fe7a33" stopOpacity="0.05" />
+                  <stop offset="0%" stopColor="#fa5219" stopOpacity="0.6" />
+                  <stop offset="100%" stopColor="#fa5219" stopOpacity="0.05" />
                 </linearGradient>
               </defs>
             </svg>
@@ -642,7 +642,7 @@ export function SeoMonitoringAnimation() {
                 <motion.div
                   className="w-full rounded-t-lg"
                   style={{
-                    background: `linear-gradient(to top, ${index === chartData.length - 1 ? "#fe7a33" : "#07437c"}, ${index === chartData.length - 1 ? "#ff9966" : "#1a5490"})`,
+                    background: `linear-gradient(to top, ${index === chartData.length - 1 ? "#fa5219" : "#19243b"}, ${index === chartData.length - 1 ? "#ff9966" : "#1a5490"})`,
                   }}
                   initial={{ height: 0 }}
                   animate={{ height: `${value}%` }}

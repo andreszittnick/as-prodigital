@@ -36,7 +36,7 @@ export default function ScrollToTopButton() {
           onClick={scrollToTop}
           className="fixed bottom-8 right-8 z-50 w-14 h-14 rounded-2xl shadow-2xl text-white hover:shadow-3xl transition-all duration-300 flex items-center justify-center"
           style={{
-            background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
+            background: 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)',
           }}
           initial={{ opacity: 0, y: 20, scale: 0.8 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}

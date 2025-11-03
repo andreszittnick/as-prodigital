@@ -133,17 +133,17 @@ export default function HeroSectionWebdesign() {
                 onClick={() => scrollToSection("contact")}
                 className="text-white px-6 py-3 text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
                 style={{
-                  background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
+                  background: 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)',
                   border: '2px solid transparent',
                   transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
                 }}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.background = 'transparent';
-                  e.currentTarget.style.color = '#fe7a33';
-                  e.currentTarget.style.borderColor = '#fe7a33';
+                  e.currentTarget.style.color = '#fa5219';
+                  e.currentTarget.style.borderColor = '#fa5219';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)';
+                  e.currentTarget.style.background = 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)';
                   e.currentTarget.style.color = 'white';
                   e.currentTarget.style.borderColor = 'transparent';
                 }}
@@ -173,7 +173,7 @@ export default function HeroSectionWebdesign() {
               <div 
                 className="w-64 h-80 sm:w-72 sm:h-96 md:w-80 md:h-[500px] lg:w-96 lg:h-[600px] mx-auto rounded-3xl"
                 style={{
-                  background: 'radial-gradient(ellipse at center, rgba(254, 122, 51, 0.3) 0%, rgba(254, 122, 51, 0.15) 40%, rgba(7, 67, 124, 0.1) 70%, transparent 100%)',
+                  background: 'radial-gradient(ellipse at center, rgba(250, 82, 25, 0.3) 0%, rgba(250, 82, 25, 0.15) 40%, rgba(25, 36, 59, 0.1) 70%, transparent 100%)',
                   filter: 'blur(40px)',
                   transform: 'scale(1.2)'
                 }}

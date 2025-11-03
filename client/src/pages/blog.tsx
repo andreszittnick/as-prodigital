@@ -122,7 +122,7 @@ export default function Blog() {
                 onClick={() => setSelectedCategory(category.id as typeof selectedCategory)}
                 className={`px-5 py-2.5 md:px-6 md:py-3 rounded-full font-medium transition-all duration-300 text-sm md:text-base ${
                   selectedCategory === category.id
-                    ? "bg-[#fe7a33] text-white shadow-lg"
+                    ? "bg-[#fa5219] text-white shadow-lg"
                     : "bg-gray-100 text-gray-700 hover:bg-gray-200"
                 }`}
                 data-testid={`category-${category.id}`}
@@ -180,7 +180,7 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
       {/* Content */}
       <div className="p-5 md:p-6 flex-1 flex flex-col">
         <Link href={`/blog/${post.slug}`} className="block mb-3">
-          <h2 className="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-[#fe7a33] transition-colors duration-300">
+          <h2 className="text-xl md:text-2xl font-bold text-slate-900 group-hover:text-[#fa5219] transition-colors duration-300">
             {post.title}
           </h2>
         </Link>
@@ -220,7 +220,7 @@ function BlogCard({ post, index }: { post: BlogPost; index: number }) {
         {/* Read More Link */}
         <Link 
           href={`/blog/${post.slug}`}
-          className="inline-flex items-center gap-2 text-[#fe7a33] font-semibold hover:gap-3 transition-all duration-300 text-sm md:text-base"
+          className="inline-flex items-center gap-2 text-[#fa5219] font-semibold hover:gap-3 transition-all duration-300 text-sm md:text-base"
           data-testid={`read-more-${post.slug}`}
         >
           Weiterlesen

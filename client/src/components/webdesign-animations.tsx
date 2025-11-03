@@ -171,7 +171,7 @@ export function ResponsiveDesignAnimation() {
       <svg className="absolute inset-0 w-full h-full pointer-events-none" style={{ zIndex: 0 }}>
         <motion.path
           d="M 100 150 Q 150 130, 200 150"
-          stroke="#fe7a33"
+          stroke="#fa5219"
           strokeWidth="2"
           fill="none"
           strokeDasharray="5,5"
@@ -187,7 +187,7 @@ export function ResponsiveDesignAnimation() {
 
 // 3. Individual Webdesign Animation - Color Palette
 export function IndividualWebdesignAnimation() {
-  const colors = ['#fe7a33', '#07437c', '#ff6b35', '#1a5490', '#ffa500'];
+  const colors = ['#fa5219', '#19243b', '#ff6b35', '#1a5490', '#ffa500'];
   
   return (
     <div className="h-full min-h-[300px] bg-gradient-to-br from-orange-50 to-purple-50 rounded-2xl p-8 flex items-center justify-center relative overflow-hidden">
@@ -292,7 +292,7 @@ export function SeoWebdesignAnimation() {
               key={rank}
               className="bg-white rounded-lg shadow-lg p-4 border-l-4"
               style={{
-                borderLeftColor: rank === 1 ? '#fe7a33' : rank === 2 ? '#07437c' : '#94a3b8',
+                borderLeftColor: rank === 1 ? '#fa5219' : rank === 2 ? '#19243b' : '#94a3b8',
               }}
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -304,7 +304,7 @@ export function SeoWebdesignAnimation() {
                 <div
                   className="w-8 h-8 rounded-full flex items-center justify-center text-white font-bold text-sm"
                   style={{
-                    backgroundColor: rank === 1 ? '#fe7a33' : rank === 2 ? '#07437c' : '#94a3b8',
+                    backgroundColor: rank === 1 ? '#fa5219' : rank === 2 ? '#19243b' : '#94a3b8',
                   }}
                 >
                   {rank}

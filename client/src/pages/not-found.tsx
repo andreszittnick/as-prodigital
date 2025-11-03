@@ -21,7 +21,7 @@ export default function NotFound() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6 }}
           >
-            <h1 className="text-8xl font-bold text-[#fe7a33] mb-6">404</h1>
+            <h1 className="text-8xl font-bold text-[#fa5219] mb-6">404</h1>
             <h2 className="text-4xl font-bold text-slate-900 mb-4">
               Seite nicht gefunden
             </h2>
@@ -31,7 +31,7 @@ export default function NotFound() {
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/">
-                <a className="inline-flex items-center gap-2 px-8 py-4 bg-[#fe7a33] text-white rounded-full font-semibold hover:bg-[#e66a23] transition-colors duration-300"
+                <a className="inline-flex items-center gap-2 px-8 py-4 bg-[#fa5219] text-white rounded-full font-semibold hover:bg-[#e66a23] transition-colors duration-300"
                   data-testid="back-home">
                   <Home className="w-5 h-5" />
                   Zur Startseite
@@ -39,7 +39,7 @@ export default function NotFound() {
               </Link>
               <button
                 onClick={() => window.history.back()}
-                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-700 border-2 border-slate-300 rounded-full font-semibold hover:border-[#fe7a33] hover:text-[#fe7a33] transition-colors duration-300"
+                className="inline-flex items-center gap-2 px-8 py-4 bg-white text-slate-700 border-2 border-slate-300 rounded-full font-semibold hover:border-[#fa5219] hover:text-[#fa5219] transition-colors duration-300"
                 data-testid="back-button"
               >
                 <ArrowLeft className="w-5 h-5" />

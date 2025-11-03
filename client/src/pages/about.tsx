@@ -115,7 +115,7 @@ export default function About() {
                 <div 
                   className="w-72 h-96 sm:w-80 sm:h-[500px] md:w-96 md:h-[600px] lg:w-[450px] lg:h-[650px] mx-auto rounded-3xl"
                   style={{
-                    background: 'radial-gradient(ellipse at center, rgba(254, 122, 51, 0.3) 0%, rgba(254, 122, 51, 0.15) 40%, rgba(7, 67, 124, 0.1) 70%, transparent 100%)',
+                    background: 'radial-gradient(ellipse at center, rgba(250, 82, 25, 0.3) 0%, rgba(250, 82, 25, 0.15) 40%, rgba(25, 36, 59, 0.1) 70%, transparent 100%)',
                     filter: 'blur(40px)',
                     transform: 'scale(1.2)'
                   }}

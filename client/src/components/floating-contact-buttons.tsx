@@ -42,7 +42,7 @@ export default function FloatingContactButtons() {
           href="mailto:info@as-prodigital.de"
           className="w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all duration-300 hover:scale-110 active:scale-90"
           style={{
-            background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
+            background: 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)',
           }}
           data-testid="button-mail-float"
         >
@@ -57,7 +57,7 @@ export default function FloatingContactButtons() {
             onClick={scrollToTop}
             className="fixed right-6 bottom-6 z-50 w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all duration-300"
             style={{
-              background: 'linear-gradient(135deg, #07437c 0%, #0a5a9e 100%)',
+              background: 'linear-gradient(135deg, #19243b 0%, #0a5a9e 100%)',
             }}
             initial={{ scale: 0, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}

@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import logoImage from "@assets/Logo_AS-ProDigital_1762107241090.png";
 
 export default function Footer() {
   return (
@@ -14,7 +13,7 @@ export default function Footer() {
             viewport={{ once: true }}
           >
             <img 
-              src={logoImage} 
+              src="/logo-new.png" 
               alt="AS-ProDigital Logo" 
               className="h-7 md:h-8 w-auto object-contain"
             />

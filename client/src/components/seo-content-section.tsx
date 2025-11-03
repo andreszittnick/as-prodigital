@@ -22,7 +22,7 @@ function ProcessTimelineContent() {
       subtitle: "Erster Schritt in Richtung Erfolg",
       description: "Sie nehmen unkompliziert Kontakt mit mir auf und teilen mir Ihre Wünsche und Ziele für Ihr Projekt mit.",
       icon: Target,
-      primaryColor: "#fe7a33",
+      primaryColor: "#fa5219",
       secondaryColor: "#ff9966",
       position: "left",
     },
@@ -32,7 +32,7 @@ function ProcessTimelineContent() {
       subtitle: "Ich entwickle Ihren Plan",
       description: "In einem persönlichen Gespräch besprechen wir die Vorgehensweise, entwickeln die passende Strategie und stimmen Designideen ab.",
       icon: Search,
-      primaryColor: "#07437c",
+      primaryColor: "#19243b",
       secondaryColor: "#1a5490",
       position: "right",
     },
@@ -42,7 +42,7 @@ function ProcessTimelineContent() {
       subtitle: "Ihre Vision wird Realität",
       description: "Ich setze Ihr Projekt mit höchster Sorgfalt um – von der technischen Umsetzung bis zum modernen, professionellen Design.",
       icon: TrendingUp,
-      primaryColor: "#fe7a33",
+      primaryColor: "#fa5219",
       secondaryColor: "#ff9966",
       position: "left",
     },
@@ -52,7 +52,7 @@ function ProcessTimelineContent() {
       subtitle: "Fertigstellung und Start",
       description: "Nach dem letzten Feinschliff erhalten Sie Ihr fertiges Projekt, inklusive Einweisung und allen benötigten Dateien.",
       icon: Rocket,
-      primaryColor: "#07437c",
+      primaryColor: "#19243b",
       secondaryColor: "#1a5490",
       position: "right",
     },
@@ -67,7 +67,7 @@ function ProcessTimelineContent() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <Sparkles className="w-5 h-5 text-[#fe7a33]" />
+          <Sparkles className="w-5 h-5 text-[#fa5219]" />
           <span className="text-sm font-medium text-slate-600">Bewährter Prozess</span>
         </motion.div>
         
@@ -78,7 +78,7 @@ function ProcessTimelineContent() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Von Ihrer <span className="text-[#064a7f]">Idee</span> zum digitalen <span className="bg-gradient-to-r from-[#fe7a33] to-[#ff6b1a] bg-clip-text text-transparent">Erfolg</span>
+          Von Ihrer <span className="text-[#064a7f]">Idee</span> zum digitalen <span className="bg-gradient-to-r from-[#fa5219] to-[#ff6b1a] bg-clip-text text-transparent">Erfolg</span>
         </motion.h2>
         
         <motion.p 
@@ -95,7 +95,7 @@ function ProcessTimelineContent() {
         {/* Central timeline */}
         <div className="absolute left-1/2 top-0 w-1 h-full bg-gradient-to-b from-transparent via-slate-300 to-transparent transform -translate-x-1/2 hidden lg:block">
           <motion.div 
-            className="w-full bg-gradient-to-b from-[#fe7a33] via-[#07437c] to-[#fe7a33] rounded-full"
+            className="w-full bg-gradient-to-b from-[#fa5219] via-[#19243b] to-[#fa5219] rounded-full"
             initial={{ height: 0 }}
             animate={isInView ? { height: "100%" } : {}}
             transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
@@ -235,17 +235,17 @@ function ProcessTimelineContent() {
           }}
           className="text-white px-6 py-3 rounded-full font-semibold text-base shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out"
           style={{
-            background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
+            background: 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)',
             border: '2px solid transparent',
             transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
           }}
           onMouseEnter={(e) => {
             e.currentTarget.style.background = 'transparent';
-            e.currentTarget.style.color = '#fe7a33';
-            e.currentTarget.style.borderColor = '#fe7a33';
+            e.currentTarget.style.color = '#fa5219';
+            e.currentTarget.style.borderColor = '#fa5219';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)';
+            e.currentTarget.style.background = 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)';
             e.currentTarget.style.color = 'white';
             e.currentTarget.style.borderColor = 'transparent';
           }}
@@ -367,17 +367,17 @@ function PremiumDigitalServicesSection() {
             }}
             className="text-white px-6 py-3 rounded-full font-semibold text-base hover:shadow-xl transition-all duration-500 ease-in-out"
             style={{
-              background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
+              background: 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)',
               border: '2px solid transparent',
               transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = 'transparent';
-              e.currentTarget.style.color = '#fe7a33';
-              e.currentTarget.style.borderColor = '#fe7a33';
+              e.currentTarget.style.color = '#fa5219';
+              e.currentTarget.style.borderColor = '#fa5219';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)';
+              e.currentTarget.style.background = 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)';
               e.currentTarget.style.color = 'white';
               e.currentTarget.style.borderColor = 'transparent';
             }}
@@ -417,7 +417,7 @@ export default function SeoContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                <span className="text-[#fe7a33]">SEO-Optimierung</span>: Sichtbarkeit steigern und Kunden gewinnen
+                <span className="text-[#fa5219]">SEO-Optimierung</span>: Sichtbarkeit steigern und Kunden gewinnen
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Wer bei Google nicht gefunden wird, existiert online kaum. Mit professioneller SEO-Optimierung sorgen Sie dafür, dass Ihre Website in den Suchergebnissen sichtbar wird – genau dann, wenn potenzielle Kunden nach Ihren Produkten oder Dienstleistungen suchen. Die Optimierung umfasst technische Aspekte wie Ladegeschwindigkeit, mobile Darstellung und Indexierbarkeit, aber auch inhaltliche Faktoren wie Keyword-Platzierung, strukturierte Inhalte und Meta-Texte. Ich analysiere Ihre aktuelle Website und entwickle eine maßgeschneiderte SEO-Strategie, die langfristig wirkt.
@@ -434,7 +434,7 @@ export default function SeoContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                <span className="text-[#fe7a33]">Technisches SEO</span>: Die Basis für gute <span className="text-[#fe7a33]">Google-Rankings</span>
+                <span className="text-[#fa5219]">Technisches SEO</span>: Die Basis für gute <span className="text-[#fa5219]">Google-Rankings</span>
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Technisches SEO ist das unsichtbare Fundament Ihrer Website – und unverzichtbar, wenn Sie bei Google erfolgreich sein möchten. Denn nur wenn Ihre Seite technisch sauber aufgebaut ist, kann sie von Suchmaschinen vollständig erfasst und korrekt bewertet werden. Zu den wichtigsten Maßnahmen zählen die Optimierung von Ladezeiten, die Mobilfreundlichkeit (Responsive Design), eine fehlerfreie Indexierung sowie die Strukturierung mit sprechenden URLs, H1/H2-Hierarchien und internen Verlinkungen. Ich überprüfe Ihre Website auf technische Schwächen und behebe sie gezielt.
@@ -571,7 +571,7 @@ export default function SeoContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                <span className="text-[#fe7a33]">Keyword-Recherche</span>: Die richtigen Begriffe für maximale Sichtbarkeit
+                <span className="text-[#fa5219]">Keyword-Recherche</span>: Die richtigen Begriffe für maximale Sichtbarkeit
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Die Keyword-Recherche ist der erste und wichtigste Schritt jeder SEO-Strategie. Nur wenn Sie die Suchbegriffe kennen, die Ihre Zielgruppe wirklich verwendet, können Sie gezielt gefunden werden. Ich analysiere relevante Keywords nach Suchvolumen, Wettbewerb und Nutzerabsicht. So entstehen Inhalte, die nicht nur Rankings bringen, sondern auch echte Anfragen generieren. Mit der richtigen Keyword-Strategie schaffen Sie eine solide Basis für langfristigen SEO-Erfolg.
@@ -588,7 +588,7 @@ export default function SeoContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                <span className="text-[#fe7a33]">Content-Optimierung</span>: Inhalte, die Google und Nutzer überzeugen
+                <span className="text-[#fa5219]">Content-Optimierung</span>: Inhalte, die Google und Nutzer überzeugen
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Guter Content ist das Herzstück jeder erfolgreichen SEO-Strategie. Es reicht nicht, einfach nur viel Text zu schreiben – Inhalte müssen relevant, strukturiert und auf die Bedürfnisse Ihrer Zielgruppe zugeschnitten sein. Ich optimiere bestehende Texte und erstelle neue Inhalte, die sowohl für Suchmaschinen als auch für Ihre Besucher wertvoll sind. Mit der richtigen Mischung aus Keywords, Struktur und Mehrwert steigern Sie Rankings und Conversions gleichzeitig.
@@ -610,9 +610,9 @@ export default function SeoContentSection() {
       <section className="py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
         {/* Background decorative elements */}
         <div className="absolute inset-0 opacity-5">
-          <div className="absolute top-20 left-10 w-32 h-32 bg-[#fe7a33] rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#07437c] rounded-full blur-3xl"></div>
-          <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-[#fe7a33] rounded-full blur-2xl"></div>
+          <div className="absolute top-20 left-10 w-32 h-32 bg-[#fa5219] rounded-full blur-3xl"></div>
+          <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#19243b] rounded-full blur-3xl"></div>
+          <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-[#fa5219] rounded-full blur-2xl"></div>
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
@@ -642,7 +642,7 @@ export default function SeoContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                <span className="text-[#fe7a33]">Local SEO</span>: Gezielt Kunden in Ihrer Region erreichen
+                <span className="text-[#fa5219]">Local SEO</span>: Gezielt Kunden in Ihrer Region erreichen
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 Für Unternehmen mit lokalem Fokus ist Local SEO unverzichtbar. Wenn Kunden in Ihrer Nähe nach Ihren Produkten oder Dienstleistungen suchen, sollten Sie an erster Stelle stehen. Ich optimiere Ihren Google My Business Eintrag, lokale Keywords und Ihre NAP-Daten (Name, Adresse, Telefonnummer), damit Sie in lokalen Suchergebnissen und auf Google Maps prominent erscheinen. So gewinnen Sie gezielt Kunden aus Ihrer Region – genau dann, wenn sie nach Ihnen suchen.
@@ -659,7 +659,7 @@ export default function SeoContentSection() {
               viewport={{ once: true }}
             >
               <h2 className="text-2xl lg:text-3xl font-bold text-slate-800 mb-6">
-                <span className="text-[#fe7a33]">SEO-Monitoring</span>: Fortschritte messen und kontinuierlich optimieren
+                <span className="text-[#fa5219]">SEO-Monitoring</span>: Fortschritte messen und kontinuierlich optimieren
               </h2>
               <p className="text-lg text-slate-600 leading-relaxed">
                 SEO ist kein einmaliges Projekt, sondern ein fortlaufender Prozess. Nur durch regelmäßiges Monitoring können Sie den Erfolg Ihrer Maßnahmen messen und rechtzeitig gegensteuern. Ich überwache Rankings, Traffic-Entwicklung und wichtige SEO-Kennzahlen kontinuierlich. Auf Basis der Daten optimiere ich Ihre Strategie laufend weiter, damit Ihre Website nicht nur kurzfristig, sondern dauerhaft erfolgreich bleibt. So bleiben Sie der Konkurrenz immer einen Schritt voraus.

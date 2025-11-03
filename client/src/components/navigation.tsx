@@ -3,7 +3,6 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Monitor, Search } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { useScrollPosition } from "@/hooks/use-scroll";
-import logoImage from "@assets/Logo_AS-ProDigital_1762107241090.png";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -39,7 +38,7 @@ export default function Navigation() {
               data-testid="logo-link"
             >
               <img 
-                src={logoImage} 
+                src="/logo-new.png" 
                 alt="AS-ProDigital Logo" 
                 className="h-7 md:h-10 w-auto object-contain"
               />
@@ -99,7 +98,7 @@ export default function Navigation() {
                       ].map((service, index) => (
                         <Link key={index} href={service.href}>
                           <motion.div
-                            whileHover={{ backgroundColor: "rgba(254, 122, 51, 0.1)" }}
+                            whileHover={{ backgroundColor: "rgba(250, 82, 25, 0.1)" }}
                             transition={{ duration: 0.05 }}
                             className="px-4 py-3 cursor-pointer flex items-start space-x-3"
                             data-testid={`dropdown-${service.name.toLowerCase().replace(/\s+/g, '-')}`}

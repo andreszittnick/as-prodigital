@@ -13,7 +13,7 @@ const ProcessTimeline = () => {
       subtitle: "Erster Schritt in Richtung Erfolg",
       description: "Sie nehmen unkompliziert Kontakt mit mir auf und teilen mir Ihre Wünsche und Ziele für Ihr Projekt mit.",
       icon: Target,
-      primaryColor: "#fe7a33",
+      primaryColor: "#fa5219",
       secondaryColor: "#ff9966",
       position: "left",
     },
@@ -23,7 +23,7 @@ const ProcessTimeline = () => {
       subtitle: "Ich entwickle Ihren Plan",
       description: "In einem persönlichen Gespräch besprechen wir die Vorgehensweise, entwickeln die passende Strategie und stimmen Designideen ab.",
       icon: Zap,
-      primaryColor: "#07437c",
+      primaryColor: "#19243b",
       secondaryColor: "#1a5490",
       position: "right",
     },
@@ -33,7 +33,7 @@ const ProcessTimeline = () => {
       subtitle: "Ihre Vision wird Realität",
       description: "Ich setze Ihr Projekt mit höchster Sorgfalt um – von der technischen Umsetzung bis zum modernen, professionellen Design.",
       icon: TrendingUp,
-      primaryColor: "#fe7a33",
+      primaryColor: "#fa5219",
       secondaryColor: "#ff9966",
       position: "left",
     },
@@ -43,7 +43,7 @@ const ProcessTimeline = () => {
       subtitle: "Fertigstellung und Start",
       description: "Nach dem letzten Feinschliff erhalten Sie Ihr fertiges Projekt, inklusive Einweisung und allen benötigten Dateien.",
       icon: Rocket,
-      primaryColor: "#07437c",
+      primaryColor: "#19243b",
       secondaryColor: "#1a5490",
       position: "right",
     },
@@ -53,9 +53,9 @@ const ProcessTimeline = () => {
     <section id="process" className="py-16 md:py-20 bg-gradient-to-br from-slate-50 via-white to-slate-100 relative overflow-hidden">
       {/* Background decorative elements */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-[#fe7a33] rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#07437c] rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-[#fe7a33] rounded-full blur-2xl"></div>
+        <div className="absolute top-20 left-10 w-32 h-32 bg-[#fa5219] rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-20 w-40 h-40 bg-[#19243b] rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/3 w-24 h-24 bg-[#fa5219] rounded-full blur-2xl"></div>
       </div>
 
       <div className="container mx-auto px-4 sm:px-6 relative">
@@ -66,7 +66,7 @@ const ProcessTimeline = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.6 }}
           >
-            <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-[#fe7a33]" />
+            <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-[#fa5219]" />
             <span className="text-sm font-medium text-slate-600">Bewährter Prozess</span>
           </motion.div>
           
@@ -77,7 +77,7 @@ const ProcessTimeline = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Von Ihrer <span className="text-[#064a7f]">Idee</span> zum digitalen <span className="bg-gradient-to-r from-[#fe7a33] to-[#ff6b1a] bg-clip-text text-transparent">Erfolg</span>
+            Von Ihrer <span className="text-[#064a7f]">Idee</span> zum digitalen <span className="bg-gradient-to-r from-[#fa5219] to-[#ff6b1a] bg-clip-text text-transparent">Erfolg</span>
           </motion.h2>
           
           <motion.p 
@@ -94,7 +94,7 @@ const ProcessTimeline = () => {
           {/* Central timeline */}
           <div className="absolute left-1/2 top-0 w-1 h-full bg-gradient-to-b from-transparent via-slate-300 to-transparent transform -translate-x-1/2 hidden lg:block">
             <motion.div 
-              className="w-full bg-gradient-to-b from-[#fe7a33] via-[#07437c] to-[#fe7a33] rounded-full"
+              className="w-full bg-gradient-to-b from-[#fa5219] via-[#19243b] to-[#fa5219] rounded-full"
               initial={{ height: 0 }}
               animate={isInView ? { height: "100%" } : {}}
               transition={{ duration: 2, delay: 0.5, ease: "easeOut" }}
@@ -269,17 +269,17 @@ const ProcessTimeline = () => {
             }}
             className="text-white px-6 py-3 rounded-full font-semibold text-base shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out"
             style={{
-              background: 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)',
+              background: 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)',
               border: '2px solid transparent',
               transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
             }}
             onMouseEnter={(e) => {
               e.currentTarget.style.background = 'transparent';
-              e.currentTarget.style.color = '#fe7a33';
-              e.currentTarget.style.borderColor = '#fe7a33';
+              e.currentTarget.style.color = '#fa5219';
+              e.currentTarget.style.borderColor = '#fa5219';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%)';
+              e.currentTarget.style.background = 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)';
               e.currentTarget.style.color = 'white';
               e.currentTarget.style.borderColor = 'transparent';
             }}
