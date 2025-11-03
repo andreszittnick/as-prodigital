@@ -36,7 +36,7 @@ export default function TypingAnimation() {
   }, [displayText, isDeleting, currentWordIndex]);
 
   return (
-    <span className="text-orange-500 font-semibold">
+    <span className="font-semibold inline-block min-w-[160px] sm:min-w-[200px]" style={{ color: '#fa5219' }}>
       {displayText}
       <motion.span
         animate={{ opacity: [1, 0] }}

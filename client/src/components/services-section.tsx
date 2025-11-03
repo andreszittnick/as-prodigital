@@ -59,7 +59,7 @@ export default function ServicesSection() {
               whileHover={{ y: -8 }}
               data-testid={`service-card-${service.title.toLowerCase().replace(/\s+/g, '-')}`}
             >
-              <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-[#fa5219]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative h-full flex flex-col">
                 <motion.div 
                   className={`w-16 h-16 md:w-18 md:h-18 ${service.colorClass} rounded-2xl flex items-center justify-center mb-6`}
@@ -83,7 +83,7 @@ export default function ServicesSection() {
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 0.4, delay: (index * 0.2) + (featureIndex * 0.1) + 0.5 }}
                     >
-                      <Check className="text-orange-500 w-4 h-4 mr-2" />
+                      <Check className="text-[#fa5219] w-4 h-4 mr-2" />
                       {feature}
                     </motion.li>
                   ))}
@@ -109,7 +109,7 @@ export default function ServicesSection() {
             }}
             className="text-white px-6 py-3 text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
             style={{
-              background: 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)',
+              background: '#fa5219',
               border: '2px solid transparent',
               transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
             }}
@@ -119,7 +119,7 @@ export default function ServicesSection() {
               e.currentTarget.style.borderColor = '#fa5219';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)';
+              e.currentTarget.style.background = '#fa5219';
               e.currentTarget.style.color = 'white';
               e.currentTarget.style.borderColor = 'transparent';
             }}

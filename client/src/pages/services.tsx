@@ -222,7 +222,7 @@ Besonders für lokale Unternehmen in Alzey und Umgebung ist Local SEO entscheide
                         {/* Features List */}
                         <div className="mb-8">
                           <h3 className="text-xl font-bold text-slate-900 mb-4 flex items-center gap-2">
-                            <Sparkles className="w-5 h-5 text-orange-500" />
+                            <Sparkles className="w-5 h-5 text-[#fa5219]" />
                             Was Sie erhalten:
                           </h3>
                           <ul className="space-y-3">
@@ -235,7 +235,7 @@ Besonders für lokale Unternehmen in Alzey und Umgebung ist Local SEO entscheide
                                 viewport={{ once: true }}
                                 transition={{ duration: 0.5, delay: featureIndex * 0.1 }}
                               >
-                                <div className="w-1.5 h-1.5 bg-orange-500 rounded-full mt-2.5 flex-shrink-0"></div>
+                                <div className="w-1.5 h-1.5 bg-[#fa5219] rounded-full mt-2.5 flex-shrink-0"></div>
                                 <span className="text-slate-700">{feature}</span>
                               </motion.li>
                             ))}

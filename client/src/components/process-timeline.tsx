@@ -77,7 +77,7 @@ const ProcessTimeline = () => {
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Von Ihrer <span className="text-[#064a7f]">Idee</span> zum digitalen <span className="bg-gradient-to-r from-[#fa5219] to-[#ff6b1a] bg-clip-text text-transparent">Erfolg</span>
+            Von Ihrer <span className="text-[#19243b]">Idee</span> zum digitalen <span className="bg-gradient-to-r from-[#fa5219] to-[#ff6b1a] bg-clip-text text-transparent">Erfolg</span>
           </motion.h2>
           
           <motion.p 
@@ -269,7 +269,7 @@ const ProcessTimeline = () => {
             }}
             className="text-white px-6 py-3 rounded-full font-semibold text-base shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out"
             style={{
-              background: 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)',
+              background: '#fa5219',
               border: '2px solid transparent',
               transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
             }}
@@ -279,7 +279,7 @@ const ProcessTimeline = () => {
               e.currentTarget.style.borderColor = '#fa5219';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)';
+              e.currentTarget.style.background = '#fa5219';
               e.currentTarget.style.color = 'white';
               e.currentTarget.style.borderColor = 'transparent';
             }}

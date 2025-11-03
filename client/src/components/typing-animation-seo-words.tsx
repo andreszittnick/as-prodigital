@@ -35,7 +35,7 @@ export default function TypingAnimationSeoWords() {
   }, [charIndex, isDeleting, currentWordIndex]);
 
   return (
-    <span className="text-orange-500 font-semibold">
+    <span className="text-[#fa5219] font-semibold inline-block min-w-[160px] sm:min-w-[200px]">
       {currentWord}
       <motion.span
         animate={{ opacity: [1, 0] }}

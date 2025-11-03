@@ -36,11 +36,12 @@ export default function TypingAnimationSeo() {
 
   return (
     <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-slate-700 h-12 sm:h-14 md:h-16 flex items-center justify-center lg:justify-start">
-      <span className="gradient-text">{currentWord}</span>
+      <span className="inline-block min-w-[160px] sm:min-w-[200px]" style={{ color: '#fa5219' }}>{currentWord}</span>
       <motion.span
         animate={{ opacity: [1, 0] }}
         transition={{ duration: 0.8, repeat: Infinity }}
-        className="ml-1 text-orange-500"
+        className="ml-1"
+        style={{ color: '#fa5219' }}
       >
         |
       </motion.span>

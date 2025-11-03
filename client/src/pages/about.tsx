@@ -78,7 +78,7 @@ export default function About() {
               transition={{ duration: 0.8 }}
             >
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
-                Über <span className="text-orange-500">André Szittnick</span>
+                Über <span className="text-[#fa5219]">André Szittnick</span>
               </h1>
               <div className="space-y-6 text-lg text-gray-600 dark:text-gray-300">
                 <p>
@@ -153,7 +153,7 @@ export default function About() {
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 className="text-center"
               >
-                <div className="bg-orange-500 w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
+                <div className="bg-[#fa5219] w-16 h-16 rounded-2xl flex items-center justify-center mx-auto mb-4">
                   <stat.icon className="w-8 h-8 text-white" />
                 </div>
                 <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
@@ -178,7 +178,7 @@ export default function About() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-              Meine <span className="text-orange-500">Werte</span>
+              Meine <span className="text-[#fa5219]">Werte</span>
             </h2>
             <p className="text-xl text-gray-600 dark:text-gray-300">
               Was mich bei jedem Projekt antreibt

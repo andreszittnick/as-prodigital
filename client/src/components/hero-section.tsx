@@ -133,7 +133,7 @@ export default function HeroSection() {
                 onClick={() => scrollToSection("services")}
                 className="text-white px-6 py-3 text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
                 style={{
-                  background: 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)',
+                  background: '#fa5219',
                   border: '2px solid transparent',
                   transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
                 }}
@@ -143,7 +143,7 @@ export default function HeroSection() {
                   e.currentTarget.style.borderColor = '#fa5219';
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.background = 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)';
+                  e.currentTarget.style.background = '#fa5219';
                   e.currentTarget.style.color = 'white';
                   e.currentTarget.style.borderColor = 'transparent';
                 }}

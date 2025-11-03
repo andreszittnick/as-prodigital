@@ -78,7 +78,7 @@ function ProcessTimelineContent() {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
         >
-          Von Ihrer <span className="text-[#064a7f]">Idee</span> zum digitalen <span className="bg-gradient-to-r from-[#fa5219] to-[#ff6b1a] bg-clip-text text-transparent">Erfolg</span>
+          Von Ihrer <span className="text-[#19243b]">Idee</span> zum digitalen <span className="bg-gradient-to-r from-[#fa5219] to-[#ff6b1a] bg-clip-text text-transparent">Erfolg</span>
         </motion.h2>
         
         <motion.p 
@@ -270,7 +270,7 @@ function ProcessTimelineContent() {
           }}
           className="text-white px-6 py-3 rounded-full font-semibold text-base shadow-lg hover:shadow-2xl transition-all duration-500 ease-in-out"
           style={{
-            background: 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)',
+            background: '#fa5219',
             border: '2px solid transparent',
             transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
           }}
@@ -280,7 +280,7 @@ function ProcessTimelineContent() {
             e.currentTarget.style.borderColor = '#fa5219';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.background = 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)';
+            e.currentTarget.style.background = '#fa5219';
             e.currentTarget.style.color = 'white';
             e.currentTarget.style.borderColor = 'transparent';
           }}
@@ -352,7 +352,7 @@ function PremiumDigitalServicesSection() {
               whileHover={{ y: -8 }}
               data-testid={`service-card-${service.title.toLowerCase().replace(/\s+/g, '-')}`}
             >
-              <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-[#fa5219]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative h-full flex flex-col">
                 <motion.div 
                   className={`w-16 h-16 ${service.colorClass} rounded-2xl flex items-center justify-center mb-6`}
@@ -376,7 +376,7 @@ function PremiumDigitalServicesSection() {
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
                       transition={{ duration: 0.4, delay: (index * 0.2) + (featureIndex * 0.1) + 0.5 }}
                     >
-                      <Check className="text-orange-500 w-4 h-4 mr-2" />
+                      <Check className="text-[#fa5219] w-4 h-4 mr-2" />
                       {feature}
                     </motion.li>
                   ))}
@@ -402,7 +402,7 @@ function PremiumDigitalServicesSection() {
             }}
             className="text-white px-6 py-3 rounded-full font-semibold text-base hover:shadow-xl transition-all duration-500 ease-in-out"
             style={{
-              background: 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)',
+              background: '#fa5219',
               border: '2px solid transparent',
               transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
             }}
@@ -412,7 +412,7 @@ function PremiumDigitalServicesSection() {
               e.currentTarget.style.borderColor = '#fa5219';
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.background = 'linear-gradient(135deg, #fa5219 0%, #ff6b35 100%)';
+              e.currentTarget.style.background = '#fa5219';
               e.currentTarget.style.color = 'white';
               e.currentTarget.style.borderColor = 'transparent';
             }}
@@ -498,7 +498,7 @@ export default function WebdesignContentSection() {
             viewport={{ once: true }}
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">
-              Warum ich der richtige <span className="text-orange-500">Partner</span> für Ihr Projekt bin
+              Warum ich der richtige <span className="text-[#fa5219]">Partner</span> für Ihr Projekt bin
             </h2>
             <p className="text-base sm:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto px-4 sm:px-0">
               Erleben Sie den Unterschied bei der Zusammenarbeit mit einem engagierten Digitalspezialisten, der Ihren Erfolg an erste Stelle setzt.
@@ -514,7 +514,7 @@ export default function WebdesignContentSection() {
               whileHover={{ y: -8 }}
               viewport={{ once: true }}
             >
-              <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-[#fa5219]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative">
                 <motion.div 
                   className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
@@ -539,7 +539,7 @@ export default function WebdesignContentSection() {
               whileHover={{ y: -8 }}
               viewport={{ once: true }}
             >
-              <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-[#fa5219]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative">
                 <motion.div 
                   className="w-20 h-20 bg-blue-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"
@@ -564,7 +564,7 @@ export default function WebdesignContentSection() {
               whileHover={{ y: -8 }}
               viewport={{ once: true }}
             >
-              <div className="absolute inset-0 bg-orange-500/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="absolute inset-0 bg-[#fa5219]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               <div className="relative">
                 <motion.div 
                   className="w-20 h-20 bg-gradient-to-br from-orange-500 to-orange-600 rounded-2xl flex items-center justify-center mb-6 mx-auto"

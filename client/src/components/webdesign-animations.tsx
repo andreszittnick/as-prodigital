@@ -66,7 +66,7 @@ export function ProfessionalWebdesignAnimation() {
             viewport={{ once: true }}
             transition={{ duration: 0.8, delay: 0.9 }}
           >
-            <Layout className="w-8 h-8 text-orange-500" />
+            <Layout className="w-8 h-8 text-[#fa5219]" />
           </motion.div>
         </div>
       </motion.div>
@@ -200,7 +200,7 @@ export function IndividualWebdesignAnimation() {
         transition={{ duration: 0.8 }}
       >
         <div className="relative bg-white rounded-3xl p-6 shadow-2xl">
-          <Palette className="w-12 h-12 text-orange-500 mb-4" />
+          <Palette className="w-12 h-12 text-[#fa5219] mb-4" />
           
           {/* Color circles */}
           <div className="flex gap-3">

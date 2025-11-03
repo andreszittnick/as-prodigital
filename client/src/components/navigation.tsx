@@ -57,8 +57,8 @@ export default function Navigation() {
                 <span
                   className={`flex items-center transition-colors duration-300 cursor-pointer ${
                     location === "/Leistungen" 
-                      ? "text-orange-500 font-semibold" 
-                      : "text-slate-600 hover:text-orange-500"
+                      ? "text-[#fa5219] font-semibold" 
+                      : "text-slate-600 hover:text-[#fa5219]"
                   }`}
                   data-testid="nav-leistungen"
                 >
@@ -86,14 +86,14 @@ export default function Navigation() {
                           href: "/Webdesign",
                           description: "Moderne, responsive Websites",
                           icon: Monitor,
-                          color: "text-blue-500"
+                          color: "text-[#19243b]"
                         },
                         { 
                           name: "SEO", 
                           href: "/SEO",
                           description: "Suchmaschinenoptimierung",
                           icon: Search,
-                          color: "text-green-500"
+                          color: "text-[#fa5219]"
                         }
                       ].map((service, index) => (
                         <Link key={index} href={service.href}>
@@ -137,8 +137,8 @@ export default function Navigation() {
                 <span
                   className={`transition-colors duration-300 cursor-pointer ${
                     location === item.href 
-                      ? "text-orange-500 font-semibold" 
-                      : "text-slate-600 hover:text-orange-500"
+                      ? "text-[#fa5219] font-semibold" 
+                      : "text-slate-600 hover:text-[#fa5219]"
                   }`}
                   data-testid={`nav-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
                 >
@@ -149,11 +149,7 @@ export default function Navigation() {
             
             <Link href="/Kontakt">
               <motion.button
-                className={`text-white px-4 py-2 lg:px-6 lg:py-2 text-sm lg:text-base rounded-full font-medium hover:shadow-lg transition-all duration-300 ${
-                  location === "/Kontakt" 
-                    ? "bg-orange-600" 
-                    : "brand-gradient"
-                }`}
+                className="text-white px-4 py-2 lg:px-6 lg:py-2 text-sm lg:text-base rounded-full font-medium hover:shadow-lg transition-all duration-300 bg-[#fa5219]"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 data-testid="nav-contact"
@@ -193,8 +189,8 @@ export default function Navigation() {
                       onClick={() => setIsOpen(false)}
                       className={`text-lg transition-colors duration-300 text-left cursor-pointer ${
                         location === "/Leistungen" 
-                          ? "text-orange-500 font-semibold" 
-                          : "text-slate-700 hover:text-orange-500"
+                          ? "text-[#fa5219] font-semibold" 
+                          : "text-slate-700 hover:text-[#fa5219]"
                       }`}
                       data-testid="mobile-nav-leistungen"
                     >
@@ -203,7 +199,7 @@ export default function Navigation() {
                   </Link>
                   <motion.button
                     onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
-                    className="p-2 text-slate-600 hover:text-orange-500"
+                    className="p-2 text-slate-600 hover:text-[#fa5219]"
                     whileTap={{ scale: 0.95 }}
                   >
                     <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${
@@ -226,13 +222,13 @@ export default function Navigation() {
                           name: "Webdesign", 
                           href: "/Webdesign",
                           icon: Monitor,
-                          color: "text-blue-500"
+                          color: "text-[#19243b]"
                         },
                         { 
                           name: "SEO", 
                           href: "/SEO",
                           icon: Search,
-                          color: "text-green-500"
+                          color: "text-[#fa5219]"
                         }
                       ].map((service, index) => (
                         <Link key={index} href={service.href}>
@@ -241,7 +237,7 @@ export default function Navigation() {
                             animate={{ opacity: 1, x: 0 }}
                             transition={{ delay: index * 0.1 }}
                             onClick={() => setIsOpen(false)}
-                            className="flex items-center space-x-3 text-base text-slate-600 hover:text-orange-500 cursor-pointer transition-colors duration-200 py-2"
+                            className="flex items-center space-x-3 text-base text-slate-600 hover:text-[#fa5219] cursor-pointer transition-colors duration-200 py-2"
                             whileTap={{ scale: 0.98 }}
                           >
                             <motion.div
@@ -271,8 +267,8 @@ export default function Navigation() {
                     onClick={() => setIsOpen(false)}
                     className={`block py-2 text-lg transition-colors duration-300 text-left cursor-pointer ${
                       location === item.href 
-                        ? "text-orange-500 font-semibold" 
-                        : "text-slate-700 hover:text-orange-500"
+                        ? "text-[#fa5219] font-semibold" 
+                        : "text-slate-700 hover:text-[#fa5219]"
                     }`}
                     data-testid={`mobile-nav-${item.name.toLowerCase().replace(/\s+/g, '-')}`}
                     whileTap={{ scale: 0.98 }}
@@ -285,7 +281,8 @@ export default function Navigation() {
               <Link href="/Kontakt">
                 <motion.button
                   onClick={() => setIsOpen(false)}
-                  className="w-full bg-gradient-to-r from-orange-500 to-orange-600 text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 mt-2"
+                  className="w-full text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 mt-2"
+                  style={{ background: '#fa5219' }}
                   data-testid="mobile-nav-contact"
                   whileTap={{ scale: 0.98 }}
                 >

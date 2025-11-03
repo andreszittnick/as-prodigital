@@ -141,7 +141,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
           >
             <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white mb-4 md:mb-6">
-              Lassen Sie uns über Ihr <span className="text-orange-500">Projekt</span> sprechen
+              Lassen Sie uns über Ihr <span className="text-[#fa5219]">Projekt</span> sprechen
             </h1>
             <p className="text-base md:text-lg lg:text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
               Ich freue mich darauf, von Ihnen zu hören und gemeinsam Ihre digitale Vision zu verwirklichen. 
@@ -164,7 +164,7 @@ export default function Contact() {
               className="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-lg"
             >
               <div className="flex items-center mb-6 md:mb-8">
-                <div className="bg-orange-500 p-3 rounded-xl mr-3 md:mr-4">
+                <div className="bg-[#fa5219] p-3 rounded-xl mr-3 md:mr-4">
                   <MessageSquare className="w-5 h-5 md:w-6 md:h-6 text-white" />
                 </div>
                 <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
@@ -292,7 +292,7 @@ export default function Contact() {
 
                   <Button 
                     type="submit" 
-                    className="w-full bg-orange-500 hover:bg-orange-600 text-white h-12 md:h-14 text-base md:text-lg"
+                    className="w-full bg-[#fa5219] hover:bg-orange-600 text-white h-12 md:h-14 text-base md:text-lg"
                     disabled={form.formState.isSubmitting}
                     data-testid="button-submit"
                   >
