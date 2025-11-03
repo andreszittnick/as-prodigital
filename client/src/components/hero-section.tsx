@@ -82,7 +82,7 @@ export default function HeroSection() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <span className="text-slate-600 font-medium text-lg md:text-xl">Willkommen bei</span><br />
-              <span className="text-slate-800 font-bold text-xl md:text-2xl">André Szittnick AS ProDigital</span>
+              <span className="text-slate-800 font-bold text-xl md:text-2xl">André Szittnick | AS-ProDigital</span>
             </motion.div>
             
             <motion.h1 
