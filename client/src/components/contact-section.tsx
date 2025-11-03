@@ -24,7 +24,7 @@ const contactInfo = [
   {
     icon: Phone,
     label: "Telefon",
-    value: "+49 (0) 123 456 789",
+    value: "06731 8789",
     colorClass: "brand-blue"
   },
   {
