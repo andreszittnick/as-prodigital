@@ -16,295 +16,468 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #1e293b;
-            background: white;
-            padding: 40px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 40px 20px;
+        }
+        
+        .container {
             max-width: 210mm;
             margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            overflow: hidden;
         }
         
         @media print {
             body {
+                background: white;
                 padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
                 max-width: 100%;
             }
             .no-print {
-                display: none;
+                display: none !important;
+            }
+            .editable {
+                background: transparent !important;
+                border: none !important;
             }
         }
         
+        /* Header mit Gradient */
         .header {
+            background: linear-gradient(135deg, #07437c 0%, #0a5a9e 100%);
+            padding: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(254, 122, 51, 0.15);
+            border-radius: 50%;
+        }
+        
+        .header-content {
             display: flex;
             justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            border-bottom: 3px solid #fe7a33;
+            align-items: center;
+            position: relative;
+            z-index: 1;
         }
         
-        .logo-section h1 {
-            font-size: 28px;
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo-section img {
+            height: 70px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+        
+        .company-info h1 {
+            font-size: 32px;
             font-weight: 800;
-            color: #07437c;
             margin-bottom: 5px;
+            letter-spacing: -0.5px;
         }
         
-        .logo-section p {
+        .company-info p {
             font-size: 14px;
-            color: #64748b;
+            opacity: 0.9;
         }
         
         .contact-info {
             text-align: right;
-            font-size: 12px;
-            color: #64748b;
+            font-size: 13px;
+            opacity: 0.95;
         }
         
         .contact-info div {
-            margin-bottom: 3px;
+            margin-bottom: 5px;
+        }
+        
+        /* Content Area */
+        .content {
+            padding: 50px 40px;
         }
         
         .document-title {
-            font-size: 32px;
+            font-size: 42px;
             font-weight: 800;
-            color: #07437c;
+            background: linear-gradient(135deg, #07437c 0%, #fe7a33 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
             margin-bottom: 10px;
         }
         
         .document-subtitle {
-            font-size: 16px;
+            font-size: 18px;
             color: #64748b;
             margin-bottom: 40px;
+            font-weight: 500;
         }
         
-        .intro-text {
-            background: #f8fafc;
-            padding: 25px;
-            border-radius: 8px;
+        .intro-box {
+            background: linear-gradient(135deg, #fef3ef 0%, #fff8f5 100%);
+            border: 2px solid #fe7a33;
+            border-radius: 12px;
+            padding: 30px;
             margin-bottom: 40px;
-            border-left: 4px solid #fe7a33;
+            position: relative;
+            overflow: hidden;
         }
         
-        .intro-text p {
-            font-size: 14px;
+        .intro-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, #fe7a33 0%, #ff6b35 100%);
+        }
+        
+        .intro-box p {
+            font-size: 15px;
             color: #475569;
-        }
-        
-        .services-section {
-            margin-bottom: 40px;
+            line-height: 1.8;
         }
         
         .section-title {
-            font-size: 22px;
+            font-size: 28px;
             font-weight: 700;
             color: #07437c;
-            margin-bottom: 25px;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 10px;
+            margin: 50px 0 30px 0;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(90deg, #fe7a33 0%, transparent 100%);
+            border-radius: 2px;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        @media (max-width: 768px) {
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         .service-card {
             background: white;
             border: 2px solid #e2e8f0;
-            border-radius: 8px;
-            padding: 25px;
-            margin-bottom: 20px;
-            page-break-inside: avoid;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-card:hover {
+            border-color: #fe7a33;
+            transform: translateY(-4px);
+            box-shadow: 0 12px 30px rgba(254, 122, 51, 0.15);
+        }
+        
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, rgba(254, 122, 51, 0.05) 0%, transparent 100%);
+            border-radius: 0 0 0 100%;
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
         }
         
         .service-card h3 {
-            font-size: 20px;
+            font-size: 22px;
             font-weight: 700;
-            color: #fe7a33;
+            color: #07437c;
             margin-bottom: 15px;
         }
         
         .service-card ul {
             list-style: none;
-            margin-bottom: 15px;
         }
         
         .service-card ul li {
-            padding: 8px 0 8px 25px;
+            padding: 10px 0 10px 30px;
             position: relative;
             font-size: 14px;
             color: #475569;
+            line-height: 1.6;
         }
         
-        .service-card ul li:before {
+        .service-card ul li::before {
             content: "✓";
             position: absolute;
             left: 0;
             color: #fe7a33;
             font-weight: bold;
+            font-size: 18px;
         }
         
-        .benefits-section {
+        .benefits-box {
             background: linear-gradient(135deg, #07437c 0%, #0a5a9e 100%);
+            border-radius: 12px;
+            padding: 40px;
             color: white;
-            padding: 30px;
-            border-radius: 8px;
-            margin-bottom: 40px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
         }
         
-        .benefits-section h3 {
-            font-size: 20px;
+        .benefits-box::before {
+            content: '';
+            position: absolute;
+            bottom: -50px;
+            right: -50px;
+            width: 200px;
+            height: 200px;
+            background: rgba(254, 122, 51, 0.2);
+            border-radius: 50%;
+        }
+        
+        .benefits-box h3 {
+            font-size: 26px;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 1;
         }
         
         .benefits-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            position: relative;
+            z-index: 1;
         }
         
         .benefit-item {
-            font-size: 14px;
-            padding-left: 25px;
-            position: relative;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+            font-size: 15px;
+            font-weight: 500;
         }
         
-        .benefit-item:before {
-            content: "→";
-            position: absolute;
-            left: 0;
+        .cta-box {
+            background: linear-gradient(135deg, #fef3ef 0%, #fff 100%);
+            border: 3px solid #fe7a33;
+            border-radius: 12px;
+            padding: 35px;
+            text-align: center;
+            margin-top: 40px;
+        }
+        
+        .cta-box h3 {
+            font-size: 26px;
+            font-weight: 700;
+            color: #07437c;
+            margin-bottom: 15px;
+        }
+        
+        .cta-box p {
+            font-size: 16px;
+            color: #475569;
+            margin-bottom: 20px;
+        }
+        
+        .cta-contact {
+            font-size: 18px;
+            font-weight: 700;
             color: #fe7a33;
-            font-weight: bold;
         }
         
         .footer {
-            margin-top: 60px;
-            padding-top: 30px;
-            border-top: 2px solid #e2e8f0;
+            background: #f8fafc;
+            padding: 30px 40px;
             text-align: center;
-            font-size: 12px;
+            font-size: 13px;
             color: #64748b;
+            border-top: 1px solid #e2e8f0;
         }
         
-        .cta-section {
-            background: #fef3ef;
-            border: 2px solid #fe7a33;
-            border-radius: 8px;
-            padding: 25px;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        
-        .cta-section h3 {
+        .footer strong {
             color: #07437c;
-            font-size: 18px;
-            margin-bottom: 10px;
         }
         
-        .cta-section p {
-            color: #475569;
-            font-size: 14px;
-        }
-        
-        .print-button {
+        /* Print Button */
+        .print-btn {
             position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #fe7a33;
+            top: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%);
             color: white;
             border: none;
-            padding: 12px 24px;
-            border-radius: 6px;
+            padding: 15px 30px;
+            border-radius: 50px;
             font-family: 'Inter', sans-serif;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 15px;
             cursor: pointer;
-            font-size: 14px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(254, 122, 51, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
         }
         
-        .print-button:hover {
-            background: #ff6b35;
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(254, 122, 51, 0.4);
+        }
+        
+        .print-btn:active {
+            transform: translateY(0);
+        }
+        
+        .editable {
+            background: #fff8e1;
+            padding: 4px 8px;
+            border-radius: 4px;
+            border: 1px dashed #ffa726;
+            display: inline-block;
+            min-width: 50px;
+        }
+        
+        .editable:focus {
+            outline: 2px solid #fe7a33;
+            background: #fff;
         }
     </style>
 </head>
 <body>
-    <button class="print-button no-print" onclick="window.print()">Als PDF speichern</button>
+    <button class="print-btn no-print" onclick="window.print()">📥 Als PDF speichern</button>
     
-    <div class="header">
-        <div class="logo-section">
-            <h1>AS-ProDigital</h1>
-            <p>André Szittnick</p>
-        </div>
-        <div class="contact-info">
-            <div><strong>Telefon:</strong> +49 (0) 170 810 94 82</div>
-            <div><strong>E-Mail:</strong> info@as-prodigital.de</div>
-            <div><strong>Standort:</strong> Alzey</div>
-        </div>
-    </div>
-    
-    <h2 class="document-title">Dienstleistungsangebot</h2>
-    <p class="document-subtitle">Professionelle Digitallösungen für Ihren Erfolg</p>
-    
-    <div class="intro-text">
-        <p>Sehr geehrte Interessentin, sehr geehrter Interessent,</p>
-        <br>
-        <p>vielen Dank für Ihr Interesse an meinen Dienstleistungen. Als spezialisierter Digitalexperte in Alzey biete ich Ihnen maßgeschneiderte Lösungen für Webdesign und Suchmaschinenoptimierung (SEO). Mit über 5 Jahren Erfahrung und mehr als 50 erfolgreich abgeschlossenen Projekten garantiere ich Ihnen höchste Qualität und messbare Ergebnisse.</p>
-    </div>
-    
-    <div class="services-section">
-        <h3 class="section-title">Meine Leistungen im Überblick</h3>
-        
-        <div class="service-card">
-            <h3>🎨 Webdesign</h3>
-            <ul>
-                <li>Individuelle, responsive Website-Entwicklung für alle Endgeräte</li>
-                <li>Modernes, nutzerfreundliches Design nach aktuellen Standards</li>
-                <li>Optimierte Ladezeiten für beste Performance</li>
-                <li>Professionelle Content-Integration und Bildbearbeitung</li>
-                <li>Suchmaschinenoptimierte Struktur von Anfang an</li>
-                <li>Mobile-First Ansatz für optimale Smartphone-Darstellung</li>
-                <li>Barrierefreie Umsetzung (WCAG-konform)</li>
-                <li>Integration von Kontaktformularen und Newsletter-Systemen</li>
-            </ul>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="logo.png" alt="AS-ProDigital Logo">
+                    <div class="company-info">
+                        <h1>AS-ProDigital</h1>
+                        <p>André Szittnick - Webdesign & SEO Experte</p>
+                    </div>
+                </div>
+                <div class="contact-info">
+                    <div>📞 +49 (0) 170 810 94 82</div>
+                    <div>✉️ info@as-prodigital.de</div>
+                    <div>📍 Alzey, Deutschland</div>
+                </div>
+            </div>
         </div>
         
-        <div class="service-card">
-            <h3>🔍 Suchmaschinenoptimierung (SEO)</h3>
-            <ul>
-                <li>Umfassende SEO-Analyse und Potenzialermittlung</li>
-                <li>Keyword-Recherche und Wettbewerbsanalyse</li>
-                <li>OnPage-Optimierung (Technik, Content, Struktur)</li>
-                <li>OffPage-Optimierung und Linkbuilding-Strategien</li>
-                <li>Local SEO für bessere regionale Sichtbarkeit</li>
-                <li>Regelmäßige Erfolgsberichte und Ranking-Monitoring</li>
-                <li>Google My Business Optimierung</li>
-                <li>Content-Strategie für nachhaltiges Wachstum</li>
-            </ul>
+        <div class="content">
+            <h1 class="document-title">Dienstleistungsangebot</h1>
+            <p class="document-subtitle">Professionelle Digitallösungen für Ihren nachhaltigen Erfolg</p>
+            
+            <div class="intro-box">
+                <p><strong>Sehr geehrte Interessentin, sehr geehrter Interessent,</strong></p>
+                <br>
+                <p>vielen Dank für Ihr Interesse an meinen Dienstleistungen. Als spezialisierter Digitalexperte mit Sitz in Alzey biete ich Ihnen maßgeschneiderte Lösungen für modernes Webdesign und nachhaltige Suchmaschinenoptimierung (SEO).</p>
+                <br>
+                <p>Mit über <strong>5 Jahren Erfahrung</strong> und mehr als <strong>50 erfolgreich abgeschlossenen Projekten</strong> stehe ich für höchste Qualität, persönlichen Service und messbare Ergebnisse. Lassen Sie uns gemeinsam Ihre digitale Präsenz auf das nächste Level heben.</p>
+            </div>
+            
+            <h2 class="section-title">Meine Leistungen im Detail</h2>
+            
+            <div class="service-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3>Webdesign</h3>
+                    <ul>
+                        <li>Individuelle, responsive Website-Entwicklung</li>
+                        <li>Modernes, nutzerfreundliches Design</li>
+                        <li>Mobile-First Ansatz</li>
+                        <li>Optimierte Ladezeiten</li>
+                        <li>SEO-optimierte Struktur</li>
+                        <li>Content-Integration</li>
+                        <li>Barrierefreie Umsetzung</li>
+                        <li>Formular-Integration</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🔍</div>
+                    <h3>SEO-Optimierung</h3>
+                    <ul>
+                        <li>Umfassende SEO-Analyse</li>
+                        <li>Keyword-Recherche</li>
+                        <li>OnPage-Optimierung</li>
+                        <li>OffPage-Strategien</li>
+                        <li>Local SEO für Alzey</li>
+                        <li>Ranking-Monitoring</li>
+                        <li>Google My Business</li>
+                        <li>Content-Strategien</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="benefits-box">
+                <h3>✨ Warum AS-ProDigital?</h3>
+                <div class="benefits-grid">
+                    <div class="benefit-item">Persönliche Beratung & Betreuung</div>
+                    <div class="benefit-item">Transparente Preisgestaltung</div>
+                    <div class="benefit-item">Schnelle Reaktionszeiten</div>
+                    <div class="benefit-item">Messbare Erfolge</div>
+                    <div class="benefit-item">5+ Jahre Erfahrung</div>
+                    <div class="benefit-item">Lokaler Partner in Alzey</div>
+                    <div class="benefit-item">Moderne Technologien</div>
+                    <div class="benefit-item">Langfristige Partnerschaft</div>
+                </div>
+            </div>
+            
+            <div class="cta-box">
+                <h3>🚀 Bereit für Ihr digitales Projekt?</h3>
+                <p>Kontaktieren Sie mich für ein unverbindliches Erstgespräch und individuelle Beratung zu Ihrem Projekt.</p>
+                <div class="cta-contact">
+                    📞 +49 (0) 170 810 94 82<br>
+                    ✉️ info@as-prodigital.de
+                </div>
+            </div>
         </div>
-    </div>
-    
-    <div class="benefits-section">
-        <h3>Warum AS-ProDigital?</h3>
-        <div class="benefits-grid">
-            <div class="benefit-item">Persönliche Beratung und Betreuung</div>
-            <div class="benefit-item">Transparente, faire Preisgestaltung</div>
-            <div class="benefit-item">Kurze Reaktionszeiten</div>
-            <div class="benefit-item">Messbare Erfolge durch Analytics</div>
-            <div class="benefit-item">5+ Jahre Erfahrung</div>
-            <div class="benefit-item">Lokaler Ansprechpartner in Alzey</div>
-            <div class="benefit-item">Moderne Technologien</div>
-            <div class="benefit-item">Langfristige Partnerschaft</div>
+        
+        <div class="footer">
+            <p><strong>AS-ProDigital</strong> | André Szittnick | Alzey, Deutschland</p>
+            <p style="margin-top: 10px;">Professionelles Webdesign & SEO mit Leidenschaft für Ihren Erfolg</p>
         </div>
-    </div>
-    
-    <div class="cta-section">
-        <h3>Bereit für Ihr digitales Projekt?</h3>
-        <p>Kontaktieren Sie mich für ein unverbindliches Erstgespräch und individuelle Beratung.</p>
-        <p style="margin-top: 15px; font-weight: 600; color: #fe7a33;">
-            📞 +49 (0) 170 810 94 82 | ✉️ info@as-prodigital.de
-        </p>
-    </div>
-    
-    <div class="footer">
-        <p><strong>AS-ProDigital</strong> | André Szittnick | Alzey</p>
-        <p style="margin-top: 5px;">Webdesign & SEO mit Leidenschaft</p>
     </div>
 </body>
 </html>

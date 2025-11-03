@@ -18,118 +18,210 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: #1e293b;
-            background: white;
-            padding: 40px;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            padding: 40px 20px;
+        }
+        
+        .container {
             max-width: 210mm;
             margin: 0 auto;
+            background: white;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            border-radius: 16px;
+            overflow: hidden;
         }
         
         @media print {
             body {
+                background: white;
                 padding: 0;
+            }
+            .container {
+                box-shadow: none;
+                border-radius: 0;
                 max-width: 100%;
             }
             .no-print {
-                display: none;
+                display: none !important;
+            }
+            .editable {
+                background: transparent !important;
+                border: none !important;
+                padding: 0 !important;
+            }
+            .edit-hint {
+                display: none !important;
             }
         }
         
+        /* Header */
         .header {
+            background: linear-gradient(135deg, #07437c 0%, #0a5a9e 100%);
+            padding: 40px;
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -10%;
+            width: 300px;
+            height: 300px;
+            background: rgba(254, 122, 51, 0.15);
+            border-radius: 50%;
+        }
+        
+        .header-content {
             display: flex;
             justify-content: space-between;
             align-items: flex-start;
-            margin-bottom: 50px;
-            padding-bottom: 30px;
-            border-bottom: 3px solid #fe7a33;
+            position: relative;
+            z-index: 1;
         }
         
-        .logo-section h1 {
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+        
+        .logo-section img {
+            height: 70px;
+            width: auto;
+            filter: brightness(0) invert(1);
+        }
+        
+        .company-info h1 {
             font-size: 28px;
             font-weight: 800;
-            color: #07437c;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
         }
         
-        .logo-section p {
-            font-size: 12px;
-            color: #64748b;
-            line-height: 1.4;
+        .company-info p {
+            font-size: 13px;
+            opacity: 0.9;
+            line-height: 1.5;
         }
         
-        .invoice-info {
+        .invoice-badge {
             text-align: right;
         }
         
         .invoice-title {
-            font-size: 32px;
+            font-size: 48px;
             font-weight: 800;
-            color: #07437c;
-            margin-bottom: 5px;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
         }
         
         .invoice-meta {
-            font-size: 12px;
-            color: #64748b;
+            font-size: 14px;
+            opacity: 0.95;
         }
         
         .invoice-meta div {
-            margin-bottom: 3px;
+            margin-bottom: 6px;
+        }
+        
+        /* Content */
+        .content {
+            padding: 40px;
+        }
+        
+        .edit-hint {
+            background: linear-gradient(135deg, #fff8e1 0%, #fffbf0 100%);
+            border: 2px solid #ffa726;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 30px;
+            font-size: 14px;
+            color: #e65100;
+        }
+        
+        .edit-hint strong {
+            color: #bf360c;
         }
         
         .addresses {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            gap: 25px;
             margin-bottom: 40px;
         }
         
         .address-box {
-            background: #f8fafc;
-            padding: 20px;
-            border-radius: 8px;
-            border-left: 4px solid #fe7a33;
+            background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .address-box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(180deg, #fe7a33 0%, #ff6b35 100%);
         }
         
         .address-box h3 {
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 700;
             color: #07437c;
-            margin-bottom: 12px;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
         
         .address-box p {
-            font-size: 13px;
+            font-size: 14px;
             color: #475569;
-            margin-bottom: 4px;
+            margin-bottom: 5px;
+        }
+        
+        /* Items Table */
+        .items-section {
+            margin: 40px 0;
         }
         
         .items-table {
             width: 100%;
             border-collapse: collapse;
-            margin-bottom: 30px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
         }
         
         .items-table thead {
-            background: #07437c;
+            background: linear-gradient(135deg, #07437c 0%, #0a5a9e 100%);
             color: white;
         }
         
         .items-table th {
-            padding: 12px;
+            padding: 18px 15px;
             text-align: left;
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
         
-        .items-table th:last-child,
-        .items-table td:last-child {
+        .items-table th:nth-child(3),
+        .items-table th:nth-child(4),
+        .items-table th:nth-child(5) {
             text-align: right;
         }
         
         .items-table tbody tr {
             border-bottom: 1px solid #e2e8f0;
+            transition: background 0.2s ease;
         }
         
         .items-table tbody tr:hover {
@@ -137,27 +229,43 @@
         }
         
         .items-table td {
-            padding: 12px;
-            font-size: 13px;
+            padding: 16px 15px;
+            font-size: 14px;
             color: #475569;
         }
         
         .items-table td:first-child {
-            font-weight: 500;
+            font-weight: 600;
             color: #1e293b;
+            width: 60px;
+        }
+        
+        .items-table td:nth-child(3),
+        .items-table td:nth-child(4),
+        .items-table td:nth-child(5) {
+            text-align: right;
+        }
+        
+        /* Totals */
+        .totals-section {
+            display: flex;
+            justify-content: flex-end;
+            margin: 30px 0;
         }
         
         .totals {
-            margin-left: auto;
-            width: 300px;
-            margin-bottom: 40px;
+            width: 400px;
+            background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 25px;
         }
         
         .total-row {
             display: flex;
             justify-content: space-between;
-            padding: 10px 0;
-            font-size: 14px;
+            padding: 12px 0;
+            font-size: 15px;
             border-bottom: 1px solid #e2e8f0;
         }
         
@@ -167,256 +275,291 @@
         
         .total-row.tax {
             color: #64748b;
-            font-size: 13px;
+            font-size: 14px;
         }
         
         .total-row.grand-total {
+            border: none;
             border-top: 3px solid #fe7a33;
-            border-bottom: 3px solid #fe7a33;
-            padding: 15px 0;
-            font-size: 18px;
+            padding: 20px 0 0 0;
+            margin-top: 15px;
+            font-size: 22px;
+            font-weight: 800;
+            color: #07437c;
+        }
+        
+        /* Payment Info */
+        .payment-box {
+            background: linear-gradient(135deg, #fef3ef 0%, #fff8f5 100%);
+            border: 3px solid #fe7a33;
+            border-radius: 12px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .payment-box h3 {
+            font-size: 20px;
             font-weight: 700;
             color: #07437c;
-            margin-top: 10px;
+            margin-bottom: 20px;
         }
         
-        .payment-info {
-            background: #fef3ef;
-            border: 2px solid #fe7a33;
+        .payment-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .payment-item {
+            font-size: 14px;
+        }
+        
+        .payment-item strong {
+            display: block;
+            color: #07437c;
+            margin-bottom: 5px;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .payment-item span {
+            color: #475569;
+        }
+        
+        /* Notes */
+        .notes-box {
+            background: linear-gradient(135deg, #f8fafc 0%, #fff 100%);
+            border-left: 4px solid #07437c;
             border-radius: 8px;
             padding: 25px;
-            margin-bottom: 30px;
+            margin: 30px 0;
         }
         
-        .payment-info h3 {
+        .notes-box h3 {
             font-size: 16px;
             font-weight: 700;
             color: #07437c;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         
-        .payment-details {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 15px;
-            font-size: 13px;
-        }
-        
-        .payment-detail {
-            color: #475569;
-        }
-        
-        .payment-detail strong {
-            color: #1e293b;
-            display: block;
-            margin-bottom: 3px;
-        }
-        
-        .notes {
-            background: #f8fafc;
-            padding: 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            border-left: 4px solid #07437c;
-        }
-        
-        .notes h3 {
+        .notes-box p {
             font-size: 14px;
-            font-weight: 700;
-            color: #07437c;
-            margin-bottom: 10px;
-        }
-        
-        .notes p {
-            font-size: 13px;
             color: #475569;
+            line-height: 1.7;
         }
         
+        /* Footer */
         .footer {
-            margin-top: 50px;
-            padding-top: 30px;
-            border-top: 2px solid #e2e8f0;
+            background: #f8fafc;
+            padding: 30px 40px;
             text-align: center;
-            font-size: 11px;
-            color: #94a3b8;
+            font-size: 12px;
+            color: #64748b;
+            border-top: 1px solid #e2e8f0;
             line-height: 1.8;
         }
         
-        .print-button {
+        .footer strong {
+            color: #07437c;
+        }
+        
+        /* Print Button */
+        .print-btn {
             position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #fe7a33;
+            top: 30px;
+            right: 30px;
+            background: linear-gradient(135deg, #fe7a33 0%, #ff6b35 100%);
             color: white;
             border: none;
-            padding: 12px 24px;
-            border-radius: 6px;
+            padding: 15px 30px;
+            border-radius: 50px;
             font-family: 'Inter', sans-serif;
-            font-weight: 600;
+            font-weight: 700;
+            font-size: 15px;
             cursor: pointer;
-            font-size: 14px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            box-shadow: 0 8px 20px rgba(254, 122, 51, 0.3);
+            transition: all 0.3s ease;
+            z-index: 1000;
         }
         
-        .print-button:hover {
-            background: #ff6b35;
+        .print-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 30px rgba(254, 122, 51, 0.4);
         }
         
+        /* Editable */
         .editable {
             background: #fff8e1;
-            padding: 2px 4px;
-            border-radius: 3px;
+            padding: 4px 8px;
+            border-radius: 4px;
             border: 1px dashed #ffa726;
+            display: inline-block;
+            min-width: 60px;
+            transition: all 0.2s ease;
         }
         
-        .edit-note {
+        .editable:hover {
             background: #fff3cd;
-            border: 1px solid #ffc107;
-            padding: 15px;
-            border-radius: 6px;
-            margin-bottom: 20px;
-            font-size: 13px;
-            color: #856404;
+            border-color: #ff9800;
+        }
+        
+        .editable:focus {
+            outline: 2px solid #fe7a33;
+            background: #fff;
+            border-color: #fe7a33;
         }
     </style>
 </head>
 <body>
-    <button class="print-button no-print" onclick="window.print()">Als PDF speichern</button>
+    <button class="print-btn no-print" onclick="window.print()">📥 Als PDF speichern</button>
     
-    <div class="edit-note no-print">
-        ⚠️ <strong>Hinweis:</strong> Bitte passen Sie die gelb markierten Felder vor dem PDF-Export an Ihre Rechnung an.
-    </div>
-    
-    <div class="header">
-        <div class="logo-section">
-            <h1>AS-ProDigital</h1>
-            <p>André Szittnick<br>
-            Am Schlosspark 21<br>
-            55232 Alzey<br>
-            Deutschland</p>
-        </div>
-        <div class="invoice-info">
-            <h2 class="invoice-title">RECHNUNG</h2>
-            <div class="invoice-meta">
-                <div><strong>Rechnungsnr.:</strong> <span class="editable" contenteditable="true">2025-001</span></div>
-                <div><strong>Datum:</strong> <span class="editable" contenteditable="true">01.01.2025</span></div>
-                <div><strong>Leistungszeitraum:</strong> <span class="editable" contenteditable="true">Januar 2025</span></div>
+    <div class="container">
+        <div class="header">
+            <div class="header-content">
+                <div class="logo-section">
+                    <img src="logo.png" alt="AS-ProDigital Logo">
+                    <div class="company-info">
+                        <h1>AS-ProDigital</h1>
+                        <p>André Szittnick<br>
+                        Am Schlosspark 21<br>
+                        55232 Alzey, Deutschland</p>
+                    </div>
+                </div>
+                <div class="invoice-badge">
+                    <div class="invoice-title">RECHNUNG</div>
+                    <div class="invoice-meta">
+                        <div><strong>Rechnungsnr.:</strong> <span class="editable" contenteditable="true">2025-001</span></div>
+                        <div><strong>Datum:</strong> <span class="editable" contenteditable="true">01.01.2025</span></div>
+                        <div><strong>Leistung:</strong> <span class="editable" contenteditable="true">Januar 2025</span></div>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-    
-    <div class="addresses">
-        <div class="address-box">
-            <h3>Rechnungsempfänger</h3>
-            <p class="editable" contenteditable="true"><strong>Firmenname / Name</strong></p>
-            <p class="editable" contenteditable="true">Straße und Hausnummer</p>
-            <p class="editable" contenteditable="true">PLZ Ort</p>
-            <p class="editable" contenteditable="true">Deutschland</p>
         </div>
         
-        <div class="address-box">
-            <h3>Rechnungssteller</h3>
-            <p><strong>AS-ProDigital</strong></p>
-            <p>André Szittnick</p>
-            <p>Am Schlosspark 21</p>
-            <p>55232 Alzey</p>
-            <p>Deutschland</p>
-            <p style="margin-top: 10px;">
-                Tel: +49 (0) 170 810 94 82<br>
-                E-Mail: info@as-prodigital.de
-            </p>
+        <div class="content">
+            <div class="edit-hint no-print">
+                ⚠️ <strong>Hinweis:</strong> Klicken Sie auf die gelb markierten Felder, um sie zu bearbeiten. Anschließend können Sie über den Button "Als PDF speichern" die fertige Rechnung herunterladen.
+            </div>
+            
+            <div class="addresses">
+                <div class="address-box">
+                    <h3>Rechnungsempfänger</h3>
+                    <p class="editable" contenteditable="true">Firmenname / Name</p>
+                    <p class="editable" contenteditable="true">Straße und Hausnummer</p>
+                    <p class="editable" contenteditable="true">PLZ Ort</p>
+                    <p class="editable" contenteditable="true">Deutschland</p>
+                </div>
+                
+                <div class="address-box">
+                    <h3>Rechnungssteller</h3>
+                    <p><strong>AS-ProDigital</strong></p>
+                    <p>André Szittnick</p>
+                    <p>Am Schlosspark 21</p>
+                    <p>55232 Alzey</p>
+                    <p>Deutschland</p>
+                    <p style="margin-top: 12px; font-size: 13px;">
+                        📞 +49 (0) 170 810 94 82<br>
+                        ✉️ info@as-prodigital.de
+                    </p>
+                </div>
+            </div>
+            
+            <div class="items-section">
+                <table class="items-table">
+                    <thead>
+                        <tr>
+                            <th>Pos.</th>
+                            <th>Beschreibung</th>
+                            <th>Menge</th>
+                            <th>Einzelpreis</th>
+                            <th>Gesamt</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="editable" contenteditable="true">1</td>
+                            <td class="editable" contenteditable="true">Webdesign - Entwicklung responsive Website</td>
+                            <td class="editable" contenteditable="true">1</td>
+                            <td class="editable" contenteditable="true">1.500,00 €</td>
+                            <td class="editable" contenteditable="true">1.500,00 €</td>
+                        </tr>
+                        <tr>
+                            <td class="editable" contenteditable="true">2</td>
+                            <td class="editable" contenteditable="true">SEO-Optimierung OnPage</td>
+                            <td class="editable" contenteditable="true">1</td>
+                            <td class="editable" contenteditable="true">500,00 €</td>
+                            <td class="editable" contenteditable="true">500,00 €</td>
+                        </tr>
+                        <tr>
+                            <td class="editable" contenteditable="true">3</td>
+                            <td class="editable" contenteditable="true">Content-Integration und Bildbearbeitung</td>
+                            <td class="editable" contenteditable="true">1</td>
+                            <td class="editable" contenteditable="true">300,00 €</td>
+                            <td class="editable" contenteditable="true">300,00 €</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="totals-section">
+                <div class="totals">
+                    <div class="total-row subtotal">
+                        <span>Zwischensumme:</span>
+                        <span class="editable" contenteditable="true">2.300,00 €</span>
+                    </div>
+                    <div class="total-row tax">
+                        <span>zzgl. 19% MwSt.:</span>
+                        <span class="editable" contenteditable="true">437,00 €</span>
+                    </div>
+                    <div class="total-row grand-total">
+                        <span>Gesamtbetrag:</span>
+                        <span class="editable" contenteditable="true">2.737,00 €</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="payment-box">
+                <h3>💳 Zahlungsinformationen</h3>
+                <div class="payment-grid">
+                    <div class="payment-item">
+                        <strong>Zahlungsziel</strong>
+                        <span class="editable" contenteditable="true">14 Tage netto</span>
+                    </div>
+                    <div class="payment-item">
+                        <strong>Fällig am</strong>
+                        <span class="editable" contenteditable="true">15.01.2025</span>
+                    </div>
+                    <div class="payment-item">
+                        <strong>IBAN</strong>
+                        <span class="editable" contenteditable="true">DE00 0000 0000 0000 0000 00</span>
+                    </div>
+                    <div class="payment-item">
+                        <strong>BIC</strong>
+                        <span class="editable" contenteditable="true">XXXDEXXX</span>
+                    </div>
+                    <div class="payment-item">
+                        <strong>Bankname</strong>
+                        <span class="editable" contenteditable="true">Musterbank AG</span>
+                    </div>
+                    <div class="payment-item">
+                        <strong>Verwendungszweck</strong>
+                        <span class="editable" contenteditable="true">Rechnung 2025-001</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="notes-box">
+                <h3>📝 Zahlungshinweise</h3>
+                <p>Vielen Dank für Ihr Vertrauen und die angenehme Zusammenarbeit! Bitte überweisen Sie den Rechnungsbetrag bis zum angegebenen Zahlungsziel unter Angabe der Rechnungsnummer als Verwendungszweck. Bei Fragen zur Rechnung oder zu meinen Leistungen stehe ich Ihnen jederzeit gerne zur Verfügung.</p>
+            </div>
         </div>
-    </div>
-    
-    <table class="items-table">
-        <thead>
-            <tr>
-                <th>Position</th>
-                <th>Beschreibung</th>
-                <th style="text-align: center;">Menge</th>
-                <th style="text-align: right;">Einzelpreis</th>
-                <th style="text-align: right;">Gesamt</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td class="editable" contenteditable="true">1</td>
-                <td class="editable" contenteditable="true">Webdesign - Entwicklung responsive Website</td>
-                <td style="text-align: center;" class="editable" contenteditable="true">1</td>
-                <td style="text-align: right;" class="editable" contenteditable="true">1.500,00 €</td>
-                <td style="text-align: right;" class="editable" contenteditable="true">1.500,00 €</td>
-            </tr>
-            <tr>
-                <td class="editable" contenteditable="true">2</td>
-                <td class="editable" contenteditable="true">SEO-Optimierung OnPage</td>
-                <td style="text-align: center;" class="editable" contenteditable="true">1</td>
-                <td style="text-align: right;" class="editable" contenteditable="true">500,00 €</td>
-                <td style="text-align: right;" class="editable" contenteditable="true">500,00 €</td>
-            </tr>
-            <tr>
-                <td class="editable" contenteditable="true">3</td>
-                <td class="editable" contenteditable="true">Content-Integration und Bildbearbeitung</td>
-                <td style="text-align: center;" class="editable" contenteditable="true">1</td>
-                <td style="text-align: right;" class="editable" contenteditable="true">300,00 €</td>
-                <td style="text-align: right;" class="editable" contenteditable="true">300,00 €</td>
-            </tr>
-        </tbody>
-    </table>
-    
-    <div class="totals">
-        <div class="total-row subtotal">
-            <span>Zwischensumme:</span>
-            <span class="editable" contenteditable="true">2.300,00 €</span>
+        
+        <div class="footer">
+            <p><strong>AS-ProDigital</strong> | André Szittnick | Am Schlosspark 21 | 55232 Alzey, Deutschland</p>
+            <p>Telefon: +49 (0) 170 810 94 82 | E-Mail: info@as-prodigital.de</p>
+            <p style="margin-top: 8px;">USt-IdNr.: <span class="editable" contenteditable="true">DE000000000</span> (bitte anpassen)</p>
         </div>
-        <div class="total-row tax">
-            <span>zzgl. 19% MwSt.:</span>
-            <span class="editable" contenteditable="true">437,00 €</span>
-        </div>
-        <div class="total-row grand-total">
-            <span>Gesamtbetrag:</span>
-            <span class="editable" contenteditable="true">2.737,00 €</span>
-        </div>
-    </div>
-    
-    <div class="payment-info">
-        <h3>💳 Zahlungsinformationen</h3>
-        <div class="payment-details">
-            <div class="payment-detail">
-                <strong>Zahlungsziel:</strong>
-                <span class="editable" contenteditable="true">14 Tage netto</span>
-            </div>
-            <div class="payment-detail">
-                <strong>Fällig am:</strong>
-                <span class="editable" contenteditable="true">15.01.2025</span>
-            </div>
-            <div class="payment-detail">
-                <strong>IBAN:</strong>
-                <span class="editable" contenteditable="true">DE00 0000 0000 0000 0000 00</span>
-            </div>
-            <div class="payment-detail">
-                <strong>BIC:</strong>
-                <span class="editable" contenteditable="true">XXXDEXXX</span>
-            </div>
-            <div class="payment-detail">
-                <strong>Bank:</strong>
-                <span class="editable" contenteditable="true">Musterbank</span>
-            </div>
-            <div class="payment-detail">
-                <strong>Verwendungszweck:</strong>
-                <span class="editable" contenteditable="true">Rechnung 2025-001</span>
-            </div>
-        </div>
-    </div>
-    
-    <div class="notes">
-        <h3>📝 Hinweise</h3>
-        <p>Vielen Dank für Ihr Vertrauen! Bitte überweisen Sie den Rechnungsbetrag bis zum angegebenen Zahlungsziel unter Angabe der Rechnungsnummer. Bei Fragen stehe ich Ihnen jederzeit gerne zur Verfügung.</p>
-    </div>
-    
-    <div class="footer">
-        <p><strong>AS-ProDigital</strong> | André Szittnick | Am Schlosspark 21 | 55232 Alzey</p>
-        <p>Tel: +49 (0) 170 810 94 82 | E-Mail: info@as-prodigital.de</p>
-        <p style="margin-top: 10px;">USt-IdNr.: <span class="editable" contenteditable="true">DE000000000</span> (bitte anpassen)</p>
     </div>
 </body>
 </html>
