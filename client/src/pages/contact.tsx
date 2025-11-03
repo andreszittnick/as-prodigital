@@ -77,13 +77,13 @@ export default function Contact() {
       icon: MapPin,
       title: "Standort",
       details: "Alzey",
-      action: "#"
+      action: null
     },
     {
       icon: Clock,
       title: "Öffnungszeiten",
       details: "Mo-Fr: 9:00 - 18:00 Uhr",
-      action: "#"
+      action: null
     }
   ];
 
@@ -327,29 +327,34 @@ export default function Contact() {
                 </div>
 
                 <div className="space-y-4 md:space-y-6">
-                  {contactInfo.map((info, index) => (
-                    <motion.a
-                      key={info.title}
-                      href={info.action}
-                      initial={{ opacity: 0, y: 20 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                      className="flex items-center p-5 md:p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-                      data-testid={`contact-info-${info.title.toLowerCase()}`}
-                    >
-                      <div className="bg-blue-600 p-3 md:p-4 rounded-xl mr-4 md:mr-6 group-hover:scale-110 transition-transform">
-                        <info.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-sm md:text-base text-gray-900 dark:text-white mb-1">
-                          {info.title}
-                        </h3>
-                        <p className="text-sm md:text-base text-gray-600 dark:text-gray-300">
-                          {info.details}
-                        </p>
-                      </div>
-                    </motion.a>
-                  ))}
+                  {contactInfo.map((info, index) => {
+                    const Component = info.action ? motion.a : motion.div;
+                    const props = info.action ? { href: info.action } : {};
+                    
+                    return (
+                      <Component
+                        key={info.title}
+                        {...props}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                        className={`flex items-center p-5 md:p-6 bg-white dark:bg-gray-800 rounded-2xl shadow-lg transition-all duration-300 group ${info.action ? 'hover:shadow-xl cursor-pointer' : ''}`}
+                        data-testid={`contact-info-${info.title.toLowerCase()}`}
+                      >
+                        <div className="bg-blue-600 p-3 md:p-4 rounded-xl mr-4 md:mr-6 group-hover:scale-110 transition-transform">
+                          <info.icon className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                        </div>
+                        <div>
+                          <h3 className="font-semibold text-sm md:text-base text-gray-900 dark:text-white mb-1">
+                            {info.title}
+                          </h3>
+                          <p className="text-sm md:text-base text-gray-600 dark:text-gray-300">
+                            {info.details}
+                          </p>
+                        </div>
+                      </Component>
+                    );
+                  })}
                 </div>
 
                 <div className="bg-gradient-to-br from-orange-500 to-blue-600 p-6 md:p-8 rounded-2xl text-white">
