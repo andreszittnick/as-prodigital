@@ -199,6 +199,39 @@ export default function Datenschutz() {
                   Wir behalten uns vor, sie bei Änderungen unserer Website oder gesetzlichen Vorgaben anzupassen.
                 </p>
               </div>
+
+              {/* 10. Hosting und Server-Logs */}
+              <div>
+                <h2 className="text-2xl font-bold text-slate-900 mb-4">
+                  10. Hosting und Server-Logs
+                </h2>
+                <p className="text-slate-700 leading-relaxed mb-4">
+                  Unsere Website wird bei Render.com (Render, Inc., 525 Market Street, San Francisco, CA 94105, USA) gehostet.
+                  Render betreibt Server in der Region Frankfurt (EU Central), auf denen die Website bereitgestellt wird.
+                </p>
+                <p className="text-slate-700 leading-relaxed mb-4">
+                  Weitere Informationen zum Datenschutz bei Render finden Sie unter:{" "}
+                  <a 
+                    href="https://render.com/privacy" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-orange-600 hover:text-orange-700 transition-colors"
+                  >
+                    https://render.com/privacy
+                  </a>
+                </p>
+                <p className="text-slate-700 leading-relaxed">
+                  Es besteht ein Auftragsverarbeitungsvertrag (DPA) gemäß Art. 28 DSGVO:{" "}
+                  <a 
+                    href="https://render.com/dpa" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-orange-600 hover:text-orange-700 transition-colors"
+                  >
+                    https://render.com/dpa
+                  </a>
+                </p>
+              </div>
             </motion.div>
           </div>
         </section>
