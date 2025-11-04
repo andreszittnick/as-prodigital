@@ -1,0 +1,185 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: hsl(0, 0%, 100%);
+  --foreground: hsl(222, 84%, 4.9%);
+  --muted: hsl(210, 40%, 98%);
+  --muted-foreground: hsl(215, 16%, 46.9%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(222, 84%, 4.9%);
+  --card: hsl(0, 0%, 100%);
+  --card-foreground: hsl(222, 84%, 4.9%);
+  --border: hsl(214, 32%, 91%);
+  --input: hsl(214, 32%, 91%);
+  --primary: hsl(14, 96%, 54%);
+  --primary-foreground: hsl(210, 40%, 98%);
+  --secondary: hsl(210, 40%, 96%);
+  --secondary-foreground: hsl(222, 47%, 11%);
+  --accent: hsl(210, 40%, 96%);
+  --accent-foreground: hsl(222, 47%, 11%);
+  --destructive: hsl(0, 84%, 60%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(222, 84%, 4.9%);
+  --radius: 0.5rem;
+  
+  /* Brand colors */
+  --brand-orange: hsl(14, 96%, 54%);
+  --brand-blue: hsl(220, 36%, 17%);
+  --brand-orange-light: hsl(14, 96%, 90%);
+  --brand-blue-light: hsl(220, 36%, 90%);
+}
+
+.dark {
+  --background: hsl(222, 84%, 4.9%);
+  --foreground: hsl(210, 40%, 98%);
+  --muted: hsl(217, 32%, 17%);
+  --muted-foreground: hsl(215, 16%, 57%);
+  --popover: hsl(222, 84%, 4.9%);
+  --popover-foreground: hsl(210, 40%, 98%);
+  --card: hsl(222, 84%, 4.9%);
+  --card-foreground: hsl(210, 40%, 98%);
+  --border: hsl(217, 32%, 17%);
+  --input: hsl(217, 32%, 17%);
+  --primary: hsl(14, 96%, 54%);
+  --primary-foreground: hsl(222, 47%, 11%);
+  --secondary: hsl(217, 32%, 17%);
+  --secondary-foreground: hsl(210, 40%, 98%);
+  --accent: hsl(217, 32%, 17%);
+  --accent-foreground: hsl(210, 40%, 98%);
+  --destructive: hsl(0, 62%, 30%);
+  --destructive-foreground: hsl(210, 40%, 98%);
+  --ring: hsl(212, 95%, 83%);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    /* Touch scrolling optimization for iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+    max-width: 100vw;
+  }
+
+  * {
+    scroll-behavior: smooth;
+    /* Prevent tap highlight on mobile */
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  body {
+    scroll-padding-top: 80px;
+    /* Better font rendering on mobile */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    /* Prevent iOS text size adjust */
+    -webkit-text-size-adjust: 100%;
+    /* Prevent horizontal scrolling */
+    overflow-x: hidden;
+    max-width: 100vw;
+    position: relative;
+  }
+
+  /* Smooth scrolling for mobile */
+  @media (max-width: 768px) {
+    html {
+      scroll-padding-top: 64px;
+    }
+    
+    body {
+      scroll-padding-top: 64px;
+    }
+  }
+
+  @keyframes gradient-flow {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  @keyframes floating-orbs {
+    0%, 100% {
+      transform: translateY(0px) scale(1);
+    }
+    50% {
+      transform: translateY(-20px) scale(1.1);
+    }
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 0.1;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+
+  .dynamic-background {
+    background: linear-gradient(-45deg, #fa5219, #19243b, #fa5219, #19243b, #fa5219);
+    background-size: 500% 500%;
+    animation: gradient-flow 12s ease infinite;
+  }
+
+  .floating-orb {
+    animation: floating-orbs 6s ease-in-out infinite;
+  }
+
+  .pulse-orb {
+    animation: pulse-slow 8s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  .gradient-text {
+    color: var(--brand-orange);
+  }
+
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .brand-gradient {
+    background: var(--brand-orange);
+  }
+
+  .brand-gradient-hover {
+    background: var(--brand-orange);
+    transition: all 0.3s ease;
+  }
+
+  .brand-gradient-hover:hover {
+    background: hsl(14, 96%, 50%);
+  }
+
+  .brand-blue {
+    background: var(--brand-blue);
+  }
+
+  .brand-blue-hover {
+    background: var(--brand-blue);
+    transition: all 0.3s ease;
+  }
+
+  .brand-blue-hover:hover {
+    background: hsl(206, 91%, 21%);
+  }
+}
