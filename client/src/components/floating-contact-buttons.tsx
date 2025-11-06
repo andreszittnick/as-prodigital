@@ -21,9 +21,16 @@ export default function FloatingContactButtons() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const scrollToTop = useCallback(() => {
+  const scrollToTop = useCallback((e?: React.MouseEvent | React.TouchEvent) => {
+    e?.preventDefault();
+    e?.stopPropagation();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }, []);
+
+  const handleTouchStart = useCallback((e: React.TouchEvent) => {
+    e.preventDefault();
+    scrollToTop();
+  }, [scrollToTop]);
 
   return (
     <>
@@ -57,28 +64,22 @@ export default function FloatingContactButtons() {
       </div>
 
       {/* Scroll to Top Button - ganz unten rechts, unabhängig von den anderen */}
-      <AnimatePresence mode="wait">
-        {showScrollTop && (
-          <motion.button
-            onClick={scrollToTop}
-            className="fixed right-6 bottom-6 z-50 w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all duration-300"
-            style={{
-              background: '#19243b',
-              pointerEvents: 'auto'
-            }}
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            exit={{ scale: 0, opacity: 0 }}
-            transition={{ duration: 0.2, ease: "easeOut" }}
-            whileHover={{ scale: 1.1, y: -2 }}
-            whileTap={{ scale: 0.9 }}
-            aria-label="Nach oben scrollen"
-            data-testid="button-scroll-top"
-          >
-            <ArrowUp className="w-6 h-6 text-white" />
-          </motion.button>
-        )}
-      </AnimatePresence>
+      {showScrollTop && (
+        <button
+          onClick={scrollToTop}
+          onTouchStart={handleTouchStart}
+          className="fixed right-6 bottom-6 z-[100] w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all duration-300 active:scale-90"
+          style={{
+            background: '#19243b',
+            WebkitTapHighlightColor: 'transparent',
+            touchAction: 'manipulation',
+          }}
+          aria-label="Nach oben scrollen"
+          data-testid="button-scroll-top"
+        >
+          <ArrowUp className="w-6 h-6 text-white" />
+        </button>
+      )}
     </>
   );
 }
