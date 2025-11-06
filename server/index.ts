@@ -5,7 +5,7 @@ import { fileURLToPath } from "node:url";
 import { registerRoutes } from "./routes";
 import { setupVite, log } from "./vite";
 
-// --- ESM-sichere __dirname/__filename herstellen ---
+// ESM-sichere Pfade
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -13,30 +13,51 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// einfache API-Access-Logs
+// kleines API-Log
 app.use((req, res, next) => {
   const start = Date.now();
-  const reqPath = req.path;
-  let capturedJsonResponse: Record<string, any> | undefined;
+  const p = req.path;
+  let captured: unknown;
 
-  const originalResJson = res.json.bind(res);
-  res.json = function (bodyJson: any, ...args: any[]) {
-    capturedJsonResponse = bodyJson;
-    return originalResJson(bodyJson, ...args);
+  const originalJson = res.json.bind(res);
+  res.json = function (body: unknown, ...args: any[]) {
+    captured = body;
+    return originalJson(body, ...args);
   };
 
   res.on("finish", () => {
-    const duration = Date.now() - start;
-    if (reqPath.startsWith("/api")) {
-      let logLine = `${req.method} ${reqPath} ${res.statusCode} in ${duration}ms`;
-      if (capturedJsonResponse) logLine += ` :: ${JSON.stringify(capturedJsonResponse)}`;
-      if (logLine.length > 80) logLine = logLine.slice(0, 79) + "…";
-      log(logLine);
-    }
+    if (!p.startsWith("/api")) return;
+    const ms = Date.now() - start;
+    let line = `${req.method} ${p} ${res.statusCode} in ${ms}ms`;
+    if (captured) line += ` :: ${JSON.stringify(captured)}`;
+    if (line.length > 80) line = line.slice(0, 79) + "…";
+    log(line);
   });
 
   next();
 });
+
+function findClientDir(): string | null {
+  // Diese Datei läuft als dist/server/index.js
+  // Häufige Kandidaten, in sinnvoller Reihenfolge:
+  const candidates = [
+    path.join(__dirname, "..", "client"),      // dist/client (standard bei Vite SSR build)
+    path.join(__dirname, "..", "public"),      // dist/public
+    path.join(process.cwd(), "dist", "client"),
+    path.join(process.cwd(), "client"),
+    path.join(process.cwd(), "public"),
+  ];
+
+  for (const dir of candidates) {
+    try {
+      const indexHtml = path.join(dir, "index.html");
+      if (fs.existsSync(indexHtml)) return dir;
+    } catch {
+      /* ignore */
+    }
+  }
+  return null;
+}
 
 (async () => {
   const server = await registerRoutes(app);
@@ -49,37 +70,28 @@ app.use((req, res, next) => {
   });
 
   if (app.get("env") === "development") {
-    // DEV: Vite-Dev-Server
     await setupVite(app, server);
   } else {
-    // PROD: statische Dateien des gebauten Clients ausliefern
-    // Diese Datei läuft als dist/server/index.js => Client liegt relativ dazu in dist/client
-    const ROOT = path.resolve(__dirname, ".."); // dist/
-    const DEFAULT_CLIENT_DIR = path.join(ROOT, "client"); // dist/client
+    // PRODUCTION: statisch ausliefern – ohne ENV, ohne resolve(undefined)
+    const clientDir = findClientDir();
 
-    // Optional: Override über ENV, aber sicher auflösen
-    const CLIENT_DIR = process.env.CLIENT_DIR
-      ? path.resolve(process.env.CLIENT_DIR)
-      : DEFAULT_CLIENT_DIR;
+    if (clientDir) {
+      log(`Static client dir: ${clientDir}`);
+      app.use(express.static(clientDir, { index: false }));
 
-    // Statisch ausliefern, Index wird manuell als SPA-Fallback gesendet
-    app.use(express.static(CLIENT_DIR, { index: false }));
-
-    // SPA-Fallback
-    app.get("*", (_req, res, next) => {
-      const indexFile = path.join(CLIENT_DIR, "index.html");
-      if (fs.existsSync(indexFile)) {
-        res.sendFile(indexFile);
-      } else {
-        next();
-      }
-    });
+      // SPA-Fallback
+      app.get("*", (_req, res, next) => {
+        const indexFile = path.join(clientDir, "index.html");
+        if (fs.existsSync(indexFile)) res.sendFile(indexFile);
+        else next();
+      });
+    } else {
+      log("⚠️ Kein index.html gefunden (kein Client-Build). API läuft trotzdem.");
+    }
   }
 
-  // Port (Render setzt PORT)
   const port = Number.parseInt(process.env.PORT || "5000", 10);
-  server.listen(
-    { port, host: "0.0.0.0", reusePort: true },
-    () => { log(`serving on port ${port}`); }
-  );
+  server.listen({ port, host: "0.0.0.0", reusePort: true }, () => {
+    log(`serving on port ${port}`);
+  });
 })();
