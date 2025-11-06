@@ -3,9 +3,11 @@ import path from "node:path";
 import fs from "node:fs";
 import { fileURLToPath } from "node:url";
 import { registerRoutes } from "./routes";
-import { setupVite, log } from "./vite";
 
-// ESM-sichere Pfade
+// ---- kein Top-Level-Import von "./vite" mehr ----
+const log = (...args: any[]) => console.log("[server]", ...args);
+
+// ESM-sicheres __dirname / __filename
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
@@ -38,23 +40,18 @@ app.use((req, res, next) => {
 });
 
 function findClientDir(): string | null {
-  // Diese Datei läuft als dist/server/index.js
-  // Häufige Kandidaten, in sinnvoller Reihenfolge:
+  // Läuft als dist/server/index.js -> typische Orte mit index.html prüfen
   const candidates = [
-    path.join(__dirname, "..", "client"),      // dist/client (standard bei Vite SSR build)
-    path.join(__dirname, "..", "public"),      // dist/public
+    path.join(__dirname, "..", "client"),              // dist/client
+    path.join(__dirname, "..", "public"),              // dist/public
     path.join(process.cwd(), "dist", "client"),
     path.join(process.cwd(), "client"),
     path.join(process.cwd(), "public"),
   ];
-
   for (const dir of candidates) {
     try {
-      const indexHtml = path.join(dir, "index.html");
-      if (fs.existsSync(indexHtml)) return dir;
-    } catch {
-      /* ignore */
-    }
+      if (fs.existsSync(path.join(dir, "index.html"))) return dir;
+    } catch {}
   }
   return null;
 }
@@ -70,23 +67,32 @@ function findClientDir(): string | null {
   });
 
   if (app.get("env") === "development") {
-    await setupVite(app, server);
+    // Nur im DEV dynamisch laden, damit Production niemals "./vite" importiert
+    try {
+      const mod = await import("./vite");
+      if (typeof mod.setupVite === "function") {
+        await mod.setupVite(app, server);
+        if (typeof mod.log === "function") (mod.log as any)("Vite dev server attached");
+        else log("Vite dev server attached");
+      } else {
+        log("setupVite not found – skipping dev server");
+      }
+    } catch (e) {
+      log("Vite import failed in dev – skipping:", e);
+    }
   } else {
-    // PRODUCTION: statisch ausliefern – ohne ENV, ohne resolve(undefined)
+    // PRODUCTION: statisch ausliefern – ohne ENV, ohne path.resolve(undefined)
     const clientDir = findClientDir();
-
     if (clientDir) {
-      log(`Static client dir: ${clientDir}`);
+      log(`Serving static client from: ${clientDir}`);
       app.use(express.static(clientDir, { index: false }));
-
-      // SPA-Fallback
       app.get("*", (_req, res, next) => {
         const indexFile = path.join(clientDir, "index.html");
         if (fs.existsSync(indexFile)) res.sendFile(indexFile);
         else next();
       });
     } else {
-      log("⚠️ Kein index.html gefunden (kein Client-Build). API läuft trotzdem.");
+      log("⚠️ Kein index.html gefunden – API-only Modus.");
     }
   }
 
