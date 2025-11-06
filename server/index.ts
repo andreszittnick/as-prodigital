@@ -6,9 +6,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-// >>> WICHTIG: Statische Dateien aus /public direkt ausliefern (z. B. Google-Verification)
-app.use(express.static("public"));
-
 app.use((req, res, next) => {
   const start = Date.now();
   const path = req.path;
