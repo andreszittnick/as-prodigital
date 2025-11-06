@@ -1,8 +1,13 @@
 import express, { type Request, Response, NextFunction } from "express";
 import path from "node:path";
 import fs from "node:fs";
+import { fileURLToPath } from "node:url";
 import { registerRoutes } from "./routes";
-import { setupVite, log } from "./vite"; // serveStatic bewusst entfernt
+import { setupVite, log } from "./vite";
+
+// --- ESM-sichere __dirname/__filename herstellen ---
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const app = express();
 app.use(express.json());
@@ -43,43 +48,38 @@ app.use((req, res, next) => {
     throw err;
   });
 
-  // DEV: Vite Dev-Server einhängen
   if (app.get("env") === "development") {
+    // DEV: Vite-Dev-Server
     await setupVite(app, server);
   } else {
-    // PROD: statische Dateien aus dem gebauten Client ausliefern
-    // Hinweis: Diese Datei läuft nach dem Build unter dist/server/index.js
-    // -> der gebaute Client liegt relativ dazu unter dist/client
-    const ROOT = path.resolve(import.meta.dirname, "..");
-    // Optional ENV overrides, aber immer sichere Defaults verwenden
-    const CLIENT_DIR =
-      (process.env.CLIENT_DIR && path.resolve(process.env.CLIENT_DIR)) ||
-      path.join(ROOT, "client");
+    // PROD: statische Dateien des gebauten Clients ausliefern
+    // Diese Datei läuft als dist/server/index.js => Client liegt relativ dazu in dist/client
+    const ROOT = path.resolve(__dirname, ".."); // dist/
+    const DEFAULT_CLIENT_DIR = path.join(ROOT, "client"); // dist/client
 
-    // static ohne auto-index, SPA-Fallback unten
+    // Optional: Override über ENV, aber sicher auflösen
+    const CLIENT_DIR = process.env.CLIENT_DIR
+      ? path.resolve(process.env.CLIENT_DIR)
+      : DEFAULT_CLIENT_DIR;
+
+    // Statisch ausliefern, Index wird manuell als SPA-Fallback gesendet
     app.use(express.static(CLIENT_DIR, { index: false }));
 
-    // SPA-Fallback auf index.html (nur wenn vorhanden)
+    // SPA-Fallback
     app.get("*", (_req, res, next) => {
       const indexFile = path.join(CLIENT_DIR, "index.html");
       if (fs.existsSync(indexFile)) {
         res.sendFile(indexFile);
       } else {
-        next(); // falls es wirklich keine index.html gibt (z. B. API-only)
+        next();
       }
     });
   }
 
-  // Port-Konfiguration (Render setzt PORT)
+  // Port (Render setzt PORT)
   const port = Number.parseInt(process.env.PORT || "5000", 10);
   server.listen(
-    {
-      port,
-      host: "0.0.0.0",
-      reusePort: true,
-    },
-    () => {
-      log(`serving on port ${port}`);
-    }
+    { port, host: "0.0.0.0", reusePort: true },
+    () => { log(`serving on port ${port}`); }
   );
 })();
