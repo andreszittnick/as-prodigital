@@ -1,44 +1,54 @@
 import express from "express";
 import nodemailer from "nodemailer";
-import dotenv from "dotenv";
-dotenv.config();
 
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// 🔹 Mail-Konfiguration (IONOS)
+// Port für Render
+const PORT = process.env.PORT || 3000;
+
+// Nodemailer-Transport (IONOS)
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || "smtp.ionos.de",
-  port: Number(process.env.SMTP_PORT) || 587,
-  secure: false,
+  port: Number(process.env.SMTP_PORT || 587),
+  secure: String(process.env.SMTP_PORT || "587") === "465", // true nur bei 465
   auth: {
-    user: process.env.SMTP_USER || "info@as-prodigital.de",
-    pass: process.env.SMTP_PASS, // dein IONOS-Mailpasswort (kommt gleich als Env)
+    user: process.env.SMTP_USER, // z.B. info@as-prodigital.de
+    pass: process.env.SMTP_PASS,
   },
 });
 
-// 🔹 Route für alle Kontaktformulare
+// Ein Endpunkt für ALLE Kontaktformulare
 app.post("/api/contact", async (req, res) => {
-  const { name, email, phone, message, subject } = req.body;
+  const { firstName, lastName, companyName, email, phone, service, message, subject } = req.body;
+
+  const text =
+    `Neue Anfrage über as-prodigital.de\n\n` +
+    `Name: ${firstName || ""} ${lastName || ""}\n` +
+    `Firma: ${companyName || ""}\n` +
+    `E-Mail: ${email || ""}\n` +
+    `Telefon: ${phone || ""}\n` +
+    `Service: ${service || ""}\n\n` +
+    `Nachricht:\n${message || ""}\n`;
 
   try {
     await transporter.sendMail({
-      from: `"AS ProDigital Kontaktformular" <info@as-prodigital.de>`,
-      to: "info@as-prodigital.de",
-      replyTo: email,
-      subject: subject || "Neue Anfrage über as-prodigital.de",
-      text: `Neue Anfrage:\n\nName: ${name}\nE-Mail: ${email}\nTelefon: ${phone}\n\nNachricht:\n${message}`,
+      from: `"AS ProDigital Kontakt" <${process.env.SMTP_USER}>`,
+      to: process.env.SMTP_USER,
+      replyTo: email || undefined,
+      subject: subject || "Neue Kontaktanfrage",
+      text,
     });
-
-    res.status(200).json({ success: true });
+    console.log("✅ Mail versendet");
+    return res.status(200).json({ success: true, message: "OK" });
   } catch (err) {
-    console.error("Fehler beim Senden:", err);
-    res.status(500).json({ success: false });
+    console.error("❌ Mail-Fehler:", err);
+    return res.status(500).json({ success: false, error: "MAIL_FAILED" });
   }
 });
 
-// 🔹 Statische Dateien (falls du z. B. „public“-Ordner hast)
+// (optional) statische Dateien
 app.use(express.static("public"));
 
-app.listen(3000, () => console.log("📨 Mailserver läuft auf Port 3000"));
+app.listen(PORT, () => console.log(`Server läuft auf Port ${PORT}`));
