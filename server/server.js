@@ -26,35 +26,41 @@ const transporter = nodemailer.createTransport({
 
 /* -------------------- API: Kontakt -------------------- */
 app.post("/api/contact", async (req, res) => {
-  const {
-    firstName,
-    lastName,
-    companyName,
-    email,
-    phone,
-    service,
-    message,
-    subject,
-  } = req.body;
-
-  const text =
-    `Neue Anfrage über as-prodigital.de\n\n` +
-    `Name: ${firstName || ""} ${lastName || ""}\n` +
-    `Firma: ${companyName || ""}\n` +
-    `E-Mail: ${email || ""}\n` +
-    `Telefon: ${phone || ""}\n` +
-    `Service: ${service || ""}\n\n` +
-    `Nachricht:\n${message || ""}\n`;
-
   try {
+    const b = req.body || {};
+    const pick = (...xs) => xs.find(v => typeof v === "string" && v.trim()) || "";
+
+    // Eingaben flexibel abfangen (verschiedene Formularnamen)
+    const firstName = pick(b.firstName, b.vorname, b.name);
+    const lastName  = pick(b.lastName, b.nachname);
+    const fullName  = [firstName, lastName].filter(Boolean).join(" ") || pick(b.fullname, b.kontaktname);
+    const company   = pick(b.companyName, b.firma, b.unternehmen);
+    const email     = pick(b.email, b.mail);
+    const phone     = pick(b.phone, b.telefon, b.tel);
+    const service   = pick(b.service, b.option, b.interesse);
+    const subject   = pick(b.subject, b.betreff) || "Neue Kontaktanfrage";
+    const message   = pick(b.message, b.nachricht, b.msg, b.text, b.beschreibung, b.inhalt);
+
+    if (!message) return res.status(400).json({ success: false, error: "message fehlt" });
+
+    const text =
+      `Neue Anfrage über as-prodigital.de\n\n` +
+      `Name: ${fullName || ""}\n` +
+      `Firma: ${company || ""}\n` +
+      `E-Mail: ${email || ""}\n` +
+      `Telefon: ${phone || ""}\n` +
+      `Service: ${service || ""}\n\n` +
+      `Nachricht:\n${message || ""}\n`;
+
     await transporter.sendMail({
       from: `"AS ProDigital Kontakt" <${process.env.SMTP_USER}>`,
       to: process.env.SMTP_USER,
       replyTo: email || undefined,
-      subject: subject || "Neue Kontaktanfrage",
+      subject,
       text,
     });
-    console.log("✅ Mail versendet");
+
+    console.log("✅ Mail versendet von", req.get("referer") || "unbekannt");
     return res.status(200).json({ success: true });
   } catch (err) {
     console.error("❌ Mail-Fehler:", err);
