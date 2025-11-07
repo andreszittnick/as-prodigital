@@ -41,24 +41,31 @@ export default function Contact() {
   });
 
   const onSubmit = async (data: ContactFormData) => {
-    try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      toast({
-        title: "Nachricht gesendet!",
-        description: "Ich melde mich innerhalb von 24 Stunden bei Ihnen zurück.",
-      });
-      
-      form.reset();
-    } catch (error) {
-      toast({
-        title: "Fehler beim Senden",
-        description: "Bitte versuchen Sie es später erneut oder kontaktieren Sie mich direkt.",
-        variant: "destructive"
-      });
-    }
-  };
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
+
+    const json = await res.json();
+    if (!res.ok || !json?.success) throw new Error(json?.error || "MAIL_FAILED");
+
+    toast({
+      title: "Nachricht gesendet!",
+      description: "Ich melde mich innerhalb von 24 Stunden bei Ihnen zurück.",
+    });
+    form.reset();
+  } catch (error) {
+    console.error("Kontaktseite send error:", error);
+    toast({
+      title: "Fehler beim Senden",
+      description: "Bitte versuchen Sie es später erneut oder kontaktieren Sie mich direkt.",
+      variant: "destructive",
+    });
+  }
+};
+
 
   const contactInfo = [
     {
