@@ -17,7 +17,7 @@ const PORT = process.env.PORT || 3000;
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || "smtp.ionos.de",
   port: Number(process.env.SMTP_PORT || 587),
-  secure: String(process.env.SMTP_PORT || "587") === "465", // nur bei 465 true
+  secure: String(process.env.SMTP_PORT || "587") === "465", // nur bei 465 true (SSL)
   auth: {
     user: process.env.SMTP_USER, // z.B. info@as-prodigital.de
     pass: process.env.SMTP_PASS,
@@ -33,7 +33,10 @@ app.post("/api/contact", async (req, res) => {
     // Eingaben flexibel abfangen (verschiedene Formularnamen)
     const firstName = pick(b.firstName, b.vorname, b.name);
     const lastName  = pick(b.lastName, b.nachname);
-    const fullName  = [firstName, lastName].filter(Boolean).join(" ") || pick(b.fullname, b.kontaktname);
+    const fullName  =
+      [firstName, lastName].filter(Boolean).join(" ") ||
+      pick(b.fullname, b.kontaktname);
+
     const company   = pick(b.companyName, b.firma, b.unternehmen);
     const email     = pick(b.email, b.mail);
     const phone     = pick(b.phone, b.telefon, b.tel);
@@ -41,7 +44,7 @@ app.post("/api/contact", async (req, res) => {
     const subject   = pick(b.subject, b.betreff) || "Neue Kontaktanfrage";
     const message   = pick(b.message, b.nachricht, b.msg, b.text, b.beschreibung, b.inhalt);
 
-    if (!message) return res.status(400).json({ success: false, error: "message fehlt" });
+    const prettyMessage = message || "— (kein Nachrichtentext) —";
 
     const text =
       `Neue Anfrage über as-prodigital.de\n\n` +
@@ -50,7 +53,7 @@ app.post("/api/contact", async (req, res) => {
       `E-Mail: ${email || ""}\n` +
       `Telefon: ${phone || ""}\n` +
       `Service: ${service || ""}\n\n` +
-      `Nachricht:\n${message || ""}\n`;
+      `Nachricht:\n${prettyMessage}\n`;
 
     await transporter.sendMail({
       from: `"AS ProDigital Kontakt" <${process.env.SMTP_USER}>`,
