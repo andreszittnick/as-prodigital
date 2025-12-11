@@ -1,15 +1,15 @@
 import express, { type Express } from "express";
 import fs from "fs";
 import path from "path";
+import { fileURLToPath } from "url";
 import { createServer as createViteServer, createLogger } from "vite";
 import { type Server } from "http";
 import viteConfig from "../vite.config";
 import { nanoid } from "nanoid";
 
-// Wichtig für ESM (__dirname ersetzen)
-import { fileURLToPath } from "url";
+// __dirname stabil für ESM erzeugen – DER WICHTIGSTE FIX
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const __dirname = path.resolve(path.dirname(__filename));
 
 const viteLogger = createLogger();
 
@@ -20,28 +20,25 @@ export function log(message: string, source = "express") {
     second: "2-digit",
     hour12: true,
   });
-
   console.log(`${formattedTime} [${source}] ${message}`);
 }
 
 export async function setupVite(app: Express, server: Server) {
-  const serverOptions = {
-    middlewareMode: true,
-    hmr: { server },
-    allowedHosts: true as const,
-  };
-
   const vite = await createViteServer({
     ...viteConfig,
     configFile: false,
+    server: {
+      middlewareMode: true,
+      hmr: { server },
+      allowedHosts: true,
+    },
     customLogger: {
       ...viteLogger,
-      error: (msg, options) => {
-        viteLogger.error(msg, options);
+      error(msg, opts) {
+        viteLogger.error(msg, opts);
         process.exit(1);
       },
     },
-    server: serverOptions,
     appType: "custom",
   });
 
@@ -49,41 +46,33 @@ export async function setupVite(app: Express, server: Server) {
 
   app.use("*", async (req, res, next) => {
     try {
-      const clientTemplate = path.resolve(
-        __dirname,
-        "..",
-        "client",
-        "index.html"
-      );
+      const templatePath = path.join(__dirname, "..", "client", "index.html");
 
-      let template = await fs.promises.readFile(clientTemplate, "utf-8");
-      template = template.replace(
+      const raw = await fs.promises.readFile(templatePath, "utf-8");
+      const tmpl = raw.replace(
         `src="/src/main.tsx"`,
         `src="/src/main.tsx?v=${nanoid()}"`
       );
 
-      const page = await vite.transformIndexHtml(req.originalUrl, template);
+      const html = await vite.transformIndexHtml(req.originalUrl, tmpl);
 
-      res.status(200).set({ "Content-Type": "text/html" }).end(page);
-    } catch (e) {
-      vite.ssrFixStacktrace(e as Error);
-      next(e);
+      res.status(200).set({"Content-Type": "text/html"}).end(html);
+    } catch (err) {
+      vite.ssrFixStacktrace(err as Error);
+      next(err);
     }
   });
 }
 
 export function serveStatic(app: Express) {
-  // final korrekt: public liegt IM ROOT, nicht im server-Ordner
   const publicPath = path.resolve(process.cwd(), "public");
 
   if (!fs.existsSync(publicPath)) {
-    throw new Error(`Could not find the public directory: ${publicPath}.`);
+    throw new Error(`Public directory not found: ${publicPath}`);
   }
 
-  // Statische Dateien bereitstellen
   app.use(express.static(publicPath));
 
-  // SPA-Fallback
   app.get("*", (_req, res) => {
     res.sendFile(path.join(publicPath, "index.html"));
   });
