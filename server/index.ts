@@ -1,87 +1,64 @@
-import express, { type Express } from "express";
-import fs from "fs";
-import path from "path";
-import { fileURLToPath } from "url";
-import { createServer as createViteServer, createLogger } from "vite";
-import { type Server } from "http";
-import viteConfig from "../vite.config";
-import { nanoid } from "nanoid";
+import express, { type Request, type Response, type NextFunction } from "express";
+import { registerRoutes } from "./routes";
+import { setupVite, serveStatic, log } from "./vite";
 
-// Fix für import.meta.dirname in ESM (Render benötigt das)
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
+const app = express();
 
-const viteLogger = createLogger();
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 
-export function log(message: string, source = "express") {
-  const formattedTime = new Date().toLocaleTimeString("en-US", {
-    hour: "numeric",
-    minute: "2-digit",
-    second: "2-digit",
-    hour12: true,
-  });
+// API Logging nur für /api
+app.use((req, res, next) => {
+  const start = Date.now();
+  const path = req.path;
+  let capturedJson: any = undefined;
 
-  console.log(`${formattedTime} [${source}] ${message}`);
-}
-
-export async function setupVite(app: Express, server: Server) {
-  const serverOptions = {
-    middlewareMode: true,
-    hmr: { server },
-    allowedHosts: true as const,
+  const originalJson = res.json;
+  res.json = function (body, ...args) {
+    capturedJson = body;
+    return originalJson.apply(res, [body, ...args]);
   };
 
-  const vite = await createViteServer({
-    ...viteConfig,
-    configFile: false,
-    customLogger: {
-      ...viteLogger,
-      error: (msg, options) => {
-        viteLogger.error(msg, options);
-        process.exit(1);
-      },
-    },
-    server: serverOptions,
-    appType: "custom",
-  });
-
-  app.use(vite.middlewares);
-
-  app.use("*", async (req, res, next) => {
-    try {
-      const clientTemplate = path.resolve(
-        __dirname,
-        "..",
-        "client",
-        "index.html"
-      );
-
-      let template = await fs.promises.readFile(clientTemplate, "utf-8");
-      template = template.replace(
-        `src="/src/main.tsx"`,
-        `src="/src/main.tsx?v=${nanoid()}"`
-      );
-
-      const page = await vite.transformIndexHtml(req.originalUrl, template);
-
-      res.status(200).set({ "Content-Type": "text/html" }).end(page);
-    } catch (e) {
-      vite.ssrFixStacktrace(e as Error);
-      next(e);
+  res.on("finish", () => {
+    if (path.startsWith("/api")) {
+      let text = `${req.method} ${path} ${res.statusCode} in ${Date.now() - start}ms`;
+      if (capturedJson) text += ` :: ${JSON.stringify(capturedJson)}`;
+      if (text.length > 80) text = text.substring(0, 79) + "…";
+      log(text);
     }
   });
-}
 
-export function serveStatic(app: Express) {
-  const publicPath = path.resolve(process.cwd(), "public");
+  next();
+});
 
-  if (!fs.existsSync(publicPath)) {
-    throw new Error(`Could not find the public directory: ${publicPath}.`);
+(async () => {
+  // Routen registrieren
+  const server = await registerRoutes(app);
+
+  // Error Handler
+  app.use((err: any, _req: Request, res: Response, _next: NextFunction) => {
+    const status = err.status || 500;
+    const msg = err.message || "Internal Server Error";
+    res.status(status).json({ message: msg });
+  });
+
+  // Nur in Development Vite aktivieren
+  if (app.get("env") === "development") {
+    await setupVite(app, server);
+  } else {
+    // Production: statische Dateien ausliefern (public/)
+    serveStatic(app);
   }
 
-  app.use(express.static(publicPath));
+  // Render-Port (Pflicht)
+  const port = parseInt(process.env.PORT || "5000", 10);
 
-  app.get("*", (_req, res) => {
-    res.sendFile(path.join(publicPath, "index.html"));
-  });
-}
+  server.listen(
+    {
+      port,
+      host: "0.0.0.0",
+      reusePort: true,
+    },
+    () => log(`Server running on port ${port}`)
+  );
+})();
