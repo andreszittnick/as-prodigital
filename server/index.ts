@@ -32,7 +32,7 @@ app.use((req, res, next) => {
 });
 
 (async () => {
-  // Routen registrieren
+  // API-Routen aktivieren
   const server = await registerRoutes(app);
 
   // Error Handler
@@ -42,15 +42,15 @@ app.use((req, res, next) => {
     res.status(status).json({ message: msg });
   });
 
-  // Nur in Development Vite aktivieren
+  // Development → Vite Middleware
   if (app.get("env") === "development") {
     await setupVite(app, server);
   } else {
-    // Production: statische Dateien ausliefern (public/)
+    // Production → statische Dateien aus /public
     serveStatic(app);
   }
 
-  // Render-Port (Pflicht)
+  // Render Port (Pflicht)
   const port = parseInt(process.env.PORT || "5000", 10);
 
   server.listen(
