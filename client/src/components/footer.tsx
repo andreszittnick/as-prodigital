@@ -15,11 +15,17 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <img 
-              src="/logo-new.png" 
-              alt="AS-ProDigital Logo" 
-              className="h-14 md:h-18 w-auto object-contain"
-            />
+            <picture>
+              <source srcSet="/logo-new.webp" type="image/webp" />
+              <img 
+                src="/logo-new.png" 
+                alt="AS-ProDigital Logo" 
+                className="h-14 md:h-18 w-auto object-contain"
+                width="72"
+                height="72"
+                loading="lazy"
+              />
+            </picture>
           </motion.div>
           
           <motion.div 
