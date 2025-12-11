@@ -7,9 +7,9 @@ import { type Server } from "http";
 import viteConfig from "../vite.config";
 import { nanoid } from "nanoid";
 
-// __dirname stabil für ESM erzeugen – DER WICHTIGSTE FIX
+// ESM-kompatibles __dirname erzeugen (Pflicht für Render)
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.resolve(path.dirname(__filename));
+const __dirname = path.dirname(__filename);
 
 const viteLogger = createLogger();
 
@@ -20,6 +20,7 @@ export function log(message: string, source = "express") {
     second: "2-digit",
     hour12: true,
   });
+
   console.log(`${formattedTime} [${source}] ${message}`);
 }
 
@@ -34,8 +35,8 @@ export async function setupVite(app: Express, server: Server) {
     },
     customLogger: {
       ...viteLogger,
-      error(msg, opts) {
-        viteLogger.error(msg, opts);
+      error(msg, options) {
+        viteLogger.error(msg, options);
         process.exit(1);
       },
     },
@@ -46,17 +47,20 @@ export async function setupVite(app: Express, server: Server) {
 
   app.use("*", async (req, res, next) => {
     try {
-      const templatePath = path.join(__dirname, "..", "client", "index.html");
+      const templatePath = path.resolve(__dirname, "..", "client", "index.html");
 
-      const raw = await fs.promises.readFile(templatePath, "utf-8");
-      const tmpl = raw.replace(
+      let template = await fs.promises.readFile(templatePath, "utf-8");
+
+      template = template.replace(
         `src="/src/main.tsx"`,
         `src="/src/main.tsx?v=${nanoid()}"`
       );
 
-      const html = await vite.transformIndexHtml(req.originalUrl, tmpl);
+      const html = await vite.transformIndexHtml(req.originalUrl, template);
 
-      res.status(200).set({"Content-Type": "text/html"}).end(html);
+      res.status(200).set({
+        "Content-Type": "text/html",
+      }).end(html);
     } catch (err) {
       vite.ssrFixStacktrace(err as Error);
       next(err);
@@ -71,8 +75,10 @@ export function serveStatic(app: Express) {
     throw new Error(`Public directory not found: ${publicPath}`);
   }
 
+  // Statische Dateien ausliefern
   app.use(express.static(publicPath));
 
+  // SPA-Fallback
   app.get("*", (_req, res) => {
     res.sendFile(path.join(publicPath, "index.html"));
   });
