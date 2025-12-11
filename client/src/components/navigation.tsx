@@ -37,11 +37,17 @@ export default function Navigation() {
               whileTap={{ scale: 0.95 }}
               data-testid="logo-link"
             >
-              <img 
-                src="/logo-new.png" 
-                alt="AS-ProDigital Logo" 
-                className="h-10 md:h-14 w-auto object-contain"
-              />
+              <picture>
+                <source srcSet="/logo-new.webp" type="image/webp" />
+                <img 
+                  src="/logo-new.png" 
+                  alt="AS-ProDigital Logo" 
+                  className="h-10 md:h-14 w-auto object-contain"
+                  width="56"
+                  height="56"
+                  loading="eager"
+                />
+              </picture>
             </motion.div>
           </Link>
           
@@ -165,8 +171,10 @@ export default function Navigation() {
             onClick={() => setIsOpen(!isOpen)}
             data-testid="mobile-menu-button"
             whileTap={{ scale: 0.95 }}
+            aria-label={isOpen ? "Menü schließen" : "Menü öffnen"}
+            aria-expanded={isOpen}
           >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+            {isOpen ? <X className="w-6 h-6" aria-hidden="true" /> : <Menu className="w-6 h-6" aria-hidden="true" />}
           </motion.button>
         </div>
 
@@ -201,10 +209,12 @@ export default function Navigation() {
                     onClick={() => setIsMobileServicesOpen(!isMobileServicesOpen)}
                     className="p-2 text-slate-600 hover:text-[#fa5219]"
                     whileTap={{ scale: 0.95 }}
+                    aria-label={isMobileServicesOpen ? "Untermenü schließen" : "Untermenü öffnen"}
+                    aria-expanded={isMobileServicesOpen}
                   >
                     <ChevronDown className={`w-5 h-5 transition-transform duration-300 ${
                       isMobileServicesOpen ? "rotate-180" : ""
-                    }`} />
+                    }`} aria-hidden="true" />
                   </motion.button>
                 </div>
                 

@@ -91,7 +91,7 @@ export default function Impressum() {
                 <h2 className="text-2xl font-bold text-slate-900 mb-4">
                   Umsatzsteuer-Identifikationsnummer gemäß § 27 a UStG
                 </h2>
-                <p className="text-slate-700">DE458172282</p>
+                <p className="text-slate-700 italic">Wird nachgereicht</p>
               </div>
 
               {/* Inhaltlich verantwortlich */}
