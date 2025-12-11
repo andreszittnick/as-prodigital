@@ -37,11 +37,17 @@ export default function Navigation() {
               whileTap={{ scale: 0.95 }}
               data-testid="logo-link"
             >
-              <img 
-                src="/logo-new.png" 
-                alt="AS-ProDigital Logo" 
-                className="h-10 md:h-14 w-auto object-contain"
-              />
+              <picture>
+                <source srcSet="/logo-new.webp" type="image/webp" />
+                <img 
+                  src="/logo-new.png" 
+                  alt="AS-ProDigital Logo" 
+                  className="h-10 md:h-14 w-auto object-contain"
+                  width="56"
+                  height="56"
+                  loading="eager"
+                />
+              </picture>
             </motion.div>
           </Link>
           
