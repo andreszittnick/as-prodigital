@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
@@ -23,6 +24,7 @@ type VideoAnalyseFormData = z.infer<typeof videoAnalyseFormSchema>;
 
 export default function VideoAnalyse() {
   const { toast } = useToast();
+  const [isSubmitted, setIsSubmitted] = useState(false);
   
   const form = useForm<VideoAnalyseFormData>({
     resolver: zodResolver(videoAnalyseFormSchema),
@@ -38,9 +40,11 @@ export default function VideoAnalyse() {
     try {
       await new Promise(resolve => setTimeout(resolve, 1000));
       
+      setIsSubmitted(true);
       toast({
         title: "Anfrage erfolgreich gesendet!",
         description: "Ich erstelle Ihre persönliche Video-Analyse und melde mich innerhalb von 48 Stunden bei Ihnen.",
+        duration: 10000,
       });
       
       form.reset();
@@ -172,100 +176,124 @@ export default function VideoAnalyse() {
                 transition={{ duration: 0.8 }}
                 className="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-lg"
               >
-                <div className="flex items-center mb-6 md:mb-8">
-                  <div className="bg-[#fa5219] p-3 rounded-xl mr-3 md:mr-4">
-                    <Video className="w-5 h-5 md:w-6 md:h-6 text-white" />
-                  </div>
-                  <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
-                    Video-Analyse anfordern
-                  </h2>
-                </div>
-
-                <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 md:space-y-6">
-                    <FormField
-                      control={form.control}
-                      name="name"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Ihr Name *</FormLabel>
-                          <FormControl>
-                            <Input placeholder="Max Mustermann" className="h-12 text-base" {...field} data-testid="input-name" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="email"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>E-Mail *</FormLabel>
-                          <FormControl>
-                            <Input type="email" placeholder="ihre@email.de" className="h-12 text-base" {...field} data-testid="input-email" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="website"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Website-URL *</FormLabel>
-                          <FormControl>
-                            <Input type="url" placeholder="https://ihre-website.de" className="h-12 text-base" {...field} data-testid="input-website" />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <FormField
-                      control={form.control}
-                      name="message"
-                      render={({ field }) => (
-                        <FormItem>
-                          <FormLabel>Worauf soll ich besonders achten? (optional)</FormLabel>
-                          <FormControl>
-                            <Textarea 
-                              placeholder="z.B. Ich möchte mehr Anfragen über meine Website erhalten..."
-                              className="min-h-[100px] text-base"
-                              {...field}
-                              data-testid="textarea-message"
-                            />
-                          </FormControl>
-                          <FormMessage />
-                        </FormItem>
-                      )}
-                    />
-
-                    <Button 
-                      type="submit" 
-                      className="w-full bg-[#fa5219] hover:bg-orange-600 text-white h-12 md:h-14 text-base md:text-lg"
-                      disabled={form.formState.isSubmitting}
-                      data-testid="button-submit"
-                    >
-                      {form.formState.isSubmitting ? (
-                        "Wird gesendet..."
-                      ) : (
-                        <>
-                          <Send className="w-5 h-5 mr-2" />
-                          Kostenlose Video-Analyse anfordern
-                        </>
-                      )}
-                    </Button>
-                    
-                    <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
-                      Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer{" "}
-                      <a href="/datenschutz" className="text-[#fa5219] hover:underline">Datenschutzerklärung</a> zu.
+                {isSubmitted ? (
+                  <div className="text-center py-8" data-testid="success-message">
+                    <div className="bg-green-100 dark:bg-green-900/30 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <CheckCircle className="w-10 h-10 text-green-600 dark:text-green-400" />
+                    </div>
+                    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-4">
+                      Vielen Dank für Ihre Anfrage!
+                    </h2>
+                    <p className="text-gray-600 dark:text-gray-300 mb-6">
+                      Ich erstelle Ihre persönliche Video-Analyse und melde mich innerhalb von 48 Stunden bei Ihnen.
                     </p>
-                  </form>
-                </Form>
+                    <Button
+                      onClick={() => setIsSubmitted(false)}
+                      variant="outline"
+                      className="border-[#fa5219] text-[#fa5219] hover:bg-[#fa5219] hover:text-white"
+                      data-testid="button-new-request"
+                    >
+                      Neue Anfrage stellen
+                    </Button>
+                  </div>
+                ) : (
+                  <>
+                    <div className="flex items-center mb-6 md:mb-8">
+                      <div className="bg-[#fa5219] p-3 rounded-xl mr-3 md:mr-4">
+                        <Video className="w-5 h-5 md:w-6 md:h-6 text-white" />
+                      </div>
+                      <h2 className="text-xl md:text-2xl font-bold text-gray-900 dark:text-white">
+                        Video-Analyse anfordern
+                      </h2>
+                    </div>
+
+                    <Form {...form}>
+                      <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 md:space-y-6">
+                        <FormField
+                          control={form.control}
+                          name="name"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Ihr Name *</FormLabel>
+                              <FormControl>
+                                <Input placeholder="Max Mustermann" className="h-12 text-base" {...field} data-testid="input-name" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+
+                        <FormField
+                          control={form.control}
+                          name="email"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>E-Mail *</FormLabel>
+                              <FormControl>
+                                <Input type="email" placeholder="ihre@email.de" className="h-12 text-base" {...field} data-testid="input-email" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+
+                        <FormField
+                          control={form.control}
+                          name="website"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Website-URL *</FormLabel>
+                              <FormControl>
+                                <Input type="url" placeholder="https://ihre-website.de" className="h-12 text-base" {...field} data-testid="input-website" />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+
+                        <FormField
+                          control={form.control}
+                          name="message"
+                          render={({ field }) => (
+                            <FormItem>
+                              <FormLabel>Worauf soll ich besonders achten? (optional)</FormLabel>
+                              <FormControl>
+                                <Textarea 
+                                  placeholder="z.B. Ich möchte mehr Anfragen über meine Website erhalten..."
+                                  className="min-h-[100px] text-base"
+                                  {...field}
+                                  data-testid="textarea-message"
+                                />
+                              </FormControl>
+                              <FormMessage />
+                            </FormItem>
+                          )}
+                        />
+
+                        <Button 
+                          type="submit" 
+                          className="w-full bg-[#fa5219] hover:bg-orange-600 text-white h-12 md:h-14 text-base md:text-lg"
+                          disabled={form.formState.isSubmitting}
+                          data-testid="button-submit"
+                        >
+                          {form.formState.isSubmitting ? (
+                            "Wird gesendet..."
+                          ) : (
+                            <>
+                              <Send className="w-5 h-5 mr-2" />
+                              Kostenlose Video-Analyse anfordern
+                            </>
+                          )}
+                        </Button>
+                        
+                        <p className="text-xs text-gray-500 dark:text-gray-400 text-center">
+                          Mit dem Absenden stimmen Sie der Verarbeitung Ihrer Daten gemäß unserer{" "}
+                          <a href="/datenschutz" className="text-[#fa5219] hover:underline">Datenschutzerklärung</a> zu.
+                        </p>
+                      </form>
+                    </Form>
+                  </>
+                )}
               </motion.div>
 
               <motion.div
