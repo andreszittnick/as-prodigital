@@ -8,7 +8,7 @@ Preferred communication style: Simple, everyday language.
 Brand colors: Use #fa5219 (orange) and #19243b (blue) separately - do not mix/gradient the colors together.
 Website language: German (all content translated from English to German).
 Page-specific modifications: When user requests changes to a specific subpage (e.g., "Webdesign-Unterseite"), only modify that exact page. Do not apply changes to other subpages unless explicitly requested.
-URL Structure: URLs - / (home), /Leistungen (services overview), /Webdesign (webdesign subpage), /SEO (SEO subpage), /ueber-mich (about page), /Kontakt (contact page), /blog (blog overview), /blog/:slug (individual blog posts), /datenschutz (privacy policy - lowercase only), /impressum (legal notice).
+URL Structure: URLs - / (home), /Leistungen (services overview), /Webdesign (webdesign subpage), /SEO (SEO subpage), /ueber-mich (about page), /Kontakt (contact page), /blog (blog overview), /blog/:slug (individual blog posts), /video-analyse (free video analysis landing page), /datenschutz (privacy policy - lowercase only), /impressum (legal notice), /agb (terms and conditions).
 Services: ONLY Webdesign and SEO - NO KI/AI services whatsoever.
 Contact: WhatsApp: 06731 8789, Email: info@as-prodigital.de, Phone: 06731 8789, Location: Alzey
 UI Features: Floating contact buttons (WhatsApp & Email) visible on all pages, NO social media sections or icons.
