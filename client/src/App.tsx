@@ -20,6 +20,7 @@ import BlogDetail from "@/pages/blog-detail";
 import Impressum from "@/pages/impressum";
 import Datenschutz from "@/pages/datenschutz";
 import AGB from "@/pages/agb";
+import VideoAnalyse from "@/pages/video-analyse";
 import NotFound from "@/pages/not-found";
 
 function ScrollToTop() {
@@ -49,6 +50,7 @@ function Router() {
         <Route path="/impressum" component={Impressum} />
         <Route path="/datenschutz" component={Datenschutz} />
         <Route path="/agb" component={AGB} />
+        <Route path="/video-analyse" component={VideoAnalyse} />
         <Route component={NotFound} />
       </Switch>
       <CookieBanner />
