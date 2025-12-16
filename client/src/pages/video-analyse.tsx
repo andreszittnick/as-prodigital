@@ -4,6 +4,7 @@ import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
 import { motion } from "framer-motion";
 import { Video, CheckCircle, Clock, Send, Play, Target, TrendingUp, Eye } from "lucide-react";
+import andreImage from "@assets/Andre-Szittnick_Bild_1765840488630.webp";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -322,17 +323,31 @@ export default function VideoAnalyse() {
                 </div>
 
                 <div className="bg-white dark:bg-gray-800 p-6 md:p-8 rounded-2xl shadow-lg">
-                  <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-4">
-                    Warum eine Video-Analyse?
-                  </h3>
-                  <p className="text-gray-600 dark:text-gray-300 mb-4">
-                    Im Gegensatz zu automatisierten Tools schaue ich mir Ihre Website persönlich an. 
-                    Sie sehen genau, worauf ich achte und erhalten Tipps, die speziell auf Ihr Geschäft zugeschnitten sind.
-                  </p>
-                  <p className="text-gray-600 dark:text-gray-300">
-                    Das Video können Sie sich so oft anschauen wie Sie möchten und die Empfehlungen selbst umsetzen 
-                    oder mich damit beauftragen - ganz wie Sie möchten.
-                  </p>
+                  <div className="flex flex-col sm:flex-row gap-6 items-start">
+                    <div className="w-24 h-24 sm:w-28 sm:h-28 flex-shrink-0 mx-auto sm:mx-0">
+                      <img 
+                        src={andreImage} 
+                        alt="André Szittnick - Ihr Ansprechpartner für die Video-Analyse"
+                        className="w-full h-full object-cover rounded-full border-4 border-[#fa5219]/20"
+                      />
+                    </div>
+                    <div>
+                      <h3 className="text-lg md:text-xl font-bold text-gray-900 dark:text-white mb-2 text-center sm:text-left">
+                        Warum eine Video-Analyse?
+                      </h3>
+                      <p className="text-gray-600 dark:text-gray-300 mb-3 text-sm md:text-base">
+                        Im Gegensatz zu automatisierten Tools schaue ich mir Ihre Website persönlich an. 
+                        Sie sehen genau, worauf ich achte und erhalten Tipps, die speziell auf Ihr Geschäft zugeschnitten sind.
+                      </p>
+                      <p className="text-gray-600 dark:text-gray-300 text-sm md:text-base">
+                        Das Video können Sie sich so oft anschauen wie Sie möchten und die Empfehlungen selbst umsetzen 
+                        oder mich damit beauftragen - ganz wie Sie möchten.
+                      </p>
+                      <p className="text-[#fa5219] font-medium mt-3 text-sm">
+                        – André Szittnick
+                      </p>
+                    </div>
+                  </div>
                 </div>
               </motion.div>
             </div>
