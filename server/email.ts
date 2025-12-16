@@ -37,7 +37,7 @@ export async function sendContactNotification(inquiry: {
     const subject = `Neue Kontaktanfrage: ${inquiry.service} - ${inquiry.firstName} ${inquiry.lastName}`;
 
     const result = await resend.emails.send({
-      from: 'AS-ProDigital <onboarding@resend.dev>',
+      from: 'AS-ProDigital <noreply@as-prodigital.de>',
       to: 'info@as-prodigital.de',
       replyTo: inquiry.email,
       subject: subject,
