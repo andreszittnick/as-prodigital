@@ -5,6 +5,7 @@ import express from "express";
 import { storage } from "./storage";
 import { insertContactInquirySchema } from "@shared/schema";
 import { z } from "zod";
+import { sendContactNotification } from "./email";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
@@ -17,13 +18,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedData = insertContactInquirySchema.parse(req.body);
       const inquiry = await storage.createContactInquiry(validatedData);
       
-      // Here you would typically send an email notification
-      // For now, we'll just log the inquiry
-      console.log("New contact inquiry received:", inquiry);
+      // Send email notification
+      try {
+        await sendContactNotification(validatedData);
+        console.log("Email notification sent for inquiry:", inquiry.id);
+      } catch (emailError) {
+        console.error("Failed to send email notification:", emailError);
+      }
       
       res.json({ 
         success: true, 
-        message: "Thank you for your message! I'll get back to you soon.",
+        message: "Vielen Dank für Ihre Nachricht! Ich melde mich bald bei Ihnen.",
         id: inquiry.id 
       });
     } catch (error) {
