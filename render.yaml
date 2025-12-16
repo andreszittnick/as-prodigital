@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: as-prodigital
+    runtime: node
+    buildCommand: npm install && npm run build && mkdir -p dist/server && cp -r dist/public dist/server/
+    startCommand: npm run start
+    envVars:
+      - key: NODE_ENV
+        value: production
