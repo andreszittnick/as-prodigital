@@ -5,7 +5,7 @@ import express from "express";
 import { storage } from "./storage";
 import { insertContactInquirySchema } from "@shared/schema";
 import { z } from "zod";
-import { sendContactNotification, sendCustomerConfirmation } from "./email";
+import { sendContactNotification } from "./email";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
@@ -26,13 +26,8 @@ export async function registerRoutes(app: Express): Promise<Server> {
         console.error("Failed to send email notification:", emailError);
       }
       
-      // Send confirmation email to customer
-      try {
-        await sendCustomerConfirmation(validatedData);
-        console.log("Customer confirmation sent to:", validatedData.email);
-      } catch (emailError) {
-        console.error("Failed to send customer confirmation:", emailError);
-      }
+      // Note: Customer confirmation emails temporarily disabled
+      // Will be re-enabled when kontakt@as-prodigital.de is configured as Gmail alias
       
       res.json({ 
         success: true, 
