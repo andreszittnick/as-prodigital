@@ -4,3 +4,34 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+
+# Replit-spezifische Dateien
+.replit
+replit.nix
+.upm/
+.cache/
+.config/
+.local/
+.npm/
+.pythonlibs/
+
+# Große Dateien die GitHub-Limits überschreiten können
+*.zip
+*.rar
+*.7z
+
+# Entwicklungs-Dateien
+*.log
+.env.local
+.env.development
+
+# IDE/Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Build-Artefakte
+.turbo/
+.next/
+out/
