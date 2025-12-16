@@ -12,7 +12,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useToast } from "@/hooks/use-toast";
 
 const videoAnalyseFormSchema = z.object({
   name: z.string().min(1, "Name ist erforderlich"),
@@ -24,8 +23,8 @@ const videoAnalyseFormSchema = z.object({
 type VideoAnalyseFormData = z.infer<typeof videoAnalyseFormSchema>;
 
 export default function VideoAnalyse() {
-  const { toast } = useToast();
   const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
   
   const form = useForm<VideoAnalyseFormData>({
     resolver: zodResolver(videoAnalyseFormSchema),
@@ -62,20 +61,16 @@ export default function VideoAnalyse() {
       }
       
       setIsSubmitted(true);
-      toast({
-        title: "Anfrage erfolgreich gesendet!",
-        description: "Ich erstelle Ihre persönliche Video-Analyse und melde mich innerhalb von 48 Stunden bei Ihnen.",
-        duration: 10000,
-      });
-      
+      setSubmitError(null);
       form.reset();
     } catch (error) {
-      toast({
-        title: "Fehler beim Senden",
-        description: "Bitte versuchen Sie es später erneut oder kontaktieren Sie mich direkt.",
-        variant: "destructive"
-      });
+      setSubmitError("Bitte versuchen Sie es später erneut oder kontaktieren Sie mich direkt.");
     }
+  };
+
+  const handleNewInquiry = () => {
+    setIsSubmitted(false);
+    setSubmitError(null);
   };
 
   const benefits = [
@@ -272,6 +267,12 @@ export default function VideoAnalyse() {
                         Video-Analyse anfordern
                       </h2>
                     </div>
+
+                    {submitError && (
+                      <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4">
+                        {submitError}
+                      </div>
+                    )}
 
                     <Form {...form}>
                       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5 md:space-y-6">

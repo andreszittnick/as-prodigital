@@ -4,13 +4,12 @@ import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
-import { Mail, Phone, MapPin } from "lucide-react";
+import { Mail, Phone, MapPin, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
-import { useToast } from "@/hooks/use-toast";
 import { insertContactInquirySchema, type InsertContactInquiry } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
 
@@ -38,7 +37,8 @@ const contactInfo = [
 export default function ContactSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
-  const { toast } = useToast();
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const form = useForm<InsertContactInquiry>({
     resolver: zodResolver(insertContactInquirySchema),
@@ -58,24 +58,23 @@ export default function ContactSection() {
       const response = await apiRequest("POST", "/api/contact", data);
       return response.json();
     },
-    onSuccess: (data) => {
-      toast({
-        title: "Nachricht erfolgreich gesendet!",
-        description: data.message,
-      });
+    onSuccess: () => {
+      setIsSubmitted(true);
+      setSubmitError(null);
       form.reset();
     },
     onError: (error: any) => {
-      toast({
-        title: "Fehler beim Senden der Nachricht",
-        description: error.message || "Bitte versuchen Sie es später erneut.",
-        variant: "destructive",
-      });
+      setSubmitError(error.message || "Bitte versuchen Sie es später erneut.");
     },
   });
 
   const onSubmit = (data: InsertContactInquiry) => {
     submitMutation.mutate(data);
+  };
+
+  const handleNewInquiry = () => {
+    setIsSubmitted(false);
+    setSubmitError(null);
   };
 
   return (
@@ -103,7 +102,39 @@ export default function ContactSection() {
             transition={{ duration: 0.8 }}
           >
             <div className="bg-gradient-to-br from-slate-50 to-white p-6 sm:p-8 rounded-2xl sm:rounded-3xl shadow-lg">
+              {isSubmitted ? (
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="text-center py-8"
+                >
+                  <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle className="w-10 h-10 text-green-600" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-gray-900 mb-3">
+                    Vielen Dank für Ihre Anfrage!
+                  </h3>
+                  <p className="text-gray-600 mb-6">
+                    Ich habe Ihre Nachricht erhalten und melde mich schnellstmöglich bei Ihnen.
+                  </p>
+                  <Button
+                    variant="outline"
+                    onClick={handleNewInquiry}
+                    className="border-[#fa5219] text-[#fa5219] hover:bg-[#fa5219] hover:text-white"
+                  >
+                    Neue Anfrage stellen
+                  </Button>
+                </motion.div>
+              ) : (
+              <>
               <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mb-4 sm:mb-6">Nachricht senden</h3>
+              
+              {submitError && (
+                <div className="bg-red-50 border border-red-200 text-red-700 px-4 py-3 rounded-lg mb-4">
+                  {submitError}
+                </div>
+              )}
               
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 sm:space-y-6">
@@ -253,6 +284,8 @@ export default function ContactSection() {
                   </Button>
                 </form>
               </Form>
+              </>
+              )}
             </div>
           </motion.div>
           
