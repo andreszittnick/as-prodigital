@@ -16,7 +16,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 const videoAnalyseFormSchema = z.object({
   name: z.string().min(1, "Name ist erforderlich"),
   email: z.string().email("Bitte geben Sie eine gültige E-Mail-Adresse ein"),
-  website: z.string().url("Bitte geben Sie eine gültige Website-URL ein (z.B. https://ihre-website.de)"),
+  website: z.string().min(1, "Website ist erforderlich"),
   message: z.string().optional(),
 });
 
@@ -311,7 +311,7 @@ export default function VideoAnalyse() {
                             <FormItem>
                               <FormLabel>Website-URL *</FormLabel>
                               <FormControl>
-                                <Input type="url" placeholder="https://ihre-website.de" className="h-12 text-base" {...field} data-testid="input-website" />
+                                <Input type="text" placeholder="ihre-website.de" className="h-12 text-base" {...field} data-testid="input-website" />
                               </FormControl>
                               <FormMessage />
                             </FormItem>
