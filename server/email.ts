@@ -34,7 +34,6 @@ async function getAccessToken() {
   );
   
   const data = await response.json();
-  console.log('Gmail connection response:', JSON.stringify(data, null, 2));
   
   connectionSettings = data.items?.[0];
 
