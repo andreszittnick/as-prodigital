@@ -39,7 +39,27 @@ export default function VideoAnalyse() {
 
   const onSubmit = async (data: VideoAnalyseFormData) => {
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      const nameParts = data.name.trim().split(' ');
+      const firstName = nameParts[0] || data.name;
+      const lastName = nameParts.slice(1).join(' ') || '';
+      
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          firstName,
+          lastName,
+          email: data.email,
+          service: 'Video-Analyse',
+          message: `Website: ${data.website}${data.message ? `\n\nNachricht: ${data.message}` : ''}`,
+        }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to submit form');
+      }
       
       setIsSubmitted(true);
       toast({
