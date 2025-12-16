@@ -60,16 +60,17 @@ async function getGmailClient() {
   return google.gmail({ version: 'v1', auth: oauth2Client });
 }
 
-function createEmail(to: string, subject: string, htmlContent: string, replyTo: string): string {
+function createEmail(to: string, subject: string, htmlContent: string, replyTo: string, fromName?: string): string {
   const emailLines = [
     `To: ${to}`,
+    fromName ? `From: ${fromName}` : '',
     `Reply-To: ${replyTo}`,
     `Subject: =?UTF-8?B?${Buffer.from(subject).toString('base64')}?=`,
     'MIME-Version: 1.0',
     'Content-Type: text/html; charset=UTF-8',
     '',
     htmlContent
-  ];
+  ].filter(line => line !== '');
   
   const email = emailLines.join('\r\n');
   return Buffer.from(email).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
@@ -111,6 +112,56 @@ export async function sendContactNotification(inquiry: {
     return result.data;
   } catch (error) {
     console.error('Failed to send email:', error);
+    throw error;
+  }
+}
+
+export async function sendCustomerConfirmation(inquiry: {
+  firstName: string;
+  lastName: string;
+  email: string;
+  service: string;
+}) {
+  try {
+    const gmail = await getGmailClient();
+    
+    const htmlContent = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <h2 style="color: #19243b;">Vielen Dank für Ihre Anfrage!</h2>
+        <p>Hallo ${inquiry.firstName} ${inquiry.lastName},</p>
+        <p>vielen Dank für Ihr Interesse an unseren <strong>${inquiry.service}</strong>-Leistungen.</p>
+        <p>Ich habe Ihre Anfrage erhalten und werde mich schnellstmöglich bei Ihnen melden.</p>
+        <p>In der Zwischenzeit können Sie sich gerne auf meiner Website umsehen:</p>
+        <p><a href="https://www.as-prodigital.de" style="color: #fa5219;">www.as-prodigital.de</a></p>
+        <br/>
+        <p>Mit freundlichen Grüßen,</p>
+        <p><strong>André Szittnick</strong><br/>
+        AS-ProDigital<br/>
+        E-Mail: info@as-prodigital.de<br/>
+        Tel: 06731 8789</p>
+      </div>
+    `;
+
+    const subject = `Ihre Anfrage bei AS-ProDigital - ${inquiry.service}`;
+    const rawEmail = createEmail(
+      inquiry.email, 
+      subject, 
+      htmlContent, 
+      'info@as-prodigital.de',
+      'AS-ProDigital <info@as-prodigital.de>'
+    );
+
+    const result = await gmail.users.messages.send({
+      userId: 'me',
+      requestBody: {
+        raw: rawEmail
+      }
+    });
+
+    console.log('Customer confirmation email sent:', result.data);
+    return result.data;
+  } catch (error) {
+    console.error('Failed to send customer confirmation:', error);
     throw error;
   }
 }

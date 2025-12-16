@@ -5,7 +5,7 @@ import express from "express";
 import { storage } from "./storage";
 import { insertContactInquirySchema } from "@shared/schema";
 import { z } from "zod";
-import { sendContactNotification } from "./email";
+import { sendContactNotification, sendCustomerConfirmation } from "./email";
 
 export async function registerRoutes(app: Express): Promise<Server> {
   
@@ -18,12 +18,20 @@ export async function registerRoutes(app: Express): Promise<Server> {
       const validatedData = insertContactInquirySchema.parse(req.body);
       const inquiry = await storage.createContactInquiry(validatedData);
       
-      // Send email notification
+      // Send email notification to business
       try {
         await sendContactNotification(validatedData);
         console.log("Email notification sent for inquiry:", inquiry.id);
       } catch (emailError) {
         console.error("Failed to send email notification:", emailError);
+      }
+      
+      // Send confirmation email to customer
+      try {
+        await sendCustomerConfirmation(validatedData);
+        console.log("Customer confirmation sent to:", validatedData.email);
+      } catch (emailError) {
+        console.error("Failed to send customer confirmation:", emailError);
       }
       
       res.json({ 
