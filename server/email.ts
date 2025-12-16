@@ -1,8 +1,13 @@
-import { Resend } from 'resend';
+// Gmail Integration for sending contact form notifications
+import { google } from 'googleapis';
 
 let connectionSettings: any;
 
-async function getCredentials() {
+async function getAccessToken() {
+  if (connectionSettings && connectionSettings.settings.expires_at && new Date(connectionSettings.settings.expires_at).getTime() > Date.now()) {
+    return connectionSettings.settings.access_token;
+  }
+  
   const hostname = process.env.REPLIT_CONNECTORS_HOSTNAME;
   const xReplitToken = process.env.REPL_IDENTITY 
     ? 'repl ' + process.env.REPL_IDENTITY 
@@ -15,7 +20,7 @@ async function getCredentials() {
   }
 
   connectionSettings = await fetch(
-    'https://' + hostname + '/api/v2/connection?include_secrets=true&connector_names=resend',
+    'https://' + hostname + '/api/v2/connection?include_secrets=true&connector_names=google-mail',
     {
       headers: {
         'Accept': 'application/json',
@@ -24,18 +29,38 @@ async function getCredentials() {
     }
   ).then(res => res.json()).then(data => data.items?.[0]);
 
-  if (!connectionSettings || (!connectionSettings.settings.api_key)) {
-    throw new Error('Resend not connected');
+  const accessToken = connectionSettings?.settings?.access_token || connectionSettings.settings?.oauth?.credentials?.access_token;
+
+  if (!connectionSettings || !accessToken) {
+    throw new Error('Gmail not connected');
   }
-  return {apiKey: connectionSettings.settings.api_key, fromEmail: connectionSettings.settings.from_email};
+  return accessToken;
 }
 
-async function getResendClient() {
-  const credentials = await getCredentials();
-  return {
-    client: new Resend(credentials.apiKey),
-    fromEmail: credentials.fromEmail
-  };
+async function getGmailClient() {
+  const accessToken = await getAccessToken();
+
+  const oauth2Client = new google.auth.OAuth2();
+  oauth2Client.setCredentials({
+    access_token: accessToken
+  });
+
+  return google.gmail({ version: 'v1', auth: oauth2Client });
+}
+
+function createEmail(to: string, subject: string, htmlContent: string, replyTo: string): string {
+  const emailLines = [
+    `To: ${to}`,
+    `Reply-To: ${replyTo}`,
+    `Subject: =?UTF-8?B?${Buffer.from(subject).toString('base64')}?=`,
+    'MIME-Version: 1.0',
+    'Content-Type: text/html; charset=UTF-8',
+    '',
+    htmlContent
+  ];
+  
+  const email = emailLines.join('\r\n');
+  return Buffer.from(email).toString('base64').replace(/\+/g, '-').replace(/\//g, '_').replace(/=+$/, '');
 }
 
 export async function sendContactNotification(inquiry: {
@@ -48,7 +73,7 @@ export async function sendContactNotification(inquiry: {
   message?: string | null;
 }) {
   try {
-    const { client, fromEmail } = await getResendClient();
+    const gmail = await getGmailClient();
     
     const htmlContent = `
       <h2>Neue Kontaktanfrage von ${inquiry.firstName} ${inquiry.lastName}</h2>
@@ -60,16 +85,18 @@ export async function sendContactNotification(inquiry: {
       ${inquiry.message ? `<p><strong>Nachricht:</strong><br/>${inquiry.message}</p>` : ''}
     `;
 
-    const result = await client.emails.send({
-      from: fromEmail || 'AS ProDigital <onboarding@resend.dev>',
-      to: 'info@as-prodigital.de',
-      subject: `Neue Kontaktanfrage: ${inquiry.service} - ${inquiry.firstName} ${inquiry.lastName}`,
-      html: htmlContent,
-      replyTo: inquiry.email
+    const subject = `Neue Kontaktanfrage: ${inquiry.service} - ${inquiry.firstName} ${inquiry.lastName}`;
+    const rawEmail = createEmail('info@as-prodigital.de', subject, htmlContent, inquiry.email);
+
+    const result = await gmail.users.messages.send({
+      userId: 'me',
+      requestBody: {
+        raw: rawEmail
+      }
     });
 
-    console.log('Email sent successfully:', result);
-    return result;
+    console.log('Email sent successfully via Gmail:', result.data);
+    return result.data;
   } catch (error) {
     console.error('Failed to send email:', error);
     throw error;
