@@ -127,7 +127,7 @@ export default function HeroSectionSeoSimple() {
               transition={{ duration: 0.6, delay: 0.7 }}
             >
               <motion.button
-                onClick={() => window.location.href = '/Kontakt'}
+                onClick={() => window.location.href = '/kontakt'}
                 className="text-white px-6 py-3 text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
                 style={{
                   background: '#fa5219',

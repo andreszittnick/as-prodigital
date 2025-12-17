@@ -40,11 +40,11 @@ function Router() {
       <FloatingContactButtons />
       <Switch>
         <Route path="/" component={Home} />
-        <Route path="/Leistungen" component={Services} />
+        <Route path="/leistungen" component={Services} />
         <Route path="/ueber-mich" component={About} />
-        <Route path="/Kontakt" component={Contact} />
-        <Route path="/Webdesign" component={WebdesignAlzey} />
-        <Route path="/SEO" component={SeoAlzey} />
+        <Route path="/kontakt" component={Contact} />
+        <Route path="/webdesign" component={WebdesignAlzey} />
+        <Route path="/seo" component={SeoAlzey} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogDetail} />
         <Route path="/impressum" component={Impressum} />

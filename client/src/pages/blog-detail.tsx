@@ -61,7 +61,7 @@ export default function BlogDetail() {
         {post.tags.map((tag) => (
           <meta key={tag} property="article:tag" content={tag} />
         ))}
-        <link rel="canonical" href={`https://asprodigital.de/blog/${post.slug}`} />
+        <link rel="canonical" href={`https://www.asprodigital.de/blog/${post.slug}`} />
       </Helmet>
       <Navigation />
       

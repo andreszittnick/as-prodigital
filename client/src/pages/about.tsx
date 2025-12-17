@@ -38,10 +38,10 @@ export default function About() {
         <title>Über André Szittnick - Webdesigner & SEO-Experte aus Alzey | AS-ProDigital</title>
         <meta name="description" content="André Szittnick - Ihr Partner für professionelles Webdesign & SEO in Alzey. 5+ Jahre Erfahrung, 50+ erfolgreiche Projekte, 30+ zufriedene Kunden. Lernen Sie mich kennen!" />
         <meta name="keywords" content="André Szittnick, Webdesigner Alzey, SEO-Experte, AS-ProDigital, Über mich, Portfolio" />
-        <link rel="canonical" href="https://asprodigital.de/ueber-mich" />
+        <link rel="canonical" href="https://www.asprodigital.de/ueber-mich" />
         
         <meta property="og:type" content="profile" />
-        <meta property="og:url" content="https://asprodigital.de/ueber-mich" />
+        <meta property="og:url" content="https://www.asprodigital.de/ueber-mich" />
         <meta property="og:title" content="Über André Szittnick - Webdesigner & SEO-Experte" />
         <meta property="og:description" content="5+ Jahre Erfahrung in Webdesign & SEO. Leidenschaft für Technologie und perfekte digitale Lösungen." />
         <meta property="og:locale" content="de_DE" />

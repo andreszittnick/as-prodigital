@@ -14,18 +14,18 @@ export default function Home() {
         <title>Webdesign & SEO Alzey - AS-ProDigital André Szittnick</title>
         <meta name="description" content="AS-ProDigital bietet professionelles Webdesign und SEO-Optimierung in Alzey. Individuelle Websites, die begeistern und bei Google gefunden werden. Jetzt unverbindlich anfragen!" />
         <meta name="keywords" content="Webdesign Alzey, SEO Alzey, Webentwicklung, Suchmaschinenoptimierung, André Szittnick, AS-ProDigital, Website erstellen" />
-        <link rel="canonical" href="https://asprodigital.de/" />
+        <link rel="canonical" href="https://www.asprodigital.de/" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://asprodigital.de/" />
+        <meta property="og:url" content="https://www.asprodigital.de/" />
         <meta property="og:title" content="AS-ProDigital - Professionelles Webdesign & SEO aus Alzey" />
         <meta property="og:description" content="Individuelle Websites und SEO-Optimierung, die Ihr Unternehmen digital erfolgreich machen. Persönliche Beratung von André Szittnick." />
         <meta property="og:locale" content="de_DE" />
         
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://asprodigital.de/" />
+        <meta property="twitter:url" content="https://www.asprodigital.de/" />
         <meta property="twitter:title" content="AS-ProDigital - Professionelles Webdesign & SEO" />
         <meta property="twitter:description" content="Individuelle Websites und SEO-Optimierung aus Alzey. Persönliche Beratung und maßgeschneiderte Lösungen." />
         
@@ -40,7 +40,7 @@ export default function Home() {
               "name": "André Szittnick"
             },
             "description": "Professionelles Webdesign und SEO-Optimierung aus Alzey",
-            "url": "https://asprodigital.de",
+            "url": "https://www.asprodigital.de",
             "telephone": "+49-6731-8789",
             "email": "Info@AS-ProDigital.de",
             "address": {

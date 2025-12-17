@@ -9,10 +9,10 @@ export default function AGB() {
       <Helmet>
         <title>AGB - Allgemeine Geschäftsbedingungen | AS ProDigital</title>
         <meta name="description" content="Allgemeine Geschäftsbedingungen (AGB) von AS ProDigital - André Szittnick. Vertragsgrundlagen für Webdesign und SEO-Dienstleistungen." />
-        <link rel="canonical" href="https://asprodigital.de/agb" />
+        <link rel="canonical" href="https://www.asprodigital.de/agb" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://asprodigital.de/agb" />
+        <meta property="og:url" content="https://www.asprodigital.de/agb" />
         <meta property="og:title" content="AGB - AS ProDigital" />
         <meta property="og:description" content="Allgemeine Geschäftsbedingungen von AS ProDigital - André Szittnick" />
         <meta property="og:locale" content="de_DE" />

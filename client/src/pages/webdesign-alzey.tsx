@@ -13,10 +13,10 @@ export default function WebdesignAlzey() {
         <title>Webdesign Alzey - Moderne Websites | AS-ProDigital</title>
         <meta name="description" content="Professionelles Webdesign aus Alzey: Responsive, schnell & SEO-optimiert. Individuelle Websites, die Ihre Kunden begeistern. ✓ Kostenlose Beratung ✓ Fair & Transparent" />
         <meta name="keywords" content="Webdesign Alzey, Webentwicklung Alzey, Website erstellen Alzey, responsive Design, WordPress Alzey" />
-        <link rel="canonical" href="https://asprodigital.de/Webdesign" />
+        <link rel="canonical" href="https://www.asprodigital.de/webdesign" />
         
         <meta property="og:type" content="service" />
-        <meta property="og:url" content="https://asprodigital.de/Webdesign" />
+        <meta property="og:url" content="https://www.asprodigital.de/webdesign" />
         <meta property="og:title" content="Professionelles Webdesign Alzey - AS-ProDigital" />
         <meta property="og:description" content="Moderne, responsive Websites für Ihr Unternehmen. Individuelle Lösungen aus Alzey." />
         <meta property="og:locale" content="de_DE" />

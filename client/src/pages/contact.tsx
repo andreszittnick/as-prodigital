@@ -109,10 +109,10 @@ export default function Contact() {
         <title>Kontakt - AS-ProDigital Alzey | Kostenlose Beratung & Anfrage</title>
         <meta name="description" content="Kontaktieren Sie AS-ProDigital für professionelles Webdesign & SEO in Alzey. ✓ Kostenlose Beratung ✓ Schnelle Antwort ✓ Unverbindliches Angebot. Telefon: 06731 8789" />
         <meta name="keywords" content="Kontakt AS-ProDigital, Webdesign Anfrage Alzey, SEO Beratung, André Szittnick Kontakt" />
-        <link rel="canonical" href="https://asprodigital.de/Kontakt" />
+        <link rel="canonical" href="https://www.asprodigital.de/kontakt" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://asprodigital.de/Kontakt" />
+        <meta property="og:url" content="https://www.asprodigital.de/kontakt" />
         <meta property="og:title" content="Kontakt - AS-ProDigital Alzey" />
         <meta property="og:description" content="Jetzt unverbindlich anfragen! Professionelles Webdesign & SEO aus Alzey." />
         <meta property="og:locale" content="de_DE" />

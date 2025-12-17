@@ -12,7 +12,7 @@ export default function Services() {
       title: "Professionelles Webdesign",
       subtitle: "Moderne Websites, die überzeugen",
       description: "Maßgeschneiderte Websites für Ihren digitalen Erfolg in Alzey und Umgebung. Responsive, schnell und konversionsstark.",
-      link: "/Webdesign",
+      link: "/webdesign",
       features: [
         "Responsive Design für alle Endgeräte",
         "SEO-optimierte Struktur von Anfang an",
@@ -35,7 +35,7 @@ Mit bewährten Technologien und modernen Frameworks entstehen Websites, die schn
       title: "Nachhaltige SEO-Optimierung",
       subtitle: "Mehr Sichtbarkeit, mehr Kunden",
       description: "Professionelle Suchmaschinenoptimierung für bessere Rankings und mehr organischen Traffic aus Alzey und der Region.",
-      link: "/SEO",
+      link: "/seo",
       features: [
         "Umfassende Keyword-Analyse & Recherche",
         "OnPage-Optimierung für bessere Rankings",
@@ -61,10 +61,10 @@ Besonders für lokale Unternehmen in Alzey und Umgebung ist Local SEO entscheide
         <title>Webdesign & SEO Leistungen Alzey | AS-ProDigital</title>
         <meta name="description" content="Professionelle Webdesign & SEO Dienstleistungen aus Alzey. ✓ Moderne Websites ✓ Suchmaschinenoptimierung ✓ Local SEO ✓ Responsive Design. Ihr digitaler Erfolg!" />
         <meta name="keywords" content="Webdesign Alzey, SEO Alzey, Webentwicklung, Suchmaschinenoptimierung, Local SEO, Responsive Design, Online Marketing Alzey" />
-        <link rel="canonical" href="https://asprodigital.de/Leistungen" />
+        <link rel="canonical" href="https://www.asprodigital.de/leistungen" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://asprodigital.de/Leistungen" />
+        <meta property="og:url" content="https://www.asprodigital.de/leistungen" />
         <meta property="og:title" content="Webdesign & SEO Leistungen Alzey | AS-ProDigital" />
         <meta property="og:description" content="Professionelle Webdesign & SEO Dienstleistungen für Ihren digitalen Erfolg in Alzey und Umgebung." />
         <meta property="og:locale" content="de_DE" />
@@ -311,7 +311,7 @@ Besonders für lokale Unternehmen in Alzey und Umgebung ist Local SEO entscheide
               <p className="text-lg md:text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
                 Lassen Sie uns gemeinsam Ihre digitale Präsenz auf das nächste Level bringen. Kontaktieren Sie mich für ein unverbindliches Erstgespräch.
               </p>
-              <Link href="/Kontakt">
+              <Link href="/kontakt">
                 <motion.button
                   className="bg-gradient-to-r from-orange-500 to-orange-600 text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 inline-flex items-center gap-2"
                   whileHover={{ scale: 1.05 }}

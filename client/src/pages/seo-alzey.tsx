@@ -13,10 +13,10 @@ export default function SeoAlzey() {
         <title>SEO Alzey - Suchmaschinenoptimierung | AS-ProDigital</title>
         <meta name="description" content="Professionelle SEO-Optimierung aus Alzey: Bessere Google-Rankings, mehr organischer Traffic. ✓ Local SEO ✓ On-Page & Off-Page ✓ Transparente Ergebnisse" />
         <meta name="keywords" content="SEO Alzey, Suchmaschinenoptimierung Alzey, Google Ranking, Local SEO, SEO Beratung Alzey" />
-        <link rel="canonical" href="https://asprodigital.de/SEO" />
+        <link rel="canonical" href="https://www.asprodigital.de/seo" />
         
         <meta property="og:type" content="service" />
-        <meta property="og:url" content="https://asprodigital.de/SEO" />
+        <meta property="og:url" content="https://www.asprodigital.de/seo" />
         <meta property="og:title" content="SEO Alzey - Professionelle Suchmaschinenoptimierung" />
         <meta property="og:description" content="Erreichen Sie Top-Rankings bei Google. Professionelle SEO-Optimierung aus Alzey mit messbaren Erfolgen." />
         <meta property="og:locale" content="de_DE" />

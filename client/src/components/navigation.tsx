@@ -59,10 +59,10 @@ export default function Navigation() {
               onMouseEnter={() => setIsServicesHovered(true)}
               onMouseLeave={() => setIsServicesHovered(false)}
             >
-              <Link href="/Leistungen">
+              <Link href="/leistungen">
                 <span
                   className={`flex items-center transition-colors duration-300 cursor-pointer ${
-                    location === "/Leistungen" 
+                    location === "/leistungen" 
                       ? "text-[#fa5219] font-semibold" 
                       : "text-slate-600 hover:text-[#fa5219]"
                   }`}
@@ -89,14 +89,14 @@ export default function Navigation() {
                       {[
                         { 
                           name: "Webdesign", 
-                          href: "/Webdesign",
+                          href: "/webdesign",
                           description: "Moderne, responsive Websites",
                           icon: Monitor,
                           color: "text-[#19243b]"
                         },
                         { 
                           name: "SEO", 
-                          href: "/SEO",
+                          href: "/seo",
                           description: "Suchmaschinenoptimierung",
                           icon: Search,
                           color: "text-[#fa5219]"
@@ -165,7 +165,7 @@ export default function Navigation() {
               </motion.button>
             </Link>
             
-            <Link href="/Kontakt">
+            <Link href="/kontakt">
               <motion.button
                 className="text-white px-4 py-2 lg:px-6 lg:py-2 text-sm lg:text-base rounded-full font-medium hover:shadow-lg transition-all duration-300 bg-[#19243b]"
                 whileHover={{ scale: 1.05 }}
@@ -204,11 +204,11 @@ export default function Navigation() {
               {/* Mobile Services Dropdown */}
               <div>
                 <div className="flex items-center justify-between py-2">
-                  <Link href="/Leistungen">
+                  <Link href="/leistungen">
                     <span
                       onClick={() => setIsOpen(false)}
                       className={`text-lg transition-colors duration-300 text-left cursor-pointer ${
-                        location === "/Leistungen" 
+                        location === "/leistungen" 
                           ? "text-[#fa5219] font-semibold" 
                           : "text-slate-700 hover:text-[#fa5219]"
                       }`}
@@ -242,13 +242,13 @@ export default function Navigation() {
                       {[
                         { 
                           name: "Webdesign", 
-                          href: "/Webdesign",
+                          href: "/webdesign",
                           icon: Monitor,
                           color: "text-[#19243b]"
                         },
                         { 
                           name: "SEO", 
-                          href: "/SEO",
+                          href: "/seo",
                           icon: Search,
                           color: "text-[#fa5219]"
                         }
@@ -313,7 +313,7 @@ export default function Navigation() {
                 </motion.button>
               </Link>
               
-              <Link href="/Kontakt">
+              <Link href="/kontakt">
                 <motion.button
                   onClick={() => setIsOpen(false)}
                   className="w-full text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 mt-2"

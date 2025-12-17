@@ -36,7 +36,7 @@ export default function Blog() {
         <meta property="og:title" content="Blog & Ratgeber - Webdesign & SEO Tipps | AS ProDigital" />
         <meta property="og:description" content="Praktische Tipps, Anleitungen und Insights zu Webdesign, SEO und digitalem Marketing." />
         <meta property="og:type" content="website" />
-        <link rel="canonical" href="https://asprodigital.de/blog" />
+        <link rel="canonical" href="https://www.asprodigital.de/blog" />
       </Helmet>
       <Navigation />
       
