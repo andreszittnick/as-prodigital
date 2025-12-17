@@ -1,9 +1,4 @@
-# robots.txt für AS-ProDigital
 User-agent: *
 Allow: /
 
-# Sitemap
-Sitemap: https://asprodigital.de/sitemap.xml
-
-# Crawl-Delay (optional, für höfliches Crawling)
-Crawl-delay: 1
+Sitemap: https://www.asprodigital.de/sitemap.xml

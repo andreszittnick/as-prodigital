@@ -1,140 +1,141 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  
-  <!-- Hauptseiten -->
   <url>
-    <loc>https://asprodigital.de/</loc>
-    <lastmod>2025-01-26</lastmod>
+    <loc>https://www.asprodigital.de/</loc>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/Leistungen</loc>
-    <lastmod>2025-01-26</lastmod>
+    <loc>https://www.asprodigital.de/leistungen</loc>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/Webdesign</loc>
-    <lastmod>2025-01-26</lastmod>
+    <loc>https://www.asprodigital.de/webdesign</loc>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/SEO</loc>
-    <lastmod>2025-01-26</lastmod>
+    <loc>https://www.asprodigital.de/seo</loc>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/ueber-mich</loc>
-    <lastmod>2025-01-26</lastmod>
+    <loc>https://www.asprodigital.de/ueber-mich</loc>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/Kontakt</loc>
-    <lastmod>2025-01-26</lastmod>
+    <loc>https://www.asprodigital.de/kontakt</loc>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Blog -->
   <url>
-    <loc>https://asprodigital.de/blog</loc>
-    <lastmod>2025-01-26</lastmod>
+    <loc>https://www.asprodigital.de/video-analyse</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.asprodigital.de/blog</loc>
+    <lastmod>2025-12-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-  
-  <!-- Blog-Posts -->
   <url>
-    <loc>https://asprodigital.de/blog/responsive-webdesign-2025</loc>
+    <loc>https://www.asprodigital.de/blog/responsive-webdesign-2025</loc>
     <lastmod>2025-01-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/blog/website-ladezeit-optimieren</loc>
+    <loc>https://www.asprodigital.de/blog/website-ladezeit-optimieren</loc>
     <lastmod>2025-01-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/blog/webdesign-kosten-2025</loc>
+    <loc>https://www.asprodigital.de/blog/webdesign-kosten-2025</loc>
     <lastmod>2025-01-05</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/blog/ux-design-prinzipien</loc>
+    <loc>https://www.asprodigital.de/blog/ux-design-prinzipien</loc>
     <lastmod>2024-12-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/blog/farbpsychologie-webdesign</loc>
+    <loc>https://www.asprodigital.de/blog/farbpsychologie-webdesign</loc>
     <lastmod>2024-12-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/blog/wordpress-vs-custom-code</loc>
+    <loc>https://www.asprodigital.de/blog/wordpress-vs-custom-code</loc>
     <lastmod>2024-12-15</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/blog/local-seo-2025</loc>
+    <loc>https://www.asprodigital.de/blog/local-seo-2025</loc>
     <lastmod>2025-01-12</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/blog/on-page-seo-checkliste</loc>
+    <loc>https://www.asprodigital.de/blog/on-page-seo-checkliste</loc>
     <lastmod>2025-01-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/blog/backlinks-aufbauen-strategien</loc>
+    <loc>https://www.asprodigital.de/blog/backlinks-aufbauen-strategien</loc>
     <lastmod>2025-01-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/blog/core-web-vitals-optimieren</loc>
+    <loc>https://www.asprodigital.de/blog/core-web-vitals-optimieren</loc>
     <lastmod>2024-12-22</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/blog/keyword-recherche-anleitung</loc>
+    <loc>https://www.asprodigital.de/blog/keyword-recherche-anleitung</loc>
     <lastmod>2024-12-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
   <url>
-    <loc>https://asprodigital.de/blog/google-analytics-4-einstieg</loc>
+    <loc>https://www.asprodigital.de/blog/google-analytics-4-einstieg</loc>
     <lastmod>2024-12-10</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  
+  <url>
+    <loc>https://www.asprodigital.de/datenschutz</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.asprodigital.de/impressum</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.asprodigital.de/agb</loc>
+    <lastmod>2025-12-16</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
