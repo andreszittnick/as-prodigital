@@ -16,6 +16,7 @@ import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "
 const videoAnalyseFormSchema = z.object({
   name: z.string().min(1, "Name ist erforderlich"),
   email: z.string().email("Bitte geben Sie eine gültige E-Mail-Adresse ein"),
+  phone: z.string().min(1, "Telefonnummer ist erforderlich"),
   website: z.string().min(1, "Website ist erforderlich"),
   message: z.string().optional(),
 });
@@ -31,6 +32,7 @@ export default function VideoAnalyse() {
     defaultValues: {
       name: "",
       email: "",
+      phone: "",
       website: "",
       message: ""
     }
@@ -51,8 +53,9 @@ export default function VideoAnalyse() {
           firstName,
           lastName,
           email: data.email,
+          phone: data.phone,
           service: 'Video-Analyse',
-          message: `Website: ${data.website}${data.message ? `\n\nNachricht: ${data.message}` : ''}`,
+          message: `Website: ${data.website}\nTelefon: ${data.phone}${data.message ? `\n\nNachricht: ${data.message}` : ''}`,
         }),
       });
 
@@ -223,6 +226,20 @@ export default function VideoAnalyse() {
                                 <FormLabel className="text-sm">E-Mail *</FormLabel>
                                 <FormControl>
                                   <Input type="email" placeholder="ihre@email.de" className="h-10 md:h-11 text-base" {...field} data-testid="input-email" />
+                                </FormControl>
+                                <FormMessage />
+                              </FormItem>
+                            )}
+                          />
+
+                          <FormField
+                            control={form.control}
+                            name="phone"
+                            render={({ field }) => (
+                              <FormItem>
+                                <FormLabel className="text-sm">Telefonnummer *</FormLabel>
+                                <FormControl>
+                                  <Input type="tel" placeholder="06731 1234567" className="h-10 md:h-11 text-base" {...field} data-testid="input-phone" />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
