@@ -185,7 +185,7 @@ export const blogPosts: BlogPost[] = [
     publishedAt: "2025-02-20",
     readTime: 7,
     tags: ["Landing Page", "Website", "Webdesign", "Conversion", "Online-Präsenz"],
-    metaDescription: "Landing Page oder Website – was ist die richtige Wahl für Ihr Unternehmen? Wir erklären die Unterschiede, Vor- und Nachteile und wann welche Lösung sinnvoller ist.",
+    metaDescription: "Landing Page oder Website – was ist die richtige Wahl? Wir erklären Unterschiede, Vor- und Nachteile und wann welche Lösung sinnvoller ist.",
     metaKeywords: ["Landing Page", "Website erstellen", "Webdesign", "Landing Page vs Website", "Online-Präsenz aufbauen"]
   },
   {

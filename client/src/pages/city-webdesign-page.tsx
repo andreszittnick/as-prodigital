@@ -61,7 +61,7 @@ export default function CityWebdesignPage() {
   return (
     <>
       <Helmet>
-        <title>{`Webdesign ${city.name} - Professionelle Websites | AS-ProDigital`}</title>
+        <title>{`Webdesign ${city.name} | Website & SEO | AS-ProDigital`}</title>
         <meta name="description" content={city.webdesignDescription} />
         <meta name="keywords" content={city.webdesignKeywords.join(", ")} />
         <link rel="canonical" href={canonical} />

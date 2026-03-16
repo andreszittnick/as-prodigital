@@ -61,7 +61,7 @@ export default function CitySeoPage() {
   return (
     <>
       <Helmet>
-        <title>{`SEO ${city.name} - Suchmaschinenoptimierung | AS-ProDigital`}</title>
+        <title>{`SEO ${city.name} | Google-Optimierung | AS-ProDigital`}</title>
         <meta name="description" content={city.seoDescription} />
         <meta name="keywords" content={city.seoKeywords.join(", ")} />
         <link rel="canonical" href={canonical} />
