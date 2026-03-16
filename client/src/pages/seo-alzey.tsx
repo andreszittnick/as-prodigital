@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/navigation";
 import HeroSectionSeoSimple from "@/components/hero-section-seo-simple";
 import SeoContentSection from "@/components/seo-content-section";
+import CityLinksSection from "@/components/city-links-section";
 import ContactSectionWebdesign from "@/components/contact-section-webdesign";
 import Footer from "@/components/footer";
 
@@ -57,7 +58,8 @@ export default function SeoAlzey() {
       <Navigation />
       <HeroSectionSeoSimple />
       <SeoContentSection />
-      
+      <CityLinksSection service="seo" />
+
       {/* Contact Section */}
       <ContactSectionWebdesign />
 

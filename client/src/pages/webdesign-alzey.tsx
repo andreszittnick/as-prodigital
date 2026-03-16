@@ -2,6 +2,7 @@ import { Helmet } from "react-helmet-async";
 import Navigation from "@/components/navigation";
 import HeroSectionWebdesign from "@/components/hero-section-webdesign";
 import WebdesignContentSection from "@/components/webdesign-content-section";
+import CityLinksSection from "@/components/city-links-section";
 import ContactSectionWebdesign from "@/components/contact-section-webdesign";
 import Footer from "@/components/footer";
 
@@ -57,7 +58,8 @@ export default function WebdesignAlzey() {
       <Navigation />
       <HeroSectionWebdesign />
       <WebdesignContentSection />
-      
+      <CityLinksSection service="webdesign" />
+
       {/* Contact Section */}
       <ContactSectionWebdesign />
 
