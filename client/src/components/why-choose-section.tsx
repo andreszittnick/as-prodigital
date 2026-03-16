@@ -6,8 +6,8 @@ import { DollarSign, Users, Zap } from "lucide-react";
 const benefits = [
   {
     icon: DollarSign,
-    title: "Faire Direktpreise",
-    description: "Direkte Zusammenarbeit direkt ohne Zwischenhändler - transparente, faire Preise für Premium-Qualität.",
+    title: "Faire Preise",
+    description: "Direkte Zusammenarbeit ohne Zwischenhändler - transparente, faire Preise für Premium-Qualität.",
     colorClass: "brand-gradient"
   },
   {
