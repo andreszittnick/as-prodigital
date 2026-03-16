@@ -9,7 +9,7 @@ export default function NotFound() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Helmet>
-        <title>Seite nicht gefunden - 404 | AS ProDigital</title>
+        <title>Seite nicht gefunden – 404 | AS-ProDigital</title>
         <meta name="robots" content="noindex, nofollow" />
       </Helmet>
       <Navigation />

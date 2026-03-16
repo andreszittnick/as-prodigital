@@ -167,9 +167,9 @@ Besonders für lokale Unternehmen in Alzey und Umgebung ist Local SEO entscheide
 
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-slate-900 mb-6" data-testid="heading-services">
                 <span className="block mb-2">
-                  <span className="text-slate-900">Meine </span>
-                  <span className="gradient-text">Leistungen</span>
+                  <span className="gradient-text">Webdesign & SEO</span>
                 </span>
+                <span className="block text-slate-900">aus Alzey</span>
               </h1>
               
               <p className="text-lg sm:text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">

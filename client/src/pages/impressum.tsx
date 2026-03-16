@@ -7,14 +7,14 @@ export default function Impressum() {
   return (
     <>
       <Helmet>
-        <title>Impressum - AS ProDigital | André Szittnick</title>
-        <meta name="description" content="Impressum von AS ProDigital - André Szittnick. Angaben gemäß § 5 TMG, Kontaktdaten und rechtliche Hinweise." />
+        <title>Impressum – AS-ProDigital | André Szittnick</title>
+        <meta name="description" content="Impressum von AS-ProDigital – André Szittnick. Angaben gemäß § 5 TMG, Kontaktdaten und rechtliche Hinweise." />
         <link rel="canonical" href="https://www.asprodigital.de/impressum" />
         
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.asprodigital.de/impressum" />
-        <meta property="og:title" content="Impressum - AS ProDigital" />
-        <meta property="og:description" content="Impressum und rechtliche Angaben von AS ProDigital - André Szittnick" />
+        <meta property="og:title" content="Impressum – AS-ProDigital" />
+        <meta property="og:description" content="Impressum und rechtliche Angaben von AS-ProDigital – André Szittnick" />
         <meta property="og:locale" content="de_DE" />
       </Helmet>
       

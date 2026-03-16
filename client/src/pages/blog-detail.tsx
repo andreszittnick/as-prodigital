@@ -19,7 +19,7 @@ export default function BlogDetail() {
     return (
       <div className="min-h-screen bg-gray-50">
         <Helmet>
-          <title>Artikel nicht gefunden | AS ProDigital Blog</title>
+          <title>Artikel nicht gefunden | AS-ProDigital Blog</title>
           <meta name="robots" content="noindex, nofollow" />
         </Helmet>
         <Navigation />
@@ -48,7 +48,7 @@ export default function BlogDetail() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Helmet>
-        <title>{post.title} | AS ProDigital Blog</title>
+        <title>{post.title} | AS-ProDigital Blog</title>
         <meta name="description" content={post.metaDescription} />
         <meta name="keywords" content={post.metaKeywords.join(', ')} />
         <meta name="author" content={post.author} />

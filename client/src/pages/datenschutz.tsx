@@ -7,14 +7,14 @@ export default function Datenschutz() {
   return (
     <>
       <Helmet>
-        <title>Datenschutzerklärung - AS ProDigital | André Szittnick</title>
-        <meta name="description" content="Datenschutzerklärung von AS ProDigital - André Szittnick. Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO." />
+        <title>Datenschutzerklärung – AS-ProDigital | André Szittnick</title>
+        <meta name="description" content="Datenschutzerklärung von AS-ProDigital – André Szittnick. Informationen zur Verarbeitung personenbezogener Daten gemäß DSGVO." />
         <link rel="canonical" href="https://www.asprodigital.de/datenschutz" />
         
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.asprodigital.de/datenschutz" />
-        <meta property="og:title" content="Datenschutzerklärung - AS ProDigital" />
-        <meta property="og:description" content="Datenschutzerklärung und Informationen zur Datenverarbeitung von AS ProDigital" />
+        <meta property="og:title" content="Datenschutzerklärung – AS-ProDigital" />
+        <meta property="og:description" content="Datenschutzerklärung und Informationen zur Datenverarbeitung von AS-ProDigital" />
         <meta property="og:locale" content="de_DE" />
       </Helmet>
       

@@ -12,8 +12,8 @@ export default function WebdesignAlzey() {
   return (
     <>
       <Helmet>
-        <title>Webdesign - Professionelle Websites | AS-ProDigital</title>
-        <meta name="description" content="Professionelles Webdesign von AS-ProDigital: Individuelle, responsive und SEO-optimierte Websites, die Kunden begeistern. ✓ Persönliche Beratung ✓ Fair & Transparent ✓ Schnelle Umsetzung" />
+        <title>Professionelles Webdesign | AS-ProDigital André Szittnick</title>
+        <meta name="description" content="Professionelles Webdesign – individuelle, responsive Websites, die Kunden gewinnen. ✓ Persönliche Beratung ✓ Fair & Transparent ✓ Schnelle Umsetzung." />
         <meta name="keywords" content="Webdesign, Webentwicklung, Website erstellen lassen, professionelle Website, responsive Webdesign, SEO-optimierte Website" />
         <link rel="canonical" href="https://www.asprodigital.de/webdesign" />
         
