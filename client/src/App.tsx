@@ -15,8 +15,8 @@ import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import WebdesignAlzey from "@/pages/webdesign-alzey";
 import SeoAlzey from "@/pages/seo-alzey";
-import CityWebdesignPage from "@/pages/city-webdesign-page";
-import CitySeoPage from "@/pages/city-seo-page";
+import RichCityWebdesignPage from "@/pages/rich-city-webdesign-page";
+import RichCitySeoPage from "@/pages/rich-city-seo-page";
 import SeoAlzeyLanding from "@/pages/seo-alzey-landing";
 import Blog from "@/pages/blog";
 import BlogDetail from "@/pages/blog-detail";
@@ -48,20 +48,20 @@ function Router() {
         <Route path="/kontakt" component={Contact} />
         <Route path="/webdesign" component={WebdesignAlzey} />
         <Route path="/seo" component={SeoAlzey} />
-        <Route path="/webdesign-alzey" component={CityWebdesignPage} />
-        <Route path="/webdesign-worms" component={CityWebdesignPage} />
-        <Route path="/webdesign-kaiserslautern" component={CityWebdesignPage} />
-        <Route path="/webdesign-bingen" component={CityWebdesignPage} />
-        <Route path="/webdesign-bad-kreuznach" component={CityWebdesignPage} />
-        <Route path="/webdesign-ingelheim" component={CityWebdesignPage} />
-        <Route path="/webdesign-mannheim" component={CityWebdesignPage} />
+        <Route path="/webdesign-alzey" component={RichCityWebdesignPage} />
+        <Route path="/webdesign-worms" component={RichCityWebdesignPage} />
+        <Route path="/webdesign-kaiserslautern" component={RichCityWebdesignPage} />
+        <Route path="/webdesign-bingen" component={RichCityWebdesignPage} />
+        <Route path="/webdesign-bad-kreuznach" component={RichCityWebdesignPage} />
+        <Route path="/webdesign-ingelheim" component={RichCityWebdesignPage} />
+        <Route path="/webdesign-mannheim" component={RichCityWebdesignPage} />
         <Route path="/seo-alzey" component={SeoAlzeyLanding} />
-        <Route path="/seo-worms" component={CitySeoPage} />
-        <Route path="/seo-kaiserslautern" component={CitySeoPage} />
-        <Route path="/seo-bingen" component={CitySeoPage} />
-        <Route path="/seo-bad-kreuznach" component={CitySeoPage} />
-        <Route path="/seo-ingelheim" component={CitySeoPage} />
-        <Route path="/seo-mannheim" component={CitySeoPage} />
+        <Route path="/seo-worms" component={RichCitySeoPage} />
+        <Route path="/seo-kaiserslautern" component={RichCitySeoPage} />
+        <Route path="/seo-bingen" component={RichCitySeoPage} />
+        <Route path="/seo-bad-kreuznach" component={RichCitySeoPage} />
+        <Route path="/seo-ingelheim" component={RichCitySeoPage} />
+        <Route path="/seo-mannheim" component={RichCitySeoPage} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogDetail} />
         <Route path="/impressum" component={Impressum} />
