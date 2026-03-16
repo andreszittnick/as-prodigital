@@ -9,6 +9,7 @@ import {
 import { useState } from "react";
 import Navigation from "@/components/navigation";
 import Footer from "@/components/footer";
+import CityLinksSection from "@/components/city-links-section";
 import { Button } from "@/components/ui/button";
 import andreImage from "@assets/Andre-Szittnick_Bild_1765840488630.webp";
 
@@ -554,6 +555,9 @@ export default function SeoAlzeyLanding() {
             </div>
           </div>
         </section>
+
+        {/* ── KARTE + STÄDTELINKS ── */}
+        <CityLinksSection />
 
         {/* ── FINALER CTA ── */}
         <section className="py-14 bg-[#19243b]">

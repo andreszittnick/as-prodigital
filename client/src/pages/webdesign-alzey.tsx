@@ -58,7 +58,7 @@ export default function WebdesignAlzey() {
       <Navigation />
       <HeroSectionWebdesign />
       <WebdesignContentSection />
-      <CityLinksSection service="webdesign" />
+      <CityLinksSection />
 
       {/* Contact Section */}
       <ContactSectionWebdesign />

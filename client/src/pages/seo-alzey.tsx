@@ -58,7 +58,7 @@ export default function SeoAlzey() {
       <Navigation />
       <HeroSectionSeoSimple />
       <SeoContentSection />
-      <CityLinksSection service="seo" />
+      <CityLinksSection />
 
       {/* Contact Section */}
       <ContactSectionWebdesign />
