@@ -1,135 +1,125 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Palette, Search, TrendingUp, Check } from "lucide-react";
-
-const services = [
-  {
-    icon: Palette,
-    title: "Webdesign",
-    description: "Ich gestalte Ihre Website so, dass sie Ihre Marke authentisch widerspiegelt und Ihre Besucher begeistert. Jede Seite entsteht in enger Abstimmung mit Ihnen – modern, klar und für alle Geräte optimiert.",
-    features: ["Responsive Design", "UX/UI Optimierung", "Performance-Fokus"],
-    colorClass: "brand-gradient"
-  },
-  {
-    icon: Search,
-    title: "SEO-Setup",
-    description: "Ich kümmere mich darum, dass Ihre Website die wichtigsten SEO-Grundlagen erfüllt – von der technischen Struktur bis zu schnellen Ladezeiten. So legen wir den Grundstein dafür, dass Sie online sichtbar werden und mehr Menschen Ihre Seite finden.",
-    features: ["Keyword-Recherche", "Technisches SEO", "Content-Strategie"],
-    colorClass: "brand-blue"
-  },
-  {
-    icon: TrendingUp,
-    title: "SEO-Management",
-    description: "Ich optimiere Ihre Website fortlaufend, damit sie langfristig sichtbar bleibt und wächst. Durch regelmäßige Analysen, neue Inhalte und gezielte Anpassungen stärken wir Ihr Ranking bei Google – nachhaltig, transparent und auf Ihre Ziele abgestimmt.",
-    features: ["Laufende Analyse", "Content-Pflege", "Strategische Weiterentwicklung"],
-    colorClass: "brand-gradient"
-  }
-];
+import { Link } from "wouter";
+import { Palette, Search, ArrowRight, Check } from "lucide-react";
 
 export default function ServicesSection() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
+  const services = [
+    {
+      icon: Palette,
+      title: "Webdesign",
+      subtitle: "Professionelle Websites, die überzeugen",
+      description: "Ich gestalte Ihre Website so, dass sie Ihre Marke authentisch widerspiegelt und Besucher begeistert. Individuell, modern und für alle Geräte optimiert – immer mit SEO als fester Grundlage.",
+      features: ["Individuelles Design – kein Template", "Responsive für alle Geräte", "SEO von Anfang an eingebaut", "Schnelle Ladezeiten"],
+      href: "/webdesign",
+      bg: "bg-white dark:bg-gray-800",
+      iconBg: "bg-[#fa5219]",
+      accentColor: "text-[#fa5219]",
+      borderHover: "hover:border-[#fa5219]/40",
+      cta: "Webdesign entdecken",
+    },
+    {
+      icon: Search,
+      title: "SEO-Optimierung",
+      subtitle: "Besser gefunden werden bei Google",
+      description: "Mit gezielter Suchmaschinenoptimierung bringe ich Ihr Unternehmen auf Seite 1 bei Google – nachhaltig, ohne Tricks und mit persönlicher Betreuung. Kein Linkaufbau, nur sicheres On-Page & Local SEO.",
+      features: ["Local SEO für Ihre Region", "Technisches SEO & Ladezeiten", "Keyword-Strategie & Content", "Regelmäßige Reports"],
+      href: "/seo",
+      bg: "bg-[#19243b] dark:bg-[#19243b]",
+      iconBg: "bg-[#fa5219]",
+      accentColor: "text-[#fa5219]",
+      borderHover: "hover:border-[#fa5219]/40",
+      cta: "SEO entdecken",
+      dark: true,
+    },
+  ];
+
   return (
-    <section id="services" className="py-16 md:py-20 bg-white overflow-x-hidden" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div 
+    <section id="services" className="py-16 md:py-24 bg-white dark:bg-gray-900 overflow-x-hidden" ref={ref}>
+      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Heading */}
+        <motion.div
           className="text-center mb-12 md:mb-16"
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 40 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.7 }}
         >
-          <h2 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4 md:mb-6">
-            Meine <span className="gradient-text">Leistungen</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#19243b] dark:text-white mb-4">
+            Meine <span className="text-[#fa5219]">Leistungen</span>
           </h2>
-          <p className="text-base md:text-lg lg:text-xl text-slate-600 max-w-3xl mx-auto">
-            Ich schaffe Sichtbarkeit und Vertrauen mit modernem Webdesign und wirkungsvoller SEO-Optimierung.
+          <p className="text-base md:text-lg text-slate-600 dark:text-gray-300 max-w-2xl mx-auto">
+            Zwei Leistungen, ein Ziel: mehr Sichtbarkeit und mehr Kunden für Ihr Unternehmen.
           </p>
         </motion.div>
-        
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-          {services.map((service, index) => (
+
+        {/* 2 Kacheln */}
+        <div className="grid md:grid-cols-2 gap-6 md:gap-8">
+          {services.map((s, index) => (
             <motion.div
-              key={service.title}
-              className="group relative bg-gradient-to-br from-white to-slate-50 p-8 md:p-8 rounded-2xl md:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 h-full"
-              initial={{ opacity: 0, y: 50 }}
+              key={s.title}
+              initial={{ opacity: 0, y: 40 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ y: -8 }}
-              data-testid={`service-card-${service.title.toLowerCase().replace(/\s+/g, '-')}`}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              whileHover={{ y: -6 }}
+              className="group"
             >
-              <div className="absolute inset-0 bg-[#fa5219]/5 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              <div className="relative h-full flex flex-col">
-                <motion.div 
-                  className={`w-16 h-16 md:w-18 md:h-18 ${service.colorClass} rounded-2xl flex items-center justify-center mb-6`}
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  transition={{ duration: 0.3 }}
-                >
-                  <service.icon className="text-white w-8 h-8 md:w-9 md:h-9" />
-                </motion.div>
-                
-                <h3 className="text-2xl md:text-2xl font-bold text-slate-900 mb-4">{service.title}</h3>
-                <p className="text-base md:text-base text-slate-600 mb-6 leading-relaxed flex-grow">
-                  {service.description}
-                </p>
-                
-                <ul className="space-y-2 text-sm text-slate-600 mt-auto">
-                  {service.features.map((feature, featureIndex) => (
-                    <motion.li 
-                      key={feature}
-                      className="flex items-center"
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={isInView ? { opacity: 1, x: 0 } : {}}
-                      transition={{ duration: 0.4, delay: (index * 0.2) + (featureIndex * 0.1) + 0.5 }}
-                    >
-                      <Check className="text-[#fa5219] w-4 h-4 mr-2" />
-                      {feature}
-                    </motion.li>
-                  ))}
-                </ul>
-              </div>
+              <Link href={s.href}>
+                <div className={`relative rounded-3xl border-2 border-transparent ${s.borderHover} ${s.bg} p-8 md:p-10 h-full flex flex-col cursor-pointer transition-all duration-300 shadow-lg hover:shadow-2xl`}>
+
+                  {/* Icon */}
+                  <div className={`${s.iconBg} w-14 h-14 rounded-2xl flex items-center justify-center mb-6`}>
+                    <s.icon className="w-7 h-7 text-white" />
+                  </div>
+
+                  {/* Title & Subtitle */}
+                  <h3 className={`text-2xl md:text-3xl font-bold mb-1 ${s.dark ? "text-white" : "text-[#19243b] dark:text-white"}`}>
+                    {s.title}
+                  </h3>
+                  <p className={`text-sm font-semibold mb-4 ${s.accentColor}`}>
+                    {s.subtitle}
+                  </p>
+
+                  {/* Description */}
+                  <p className={`text-base leading-relaxed mb-6 flex-grow ${s.dark ? "text-gray-300" : "text-gray-600 dark:text-gray-300"}`}>
+                    {s.description}
+                  </p>
+
+                  {/* Feature List */}
+                  <ul className="space-y-2 mb-8">
+                    {s.features.map((f) => (
+                      <li key={f} className={`flex items-center gap-2 text-sm ${s.dark ? "text-gray-300" : "text-gray-600 dark:text-gray-300"}`}>
+                        <Check className={`w-4 h-4 flex-shrink-0 ${s.accentColor}`} />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* CTA */}
+                  <div className={`flex items-center gap-2 font-semibold text-sm ${s.accentColor} group-hover:gap-3 transition-all duration-200`}>
+                    {s.cta} <ArrowRight className="w-4 h-4" />
+                  </div>
+
+                </div>
+              </Link>
             </motion.div>
           ))}
         </div>
-        
-        {/* CTA Button */}
-        <motion.div
-          className="text-center mt-12 md:mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 1.0 }}
+
+        {/* Subtext */}
+        <motion.p
+          className="text-center text-sm text-gray-400 dark:text-gray-500 mt-8"
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.5 }}
         >
-          <motion.button
-            onClick={() => {
-              const contactSection = document.getElementById("contact");
-              if (contactSection) {
-                contactSection.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
-            className="text-white px-6 py-3 text-base rounded-full font-semibold hover:shadow-xl transition-all duration-500 ease-in-out"
-            style={{
-              background: '#fa5219',
-              border: '2px solid transparent',
-              transition: 'background 0.5s ease-in-out, color 0.5s ease-in-out, border-color 0.5s ease-in-out, box-shadow 0.3s ease'
-            }}
-            onMouseEnter={(e) => {
-              e.currentTarget.style.background = 'transparent';
-              e.currentTarget.style.color = '#fa5219';
-              e.currentTarget.style.borderColor = '#fa5219';
-            }}
-            onMouseLeave={(e) => {
-              e.currentTarget.style.background = '#fa5219';
-              e.currentTarget.style.color = 'white';
-              e.currentTarget.style.borderColor = 'transparent';
-            }}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            data-testid="button-questions-services"
-          >
-            Lassen Sie uns starten
-          </motion.button>
-        </motion.div>
+          Beide Leistungen auch als Kombi-Paket – Webdesign & SEO aus einer Hand.
+        </motion.p>
+
       </div>
     </section>
   );
