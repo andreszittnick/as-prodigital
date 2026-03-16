@@ -62,6 +62,35 @@ export default function BlogDetail() {
           <meta key={tag} property="article:tag" content={tag} />
         ))}
         <link rel="canonical" href={`https://www.asprodigital.de/blog/${post.slug}`} />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BlogPosting",
+            "headline": post.title,
+            "description": post.metaDescription,
+            "author": {
+              "@type": "Person",
+              "name": post.author,
+              "url": "https://www.asprodigital.de/ueber-mich"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "AS-ProDigital",
+              "@id": "https://www.asprodigital.de/#organization",
+              "url": "https://www.asprodigital.de"
+            },
+            "datePublished": post.publishedAt,
+            "dateModified": post.publishedAt,
+            "url": `https://www.asprodigital.de/blog/${post.slug}`,
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://www.asprodigital.de/blog/${post.slug}`
+            },
+            "keywords": post.metaKeywords.join(', '),
+            "articleSection": post.category === "webdesign" ? "Webdesign" : "SEO",
+            "inLanguage": "de-DE"
+          })
+        }} />
       </Helmet>
       <Navigation />
       

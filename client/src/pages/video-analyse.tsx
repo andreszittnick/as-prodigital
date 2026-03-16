@@ -111,6 +111,39 @@ export default function VideoAnalyse() {
         <meta property="og:title" content="Kostenfreie Video-Analyse Ihrer Website | AS-ProDigital" />
         <meta property="og:description" content="Erhalten Sie eine persönliche Video-Analyse Ihrer Website - völlig kostenlos und unverbindlich." />
         <meta property="og:locale" content="de_DE" />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Service",
+            "serviceType": "Website-Analyse",
+            "name": "Kostenfreie Video-Analyse Ihrer Website",
+            "description": "André Szittnick erstellt eine persönliche Video-Analyse Ihrer Website und zeigt Ihnen konkrete Optimierungspotenziale für mehr Sichtbarkeit und mehr Kunden.",
+            "provider": {
+              "@type": "LocalBusiness",
+              "@id": "https://www.asprodigital.de/#organization",
+              "name": "AS-ProDigital",
+              "founder": { "@type": "Person", "name": "André Szittnick" },
+              "telephone": "+49-6731-8789",
+              "email": "info@as-prodigital.de",
+              "address": {
+                "@type": "PostalAddress",
+                "addressLocality": "Alzey",
+                "postalCode": "55232",
+                "addressRegion": "Rheinland-Pfalz",
+                "addressCountry": "DE"
+              },
+              "url": "https://www.asprodigital.de"
+            },
+            "offers": {
+              "@type": "Offer",
+              "price": "0",
+              "priceCurrency": "EUR",
+              "description": "Kostenlose und unverbindliche Video-Analyse Ihrer Website"
+            },
+            "url": "https://www.asprodigital.de/video-analyse",
+            "areaServed": "Deutschland"
+          })
+        }} />
       </Helmet>
       
       <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
