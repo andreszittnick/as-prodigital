@@ -15,10 +15,10 @@ export default function WebdesignAlzey() {
         <title>Professionelles Webdesign | AS-ProDigital André Szittnick</title>
         <meta name="description" content="Professionelles Webdesign – individuelle, responsive Websites, die Kunden gewinnen. ✓ Persönliche Beratung ✓ Fair & Transparent ✓ Schnelle Umsetzung." />
         <meta name="keywords" content="Webdesign, Webentwicklung, Website erstellen lassen, professionelle Website, responsive Webdesign, SEO-optimierte Website" />
-        <link rel="canonical" href="https://www.asprodigital.de/webdesign" />
+        <link rel="canonical" href="https://www.as-prodigital.de/webdesign" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.asprodigital.de/webdesign" />
+        <meta property="og:url" content="https://www.as-prodigital.de/webdesign" />
         <meta property="og:title" content="Professionelles Webdesign | AS-ProDigital" />
         <meta property="og:description" content="Moderne, responsive Websites für Ihr Unternehmen. Individuelle Lösungen mit SEO von Anfang an." />
         <meta property="og:locale" content="de_DE" />
@@ -31,7 +31,7 @@ export default function WebdesignAlzey() {
             "name": "Professionelles Webdesign",
             "provider": {
               "@type": "LocalBusiness",
-              "@id": "https://www.asprodigital.de/#organization",
+              "@id": "https://www.as-prodigital.de/#organization",
               "name": "AS-ProDigital",
               "founder": {
                 "@type": "Person",
@@ -46,11 +46,11 @@ export default function WebdesignAlzey() {
                 "addressRegion": "Rheinland-Pfalz",
                 "addressCountry": "DE"
               },
-              "url": "https://www.asprodigital.de"
+              "url": "https://www.as-prodigital.de"
             },
             "areaServed": "Deutschland",
             "description": "Professionelles Webdesign: Moderne, responsive Websites, die Ihre Kunden begeistern und bei Google gefunden werden",
-            "url": "https://www.asprodigital.de/webdesign"
+            "url": "https://www.as-prodigital.de/webdesign"
           })
         }} />
       </Helmet>

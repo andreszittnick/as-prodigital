@@ -104,10 +104,10 @@ export default function VideoAnalyse() {
         <title>Kostenfreie Video-Analyse Ihrer Website | AS-ProDigital</title>
         <meta name="description" content="Erhalten Sie eine kostenfreie Video-Analyse Ihrer Website. Ich zeige Ihnen persönlich, wie Sie Ihre Online-Präsenz verbessern können. ✓ Unverbindlich ✓ Individuell ✓ Innerhalb 48h" />
         <meta name="keywords" content="Website Analyse, Video Analyse, kostenlose Website Bewertung, Webdesign Check, SEO Analyse, AS-ProDigital" />
-        <link rel="canonical" href="https://www.asprodigital.de/video-analyse" />
+        <link rel="canonical" href="https://www.as-prodigital.de/video-analyse" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.asprodigital.de/video-analyse" />
+        <meta property="og:url" content="https://www.as-prodigital.de/video-analyse" />
         <meta property="og:title" content="Kostenfreie Video-Analyse Ihrer Website | AS-ProDigital" />
         <meta property="og:description" content="Erhalten Sie eine persönliche Video-Analyse Ihrer Website - völlig kostenlos und unverbindlich." />
         <meta property="og:locale" content="de_DE" />
@@ -120,7 +120,7 @@ export default function VideoAnalyse() {
             "description": "André Szittnick erstellt eine persönliche Video-Analyse Ihrer Website und zeigt Ihnen konkrete Optimierungspotenziale für mehr Sichtbarkeit und mehr Kunden.",
             "provider": {
               "@type": "LocalBusiness",
-              "@id": "https://www.asprodigital.de/#organization",
+              "@id": "https://www.as-prodigital.de/#organization",
               "name": "AS-ProDigital",
               "founder": { "@type": "Person", "name": "André Szittnick" },
               "telephone": "+49-6731-8789",
@@ -132,7 +132,7 @@ export default function VideoAnalyse() {
                 "addressRegion": "Rheinland-Pfalz",
                 "addressCountry": "DE"
               },
-              "url": "https://www.asprodigital.de"
+              "url": "https://www.as-prodigital.de"
             },
             "offers": {
               "@type": "Offer",
@@ -140,7 +140,7 @@ export default function VideoAnalyse() {
               "priceCurrency": "EUR",
               "description": "Kostenlose und unverbindliche Video-Analyse Ihrer Website"
             },
-            "url": "https://www.asprodigital.de/video-analyse",
+            "url": "https://www.as-prodigital.de/video-analyse",
             "areaServed": "Deutschland"
           })
         }} />

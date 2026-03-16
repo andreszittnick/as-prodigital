@@ -61,10 +61,10 @@ Besonders für lokale Unternehmen in Alzey und Umgebung ist Local SEO entscheide
         <title>Webdesign & SEO Leistungen Alzey | AS-ProDigital</title>
         <meta name="description" content="Professionelle Webdesign & SEO Dienstleistungen aus Alzey. ✓ Moderne Websites ✓ Suchmaschinenoptimierung ✓ Local SEO ✓ Responsive Design. Ihr digitaler Erfolg!" />
         <meta name="keywords" content="Webdesign Alzey, SEO Alzey, Webentwicklung, Suchmaschinenoptimierung, Local SEO, Responsive Design, Online Marketing Alzey" />
-        <link rel="canonical" href="https://www.asprodigital.de/leistungen" />
+        <link rel="canonical" href="https://www.as-prodigital.de/leistungen" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.asprodigital.de/leistungen" />
+        <meta property="og:url" content="https://www.as-prodigital.de/leistungen" />
         <meta property="og:title" content="Webdesign & SEO Leistungen Alzey | AS-ProDigital" />
         <meta property="og:description" content="Professionelle Webdesign & SEO Dienstleistungen für Ihren digitalen Erfolg in Alzey und Umgebung." />
         <meta property="og:locale" content="de_DE" />

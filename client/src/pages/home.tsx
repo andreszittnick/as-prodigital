@@ -14,18 +14,18 @@ export default function Home() {
         <title>Webdesign & SEO Alzey - AS-ProDigital André Szittnick</title>
         <meta name="description" content="Professionelles Webdesign & SEO aus Alzey – individuelle Websites, die Kunden gewinnen. Persönliche Beratung von André Szittnick. Jetzt kostenlos anfragen!" />
         <meta name="keywords" content="Webdesign Alzey, SEO Alzey, Webentwicklung, Suchmaschinenoptimierung, André Szittnick, AS-ProDigital, Website erstellen" />
-        <link rel="canonical" href="https://www.asprodigital.de/" />
+        <link rel="canonical" href="https://www.as-prodigital.de/" />
         
         {/* Open Graph / Facebook */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.asprodigital.de/" />
+        <meta property="og:url" content="https://www.as-prodigital.de/" />
         <meta property="og:title" content="AS-ProDigital - Professionelles Webdesign & SEO aus Alzey" />
         <meta property="og:description" content="Individuelle Websites und SEO-Optimierung, die Ihr Unternehmen digital erfolgreich machen. Persönliche Beratung von André Szittnick." />
         <meta property="og:locale" content="de_DE" />
         
         {/* Twitter */}
         <meta property="twitter:card" content="summary_large_image" />
-        <meta property="twitter:url" content="https://www.asprodigital.de/" />
+        <meta property="twitter:url" content="https://www.as-prodigital.de/" />
         <meta property="twitter:title" content="AS-ProDigital - Professionelles Webdesign & SEO" />
         <meta property="twitter:description" content="Individuelle Websites und SEO-Optimierung aus Alzey. Persönliche Beratung und maßgeschneiderte Lösungen." />
         
@@ -34,7 +34,7 @@ export default function Home() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
-            "@id": "https://www.asprodigital.de/#organization",
+            "@id": "https://www.as-prodigital.de/#organization",
             "name": "AS-ProDigital",
             "alternateName": "AS ProDigital",
             "founder": {
@@ -43,7 +43,7 @@ export default function Home() {
               "jobTitle": "Webdesigner & SEO-Experte"
             },
             "description": "AS-ProDigital bietet professionelles Webdesign und SEO-Optimierung für Unternehmen in Rheinhessen und ganz Deutschland. Individuelle Websites und nachhaltige Google-Rankings.",
-            "url": "https://www.asprodigital.de",
+            "url": "https://www.as-prodigital.de",
             "telephone": "+49-6731-8789",
             "email": "info@as-prodigital.de",
             "address": {

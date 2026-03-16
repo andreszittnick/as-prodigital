@@ -15,10 +15,10 @@ export default function SeoAlzey() {
         <title>SEO & Suchmaschinenoptimierung | AS-ProDigital Alzey</title>
         <meta name="description" content="Professionelle SEO-Optimierung: Bessere Google-Rankings, mehr Traffic, mehr Kunden. ✓ Local SEO ✓ On-Page SEO ✓ Technisches SEO. Persönliche Betreuung." />
         <meta name="keywords" content="SEO, Suchmaschinenoptimierung, Google Ranking verbessern, Local SEO, SEO Beratung, On-Page SEO, Technisches SEO" />
-        <link rel="canonical" href="https://www.asprodigital.de/seo" />
+        <link rel="canonical" href="https://www.as-prodigital.de/seo" />
         
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.asprodigital.de/seo" />
+        <meta property="og:url" content="https://www.as-prodigital.de/seo" />
         <meta property="og:title" content="SEO - Professionelle Suchmaschinenoptimierung | AS-ProDigital" />
         <meta property="og:description" content="Erreichen Sie Top-Rankings bei Google. Professionelle SEO-Optimierung mit messbaren Erfolgen." />
         <meta property="og:locale" content="de_DE" />
@@ -31,7 +31,7 @@ export default function SeoAlzey() {
             "name": "Professionelle SEO-Optimierung",
             "provider": {
               "@type": "LocalBusiness",
-              "@id": "https://www.asprodigital.de/#organization",
+              "@id": "https://www.as-prodigital.de/#organization",
               "name": "AS-ProDigital",
               "founder": {
                 "@type": "Person",
@@ -46,11 +46,11 @@ export default function SeoAlzey() {
                 "addressRegion": "Rheinland-Pfalz",
                 "addressCountry": "DE"
               },
-              "url": "https://www.asprodigital.de"
+              "url": "https://www.as-prodigital.de"
             },
             "areaServed": "Deutschland",
             "description": "Professionelle Suchmaschinenoptimierung für bessere Google-Rankings, mehr Sichtbarkeit und mehr Kunden",
-            "url": "https://www.asprodigital.de/seo"
+            "url": "https://www.as-prodigital.de/seo"
           })
         }} />
       </Helmet>

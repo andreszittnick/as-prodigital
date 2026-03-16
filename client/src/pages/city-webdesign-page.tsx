@@ -17,7 +17,7 @@ export default function CityWebdesignPage() {
 
   if (!city) return <NotFound />;
 
-  const canonical = `https://www.asprodigital.de/webdesign-${city.slug}`;
+  const canonical = `https://www.as-prodigital.de/webdesign-${city.slug}`;
 
   const features = [
     {
@@ -78,13 +78,13 @@ export default function CityWebdesignPage() {
             "name": `Webdesign ${city.name}`,
             "provider": {
               "@type": "LocalBusiness",
-              "@id": "https://www.asprodigital.de/#organization",
+              "@id": "https://www.as-prodigital.de/#organization",
               "name": "AS-ProDigital",
               "founder": { "@type": "Person", "name": "André Szittnick" },
               "telephone": "+49-6731-8789",
               "email": "info@as-prodigital.de",
               "address": { "@type": "PostalAddress", "addressLocality": "Alzey", "postalCode": "55232", "addressRegion": "Rheinland-Pfalz", "addressCountry": "DE" },
-              "url": "https://www.asprodigital.de",
+              "url": "https://www.as-prodigital.de",
             },
             "areaServed": { "@type": "City", "name": city.nameFull },
             "description": city.webdesignDescription,

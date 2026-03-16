@@ -50,9 +50,9 @@ export default function SeoAlzeyLanding() {
         <title>SEO Alzey - Suchmaschinenoptimierung | AS-ProDigital</title>
         <meta name="description" content="SEO-Optimierung in Alzey: Mehr Sichtbarkeit bei Google für Ihr Unternehmen. ✓ Local SEO ✓ On-Page SEO ✓ Technisches SEO. Persönliche Betreuung, faire Preise, keine versteckten Kosten." />
         <meta name="keywords" content="SEO Alzey, Suchmaschinenoptimierung Alzey, Google Ranking Alzey, Local SEO Alzey, SEO Experte Alzey, SEO Beratung Alzey" />
-        <link rel="canonical" href="https://www.asprodigital.de/seo-alzey" />
+        <link rel="canonical" href="https://www.as-prodigital.de/seo-alzey" />
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.asprodigital.de/seo-alzey" />
+        <meta property="og:url" content="https://www.as-prodigital.de/seo-alzey" />
         <meta property="og:title" content="SEO Alzey – Suchmaschinenoptimierung | AS-ProDigital" />
         <meta property="og:description" content="Professionelle SEO-Optimierung für Unternehmen in Alzey – mehr Google-Sichtbarkeit, mehr Kunden, faire Preise." />
         <meta property="og:locale" content="de_DE" />
@@ -64,17 +64,17 @@ export default function SeoAlzeyLanding() {
             "name": "SEO Alzey",
             "provider": {
               "@type": "LocalBusiness",
-              "@id": "https://www.asprodigital.de/#organization",
+              "@id": "https://www.as-prodigital.de/#organization",
               "name": "AS-ProDigital",
               "founder": { "@type": "Person", "name": "André Szittnick" },
               "telephone": "+49-6731-8789",
               "email": "info@as-prodigital.de",
               "address": { "@type": "PostalAddress", "addressLocality": "Alzey", "postalCode": "55232", "addressRegion": "Rheinland-Pfalz", "addressCountry": "DE" },
-              "url": "https://www.asprodigital.de"
+              "url": "https://www.as-prodigital.de"
             },
             "areaServed": { "@type": "City", "name": "Alzey" },
             "description": "Professionelle SEO-Optimierung für Unternehmen in Alzey und Rheinhessen",
-            "url": "https://www.asprodigital.de/seo-alzey"
+            "url": "https://www.as-prodigital.de/seo-alzey"
           })
         }} />
       </Helmet>

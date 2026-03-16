@@ -61,7 +61,7 @@ export default function BlogDetail() {
         {post.tags.map((tag) => (
           <meta key={tag} property="article:tag" content={tag} />
         ))}
-        <link rel="canonical" href={`https://www.asprodigital.de/blog/${post.slug}`} />
+        <link rel="canonical" href={`https://www.as-prodigital.de/blog/${post.slug}`} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
@@ -71,20 +71,20 @@ export default function BlogDetail() {
             "author": {
               "@type": "Person",
               "name": post.author,
-              "url": "https://www.asprodigital.de/ueber-mich"
+              "url": "https://www.as-prodigital.de/ueber-mich"
             },
             "publisher": {
               "@type": "Organization",
               "name": "AS-ProDigital",
-              "@id": "https://www.asprodigital.de/#organization",
-              "url": "https://www.asprodigital.de"
+              "@id": "https://www.as-prodigital.de/#organization",
+              "url": "https://www.as-prodigital.de"
             },
             "datePublished": post.publishedAt,
             "dateModified": post.publishedAt,
-            "url": `https://www.asprodigital.de/blog/${post.slug}`,
+            "url": `https://www.as-prodigital.de/blog/${post.slug}`,
             "mainEntityOfPage": {
               "@type": "WebPage",
-              "@id": `https://www.asprodigital.de/blog/${post.slug}`
+              "@id": `https://www.as-prodigital.de/blog/${post.slug}`
             },
             "keywords": post.metaKeywords.join(', '),
             "articleSection": post.category === "webdesign" ? "Webdesign" : "SEO",
