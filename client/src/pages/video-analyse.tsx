@@ -101,7 +101,7 @@ export default function VideoAnalyse() {
   return (
     <>
       <Helmet>
-        <title>Kostenfreie Video-Analyse Ihrer Website | AS-ProDigital Alzey</title>
+        <title>Kostenfreie Video-Analyse Ihrer Website | AS-ProDigital</title>
         <meta name="description" content="Erhalten Sie eine kostenfreie Video-Analyse Ihrer Website. Ich zeige Ihnen persönlich, wie Sie Ihre Online-Präsenz verbessern können. ✓ Unverbindlich ✓ Individuell ✓ Innerhalb 48h" />
         <meta name="keywords" content="Website Analyse, Video Analyse, kostenlose Website Bewertung, Webdesign Check, SEO Analyse, AS-ProDigital" />
         <link rel="canonical" href="https://www.asprodigital.de/video-analyse" />
