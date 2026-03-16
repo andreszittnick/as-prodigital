@@ -17,6 +17,7 @@ import WebdesignAlzey from "@/pages/webdesign-alzey";
 import SeoAlzey from "@/pages/seo-alzey";
 import CityWebdesignPage from "@/pages/city-webdesign-page";
 import CitySeoPage from "@/pages/city-seo-page";
+import SeoAlzeyLanding from "@/pages/seo-alzey-landing";
 import Blog from "@/pages/blog";
 import BlogDetail from "@/pages/blog-detail";
 import Impressum from "@/pages/impressum";
@@ -54,7 +55,7 @@ function Router() {
         <Route path="/webdesign-bad-kreuznach" component={CityWebdesignPage} />
         <Route path="/webdesign-ingelheim" component={CityWebdesignPage} />
         <Route path="/webdesign-mannheim" component={CityWebdesignPage} />
-        <Route path="/seo-alzey" component={CitySeoPage} />
+        <Route path="/seo-alzey" component={SeoAlzeyLanding} />
         <Route path="/seo-worms" component={CitySeoPage} />
         <Route path="/seo-kaiserslautern" component={CitySeoPage} />
         <Route path="/seo-bingen" component={CitySeoPage} />
