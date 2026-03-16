@@ -90,8 +90,9 @@ export default function HeroSectionWebdesign() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <span className="gradient-text whitespace-nowrap">Professionelles Webdesign</span><br />
-              <span className="text-slate-900 whitespace-nowrap">für Ihren starken</span><br />
+              <span className="gradient-text">Professionelles</span><br />
+              <span className="gradient-text">Webdesign</span><br />
+              <span className="text-slate-900">für Ihren starken</span><br />
               <span className="text-slate-900">Online-Auftritt</span>
             </motion.h1>
             
