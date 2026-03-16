@@ -203,6 +203,37 @@ export default function BlogDetail() {
         </div>
       </article>
 
+      {/* Service CTA */}
+      <section className="py-14 px-4 bg-[#19243b]">
+        <div className="max-w-4xl mx-auto text-center">
+          <p className="text-[#fa5219] font-semibold uppercase tracking-widest text-sm mb-3">
+            {post.category === "webdesign" ? "Professionelles Webdesign" : "Suchmaschinenoptimierung"}
+          </p>
+          <h2 className="text-2xl md:text-3xl font-bold text-white mb-4">
+            {post.category === "webdesign"
+              ? "Möchten Sie eine Website, die wirklich Kunden bringt?"
+              : "Möchten Sie bei Google besser gefunden werden?"}
+          </h2>
+          <p className="text-gray-300 max-w-xl mx-auto mb-8 text-lg">
+            {post.category === "webdesign"
+              ? "Als Webdesign-Experte aus Alzey entwickle ich Ihre Website – individuell, schnell und SEO-optimiert. Kostenlose Erstberatung, kein Risiko."
+              : "Als SEO-Experte aus Alzey bringe ich Ihre Website dauerhaft nach vorne bei Google – mit On-Page SEO und Local SEO. Kostenlose Erstberatung."}
+          </p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link href={post.category === "webdesign" ? "/webdesign" : "/seo"}>
+              <a className="inline-block bg-[#fa5219] hover:bg-orange-600 text-white font-semibold px-8 py-4 rounded-xl transition-colors duration-300">
+                {post.category === "webdesign" ? "Webdesign entdecken" : "SEO-Leistungen entdecken"}
+              </a>
+            </Link>
+            <Link href="/kontakt">
+              <a className="inline-block border-2 border-white text-white hover:bg-white/10 font-semibold px-8 py-4 rounded-xl transition-colors duration-300">
+                Kostenlos anfragen
+              </a>
+            </Link>
+          </div>
+        </div>
+      </section>
+
       {/* Related Posts */}
       {relatedPosts.length > 0 && (
         <section className="py-16 px-4 bg-white">

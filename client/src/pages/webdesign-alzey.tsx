@@ -4,6 +4,7 @@ import HeroSectionWebdesign from "@/components/hero-section-webdesign";
 import WebdesignContentSection from "@/components/webdesign-content-section";
 import CityLinksSection from "@/components/city-links-section";
 import ContactSectionWebdesign from "@/components/contact-section-webdesign";
+import BlogTeaserSection from "@/components/blog-teaser-section";
 import Footer from "@/components/footer";
 
 export default function WebdesignAlzey() {
@@ -58,6 +59,7 @@ export default function WebdesignAlzey() {
       <Navigation />
       <HeroSectionWebdesign />
       <WebdesignContentSection />
+      <BlogTeaserSection category="webdesign" />
       <CityLinksSection />
 
       {/* Contact Section */}
