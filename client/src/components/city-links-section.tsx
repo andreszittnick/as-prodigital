@@ -26,7 +26,7 @@ export default function CityLinksSection() {
             Webdesign & SEO – in Ihrer Region
           </h2>
           <p className="text-gray-500 dark:text-gray-400 text-sm sm:text-base max-w-xl mx-auto">
-            Als Agentur aus Alzey betreue ich Unternehmen in der gesamten Region Rheinhessen und Rheinland-Pfalz.
+            Als Freelancer aus Alzey betreue ich Unternehmen in der gesamten Region Rheinhessen und Rheinland-Pfalz.
           </p>
         </div>
 

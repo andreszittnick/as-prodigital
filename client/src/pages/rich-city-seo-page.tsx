@@ -78,7 +78,7 @@ export default function RichCitySeoPage() {
           <div className="relative max-w-5xl mx-auto px-4 text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <span className="inline-block bg-[#fa5219]/10 text-[#fa5219] text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
-                SEO Agentur {city.name}
+                SEO Experte {city.name}
               </span>
               <h1 className="text-3xl md:text-5xl font-bold text-[#19243b] dark:text-white mb-5 leading-tight">
                 Mehr Kunden durch besseres{" "}

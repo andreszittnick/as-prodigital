@@ -51,7 +51,7 @@ export default function CityWebdesignPage() {
 
   const usp = [
     "Persönlicher Ansprechpartner von Anfang bis Ende – kein Callcenter, kein Ticket-System",
-    "Faire, transparente Preise ohne versteckte Kosten – günstiger als klassische Agenturen",
+    "Faire, transparente Preise ohne versteckte Kosten – günstiger als externe Anbieter",
     "SEO von Anfang an: Jede Website wird suchmaschinenoptimiert entwickelt",
     "Schnelle Umsetzung: Von der Idee zur fertigen Website in 2–6 Wochen",
     "Langfristige Partnerschaft: Ich bin auch nach dem Launch für Sie da",

@@ -48,7 +48,7 @@ export default function SeoAlzeyLanding() {
       <Helmet>
         <title>SEO Alzey - Suchmaschinenoptimierung | AS-ProDigital</title>
         <meta name="description" content="SEO-Optimierung in Alzey: Mehr Sichtbarkeit bei Google für Ihr Unternehmen. ✓ Local SEO ✓ On-Page SEO ✓ Technisches SEO. Persönliche Betreuung, faire Preise, keine versteckten Kosten." />
-        <meta name="keywords" content="SEO Alzey, Suchmaschinenoptimierung Alzey, Google Ranking Alzey, Local SEO Alzey, SEO Agentur Alzey, SEO Beratung Alzey" />
+        <meta name="keywords" content="SEO Alzey, Suchmaschinenoptimierung Alzey, Google Ranking Alzey, Local SEO Alzey, SEO Experte Alzey, SEO Beratung Alzey" />
         <link rel="canonical" href="https://www.asprodigital.de/seo-alzey" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://www.asprodigital.de/seo-alzey" />
@@ -87,7 +87,7 @@ export default function SeoAlzeyLanding() {
           <div className="relative max-w-5xl mx-auto px-4 text-center">
             <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
               <span className="inline-block bg-[#fa5219]/10 text-[#fa5219] text-sm font-semibold px-4 py-1.5 rounded-full mb-4">
-                SEO Agentur Alzey
+                SEO Experte Alzey
               </span>
               <h1 className="text-3xl md:text-5xl font-bold text-[#19243b] dark:text-white mb-5 leading-tight">
                 Mehr Kunden für Ihr Unternehmen<br className="hidden md:block" />

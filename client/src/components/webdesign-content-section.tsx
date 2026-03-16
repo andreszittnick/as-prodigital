@@ -524,9 +524,9 @@ export default function WebdesignContentSection() {
                   <DollarSign className="text-white w-10 h-10" />
                 </motion.div>
                 
-                <h3 className="text-2xl font-bold text-slate-900 mb-4">Keine Agentur-Preise</h3>
+                <h3 className="text-2xl font-bold text-slate-900 mb-4">Faire Direktpreise</h3>
                 <p className="text-slate-600 leading-relaxed">
-                  Direkte Zusammenarbeit ohne Agentur-Aufschläge - transparente, faire Preise für Premium-Qualität.
+                  Direkte Zusammenarbeit direkt ohne Zwischenhändler - transparente, faire Preise für Premium-Qualität.
                 </p>
               </div>
             </motion.div>

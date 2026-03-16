@@ -34,7 +34,7 @@ export default function RichCityWebdesignPage() {
 
   const usp = [
     "Persönlicher Ansprechpartner von Anfang bis Ende – kein Callcenter",
-    "Faire Preise ohne versteckte Kosten – günstiger als klassische Agenturen",
+    "Faire Preise ohne versteckte Kosten – günstiger als externe Anbieter",
     "SEO von Anfang an in jede Website eingebaut",
     "Schnelle Umsetzung: von der Idee zur fertigen Website in 2–6 Wochen",
     "Ihre Website gehört Ihnen – keine Bindung an teure Abonnements",
@@ -320,10 +320,10 @@ export default function RichCityWebdesignPage() {
               <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
                 <span className="text-[#fa5219] text-sm font-semibold uppercase tracking-wider">Warum AS-ProDigital?</span>
                 <h2 className="text-2xl md:text-3xl font-bold text-[#19243b] dark:text-white mt-2 mb-4">
-                  Qualität und Fairness statt Agentur-Overhead
+                  Qualität und Fairness – direkt vom Experten
                 </h2>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
-                  Große Webagenturen in {city.name} und Umgebung haben hohe Fixkosten – Büromiete, Mitarbeiter, Vertrieb – die sich in teuren Angeboten niederschlagen. Bei AS-ProDigital zahlen Sie nur für das, was Sie wirklich bekommen: hochwertige Webdesign-Arbeit mit persönlichem Service.
+                  Große Webdesign-Studios in {city.name} und Umgebung haben hohe Fixkosten – Büromiete, Mitarbeiter, Vertrieb – die sich in teuren Angeboten niederschlagen. Bei AS-ProDigital zahlen Sie nur für das, was Sie wirklich bekommen: hochwertige Webdesign-Arbeit mit persönlichem Service.
                 </p>
                 <p className="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
                   Als persönlich geführter Betrieb aus Alzey kann ich faire Preise anbieten, ohne Abstriche bei der Qualität zu machen. Jede Website, die ich erstelle, ist individuell gestaltet, technisch sauber entwickelt und von Anfang an für Suchmaschinen optimiert – alles aus einer Hand, ohne Mittelsmänner.
