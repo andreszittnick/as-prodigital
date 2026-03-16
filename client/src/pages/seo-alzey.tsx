@@ -11,8 +11,8 @@ export default function SeoAlzey() {
     <>
       <Helmet>
         <title>SEO - Suchmaschinenoptimierung | AS-ProDigital</title>
-        <meta name="description" content="Professionelle SEO-Optimierung von AS-ProDigital: Bessere Google-Rankings, mehr organischer Traffic und mehr Kunden. ✓ Local SEO ✓ On-Page & Off-Page ✓ Transparente Ergebnisse" />
-        <meta name="keywords" content="SEO, Suchmaschinenoptimierung, Google Ranking verbessern, Local SEO, SEO Beratung, On-Page SEO, Off-Page SEO" />
+        <meta name="description" content="Professionelle SEO-Optimierung von AS-ProDigital: Bessere Google-Rankings, mehr organischer Traffic und mehr Kunden. ✓ Local SEO ✓ On-Page SEO ✓ Technisches SEO ✓ Transparente Ergebnisse" />
+        <meta name="keywords" content="SEO, Suchmaschinenoptimierung, Google Ranking verbessern, Local SEO, SEO Beratung, On-Page SEO, Technisches SEO" />
         <link rel="canonical" href="https://www.asprodigital.de/seo" />
         
         <meta property="og:type" content="website" />
