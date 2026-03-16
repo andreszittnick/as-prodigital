@@ -1,4 +1,4 @@
-import { useParams, Link } from "wouter";
+import { useLocation, Link } from "wouter";
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { CheckCircle, Monitor, Smartphone, Zap, Search, Phone, Mail, MapPin, ArrowRight, Star } from "lucide-react";
@@ -9,8 +9,9 @@ import { getCityData } from "@/data/cities";
 import NotFound from "@/pages/not-found";
 
 export default function CityWebdesignPage() {
-  const params = useParams<{ city: string }>();
-  const city = getCityData(params.city ?? "");
+  const [location] = useLocation();
+  const citySlug = location.replace("/webdesign-", "");
+  const city = getCityData(citySlug);
 
   if (!city) return <NotFound />;
 

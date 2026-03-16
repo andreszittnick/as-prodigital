@@ -47,8 +47,20 @@ function Router() {
         <Route path="/kontakt" component={Contact} />
         <Route path="/webdesign" component={WebdesignAlzey} />
         <Route path="/seo" component={SeoAlzey} />
-        <Route path="/webdesign-:city" component={CityWebdesignPage} />
-        <Route path="/seo-:city" component={CitySeoPage} />
+        <Route path="/webdesign-alzey" component={CityWebdesignPage} />
+        <Route path="/webdesign-worms" component={CityWebdesignPage} />
+        <Route path="/webdesign-kaiserslautern" component={CityWebdesignPage} />
+        <Route path="/webdesign-bingen" component={CityWebdesignPage} />
+        <Route path="/webdesign-bad-kreuznach" component={CityWebdesignPage} />
+        <Route path="/webdesign-ingelheim" component={CityWebdesignPage} />
+        <Route path="/webdesign-mannheim" component={CityWebdesignPage} />
+        <Route path="/seo-alzey" component={CitySeoPage} />
+        <Route path="/seo-worms" component={CitySeoPage} />
+        <Route path="/seo-kaiserslautern" component={CitySeoPage} />
+        <Route path="/seo-bingen" component={CitySeoPage} />
+        <Route path="/seo-bad-kreuznach" component={CitySeoPage} />
+        <Route path="/seo-ingelheim" component={CitySeoPage} />
+        <Route path="/seo-mannheim" component={CitySeoPage} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogDetail} />
         <Route path="/impressum" component={Impressum} />
