@@ -62,6 +62,17 @@ UI Features: Floating contact buttons (WhatsApp & Email) visible on all pages, N
   - `blog_posts` - Blog articles with categories, tags, and SEO metadata
 - **Schema Management**: Drizzle migrations with push-based deployment
 
+## Local SEO Landingpages
+- **Strategie**: /webdesign und /seo sind allgemeine Service-Seiten (nicht Alzey-spezifisch)
+- **Stadt-Landingpages**: Je eine Webdesign + SEO Seite für 7 Städte = 14 Landingpages
+- **Städte**: Alzey, Worms, Kaiserslautern, Bingen, Bad Kreuznach, Ingelheim, Mannheim
+- **URLs**: /webdesign-[stadtname] und /seo-[stadtname] (z.B. /webdesign-alzey, /seo-worms)
+- **Routing**: Dynamisch via wouter Param-Route /webdesign-:city und /seo-:city
+- **City-Daten**: client/src/data/cities.ts (CityData Typ mit SEO-relevanten Feldern)
+- **Templates**: client/src/pages/city-webdesign-page.tsx und city-seo-page.tsx
+- **Schema.org**: Service-Markup mit areaServed pro Stadtseite, vollständiges LocalBusiness-Markup auf Homepage
+- **Sitemap**: Alle 14 neuen Landingpages in sitemap.xml eingetragen
+
 ## Blog System
 - **Content**: 12 SEO-optimized blog posts (6 Webdesign, 6 SEO topics)
 - **Features**: Category filtering (All, Webdesign, SEO), Individual blog detail pages, Related posts suggestions, Share functionality, SEO metadata (title, description, keywords)

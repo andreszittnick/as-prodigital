@@ -29,28 +29,34 @@ export default function Home() {
         <meta property="twitter:title" content="AS-ProDigital - Professionelles Webdesign & SEO" />
         <meta property="twitter:description" content="Individuelle Websites und SEO-Optimierung aus Alzey. Persönliche Beratung und maßgeschneiderte Lösungen." />
         
-        {/* Structured Data - Local Business */}
+        {/* Structured Data - Local Business (vollständig) */}
         <script type="application/ld+json" dangerouslySetInnerHTML={{
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "LocalBusiness",
+            "@id": "https://www.asprodigital.de/#organization",
             "name": "AS-ProDigital",
+            "alternateName": "AS ProDigital",
             "founder": {
               "@type": "Person",
-              "name": "André Szittnick"
+              "name": "André Szittnick",
+              "jobTitle": "Webdesigner & SEO-Experte"
             },
-            "description": "Professionelles Webdesign und SEO-Optimierung aus Alzey",
+            "description": "AS-ProDigital bietet professionelles Webdesign und SEO-Optimierung für Unternehmen in Rheinhessen und ganz Deutschland. Individuelle Websites und nachhaltige Google-Rankings.",
             "url": "https://www.asprodigital.de",
             "telephone": "+49-6731-8789",
-            "email": "Info@AS-ProDigital.de",
+            "email": "info@as-prodigital.de",
             "address": {
               "@type": "PostalAddress",
               "addressLocality": "Alzey",
+              "postalCode": "55232",
+              "addressRegion": "Rheinland-Pfalz",
               "addressCountry": "DE"
             },
             "geo": {
               "@type": "GeoCoordinates",
-              "addressCountry": "DE"
+              "latitude": "49.7467",
+              "longitude": "8.1153"
             },
             "openingHoursSpecification": {
               "@type": "OpeningHoursSpecification",
@@ -59,7 +65,37 @@ export default function Home() {
               "closes": "18:00"
             },
             "priceRange": "€€",
-            "areaServed": "DE"
+            "areaServed": [
+              { "@type": "City", "name": "Alzey" },
+              { "@type": "City", "name": "Worms" },
+              { "@type": "City", "name": "Bad Kreuznach" },
+              { "@type": "City", "name": "Bingen am Rhein" },
+              { "@type": "City", "name": "Ingelheim am Rhein" },
+              { "@type": "City", "name": "Kaiserslautern" },
+              { "@type": "City", "name": "Mannheim" }
+            ],
+            "hasOfferCatalog": {
+              "@type": "OfferCatalog",
+              "name": "Leistungen",
+              "itemListElement": [
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "Webdesign",
+                    "description": "Individuelle, responsive Websites mit SEO-Optimierung"
+                  }
+                },
+                {
+                  "@type": "Offer",
+                  "itemOffered": {
+                    "@type": "Service",
+                    "name": "SEO-Optimierung",
+                    "description": "Suchmaschinenoptimierung für bessere Google-Rankings"
+                  }
+                }
+              ]
+            }
           })
         }} />
       </Helmet>

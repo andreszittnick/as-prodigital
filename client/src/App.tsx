@@ -15,6 +15,8 @@ import About from "@/pages/about";
 import Contact from "@/pages/contact";
 import WebdesignAlzey from "@/pages/webdesign-alzey";
 import SeoAlzey from "@/pages/seo-alzey";
+import CityWebdesignPage from "@/pages/city-webdesign-page";
+import CitySeoPage from "@/pages/city-seo-page";
 import Blog from "@/pages/blog";
 import BlogDetail from "@/pages/blog-detail";
 import Impressum from "@/pages/impressum";
@@ -45,6 +47,8 @@ function Router() {
         <Route path="/kontakt" component={Contact} />
         <Route path="/webdesign" component={WebdesignAlzey} />
         <Route path="/seo" component={SeoAlzey} />
+        <Route path="/webdesign-:city" component={CityWebdesignPage} />
+        <Route path="/seo-:city" component={CitySeoPage} />
         <Route path="/blog" component={Blog} />
         <Route path="/blog/:slug" component={BlogDetail} />
         <Route path="/impressum" component={Impressum} />
