@@ -551,23 +551,23 @@ export default function Analytics() {
 
           {/* Daily Chart */}
           <div className="bg-white rounded-xl p-6 shadow-sm">
-            <h2 className="text-slate-900 font-semibold mb-4">Tagesübersicht</h2>
+            <h2 className="text-slate-900 font-semibold mb-4">
+              Besucherverlauf –{" "}
+              {dateRange === "today" ? "Heute" : dateRange === "7" ? "Letzte 7 Tage" : dateRange === "30" ? "Letzte 30 Tage" : `${customFrom} bis ${customTo}`}
+            </h2>
             <ResponsiveContainer width="100%" height={280}>
               <LineChart data={daily ?? []} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
                 <CartesianGrid strokeDasharray="3 3" stroke="#f1f5f9" />
                 <XAxis dataKey="date" tickFormatter={formatDate} tick={{ fontSize: 11, fill: "#64748b" }} />
-                <YAxis tick={{ fontSize: 11, fill: "#64748b" }} />
+                <YAxis tick={{ fontSize: 11, fill: "#64748b" }} allowDecimals={false} />
                 <Tooltip
                   formatter={(val: number, name: string) => [val, name]}
                   labelFormatter={(label) => new Date(label).toLocaleDateString("de-DE")}
                   contentStyle={{ borderRadius: 8, border: "1px solid #e2e8f0", fontSize: 12 }}
                 />
                 <Legend wrapperStyle={{ fontSize: 12 }} />
-                <Line type="monotone" dataKey="visitors" name="Besucher" stroke="#19243b" strokeWidth={2} dot={false} />
-                <Line type="monotone" dataKey="newVisitors" name="Neue" stroke="#fa5219" strokeWidth={2} dot={false} />
-                <Line type="monotone" dataKey="returningVisitors" name="Wiederkehrend" stroke="#2563eb" strokeWidth={2} dot={false} />
-                <Line type="monotone" dataKey="pageViews" name="Seitenaufrufe" stroke="#16a34a" strokeWidth={2} dot={false} />
-                <Line type="monotone" dataKey="ctaClicks" name="CTA-Klicks" stroke="#9333ea" strokeWidth={2} dot={false} />
+                <Line type="monotone" dataKey="visitors" name="Besucher gesamt" stroke="#19243b" strokeWidth={2} dot={false} />
+                <Line type="monotone" dataKey="newVisitors" name="Neue Besucher" stroke="#fa5219" strokeWidth={2} dot={false} />
               </LineChart>
             </ResponsiveContainer>
           </div>
