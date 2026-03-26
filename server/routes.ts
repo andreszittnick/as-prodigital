@@ -9,7 +9,12 @@ import { sendContactNotification } from "./email";
 
 function checkAnalyticsAuth(req: express.Request, res: express.Response): boolean {
   const password = process.env.ANALYTICS_PASSWORD;
-  if (!password) return true;
+  if (!password) {
+    // In development, allow access without a password
+    if (process.env.NODE_ENV === "development") return true;
+    res.status(401).json({ success: false, message: "Analytics password not configured" });
+    return false;
+  }
   const provided = req.headers['x-analytics-password'] || req.query.password;
   if (provided !== password) {
     res.status(401).json({ success: false, message: "Unauthorized" });

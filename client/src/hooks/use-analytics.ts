@@ -61,10 +61,19 @@ async function post(url: string, data: object): Promise<void> {
 
 function sendBeacon(url: string, data: object): void {
   try {
-    navigator.sendBeacon(url, JSON.stringify(data));
+    // Send as Blob with Content-Type so express.json() can parse it
+    const blob = new Blob([JSON.stringify(data)], { type: "application/json" });
+    if (navigator.sendBeacon(url, blob)) return;
   } catch {
-    // Silent fail
+    // Fall through to fetch fallback
   }
+  // Fallback: keepalive fetch (works in most browsers when sendBeacon fails)
+  fetch(url, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(data),
+    keepalive: true,
+  }).catch(() => {});
 }
 
 let sessionInitialized = false;
@@ -110,118 +119,91 @@ export function trackClick(element: string, page?: string): void {
 export function useAnalytics(): void {
   const [location] = useLocation();
   const prevPageRef = useRef<string | null>(null);
-  const scrollCleanupRef = useRef<(() => void) | null>(null);
-  const unloadCleanupRef = useRef<(() => void) | null>(null);
 
   useEffect(() => {
     initSession();
   }, []);
 
   useEffect(() => {
-    // Clean up previous page's listeners
-    if (scrollCleanupRef.current) {
-      scrollCleanupRef.current();
-      scrollCleanupRef.current = null;
-    }
-    if (unloadCleanupRef.current) {
-      unloadCleanupRef.current();
-      unloadCleanupRef.current = null;
-    }
+    const currentPage = location;
+    const prevPage = prevPageRef.current;
+    prevPageRef.current = currentPage;
 
-    // Send exit event for previous page
-    if (prevPageRef.current && currentSessionId) {
-      const timeOnPrev = Math.round((Date.now() - pageStartTime) / 1000);
+    // Reset page timer and scroll depth for new page
+    pageStartTime = Date.now();
+    lastScrollDepth = 0;
+
+    // Send exit event for previous page on SPA navigation
+    if (prevPage !== null && prevPage !== currentPage && currentSessionId) {
       post("/api/analytics/event", {
         sessionId: currentSessionId,
         eventType: "exit",
-        page: prevPageRef.current,
-        timeOnPage: timeOnPrev,
+        page: prevPage,
+        timeOnPage: 0, // SPA nav: duration is not meaningful here (already tracked by unload)
         scrollDepth: lastScrollDepth,
       });
     }
 
-    pageStartTime = Date.now();
-    lastScrollDepth = 0;
-    prevPageRef.current = location;
-
-    // Delay tracking until session is ready
-    const trackPage = () => {
-      if (!currentSessionId) return;
-
-      post("/api/analytics/event", {
-        sessionId: currentSessionId,
-        eventType: "pageview",
-        page: location,
-        timeOnPage: 0,
-      });
-
-      // Update session page count
-      post("/api/analytics/session", {
-        sessionId: currentSessionId,
-        visitorId: localStorage.getItem(VISITOR_KEY) || "",
-        isReturning: !!localStorage.getItem(VISITOR_KEY + "_seen"),
-        entryPage: location,
-        device: getDevice(),
-        referrerSource: getReferrerSource(),
-        pageCount: 1,
-        duration: 0,
-      });
-    };
-
-    if (sessionReady) {
-      trackPage();
-    } else {
-      const timer = setTimeout(trackPage, 800);
-      return () => clearTimeout(timer);
-    }
-
-    // Scroll depth tracking
+    // Scroll depth tracking - always attach; tracker checks currentSessionId lazily
     const milestones = [25, 50, 75, 100];
     const reported = new Set<number>();
     const scrollHandler = () => {
+      if (!currentSessionId) return;
       const scrolled = window.scrollY + window.innerHeight;
       const total = document.documentElement.scrollHeight;
       const pct = Math.round((scrolled / total) * 100);
       for (const milestone of milestones) {
-        if (pct >= milestone && !reported.has(milestone) && currentSessionId) {
+        if (pct >= milestone && !reported.has(milestone)) {
           reported.add(milestone);
           lastScrollDepth = milestone;
           post("/api/analytics/event", {
             sessionId: currentSessionId,
             eventType: "scroll",
-            page: location,
+            page: currentPage,
             scrollDepth: milestone,
           });
         }
       }
     };
-    window.addEventListener("scroll", scrollHandler, { passive: true });
-    scrollCleanupRef.current = () => window.removeEventListener("scroll", scrollHandler);
 
-    // Unload beacon
+    // Unload beacon - always attach; fires when user closes tab or navigates away
     const handleUnload = () => {
       if (!currentSessionId) return;
       const duration = Math.round((Date.now() - pageStartTime) / 1000);
       sendBeacon("/api/analytics/event", {
         sessionId: currentSessionId,
         eventType: "exit",
-        page: location,
+        page: currentPage,
         timeOnPage: duration,
         scrollDepth: lastScrollDepth,
       });
     };
+
+    window.addEventListener("scroll", scrollHandler, { passive: true });
     window.addEventListener("beforeunload", handleUnload);
-    unloadCleanupRef.current = () => window.removeEventListener("beforeunload", handleUnload);
+
+    // Track pageview - delayed if session hasn't finished initializing yet
+    let pageviewTimer: ReturnType<typeof setTimeout> | null = null;
+    const trackPageview = () => {
+      if (!currentSessionId) return;
+      post("/api/analytics/event", {
+        sessionId: currentSessionId,
+        eventType: "pageview",
+        page: currentPage,
+        timeOnPage: 0,
+      });
+    };
+
+    if (sessionReady) {
+      trackPageview();
+    } else {
+      pageviewTimer = setTimeout(trackPageview, 1000);
+    }
 
     return () => {
-      if (scrollCleanupRef.current) {
-        scrollCleanupRef.current();
-        scrollCleanupRef.current = null;
-      }
-      if (unloadCleanupRef.current) {
-        unloadCleanupRef.current();
-        unloadCleanupRef.current = null;
-      }
+      window.removeEventListener("scroll", scrollHandler);
+      window.removeEventListener("beforeunload", handleUnload);
+      if (pageviewTimer !== null) clearTimeout(pageviewTimer);
     };
   }, [location]);
 }

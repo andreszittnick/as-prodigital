@@ -83,6 +83,8 @@ function getDateParams(range: DateRange, customFrom: string, customTo: string): 
   return `from=${customFrom}&to=${customTo}`;
 }
 
+type PageSortKey = "views" | "entries" | "exits" | "avgDuration" | "avgScrollDepth";
+
 export default function Analytics() {
   const [password, setPassword] = useState(() => sessionStorage.getItem(API_PASSWORD_KEY) || "");
   const [inputPw, setInputPw] = useState("");
@@ -92,6 +94,8 @@ export default function Analytics() {
   const [customFrom, setCustomFrom] = useState("");
   const [customTo, setCustomTo] = useState("");
   const dashboardRef = useRef<HTMLDivElement>(null);
+  const [pageSort, setPageSort] = useState<PageSortKey>("views");
+  const [pageSortDir, setPageSortDir] = useState<"desc" | "asc">("desc");
 
   const dateParams = getDateParams(dateRange, customFrom, customTo);
   const headers = { "x-analytics-password": password };
@@ -356,24 +360,38 @@ export default function Analytics() {
                   <thead>
                     <tr className="text-left text-slate-400 border-b border-slate-100">
                       <th className="pb-2 font-medium">Seite</th>
-                      <th className="pb-2 font-medium text-right">Aufrufe</th>
-                      <th className="pb-2 font-medium text-right">Einstiege</th>
-                      <th className="pb-2 font-medium text-right">Absprünge</th>
-                      <th className="pb-2 font-medium text-right">Ø Zeit</th>
-                      <th className="pb-2 font-medium text-right">Scroll</th>
+                      {(["views", "entries", "exits", "avgDuration", "avgScrollDepth"] as PageSortKey[]).map(key => {
+                        const labels: Record<PageSortKey, string> = { views: "Aufrufe", entries: "Einstiege", exits: "Absprünge", avgDuration: "Ø Zeit", avgScrollDepth: "Scroll" };
+                        const active = pageSort === key;
+                        return (
+                          <th
+                            key={key}
+                            className="pb-2 font-medium text-right cursor-pointer hover:text-slate-700 select-none"
+                            onClick={() => {
+                              if (pageSort === key) setPageSortDir(d => d === "desc" ? "asc" : "desc");
+                              else { setPageSort(key); setPageSortDir("desc"); }
+                            }}
+                          >
+                            {labels[key]}{active ? (pageSortDir === "desc" ? " ↓" : " ↑") : ""}
+                          </th>
+                        );
+                      })}
                     </tr>
                   </thead>
                   <tbody>
-                    {(pages ?? []).slice(0, 15).map((p: PageStat, i: number) => (
-                      <tr key={i} className="border-b border-slate-50 hover:bg-slate-50">
-                        <td className="py-2 text-slate-700 truncate max-w-[120px]" title={p.page}>{p.page}</td>
-                        <td className="py-2 text-right text-slate-900 font-medium">{p.views}</td>
-                        <td className="py-2 text-right text-slate-500">{p.entries}</td>
-                        <td className="py-2 text-right text-slate-500">{p.exits}</td>
-                        <td className="py-2 text-right text-slate-500">{p.avgDuration > 0 ? formatSeconds(p.avgDuration) : "-"}</td>
-                        <td className="py-2 text-right text-slate-500">{p.avgScrollDepth > 0 ? `${p.avgScrollDepth}%` : "-"}</td>
-                      </tr>
-                    ))}
+                    {[...(pages ?? [])]
+                      .sort((a, b) => pageSortDir === "desc" ? b[pageSort] - a[pageSort] : a[pageSort] - b[pageSort])
+                      .slice(0, 15)
+                      .map((p: PageStat, i: number) => (
+                        <tr key={i} className="border-b border-slate-50 hover:bg-slate-50">
+                          <td className="py-2 text-slate-700 truncate max-w-[120px]" title={p.page}>{p.page}</td>
+                          <td className="py-2 text-right text-slate-900 font-medium">{p.views}</td>
+                          <td className="py-2 text-right text-slate-500">{p.entries}</td>
+                          <td className="py-2 text-right text-slate-500">{p.exits}</td>
+                          <td className="py-2 text-right text-slate-500">{p.avgDuration > 0 ? formatSeconds(p.avgDuration) : "-"}</td>
+                          <td className="py-2 text-right text-slate-500">{p.avgScrollDepth > 0 ? `${p.avgScrollDepth}%` : "-"}</td>
+                        </tr>
+                      ))}
                     {(!pages || pages.length === 0) && (
                       <tr><td colSpan={6} className="py-8 text-center text-slate-400 text-sm">Noch keine Daten</td></tr>
                     )}
