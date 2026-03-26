@@ -169,7 +169,7 @@ export function useAnalytics(): void {
     pageStartTime = Date.now();
     lastScrollDepth = 0;
 
-    if (prevPage !== null && prevPage !== currentPage && currentSessionId && analyticsEnabled) {
+    if (prevPage !== null && prevPage !== currentPage && currentSessionId && analyticsEnabled && prevPage !== "/analytics") {
       post("/api/analytics/event", {
         sessionId: currentSessionId,
         eventType: "exit",
@@ -214,6 +214,7 @@ export function useAnalytics(): void {
 
     const handleGlobalClick = (e: MouseEvent) => {
       if (!analyticsEnabled || !currentSessionId) return;
+      if (window.location.pathname === "/analytics") return;
       const target = e.target as HTMLElement;
       const el = target.closest("a, button, [role='button'], [data-track]") as HTMLElement | null;
       if (!el) return;
@@ -239,6 +240,7 @@ export function useAnalytics(): void {
     let pageviewTimer: ReturnType<typeof setTimeout> | null = null;
     const trackPageview = () => {
       if (!analyticsEnabled || !currentSessionId) return;
+      if (currentPage === "/analytics") return;
       post("/api/analytics/event", {
         sessionId: currentSessionId,
         eventType: "pageview",
