@@ -12,6 +12,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
 import { insertContactInquirySchema, type InsertContactInquiry } from "@shared/schema";
 import { apiRequest } from "@/lib/queryClient";
+import { trackClick } from "@/hooks/use-analytics";
 
 const contactInfo = [
   {
@@ -69,6 +70,7 @@ export default function ContactSection() {
   });
 
   const onSubmit = (data: InsertContactInquiry) => {
+    trackClick("kontaktformular-absenden");
     submitMutation.mutate(data);
   };
 

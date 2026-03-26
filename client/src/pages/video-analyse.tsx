@@ -12,6 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { trackClick } from "@/hooks/use-analytics";
 
 const videoAnalyseFormSchema = z.object({
   name: z.string().min(1, "Name ist erforderlich"),
@@ -39,6 +40,7 @@ export default function VideoAnalyse() {
   });
 
   const onSubmit = async (data: VideoAnalyseFormData) => {
+    trackClick("video-analyse-formular-absenden");
     try {
       const nameParts = data.name.trim().split(' ');
       const firstName = nameParts[0] || data.name;

@@ -2,6 +2,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Mail, ArrowUp } from "lucide-react";
 import { SiWhatsapp } from "react-icons/si";
 import { useState, useEffect, useCallback } from "react";
+import { trackClick } from "@/hooks/use-analytics";
 
 export default function FloatingContactButtons() {
   const [showScrollTop, setShowScrollTop] = useState(false);
@@ -41,6 +42,7 @@ export default function FloatingContactButtons() {
           href="https://wa.me/4967318789"
           target="_blank"
           rel="noopener noreferrer"
+          onClick={() => trackClick("whatsapp-float")}
           className="w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all duration-300 hover:scale-110 active:scale-90"
           style={{
             background: 'linear-gradient(135deg, #25D366 0%, #128C7E 100%)',
@@ -53,6 +55,7 @@ export default function FloatingContactButtons() {
         {/* Mail Button */}
         <a
           href="mailto:info@as-prodigital.de"
+          onClick={() => trackClick("email-float")}
           className="w-14 h-14 rounded-full shadow-2xl flex items-center justify-center hover:shadow-3xl transition-all duration-300 hover:scale-110 active:scale-90"
           style={{
             background: '#fa5219',

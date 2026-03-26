@@ -59,8 +59,22 @@ UI Features: Floating contact buttons (WhatsApp & Email) visible on all pages, N
 - **Tables**: 
   - `users` - User authentication and management
   - `contact_inquiries` - Contact form submissions with fields: firstName, lastName, companyName (optional), email, phone (optional), service, message (optional)
+  - `analytics_sessions` - Anonymous visitor sessions (sessionId, visitorId, isReturning, entryPage, device, referrerSource, startedAt, lastActivity, pageCount, duration)
+  - `analytics_events` - Individual tracking events (sessionId, eventType, page, element, scrollDepth, timeOnPage, timestamp)
   - `blog_posts` - Blog articles with categories, tags, and SEO metadata
 - **Schema Management**: Drizzle migrations with push-based deployment
+
+## Custom Analytics Tracking System (DSGVO-compliant)
+- **Dashboard URL**: /analytics (password-protected, noindex, not in sitemap/navigation)
+- **Auth**: ANALYTICS_PASSWORD environment variable (set on Render.com)
+- **Hook**: `client/src/hooks/use-analytics.ts` - Auto-tracks pageviews, scroll depth, session, exit events
+- **Tracking**: Runs invisibly on all pages via AnalyticsTracker in App.tsx
+- **CTA Tracking**: trackClick() function - used in FloatingContactButtons, contact form, video-analyse form
+- **Anonymous IDs**: visitor_id (localStorage) and session_id (sessionStorage) - no personal data
+- **Data collected**: pageviews per page, entry/exit pages, time on page, scroll depth (25/50/75/100%), CTA clicks, device type (desktop/tablet/mobile), referrer source (direct/google/social/other), user flows between pages
+- **Dashboard features**: KPI cards, daily timeline chart (Recharts), pages table, CTA ranking, user flow list, device/referrer breakdown, date range filter, PDF export (jsPDF + html2canvas)
+- **PDF Export**: "Als PDF exportieren" button exports full dashboard with branding
+- **Render.com setup needed**: DATABASE_URL + ANALYTICS_PASSWORD environment variables
 
 ## Local SEO Landingpages
 - **Strategie**: /webdesign und /seo sind allgemeine Service-Seiten (nicht Alzey-spezifisch)
