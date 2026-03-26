@@ -44,11 +44,12 @@ function AnalyticsTracker() {
 }
 
 function Router() {
+  const [location] = useLocation();
   return (
     <>
       <ScrollToTop />
       <AnalyticsTracker />
-      <FloatingContactButtons />
+      {location !== "/analytics" && <FloatingContactButtons />}
       <Switch>
         <Route path="/" component={Home} />
         <Route path="/leistungen" component={Services} />
