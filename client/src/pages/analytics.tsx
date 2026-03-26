@@ -168,7 +168,8 @@ export default function Analytics() {
   const handleExportPDF = async () => {
     const jspdfModule = await import("jspdf");
     const jsPDF = jspdfModule.jsPDF ?? jspdfModule.default;
-    await import("jspdf-autotable");
+    const autoTableModule = await import("jspdf-autotable");
+    const autoTableFn = autoTableModule.default ?? autoTableModule;
 
     const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
     const W = doc.internal.pageSize.getWidth();
@@ -177,7 +178,7 @@ export default function Analytics() {
     const LGRAY = [245, 247, 250] as [number, number, number];
     const rangeLbl = dateRange === "today" ? "Heute" : dateRange === "7" ? "Letzte 7 Tage" : dateRange === "30" ? "Letzte 30 Tage" : `${customFrom} – ${customTo}`;
     const today = new Date().toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" });
-    const autoTable = (doc as any).autoTable.bind(doc);
+    const autoTable = (opts: object) => autoTableFn(doc, opts);
     let y = 0;
 
     // ── Header bar ──────────────────────────────────────────────────────────
