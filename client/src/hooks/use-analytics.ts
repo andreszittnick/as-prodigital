@@ -82,8 +82,8 @@ function sendBeacon(url: string, data: object): void {
 }
 
 // ─── Consent gate ────────────────────────────────────────────────────────────
-// All tracking is disabled until explicitly enabled via setAnalyticsEnabled().
-let analyticsEnabled = false;
+// Tracking is active by default for all visitors.
+let analyticsEnabled = true;
 
 export function setAnalyticsEnabled(enabled: boolean): void {
   const wasEnabled = analyticsEnabled;
