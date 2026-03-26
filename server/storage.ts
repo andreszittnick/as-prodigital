@@ -65,6 +65,7 @@ export interface IStorage {
   getPageStats(from: Date, to: Date): Promise<PageStat[]>;
   getCtaStats(from: Date, to: Date): Promise<CtaStat[]>;
   getUserFlows(from: Date, to: Date): Promise<FlowStep[]>;
+  getUserPaths(from: Date, to: Date): Promise<{ steps: string[]; count: number }[]>;
   clearAnalyticsData(): Promise<void>;
 }
 
@@ -324,6 +325,34 @@ export class MemStorage implements IStorage {
       .slice(0, 20);
   }
 
+  async getUserPaths(from: Date, to: Date): Promise<{ steps: string[]; count: number }[]> {
+    const sessions = this.getSessionsInRange(from, to);
+    const events = this.getEventsInRange(from, to);
+    const pathMap = new Map<string, number>();
+
+    for (const session of sessions) {
+      const pageviews = events
+        .filter(e => e.sessionId === session.sessionId && e.eventType === 'pageview')
+        .sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
+      if (pageviews.length < 2) continue;
+
+      const steps: string[] = [];
+      for (const ev of pageviews) {
+        const page = ev.page || '/';
+        if (steps.length === 0 || steps[steps.length - 1] !== page) steps.push(page);
+      }
+      if (steps.length < 2) continue;
+
+      const key = steps.join(' → ');
+      pathMap.set(key, (pathMap.get(key) || 0) + 1);
+    }
+
+    return Array.from(pathMap.entries())
+      .map(([key, count]) => ({ steps: key.split(' → '), count }))
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 20);
+  }
+
   async clearAnalyticsData(): Promise<void> {
     this.analyticsSessions.clear();
     this.analyticsEvents = [];
@@ -531,6 +560,37 @@ export class DbStorage implements IStorage {
         const parts = key.split(' → ');
         return { from: parts[0], to: parts[1], count };
       })
+      .sort((a, b) => b.count - a.count)
+      .slice(0, 20);
+  }
+
+  async getUserPaths(from: Date, to: Date): Promise<{ steps: string[]; count: number }[]> {
+    const sessions = await this.db.select().from(analyticsSessions)
+      .where(and(gte(analyticsSessions.startedAt, from), lte(analyticsSessions.startedAt, to)));
+    const eventsResult = await this.db.select().from(analyticsEvents)
+      .where(and(gte(analyticsEvents.timestamp, from), lte(analyticsEvents.timestamp, to)));
+
+    const pathMap = new Map<string, number>();
+
+    for (const session of sessions) {
+      const pageviews = eventsResult
+        .filter(e => e.sessionId === session.sessionId && e.eventType === 'pageview')
+        .sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
+      if (pageviews.length < 2) continue;
+
+      const steps: string[] = [];
+      for (const ev of pageviews) {
+        const page = ev.page || '/';
+        if (steps.length === 0 || steps[steps.length - 1] !== page) steps.push(page);
+      }
+      if (steps.length < 2) continue;
+
+      const key = steps.join(' → ');
+      pathMap.set(key, (pathMap.get(key) || 0) + 1);
+    }
+
+    return Array.from(pathMap.entries())
+      .map(([key, count]) => ({ steps: key.split(' → '), count }))
       .sort((a, b) => b.count - a.count)
       .slice(0, 20);
   }

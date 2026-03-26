@@ -49,6 +49,11 @@ interface FlowStep {
   count: number;
 }
 
+interface UserPath {
+  steps: string[];
+  count: number;
+}
+
 function formatSeconds(s: number): string {
   if (s < 60) return `${s}s`;
   const m = Math.floor(s / 60);
@@ -151,6 +156,13 @@ export default function Analytics() {
     retry: false,
   });
 
+  const { data: paths } = useQuery<UserPath[]>({
+    queryKey: ["/api/analytics/paths", dateParams, password],
+    queryFn: () => fetch(`/api/analytics/paths?${dateParams}`, { headers }).then(r => r.json()),
+    enabled: isLoggedIn,
+    retry: false,
+  });
+
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     const res = await fetch(`/api/analytics/summary?from=2020-01-01&to=2020-01-01`, {
@@ -173,6 +185,7 @@ export default function Analytics() {
     await queryClient.invalidateQueries({ queryKey: ["/api/analytics/pages"] });
     await queryClient.invalidateQueries({ queryKey: ["/api/analytics/cta"] });
     await queryClient.invalidateQueries({ queryKey: ["/api/analytics/flows"] });
+    await queryClient.invalidateQueries({ queryKey: ["/api/analytics/paths"] });
     setIsRefreshing(false);
   };
 
@@ -671,20 +684,27 @@ export default function Analytics() {
                 )}
               </div>
 
-              {/* User Flows */}
+              {/* User Paths */}
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <h2 className="text-slate-900 font-semibold mb-4">Häufige Wege</h2>
-                <div className="space-y-2">
-                  {(flows ?? []).map((f: FlowStep, i: number) => (
-                    <div key={i} className="flex items-center gap-2 text-sm">
-                      <span className="text-slate-500 w-5 text-right text-xs">{i + 1}.</span>
-                      <span className="text-slate-700 truncate max-w-[100px]" title={f.from}>{f.from}</span>
-                      <ArrowRight className="w-3 h-3 text-slate-300 shrink-0" />
-                      <span className="text-slate-700 truncate max-w-[100px]" title={f.to}>{f.to}</span>
-                      <span className="ml-auto text-xs font-semibold px-2 py-0.5 rounded-full" style={{ background: "#fff3ee", color: "#fa5219" }}>{f.count}×</span>
+                <div className="space-y-3">
+                  {(paths ?? []).map((p: UserPath, i: number) => (
+                    <div key={i} className="flex items-start gap-3 py-2 border-b border-slate-50 last:border-0">
+                      <span className="text-slate-400 text-xs w-5 shrink-0 pt-0.5 text-right">{i + 1}.</span>
+                      <div className="flex flex-wrap items-center gap-x-1 gap-y-1 flex-1 min-w-0">
+                        {p.steps.map((step, si) => (
+                          <span key={si} className="flex items-center gap-1">
+                            <span className="text-xs font-medium px-2 py-0.5 rounded" style={{ background: "#f1f5f9", color: "#19243b" }}>{step}</span>
+                            {si < p.steps.length - 1 && (
+                              <ArrowRight className="w-3 h-3 text-slate-300 shrink-0" />
+                            )}
+                          </span>
+                        ))}
+                      </div>
+                      <span className="text-xs font-bold shrink-0 px-2 py-0.5 rounded-full" style={{ background: "#fff3ee", color: "#fa5219" }}>{p.count}×</span>
                     </div>
                   ))}
-                  {(!flows || flows.length === 0) && (
+                  {(!paths || paths.length === 0) && (
                     <p className="text-slate-400 text-sm text-center py-4">Noch keine Daten</p>
                   )}
                 </div>
