@@ -63,6 +63,12 @@ function formatDate(d: string): string {
 
 type DateRange = "today" | "7" | "30" | "custom";
 
+function isValidDate(s: string): boolean {
+  if (!s || !/^\d{4}-\d{2}-\d{2}$/.test(s)) return false;
+  const d = new Date(s);
+  return !isNaN(d.getTime());
+}
+
 function getDateParams(range: DateRange, customFrom: string, customTo: string): string {
   const now = new Date();
   const pad = (n: number) => String(n).padStart(2, "0");
@@ -80,7 +86,13 @@ function getDateParams(range: DateRange, customFrom: string, customTo: string): 
     from.setDate(from.getDate() - 29);
     return `from=${fmt(from)}&to=${today}`;
   }
-  return `from=${customFrom}&to=${customTo}`;
+  // custom: validate both dates; fall back to last 30 days on invalid input
+  if (isValidDate(customFrom) && isValidDate(customTo) && customFrom <= customTo) {
+    return `from=${customFrom}&to=${customTo}`;
+  }
+  const fallback = new Date(now);
+  fallback.setDate(fallback.getDate() - 29);
+  return `from=${fmt(fallback)}&to=${today}`;
 }
 
 type PageSortKey = "views" | "entries" | "exits" | "avgDuration" | "avgScrollDepth";
@@ -382,7 +394,6 @@ export default function Analytics() {
                   <tbody>
                     {[...(pages ?? [])]
                       .sort((a, b) => pageSortDir === "desc" ? b[pageSort] - a[pageSort] : a[pageSort] - b[pageSort])
-                      .slice(0, 15)
                       .map((p: PageStat, i: number) => (
                         <tr key={i} className="border-b border-slate-50 hover:bg-slate-50">
                           <td className="py-2 text-slate-700 truncate max-w-[120px]" title={p.page}>{p.page}</td>
@@ -408,13 +419,13 @@ export default function Analytics() {
                 {(cta ?? []).length === 0 ? (
                   <p className="text-slate-400 text-sm text-center py-4">Noch keine Daten</p>
                 ) : (
-                  <ResponsiveContainer width="100%" height={180}>
-                    <BarChart data={(cta ?? []).slice(0, 8)} layout="vertical" margin={{ left: 0, right: 20, top: 0, bottom: 0 }}>
+                  <ResponsiveContainer width="100%" height={Math.max(180, Math.min((cta ?? []).length * 28, 360))}>
+                    <BarChart data={(cta ?? [])} layout="vertical" margin={{ left: 0, right: 20, top: 0, bottom: 0 }}>
                       <XAxis type="number" tick={{ fontSize: 11, fill: "#64748b" }} />
                       <YAxis type="category" dataKey="element" width={100} tick={{ fontSize: 11, fill: "#64748b" }} />
                       <Tooltip contentStyle={{ borderRadius: 8, border: "1px solid #e2e8f0", fontSize: 12 }} />
                       <Bar dataKey="clicks" name="Klicks" radius={[0, 4, 4, 0]}>
-                        {(cta ?? []).slice(0, 8).map((_: CtaStat, index: number) => (
+                        {(cta ?? []).map((_: CtaStat, index: number) => (
                           <Cell key={index} fill={index % 2 === 0 ? "#fa5219" : "#19243b"} />
                         ))}
                       </Bar>
@@ -427,7 +438,7 @@ export default function Analytics() {
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <h2 className="text-slate-900 font-semibold mb-4">Häufige Wege</h2>
                 <div className="space-y-2">
-                  {(flows ?? []).slice(0, 8).map((f: FlowStep, i: number) => (
+                  {(flows ?? []).map((f: FlowStep, i: number) => (
                     <div key={i} className="flex items-center gap-2 text-sm">
                       <span className="text-slate-500 w-5 text-right text-xs">{i + 1}.</span>
                       <span className="text-slate-700 truncate max-w-[100px]" title={f.from}>{f.from}</span>
