@@ -90,7 +90,7 @@ async function initSession(): Promise<void> {
     entryPage: window.location.pathname,
     device: getDevice(),
     referrerSource: getReferrerSource(),
-    pageCount: 1,
+    pageCount: 0,
     duration: 0,
   });
 

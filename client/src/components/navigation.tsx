@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronDown, Monitor, Search, Video } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { useScrollPosition } from "@/hooks/use-scroll";
+import { trackClick } from "@/hooks/use-analytics";
 
 export default function Navigation() {
   const [isOpen, setIsOpen] = useState(false);
@@ -315,7 +316,7 @@ export default function Navigation() {
               
               <Link href="/kontakt">
                 <motion.button
-                  onClick={() => setIsOpen(false)}
+                  onClick={() => { setIsOpen(false); trackClick("nav-kontakt-aufnehmen"); }}
                   className="w-full text-white px-6 py-3 rounded-lg font-semibold hover:shadow-lg transition-all duration-300 mt-2"
                   style={{ background: '#19243b' }}
                   data-testid="mobile-nav-contact"

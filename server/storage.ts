@@ -228,29 +228,35 @@ export class MemStorage implements IStorage {
 
     const pageMap = new Map<string, { views: number; entries: number; exits: number; durations: number[]; scrollDepths: number[] }>();
 
-    const pageViews = events.filter(e => e.eventType === 'pageview');
-    for (const e of pageViews) {
-      if (!pageMap.has(e.page)) {
-        pageMap.set(e.page, { views: 0, entries: 0, exits: 0, durations: [], scrollDepths: [] });
-      }
-      const p = pageMap.get(e.page)!;
-      p.views++;
-      if (e.timeOnPage !== null) p.durations.push(e.timeOnPage);
-      if (e.scrollDepth !== null) p.scrollDepths.push(e.scrollDepth);
+    const ensure = (page: string) => {
+      if (!pageMap.has(page)) pageMap.set(page, { views: 0, entries: 0, exits: 0, durations: [], scrollDepths: [] });
+      return pageMap.get(page)!;
+    };
+
+    for (const e of events.filter(e => e.eventType === 'pageview')) {
+      ensure(e.page).views++;
     }
 
     for (const s of sessions) {
-      if (!pageMap.has(s.entryPage)) {
-        pageMap.set(s.entryPage, { views: 0, entries: 0, exits: 0, durations: [], scrollDepths: [] });
-      }
-      pageMap.get(s.entryPage)!.entries++;
+      ensure(s.entryPage).entries++;
     }
 
-    const exitEvents = events.filter(e => e.eventType === 'exit');
-    for (const e of exitEvents) {
-      if (pageMap.has(e.page)) {
-        pageMap.get(e.page)!.exits++;
-      }
+    for (const e of events.filter(e => e.eventType === 'exit')) {
+      const p = ensure(e.page);
+      p.exits++;
+      if (e.timeOnPage !== null && e.timeOnPage > 0) p.durations.push(e.timeOnPage);
+    }
+
+    // Scroll depth: take max scroll depth per session per page, then average those
+    const scrollBySessionPage = new Map<string, number>();
+    for (const e of events.filter(e => e.eventType === 'scroll' && e.scrollDepth !== null)) {
+      const key = `${e.sessionId}::${e.page}`;
+      const cur = scrollBySessionPage.get(key) ?? 0;
+      if ((e.scrollDepth ?? 0) > cur) scrollBySessionPage.set(key, e.scrollDepth!);
+    }
+    for (const [key, depth] of scrollBySessionPage) {
+      const page = key.split('::')[1];
+      ensure(page).scrollDepths.push(depth);
     }
 
     return Array.from(pageMap.entries()).map(([page, data]) => ({
@@ -426,19 +432,33 @@ export class DbStorage implements IStorage {
 
     const pageMap = new Map<string, { views: number; entries: number; exits: number; durations: number[]; scrollDepths: number[] }>();
 
+    const ensure = (page: string) => {
+      if (!pageMap.has(page)) pageMap.set(page, { views: 0, entries: 0, exits: 0, durations: [], scrollDepths: [] });
+      return pageMap.get(page)!;
+    };
+
     for (const e of eventsResult.filter(e => e.eventType === 'pageview')) {
-      if (!pageMap.has(e.page)) pageMap.set(e.page, { views: 0, entries: 0, exits: 0, durations: [], scrollDepths: [] });
-      const p = pageMap.get(e.page)!;
-      p.views++;
-      if (e.timeOnPage !== null) p.durations.push(e.timeOnPage);
-      if (e.scrollDepth !== null) p.scrollDepths.push(e.scrollDepth);
+      ensure(e.page).views++;
     }
     for (const s of sessions) {
-      if (!pageMap.has(s.entryPage)) pageMap.set(s.entryPage, { views: 0, entries: 0, exits: 0, durations: [], scrollDepths: [] });
-      pageMap.get(s.entryPage)!.entries++;
+      ensure(s.entryPage).entries++;
     }
     for (const e of eventsResult.filter(e => e.eventType === 'exit')) {
-      if (pageMap.has(e.page)) pageMap.get(e.page)!.exits++;
+      const p = ensure(e.page);
+      p.exits++;
+      if (e.timeOnPage !== null && e.timeOnPage > 0) p.durations.push(e.timeOnPage);
+    }
+
+    // Scroll depth: take max scroll depth per session per page, then average those
+    const scrollBySessionPage = new Map<string, number>();
+    for (const e of eventsResult.filter(e => e.eventType === 'scroll' && e.scrollDepth !== null)) {
+      const key = `${e.sessionId}::${e.page}`;
+      const cur = scrollBySessionPage.get(key) ?? 0;
+      if ((e.scrollDepth ?? 0) > cur) scrollBySessionPage.set(key, e.scrollDepth!);
+    }
+    for (const [key, depth] of scrollBySessionPage) {
+      const page = key.split('::')[1];
+      ensure(page).scrollDepths.push(depth);
     }
 
     return Array.from(pageMap.entries()).map(([page, data]) => ({

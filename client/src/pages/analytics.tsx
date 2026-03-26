@@ -9,6 +9,47 @@ import { Lock, Download, Users, Eye, MousePointer, Clock, Monitor, Smartphone, T
 
 const API_PASSWORD_KEY = "asp_dashboard_pw";
 
+interface AnalyticsSummary {
+  totalVisitors: number;
+  newVisitors: number;
+  returningVisitors: number;
+  totalPageViews: number;
+  totalCtaClicks: number;
+  avgDuration: number;
+  deviceBreakdown: { desktop: number; tablet: number; mobile: number };
+  referrerBreakdown: { direct: number; google: number; social: number; other: number };
+}
+
+interface DailyStat {
+  date: string;
+  visitors: number;
+  newVisitors: number;
+  returningVisitors: number;
+  pageViews: number;
+  ctaClicks: number;
+}
+
+interface PageStat {
+  page: string;
+  views: number;
+  entries: number;
+  exits: number;
+  avgDuration: number;
+  avgScrollDepth: number;
+}
+
+interface CtaStat {
+  element: string;
+  clicks: number;
+  page: string;
+}
+
+interface FlowStep {
+  from: string;
+  to: string;
+  count: number;
+}
+
 function formatSeconds(s: number): string {
   if (s < 60) return `${s}s`;
   const m = Math.floor(s / 60);
@@ -55,7 +96,7 @@ export default function Analytics() {
   const dateParams = getDateParams(dateRange, customFrom, customTo);
   const headers = { "x-analytics-password": password };
 
-  const { data: summary } = useQuery({
+  const { data: summary } = useQuery<AnalyticsSummary>({
     queryKey: ["/api/analytics/summary", dateParams, password],
     queryFn: () => fetch(`/api/analytics/summary?${dateParams}`, { headers }).then(r => {
       if (r.status === 401) throw new Error("Unauthorized");
@@ -65,28 +106,28 @@ export default function Analytics() {
     retry: false,
   });
 
-  const { data: daily } = useQuery({
+  const { data: daily } = useQuery<DailyStat[]>({
     queryKey: ["/api/analytics/daily", dateParams, password],
     queryFn: () => fetch(`/api/analytics/daily?${dateParams}`, { headers }).then(r => r.json()),
     enabled: isLoggedIn,
     retry: false,
   });
 
-  const { data: pages } = useQuery({
+  const { data: pages } = useQuery<PageStat[]>({
     queryKey: ["/api/analytics/pages", dateParams, password],
     queryFn: () => fetch(`/api/analytics/pages?${dateParams}`, { headers }).then(r => r.json()),
     enabled: isLoggedIn,
     retry: false,
   });
 
-  const { data: cta } = useQuery({
+  const { data: cta } = useQuery<CtaStat[]>({
     queryKey: ["/api/analytics/cta", dateParams, password],
     queryFn: () => fetch(`/api/analytics/cta?${dateParams}`, { headers }).then(r => r.json()),
     enabled: isLoggedIn,
     retry: false,
   });
 
-  const { data: flows } = useQuery({
+  const { data: flows } = useQuery<FlowStep[]>({
     queryKey: ["/api/analytics/flows", dateParams, password],
     queryFn: () => fetch(`/api/analytics/flows?${dateParams}`, { headers }).then(r => r.json()),
     enabled: isLoggedIn,
@@ -317,22 +358,24 @@ export default function Analytics() {
                       <th className="pb-2 font-medium">Seite</th>
                       <th className="pb-2 font-medium text-right">Aufrufe</th>
                       <th className="pb-2 font-medium text-right">Einstiege</th>
+                      <th className="pb-2 font-medium text-right">Absprünge</th>
                       <th className="pb-2 font-medium text-right">Ø Zeit</th>
                       <th className="pb-2 font-medium text-right">Scroll</th>
                     </tr>
                   </thead>
                   <tbody>
-                    {(pages ?? []).slice(0, 15).map((p: any, i: number) => (
+                    {(pages ?? []).slice(0, 15).map((p: PageStat, i: number) => (
                       <tr key={i} className="border-b border-slate-50 hover:bg-slate-50">
-                        <td className="py-2 text-slate-700 truncate max-w-[150px]" title={p.page}>{p.page}</td>
+                        <td className="py-2 text-slate-700 truncate max-w-[120px]" title={p.page}>{p.page}</td>
                         <td className="py-2 text-right text-slate-900 font-medium">{p.views}</td>
                         <td className="py-2 text-right text-slate-500">{p.entries}</td>
-                        <td className="py-2 text-right text-slate-500">{formatSeconds(p.avgDuration)}</td>
+                        <td className="py-2 text-right text-slate-500">{p.exits}</td>
+                        <td className="py-2 text-right text-slate-500">{p.avgDuration > 0 ? formatSeconds(p.avgDuration) : "-"}</td>
                         <td className="py-2 text-right text-slate-500">{p.avgScrollDepth > 0 ? `${p.avgScrollDepth}%` : "-"}</td>
                       </tr>
                     ))}
                     {(!pages || pages.length === 0) && (
-                      <tr><td colSpan={5} className="py-8 text-center text-slate-400 text-sm">Noch keine Daten</td></tr>
+                      <tr><td colSpan={6} className="py-8 text-center text-slate-400 text-sm">Noch keine Daten</td></tr>
                     )}
                   </tbody>
                 </table>
@@ -352,7 +395,7 @@ export default function Analytics() {
                       <YAxis type="category" dataKey="element" width={100} tick={{ fontSize: 11, fill: "#64748b" }} />
                       <Tooltip contentStyle={{ borderRadius: 8, border: "1px solid #e2e8f0", fontSize: 12 }} />
                       <Bar dataKey="clicks" name="Klicks" radius={[0, 4, 4, 0]}>
-                        {(cta ?? []).slice(0, 8).map((_: any, index: number) => (
+                        {(cta ?? []).slice(0, 8).map((_: CtaStat, index: number) => (
                           <Cell key={index} fill={index % 2 === 0 ? "#fa5219" : "#19243b"} />
                         ))}
                       </Bar>
@@ -365,7 +408,7 @@ export default function Analytics() {
               <div className="bg-white rounded-xl p-6 shadow-sm">
                 <h2 className="text-slate-900 font-semibold mb-4">Häufige Wege</h2>
                 <div className="space-y-2">
-                  {(flows ?? []).slice(0, 8).map((f: any, i: number) => (
+                  {(flows ?? []).slice(0, 8).map((f: FlowStep, i: number) => (
                     <div key={i} className="flex items-center gap-2 text-sm">
                       <span className="text-slate-500 w-5 text-right text-xs">{i + 1}.</span>
                       <span className="text-slate-700 truncate max-w-[100px]" title={f.from}>{f.from}</span>
