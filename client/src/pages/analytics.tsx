@@ -156,7 +156,8 @@ export default function Analytics() {
   const handleExportPDF = async () => {
     if (!dashboardRef.current) return;
     const { default: html2canvas } = await import("html2canvas");
-    const { default: jsPDF } = await import("jspdf");
+    const jspdfModule = await import("jspdf");
+    const jsPDF = jspdfModule.jsPDF ?? jspdfModule.default;
 
     const canvas = await html2canvas(dashboardRef.current, {
       scale: 1.5,

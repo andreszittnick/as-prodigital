@@ -297,13 +297,19 @@ export class MemStorage implements IStorage {
 
     for (const session of sessions) {
       const sessionEvents = events
-        .filter(e => e.sessionId === session.sessionId && e.eventType === 'pageview')
+        .filter(e => e.sessionId === session.sessionId && (e.eventType === 'pageview' || e.eventType === 'cta_click'))
         .sort((a, b) => a.timestamp.getTime() - b.timestamp.getTime());
 
       for (let i = 0; i < sessionEvents.length - 1; i++) {
-        const from = sessionEvents[i].page;
-        const to = sessionEvents[i + 1].page;
-        const key = `${from} → ${to}`;
+        const ev = sessionEvents[i];
+        const nextEv = sessionEvents[i + 1];
+        // Skip if both are CTA clicks (only track page→page or page→cta transitions)
+        if (ev.eventType === 'cta_click') continue;
+        const fromNode = ev.page;
+        const toNode = nextEv.eventType === 'cta_click'
+          ? `cta:${nextEv.element || 'unknown'}`
+          : nextEv.page;
+        const key = `${fromNode} → ${toNode}`;
         flowMap.set(key, (flowMap.get(key) || 0) + 1);
       }
     }
@@ -498,11 +504,18 @@ export class DbStorage implements IStorage {
     const flowMap = new Map<string, number>();
     for (const session of sessions) {
       const sessionEvents = eventsResult
-        .filter(e => e.sessionId === session.sessionId && e.eventType === 'pageview')
+        .filter(e => e.sessionId === session.sessionId && (e.eventType === 'pageview' || e.eventType === 'cta_click'))
         .sort((a, b) => new Date(a.timestamp).getTime() - new Date(b.timestamp).getTime());
 
       for (let i = 0; i < sessionEvents.length - 1; i++) {
-        const key = `${sessionEvents[i].page} → ${sessionEvents[i + 1].page}`;
+        const ev = sessionEvents[i];
+        const nextEv = sessionEvents[i + 1];
+        if (ev.eventType === 'cta_click') continue;
+        const fromNode = ev.page;
+        const toNode = nextEv.eventType === 'cta_click'
+          ? `cta:${nextEv.element || 'unknown'}`
+          : nextEv.page;
+        const key = `${fromNode} → ${toNode}`;
         flowMap.set(key, (flowMap.get(key) || 0) + 1);
       }
     }

@@ -129,6 +129,10 @@ export function useAnalytics(): void {
     const prevPage = prevPageRef.current;
     prevPageRef.current = currentPage;
 
+    // Capture time on previous page before resetting the timer
+    const prevPageDuration = Math.round((Date.now() - pageStartTime) / 1000);
+    const prevScrollDepth = lastScrollDepth;
+
     // Reset page timer and scroll depth for new page
     pageStartTime = Date.now();
     lastScrollDepth = 0;
@@ -139,8 +143,8 @@ export function useAnalytics(): void {
         sessionId: currentSessionId,
         eventType: "exit",
         page: prevPage,
-        timeOnPage: 0, // SPA nav: duration is not meaningful here (already tracked by unload)
-        scrollDepth: lastScrollDepth,
+        timeOnPage: prevPageDuration,
+        scrollDepth: prevScrollDepth,
       });
     }
 
