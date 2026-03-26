@@ -5,11 +5,11 @@ import { QueryClientProvider } from "@tanstack/react-query";
 import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { HelmetProvider } from "react-helmet-async";
-import { CookieConsentProvider } from "@/hooks/use-cookie-consent";
+import { CookieConsentProvider, useCookieConsent } from "@/hooks/use-cookie-consent";
 import FloatingContactButtons from "@/components/floating-contact-buttons";
 import CookieBanner from "@/components/cookie-banner";
 import CookieSettingsModal from "@/components/cookie-settings-modal";
-import { useAnalytics } from "@/hooks/use-analytics";
+import { useAnalytics, setAnalyticsEnabled } from "@/hooks/use-analytics";
 import Home from "@/pages/home";
 import Services from "@/pages/services";
 import About from "@/pages/about";
@@ -39,6 +39,14 @@ function ScrollToTop() {
 }
 
 function AnalyticsTracker() {
+  const { preferences, hasConsent } = useCookieConsent();
+
+  useEffect(() => {
+    if (hasConsent) {
+      setAnalyticsEnabled(preferences.analytics);
+    }
+  }, [preferences.analytics, hasConsent]);
+
   useAnalytics();
   return null;
 }

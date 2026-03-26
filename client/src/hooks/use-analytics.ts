@@ -8,7 +8,6 @@ function generateUUID(): string {
   if (typeof crypto !== "undefined" && typeof crypto.randomUUID === "function") {
     return crypto.randomUUID();
   }
-  // Fallback for older browsers
   return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
     const r = (Math.random() * 16) | 0;
     const v = c === "x" ? r : (r & 0x3) | 0x8;
@@ -69,13 +68,11 @@ async function post(url: string, data: object): Promise<void> {
 
 function sendBeacon(url: string, data: object): void {
   try {
-    // Send as Blob with Content-Type so express.json() can parse it
     const blob = new Blob([JSON.stringify(data)], { type: "application/json" });
     if (navigator.sendBeacon(url, blob)) return;
   } catch {
     // Fall through to fetch fallback
   }
-  // Fallback: keepalive fetch (works in most browsers when sendBeacon fails)
   fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
@@ -84,6 +81,32 @@ function sendBeacon(url: string, data: object): void {
   }).catch(() => {});
 }
 
+// ─── Consent gate ────────────────────────────────────────────────────────────
+// All tracking is disabled until explicitly enabled via setAnalyticsEnabled().
+let analyticsEnabled = false;
+
+export function setAnalyticsEnabled(enabled: boolean): void {
+  const wasEnabled = analyticsEnabled;
+  analyticsEnabled = enabled;
+
+  if (enabled && !wasEnabled) {
+    // Consent was just granted — start a new session
+    sessionInitialized = false;
+    sessionReady = false;
+    currentSessionId = "";
+    initSession();
+  } else if (!enabled && wasEnabled) {
+    // Consent was revoked — clear all persistent tracking IDs
+    localStorage.removeItem(VISITOR_KEY);
+    localStorage.removeItem(VISITOR_KEY + "_seen");
+    sessionStorage.removeItem(SESSION_KEY);
+    sessionInitialized = false;
+    sessionReady = false;
+    currentSessionId = "";
+  }
+}
+// ─────────────────────────────────────────────────────────────────────────────
+
 let sessionInitialized = false;
 let sessionReady = false;
 let currentSessionId = "";
@@ -91,6 +114,7 @@ let pageStartTime = Date.now();
 let lastScrollDepth = 0;
 
 async function initSession(): Promise<void> {
+  if (!analyticsEnabled) return;
   if (sessionInitialized) return;
   sessionInitialized = true;
 
@@ -115,7 +139,7 @@ async function initSession(): Promise<void> {
 }
 
 export function trackClick(element: string, page?: string): void {
-  if (!currentSessionId) return;
+  if (!analyticsEnabled || !currentSessionId) return;
   post("/api/analytics/event", {
     sessionId: currentSessionId,
     eventType: "cta_click",
@@ -129,7 +153,9 @@ export function useAnalytics(): void {
   const prevPageRef = useRef<string | null>(null);
 
   useEffect(() => {
-    initSession();
+    if (analyticsEnabled) {
+      initSession();
+    }
   }, []);
 
   useEffect(() => {
@@ -137,16 +163,13 @@ export function useAnalytics(): void {
     const prevPage = prevPageRef.current;
     prevPageRef.current = currentPage;
 
-    // Capture time on previous page before resetting the timer
     const prevPageDuration = Math.round((Date.now() - pageStartTime) / 1000);
     const prevScrollDepth = lastScrollDepth;
 
-    // Reset page timer and scroll depth for new page
     pageStartTime = Date.now();
     lastScrollDepth = 0;
 
-    // Send exit event for previous page on SPA navigation
-    if (prevPage !== null && prevPage !== currentPage && currentSessionId) {
+    if (prevPage !== null && prevPage !== currentPage && currentSessionId && analyticsEnabled) {
       post("/api/analytics/event", {
         sessionId: currentSessionId,
         eventType: "exit",
@@ -156,11 +179,10 @@ export function useAnalytics(): void {
       });
     }
 
-    // Scroll depth tracking - always attach; tracker checks currentSessionId lazily
     const milestones = [25, 50, 75, 100];
     const reported = new Set<number>();
     const scrollHandler = () => {
-      if (!currentSessionId) return;
+      if (!analyticsEnabled || !currentSessionId) return;
       const scrolled = window.scrollY + window.innerHeight;
       const total = document.documentElement.scrollHeight;
       const pct = Math.round((scrolled / total) * 100);
@@ -178,9 +200,8 @@ export function useAnalytics(): void {
       }
     };
 
-    // Unload beacon - always attach; fires when user closes tab or navigates away
     const handleUnload = () => {
-      if (!currentSessionId) return;
+      if (!analyticsEnabled || !currentSessionId) return;
       const duration = Math.round((Date.now() - pageStartTime) / 1000);
       sendBeacon("/api/analytics/event", {
         sessionId: currentSessionId,
@@ -194,10 +215,9 @@ export function useAnalytics(): void {
     window.addEventListener("scroll", scrollHandler, { passive: true });
     window.addEventListener("beforeunload", handleUnload);
 
-    // Track pageview - delayed if session hasn't finished initializing yet
     let pageviewTimer: ReturnType<typeof setTimeout> | null = null;
     const trackPageview = () => {
-      if (!currentSessionId) return;
+      if (!analyticsEnabled || !currentSessionId) return;
       post("/api/analytics/event", {
         sessionId: currentSessionId,
         eventType: "pageview",
@@ -206,10 +226,12 @@ export function useAnalytics(): void {
       });
     };
 
-    if (sessionReady) {
-      trackPageview();
-    } else {
-      pageviewTimer = setTimeout(trackPageview, 1000);
+    if (analyticsEnabled) {
+      if (sessionReady) {
+        trackPageview();
+      } else {
+        pageviewTimer = setTimeout(trackPageview, 1000);
+      }
     }
 
     return () => {
