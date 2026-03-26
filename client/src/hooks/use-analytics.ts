@@ -212,6 +212,27 @@ export function useAnalytics(): void {
       });
     };
 
+    const handleGlobalClick = (e: MouseEvent) => {
+      if (!analyticsEnabled || !currentSessionId) return;
+      const target = e.target as HTMLElement;
+      const el = target.closest("a, button, [role='button'], [data-track]") as HTMLElement | null;
+      if (!el) return;
+      const label =
+        el.getAttribute("data-track") ||
+        el.getAttribute("aria-label") ||
+        el.textContent?.trim().slice(0, 60) ||
+        el.getAttribute("href") ||
+        el.tagName.toLowerCase();
+      if (!label || label.length === 0) return;
+      post("/api/analytics/event", {
+        sessionId: currentSessionId,
+        eventType: "cta_click",
+        page: window.location.pathname,
+        element: label,
+      });
+    };
+
+    document.addEventListener("click", handleGlobalClick, { capture: true });
     window.addEventListener("scroll", scrollHandler, { passive: true });
     window.addEventListener("beforeunload", handleUnload);
 
@@ -235,6 +256,7 @@ export function useAnalytics(): void {
     }
 
     return () => {
+      document.removeEventListener("click", handleGlobalClick, { capture: true });
       window.removeEventListener("scroll", scrollHandler);
       window.removeEventListener("beforeunload", handleUnload);
       if (pageviewTimer !== null) clearTimeout(pageviewTimer);

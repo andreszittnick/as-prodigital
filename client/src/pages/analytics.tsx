@@ -1,11 +1,10 @@
 import { useState, useRef } from "react";
 import { Helmet } from "react-helmet-async";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
-  BarChart, Bar, Cell
 } from "recharts";
-import { Lock, Download, Users, Eye, MousePointer, Clock, Monitor, Smartphone, Tablet, TrendingUp, ArrowRight } from "lucide-react";
+import { Lock, Download, Users, Eye, MousePointer, Clock, Monitor, Smartphone, Tablet, TrendingUp, ArrowRight, RefreshCw } from "lucide-react";
 
 const API_PASSWORD_KEY = "asp_dashboard_pw";
 
@@ -108,6 +107,8 @@ export default function Analytics() {
   const dashboardRef = useRef<HTMLDivElement>(null);
   const [pageSort, setPageSort] = useState<PageSortKey>("views");
   const [pageSortDir, setPageSortDir] = useState<"desc" | "asc">("desc");
+  const [isRefreshing, setIsRefreshing] = useState(false);
+  const queryClient = useQueryClient();
 
   const dateParams = getDateParams(dateRange, customFrom, customTo);
   const headers = { "x-analytics-password": password };
@@ -163,6 +164,16 @@ export default function Analytics() {
     sessionStorage.setItem(API_PASSWORD_KEY, inputPw);
     setIsLoggedIn(true);
     setLoginError(false);
+  };
+
+  const handleRefresh = async () => {
+    setIsRefreshing(true);
+    await queryClient.invalidateQueries({ queryKey: ["/api/analytics/summary"] });
+    await queryClient.invalidateQueries({ queryKey: ["/api/analytics/daily"] });
+    await queryClient.invalidateQueries({ queryKey: ["/api/analytics/pages"] });
+    await queryClient.invalidateQueries({ queryKey: ["/api/analytics/cta"] });
+    await queryClient.invalidateQueries({ queryKey: ["/api/analytics/flows"] });
+    setIsRefreshing(false);
   };
 
   const handleExportPDF = async () => {
@@ -459,6 +470,14 @@ export default function Analytics() {
               PDF exportieren
             </button>
             <button
+              onClick={handleRefresh}
+              disabled={isRefreshing}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-slate-700 text-white transition hover:bg-slate-600 disabled:opacity-50"
+            >
+              <RefreshCw className={`w-4 h-4 ${isRefreshing ? "animate-spin" : ""}`} />
+              Aktualisieren
+            </button>
+            <button
               onClick={() => { sessionStorage.removeItem(API_PASSWORD_KEY); setIsLoggedIn(false); setPassword(""); }}
               className="text-slate-400 text-xs hover:text-white transition"
             >
@@ -609,18 +628,30 @@ export default function Analytics() {
                 {(cta ?? []).length === 0 ? (
                   <p className="text-slate-400 text-sm text-center py-4">Noch keine Daten</p>
                 ) : (
-                  <ResponsiveContainer width="100%" height={Math.max(180, Math.min((cta ?? []).length * 28, 360))}>
-                    <BarChart data={(cta ?? [])} layout="vertical" margin={{ left: 0, right: 20, top: 0, bottom: 0 }}>
-                      <XAxis type="number" tick={{ fontSize: 11, fill: "#64748b" }} />
-                      <YAxis type="category" dataKey="element" width={100} tick={{ fontSize: 11, fill: "#64748b" }} />
-                      <Tooltip contentStyle={{ borderRadius: 8, border: "1px solid #e2e8f0", fontSize: 12 }} />
-                      <Bar dataKey="clicks" name="Klicks" radius={[0, 4, 4, 0]}>
-                        {(cta ?? []).map((_: CtaStat, index: number) => (
-                          <Cell key={index} fill={index % 2 === 0 ? "#fa5219" : "#19243b"} />
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm">
+                      <thead>
+                        <tr className="border-b border-slate-100">
+                          <th className="text-left text-slate-500 font-medium pb-2 pr-4">#</th>
+                          <th className="text-left text-slate-500 font-medium pb-2 pr-4">Button / Link</th>
+                          <th className="text-left text-slate-500 font-medium pb-2 pr-4">Seite</th>
+                          <th className="text-right text-slate-500 font-medium pb-2">Klicks</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {(cta ?? []).map((c: CtaStat, i: number) => (
+                          <tr key={i} className="border-b border-slate-50 hover:bg-slate-50 transition">
+                            <td className="py-2.5 pr-4 text-slate-400 text-xs">{i + 1}</td>
+                            <td className="py-2.5 pr-4 font-medium text-slate-800">{c.element}</td>
+                            <td className="py-2.5 pr-4 text-slate-500 text-xs">{c.page}</td>
+                            <td className="py-2.5 text-right">
+                              <span className="inline-block font-bold text-sm px-2.5 py-0.5 rounded-full" style={{ background: "#fff3ee", color: "#fa5219" }}>{c.clicks}</span>
+                            </td>
+                          </tr>
                         ))}
-                      </Bar>
-                    </BarChart>
-                  </ResponsiveContainer>
+                      </tbody>
+                    </table>
+                  </div>
                 )}
               </div>
 
