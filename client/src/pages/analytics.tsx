@@ -166,40 +166,229 @@ export default function Analytics() {
   };
 
   const handleExportPDF = async () => {
-    if (!dashboardRef.current) return;
-    const { default: html2canvas } = await import("html2canvas");
     const jspdfModule = await import("jspdf");
     const jsPDF = jspdfModule.jsPDF ?? jspdfModule.default;
+    await import("jspdf-autotable");
 
-    const canvas = await html2canvas(dashboardRef.current, {
-      scale: 1.5,
-      useCORS: true,
-      backgroundColor: "#f8fafc",
+    const doc = new jsPDF({ orientation: "portrait", unit: "mm", format: "a4" });
+    const W = doc.internal.pageSize.getWidth();
+    const BLUE = [25, 36, 59] as [number, number, number];
+    const ORANGE = [250, 82, 25] as [number, number, number];
+    const LGRAY = [245, 247, 250] as [number, number, number];
+    const rangeLbl = dateRange === "today" ? "Heute" : dateRange === "7" ? "Letzte 7 Tage" : dateRange === "30" ? "Letzte 30 Tage" : `${customFrom} – ${customTo}`;
+    const today = new Date().toLocaleDateString("de-DE", { day: "2-digit", month: "2-digit", year: "numeric" });
+    const autoTable = (doc as any).autoTable.bind(doc);
+    let y = 0;
+
+    // ── Header bar ──────────────────────────────────────────────────────────
+    doc.setFillColor(...BLUE);
+    doc.rect(0, 0, W, 24, "F");
+    doc.setFillColor(...ORANGE);
+    doc.rect(0, 22, W, 2, "F");
+
+    doc.setTextColor(255, 255, 255);
+    doc.setFontSize(16);
+    doc.setFont("helvetica", "bold");
+    doc.text("AS ProDigital", 12, 10);
+    doc.setFontSize(9);
+    doc.setFont("helvetica", "normal");
+    doc.text("Analytics Report", 12, 17);
+    doc.setFontSize(9);
+    doc.text(`Zeitraum: ${rangeLbl}`, W / 2, 10, { align: "center" });
+    doc.text(`Erstellt: ${today}`, W - 12, 10, { align: "right" });
+    doc.text("as-prodigital.de", W - 12, 17, { align: "right" });
+
+    y = 32;
+
+    // ── Section: KPI Übersicht ───────────────────────────────────────────────
+    doc.setTextColor(...BLUE);
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "bold");
+    doc.text("Kennzahlen im Überblick", 12, y);
+    y += 6;
+
+    const kpis = [
+      { label: "Besucher gesamt", value: String(summary?.totalVisitors ?? 0) },
+      { label: "Neue Besucher", value: String(summary?.newVisitors ?? 0) },
+      { label: "Wiederkehrend", value: String(summary?.returningVisitors ?? 0) },
+      { label: "Seitenaufrufe", value: String(summary?.totalPageViews ?? 0) },
+      { label: "CTA-Klicks", value: String(summary?.totalCtaClicks ?? 0) },
+      { label: "Ø Verweildauer", value: summary ? formatSeconds(summary.avgDuration) : "0s" },
+    ];
+
+    const kpiW = (W - 24) / 3;
+    kpis.forEach((k, i) => {
+      const col = i % 3;
+      const row = Math.floor(i / 3);
+      const bx = 12 + col * kpiW;
+      const by = y + row * 18;
+      doc.setFillColor(...LGRAY);
+      doc.roundedRect(bx, by, kpiW - 4, 14, 2, 2, "F");
+      doc.setFontSize(7);
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(100, 100, 100);
+      doc.text(k.label, bx + 4, by + 5);
+      doc.setFontSize(14);
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(...BLUE);
+      doc.text(k.value, bx + 4, by + 12);
     });
 
-    const imgData = canvas.toDataURL("image/png");
-    const pdf = new jsPDF({ orientation: "landscape", unit: "mm", format: "a4" });
-    const pdfW = pdf.internal.pageSize.getWidth();
-    const pdfH = (canvas.height * pdfW) / canvas.width;
+    y += 42;
 
-    const rangeLbl = dateRange === "today" ? "Heute" : dateRange === "7" ? "Letzte 7 Tage" : dateRange === "30" ? "Letzte 30 Tage" : `${customFrom} – ${customTo}`;
-    pdf.setFontSize(10);
-    pdf.setTextColor(100);
-    pdf.text(`AS ProDigital – Analytics Report | ${rangeLbl} | Erstellt: ${new Date().toLocaleDateString("de-DE")}`, 10, 8);
+    // ── Section: Gerät & Herkunft ────────────────────────────────────────────
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(...BLUE);
+    doc.text("Gerät & Herkunft", 12, y);
+    y += 5;
 
-    const contentY = 12;
-    const maxH = pdf.internal.pageSize.getHeight() - contentY - 5;
-    if (pdfH <= maxH) {
-      pdf.addImage(imgData, "PNG", 0, contentY, pdfW, pdfH);
-    } else {
-      const pages = Math.ceil(pdfH / maxH);
-      for (let i = 0; i < pages; i++) {
-        if (i > 0) pdf.addPage();
-        pdf.addImage(imgData, "PNG", 0, contentY - i * maxH, pdfW, pdfH);
-      }
+    const db = summary?.deviceBreakdown ?? { desktop: 0, tablet: 0, mobile: 0 };
+    const rb = summary?.referrerBreakdown ?? { direct: 0, google: 0, social: 0, other: 0 };
+    const totalD = (db.desktop + db.tablet + db.mobile) || 1;
+    const totalR = (rb.direct + rb.google + rb.social + rb.other) || 1;
+
+    autoTable({
+      startY: y,
+      margin: { left: 12, right: 12 },
+      tableWidth: (W - 24) / 2 - 3,
+      head: [["Gerät", "Besucher", "Anteil"]],
+      body: [
+        ["Desktop", db.desktop, `${Math.round(db.desktop / totalD * 100)}%`],
+        ["Tablet", db.tablet, `${Math.round(db.tablet / totalD * 100)}%`],
+        ["Mobil", db.mobile, `${Math.round(db.mobile / totalD * 100)}%`],
+      ],
+      headStyles: { fillColor: BLUE, textColor: 255, fontSize: 8, fontStyle: "bold" },
+      bodyStyles: { fontSize: 8, textColor: [40, 40, 40] },
+      alternateRowStyles: { fillColor: LGRAY },
+      columnStyles: { 1: { halign: "center" }, 2: { halign: "center" } },
+      theme: "grid",
+    });
+
+    const deviceEndY = (doc as any).lastAutoTable.finalY;
+
+    autoTable({
+      startY: y,
+      margin: { left: W / 2 + 3, right: 12 },
+      tableWidth: (W - 24) / 2 - 3,
+      head: [["Herkunft", "Besucher", "Anteil"]],
+      body: [
+        ["Direkt", rb.direct, `${Math.round(rb.direct / totalR * 100)}%`],
+        ["Google", rb.google, `${Math.round(rb.google / totalR * 100)}%`],
+        ["Social", rb.social, `${Math.round(rb.social / totalR * 100)}%`],
+        ["Sonstige", rb.other, `${Math.round(rb.other / totalR * 100)}%`],
+      ],
+      headStyles: { fillColor: BLUE, textColor: 255, fontSize: 8, fontStyle: "bold" },
+      bodyStyles: { fontSize: 8, textColor: [40, 40, 40] },
+      alternateRowStyles: { fillColor: LGRAY },
+      columnStyles: { 1: { halign: "center" }, 2: { halign: "center" } },
+      theme: "grid",
+    });
+
+    y = Math.max(deviceEndY, (doc as any).lastAutoTable.finalY) + 8;
+
+    // ── Section: Seiten ──────────────────────────────────────────────────────
+    doc.setFontSize(12);
+    doc.setFont("helvetica", "bold");
+    doc.setTextColor(...BLUE);
+    doc.text("Seiten-Performance", 12, y);
+    y += 4;
+
+    const sortedPages = [...(pages ?? [])].sort((a, b) => b.views - a.views);
+    autoTable({
+      startY: y,
+      margin: { left: 12, right: 12 },
+      head: [["Seite", "Aufrufe", "Einstiege", "Absprünge", "Ø Zeit", "Ø Scroll"]],
+      body: sortedPages.map(p => [
+        p.page,
+        p.views,
+        p.entries,
+        p.exits,
+        p.avgDuration > 0 ? formatSeconds(p.avgDuration) : "–",
+        p.avgScrollDepth > 0 ? `${p.avgScrollDepth}%` : "–",
+      ]),
+      headStyles: { fillColor: BLUE, textColor: 255, fontSize: 8, fontStyle: "bold" },
+      bodyStyles: { fontSize: 8, textColor: [40, 40, 40] },
+      alternateRowStyles: { fillColor: LGRAY },
+      columnStyles: {
+        0: { cellWidth: 55 },
+        1: { halign: "center" },
+        2: { halign: "center" },
+        3: { halign: "center" },
+        4: { halign: "center" },
+        5: { halign: "center" },
+      },
+      theme: "grid",
+    });
+
+    y = (doc as any).lastAutoTable.finalY + 8;
+
+    // ── Section: CTA-Klicks ──────────────────────────────────────────────────
+    if ((cta ?? []).length > 0) {
+      if (y > 220) { doc.addPage(); y = 20; }
+      doc.setFontSize(12);
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(...BLUE);
+      doc.text("CTA-Klicks Ranking", 12, y);
+      y += 4;
+
+      autoTable({
+        startY: y,
+        margin: { left: 12, right: 12 },
+        head: [["Rang", "CTA-Element", "Seite", "Klicks"]],
+        body: (cta ?? []).map((c, i) => [i + 1, c.element, c.page, c.clicks]),
+        headStyles: { fillColor: ORANGE, textColor: 255, fontSize: 8, fontStyle: "bold" },
+        bodyStyles: { fontSize: 8, textColor: [40, 40, 40] },
+        alternateRowStyles: { fillColor: LGRAY },
+        columnStyles: {
+          0: { halign: "center", cellWidth: 12 },
+          3: { halign: "center", cellWidth: 18 },
+        },
+        theme: "grid",
+      });
+
+      y = (doc as any).lastAutoTable.finalY + 8;
     }
 
-    pdf.save(`analytics-report-${new Date().toISOString().split("T")[0]}.pdf`);
+    // ── Section: Häufige Wege ────────────────────────────────────────────────
+    if ((flows ?? []).length > 0) {
+      if (y > 220) { doc.addPage(); y = 20; }
+      doc.setFontSize(12);
+      doc.setFont("helvetica", "bold");
+      doc.setTextColor(...BLUE);
+      doc.text("Häufige Nutzerwege", 12, y);
+      y += 4;
+
+      autoTable({
+        startY: y,
+        margin: { left: 12, right: 12 },
+        head: [["Rang", "Von", "Nach", "Häufigkeit"]],
+        body: (flows ?? []).map((f, i) => [i + 1, f.from, f.to, `${f.count}×`]),
+        headStyles: { fillColor: BLUE, textColor: 255, fontSize: 8, fontStyle: "bold" },
+        bodyStyles: { fontSize: 8, textColor: [40, 40, 40] },
+        alternateRowStyles: { fillColor: LGRAY },
+        columnStyles: {
+          0: { halign: "center", cellWidth: 12 },
+          3: { halign: "center", cellWidth: 22 },
+        },
+        theme: "grid",
+      });
+    }
+
+    // ── Footer on every page ─────────────────────────────────────────────────
+    const pageCount = (doc as any).internal.getNumberOfPages();
+    for (let p = 1; p <= pageCount; p++) {
+      doc.setPage(p);
+      doc.setFillColor(...BLUE);
+      doc.rect(0, 287, W, 10, "F");
+      doc.setFontSize(7);
+      doc.setFont("helvetica", "normal");
+      doc.setTextColor(255, 255, 255);
+      doc.text("AS ProDigital – Vertraulicher Analytics Report", 12, 293);
+      doc.text(`Seite ${p} von ${pageCount}`, W - 12, 293, { align: "right" });
+    }
+
+    doc.save(`as-prodigital-analytics-${new Date().toISOString().split("T")[0]}.pdf`);
   };
 
   if (!isLoggedIn) {
