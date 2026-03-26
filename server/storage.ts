@@ -65,6 +65,7 @@ export interface IStorage {
   getPageStats(from: Date, to: Date): Promise<PageStat[]>;
   getCtaStats(from: Date, to: Date): Promise<CtaStat[]>;
   getUserFlows(from: Date, to: Date): Promise<FlowStep[]>;
+  clearAnalyticsData(): Promise<void>;
 }
 
 export class MemStorage implements IStorage {
@@ -322,6 +323,11 @@ export class MemStorage implements IStorage {
       .sort((a, b) => b.count - a.count)
       .slice(0, 20);
   }
+
+  async clearAnalyticsData(): Promise<void> {
+    this.analyticsSessions.clear();
+    this.analyticsEvents = [];
+  }
 }
 
 export class DbStorage implements IStorage {
@@ -527,6 +533,11 @@ export class DbStorage implements IStorage {
       })
       .sort((a, b) => b.count - a.count)
       .slice(0, 20);
+  }
+
+  async clearAnalyticsData(): Promise<void> {
+    await this.db.delete(analyticsEvents);
+    await this.db.delete(analyticsSessions);
   }
 }
 

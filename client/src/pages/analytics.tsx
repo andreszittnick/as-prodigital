@@ -4,7 +4,7 @@ import { useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, Legend, ResponsiveContainer,
 } from "recharts";
-import { Lock, Download, Users, Eye, MousePointer, Clock, Monitor, Smartphone, Tablet, TrendingUp, ArrowRight, RefreshCw } from "lucide-react";
+import { Lock, Download, Users, Eye, MousePointer, Clock, Monitor, Smartphone, Tablet, TrendingUp, ArrowRight, RefreshCw, Trash2 } from "lucide-react";
 
 const API_PASSWORD_KEY = "asp_dashboard_pw";
 
@@ -174,6 +174,15 @@ export default function Analytics() {
     await queryClient.invalidateQueries({ queryKey: ["/api/analytics/cta"] });
     await queryClient.invalidateQueries({ queryKey: ["/api/analytics/flows"] });
     setIsRefreshing(false);
+  };
+
+  const handleClearData = async () => {
+    if (!window.confirm("Alle Analytics-Daten wirklich löschen? Diese Aktion kann nicht rückgängig gemacht werden.")) return;
+    await fetch("/api/analytics/data", {
+      method: "DELETE",
+      headers: { "x-analytics-password": password },
+    });
+    await handleRefresh();
   };
 
   const handleExportPDF = async () => {
@@ -476,6 +485,13 @@ export default function Analytics() {
             >
               <RefreshCw className={`w-4 h-4 ${isRefreshing ? "animate-spin" : ""}`} />
               Aktualisieren
+            </button>
+            <button
+              onClick={handleClearData}
+              className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium bg-red-600 text-white transition hover:bg-red-700"
+            >
+              <Trash2 className="w-4 h-4" />
+              Daten löschen
             </button>
             <button
               onClick={() => { sessionStorage.removeItem(API_PASSWORD_KEY); setIsLoggedIn(false); setPassword(""); }}

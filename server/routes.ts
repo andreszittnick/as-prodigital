@@ -188,6 +188,17 @@ export async function registerRoutes(app: Express): Promise<Server> {
     }
   });
 
+  app.delete("/api/analytics/data", async (req, res) => {
+    if (!checkAnalyticsAuth(req, res)) return;
+    try {
+      await storage.clearAnalyticsData();
+      res.json({ success: true });
+    } catch (error) {
+      console.error("Analytics clear error:", error);
+      res.status(500).json({ message: "Internal server error" });
+    }
+  });
+
   const httpServer = createServer(app);
   return httpServer;
 }
